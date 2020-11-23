@@ -1,4 +1,4 @@
-# Scholarly
+# Scholarly Usage
 
 [Project description]([https://pypi.org/project/scholarly/)
 
