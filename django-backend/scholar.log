@@ -1,6 +1,0 @@
-INFO:django.utils.autoreload:Watching for file changes with StatReloader
-INFO:django.utils.autoreload:Watching for file changes with StatReloader
-INFO:scholarly:Getting https://scholar.google.com/scholar?hl=en&q=Math&as_vis=0&as_sdt=0,33
-INFO:scholarly:Session proxy config is {}
-INFO:scholarly:Getting https://scholar.google.com/scholar?hl=en&q=Mimic&as_vis=0&as_sdt=0,33
-INFO:scholarly:Session proxy config is {}
