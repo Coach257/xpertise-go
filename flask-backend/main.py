@@ -10,6 +10,6 @@ def search_author_by_name():
     res=next(scholarly.search_author(author_name)).affiliation
     return jsonify(res)
 
-if __name__=='__main__':
-    app.run(port=8080)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)
 
