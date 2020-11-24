@@ -2,4 +2,4 @@ runtime: python38
 
 handlers:
 - url: .*
-  script: main.py runserver
+  script: auto
