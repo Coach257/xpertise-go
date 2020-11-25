@@ -4,10 +4,12 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
+// ...
 var (
 	DB *gorm.DB
 )
 
+// InitMySQL means initialize database.
 func InitMySQL() (err error) {
 	DB, err = gorm.Open("mysql", "root:@buaa21@tcp(101.132.227.56:3306)/test?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
@@ -23,6 +25,13 @@ func InitMySQL() (err error) {
 	return DB.DB().Ping()
 }
 
+// CreateTableStudent : AutoMigrate a table student
+func CreateTableStudent() (err error) {
+	DB.AutoMigrate(&Student{})
+	return
+}
+
+// Close the connection of the database.
 func Close() {
 	DB.Close()
 }
