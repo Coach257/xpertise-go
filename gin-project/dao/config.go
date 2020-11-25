@@ -1,9 +1,6 @@
 package dao
 
 import (
-	"fmt"
-	"os"
-
 	"github.com/jinzhu/gorm"
 )
 
@@ -12,15 +9,7 @@ var (
 )
 
 func InitMySQL() (err error) {
-	socketDir, isSet := os.LookupEnv("DB_SOCKET_DIR")
-	if !isSet {
-		socketDir = "/cloudsql"
-	}
-
-	var dbURI string
-	dbURI = fmt.Sprintf("szl:123@unix(/%s/test-project-296508:asia-east2:test)/test?parseTime=true", socketDir)
-
-	DB, err = gorm.Open("mysql", dbURI)
+	DB, err = gorm.Open("mysql", "root:@buaa21@tcp(101.132.227.56:3306)/test?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}
