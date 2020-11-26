@@ -3,44 +3,53 @@ package controller
 import (
 	"gin-project/dao"
 	"gin-project/server"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
-// Index func.
 func Index(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"message": "Welcome to Home Page.",
+		"message": "Xpertise Scholar",
 	})
 }
 
-// Test func.
-func Test(c *gin.Context) {
-	// 插入两条数据
-	student1 := dao.Student{ID: 18373059, Name: "胡鹏飞", Age: 20}
-	student2 := dao.Student{ID: 18373722, Name: "朱英豪", Age: 20}
-	// 创建Table
-	dao.CreateTableStudent()
-	// 在表中插入数据
-	server.CreateAStudent(&student1)
-	server.CreateAStudent(&student2)
+func CreateAStudent(c *gin.Context) {
+	stu := dao.Student{ID: 1, Name: "hpf", Age: 20}
+	if err := server.CreateAStudent(&stu); err != nil {
+		c.JSON(0, gin.H{"message": err})
+	} else {
+		c.JSON(200, gin.H{"message": "success"})
+	}
+}
 
-	// 删除数据
-	//server.DeleteAStudentByID(18373059)
+func DeleteAStudentByID(c *gin.Context) {
+	sid, _ := strconv.ParseUint(c.Param("id"), 0, 64)
+	server.DeleteAStudentByID(sid)
+	c.JSON(200, gin.H{"message": "success"})
+}
 
-	// 这里要先定义再传student
-	var student []dao.Student
-	// 获取所有数据到 student中
-	dao.DB.Find(&student)
+func QueryAllStudents(c *gin.Context) {
+	students := server.QueryAllStudents()
+	c.IndentedJSON(200, students)
+}
 
-	// 封装成 JSon文件
+func UpdateAStudentByAge(c *gin.Context) {
+	sid, _ := strconv.ParseUint(c.PostForm("sid"), 0, 64)
+	age, _ := strconv.ParseUint(c.PostForm("age"), 0, 64)
+	student := server.QueryStudentByID(sid)
+	server.UpdateAStudentByAge(student[0], age)
+	c.JSON(200, gin.H{"message": "success"})
+}
+
+func QueryStudentByID(c *gin.Context) {
+	sid, _ := strconv.ParseUint(c.PostForm("id"), 0, 64)
+	student := server.QueryStudentByID(sid)
 	c.IndentedJSON(200, student)
-	//c.JSON(200, gin.H{"message": "create a user"})
+}
 
-	dao.DB.Model(&student).Where("Name = ?", "胡鹏飞").Update("Age", 21)
-	//dao.DBModel(&student).Update("Age", 21)
-
-	// 重新获取全部数据
-	dao.DB.Find(&student)
+func QueryStudentsByAge(c *gin.Context) {
+	age, _ := strconv.ParseUint(c.PostForm("age"), 0, 64)
+	student := server.QueryStudentsByAge(age)
 	c.IndentedJSON(200, student)
 }

@@ -10,11 +10,16 @@ import (
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/index", controller.Index)
+	r.GET("/", controller.Index)
 	// api
-	apiGroup := r.Group("api")
+	v1 := r.Group("api/v1/student")
 	{
-		apiGroup.GET("/test", controller.Test)
+		v1.POST("/create", controller.CreateAStudent)
+		v1.DELETE("/delete/:id", controller.DeleteAStudentByID)
+		v1.PUT("/update/age", controller.UpdateAStudentByAge)
+		v1.GET("/query/all", controller.QueryAllStudents)
+		v1.GET("/query/id", controller.QueryStudentByID)
+		v1.GET("/query/age", controller.QueryStudentsByAge)
 	}
 	return r
 }
