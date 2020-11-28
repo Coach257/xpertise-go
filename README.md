@@ -15,6 +15,14 @@ python search.py runserver
 python manage.py runserver
 ```
 
+- Flask backend
+  - Run in `localhost:8080`
+
+```bash
+pip install flask
+python main.py
+```
+
 - Gin backend
   - Run in `localhost:8080`
 
