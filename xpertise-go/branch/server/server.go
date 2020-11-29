@@ -40,3 +40,11 @@ func QueryStudentsByAge(age uint64) (students []*dao.Student) {
 	dao.DB.Where("Age = ?", age).Find(&students)
 	return students
 }
+
+//CreatAComment 创建一条评论
+func CreateAComment(comm *dao.Comment) (err error) {
+	if err = dao.DB1.Create(&comm).Error; err != nil {
+		return err
+	}
+	return
+}
