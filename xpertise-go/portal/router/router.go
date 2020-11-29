@@ -12,10 +12,11 @@ func SetupRouter() *gin.Engine {
 
 	r.GET("/", controller.Index)
 	// api
-	v2 := r.Group("api/portal")
+	test := r.Group("api/portal/test")
 	{
-		v2.GET("/document/create", controller.CreateADocument)
-		v2.GET("/document/query", controller.QueryDocumentByID)
+		test.GET("/document/create", controller.CreateADocument)
+		test.GET("/document/query", controller.QueryDocumentByID)
 	}
+
 	return r
 }
