@@ -2,41 +2,17 @@ package server
 
 import "xpertise-go/portal/dao"
 
-// CreateAUser : Create a table user.
-func CreateAUser(user *dao.User) (err error) {
-	if err = dao.DB.Create(&user).Error; err != nil {
+// CreateADocument is a test service
+func CreateADocument(doc *dao.Document) (err error) {
+	print(doc.Abstract)
+	if err = dao.DB.Create(&doc).Error; err != nil {
 		return err
 	}
 	return
 }
 
-func CreateAStudent(student *dao.Student) (err error) {
-	if err = dao.DB.Create(&student).Error; err != nil {
-		return err
-	}
-	return
-}
-
-func DeleteAStudentByID(StudentID uint64) {
-	dao.DB.Where("ID = ?", StudentID).Delete(&dao.Student{})
-	return
-}
-
-func UpdateAStudentByAge(student *dao.Student, age uint64) {
-	dao.DB.Model(&student).Update("Age", age)
-}
-
-func QueryAllStudents() (students []*dao.Student) {
-	dao.DB.Find(&students)
-	return students
-}
-
-func QueryStudentByID(StudentID uint64) (student []*dao.Student) {
-	dao.DB.First(&student, StudentID)
-	return student
-}
-
-func QueryStudentsByAge(age uint64) (students []*dao.Student) {
-	dao.DB.Where("Age = ?", age).Find(&students)
-	return students
+// QueryDocument is a test service
+func QueryDocument(id uint64) (doc []*dao.Document) {
+	dao.DB.First(&doc, id)
+	return doc
 }
