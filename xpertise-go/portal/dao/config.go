@@ -11,7 +11,7 @@ var (
 
 // InitMySQL means initialize database.
 func InitMySQL() (err error) {
-	DB, err = gorm.Open("mysql", "root:@buaa21@tcp(101.132.227.56:3306)/admin_db?charset=utf8&parseTime=True&loc=Local")
+	DB, err = gorm.Open("mysql", "root:@buaa21@tcp(101.132.227.56:3306)/portal_db?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}
