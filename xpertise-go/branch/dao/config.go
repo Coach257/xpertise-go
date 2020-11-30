@@ -9,7 +9,6 @@ import (
 // ...
 var (
 	DB *gorm.DB
-	DB *gorm.DB
 )
 
 // InitMySQL means initialize database.
