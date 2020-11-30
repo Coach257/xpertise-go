@@ -15,8 +15,7 @@ func Index(c *gin.Context) {
 }
 
 func CreateAUser(c *gin.Context) {
-	user := dao.User{UserID: 18373059, Username: "IAmParasite", Password: "123", Email: "1004181396@qq.com",
-		Usertype: 1}
+	user := dao.User{Username: "Rolin", Password: "123456", Email: "1207640183@qq.com"}
 	if err := server.CreateAUser(&user); err != nil {
 		c.JSON(0, gin.H{"message": err})
 	} else {
@@ -53,4 +52,40 @@ func QueryStudentsByAge(c *gin.Context) {
 	age, _ := strconv.ParseUint(c.PostForm("age"), 0, 64)
 	student := server.QueryStudentsByAge(age)
 	c.IndentedJSON(200, student)
+}
+
+func Register(c *gin.Context)  {
+	/*
+	request:
+	{
+		"username":string,
+		"password":string,
+		"password2":string,
+		"email":string,
+		"info":string
+	}
+	*/
+
+	username :=c.Request.FormValue("username")
+	password :=c.Request.FormValue("password")
+	password2 :=c.Request.FormValue("password2")
+	email :=c.Request.FormValue("email")
+	info :=c.Request.FormValue("info")
+
+	if server.QueryAUserByUsername(username) !=nil{
+		c.JSON(200,gin.H{"success":false,"message":"用户名已被占用"})
+	}
+	if password != password2{
+		c.JSON(200,gin.H{"success":false,"message":"两次密码不一致"})
+	}
+	if email == ""{
+		c.JSON(200,gin.H{"success":false,"message":"未输入邮箱"})
+	}
+	if server.QueryAUserByEmail(email) !=nil {
+		c.JSON(200,gin.H{"success":false,"message":"邮箱已被占用"})
+	}
+
+	user:=dao.User{Username: username,Password: password,Email:email,BasicInfo:info}
+	server.CreateAUser(&user)
+	c.JSON(200,gin.H{"success":true,"message":"用户创建成功"})
 }
