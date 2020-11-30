@@ -14,9 +14,10 @@ func Index(c *gin.Context) {
 	})
 }
 
-func CreateAStudent(c *gin.Context) {
-	stu := dao.Student{ID: 1, Name: "hpf", Age: 20}
-	if err := server.CreateAStudent(&stu); err != nil {
+func CreateAUser(c *gin.Context) {
+	user := dao.User{UserID: 18373059, Username: "IAmParasite", Password: "123", Email: "1004181396@qq.com",
+		Usertype: 1}
+	if err := server.CreateAUser(&user); err != nil {
 		c.JSON(0, gin.H{"message": err})
 	} else {
 		c.JSON(200, gin.H{"message": "success"})

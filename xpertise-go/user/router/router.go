@@ -14,7 +14,7 @@ func SetupRouter() *gin.Engine {
 	// api
 	v1 := r.Group("api/v1/student")
 	{
-		v1.POST("/create", controller.CreateAStudent)
+		v1.POST("/create", controller.CreateAUser)
 		v1.DELETE("/delete/:id", controller.DeleteAStudentByID)
 		v1.PUT("/update/age", controller.UpdateAStudentByAge)
 		v1.GET("/query/all", controller.QueryAllStudents)

@@ -10,13 +10,6 @@ func CreateAUser(user *dao.User) (err error) {
 	return
 }
 
-func CreateAStudent(student *dao.Student) (err error) {
-	if err = dao.DB.Create(&student).Error; err != nil {
-		return err
-	}
-	return
-}
-
 func DeleteAStudentByID(StudentID uint64) {
 	dao.DB.Where("ID = ?", StudentID).Delete(&dao.Student{})
 	return

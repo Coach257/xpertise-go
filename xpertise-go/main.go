@@ -14,6 +14,14 @@ import (
 )
 
 func main() {
+	userErr := userDao.InitMySQL()
+	if userErr != nil {
+		panic(userErr)
+	}
+	defer userDao.Close()
+	userR := userRouter.SetupRouter()
+	userR.Run()
+
 	adminErr := adminDao.InitMySQL()
 	if adminErr != nil {
 		panic(adminErr)
@@ -37,12 +45,4 @@ func main() {
 	defer portalDao.Close()
 	portalR := portalRouter.SetupRouter()
 	portalR.Run()
-
-	userErr := userDao.InitMySQL()
-	if userErr != nil {
-		panic(adminErr)
-	}
-	defer userDao.Close()
-	userR := userRouter.SetupRouter()
-	userR.Run()
 }
