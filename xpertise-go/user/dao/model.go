@@ -2,13 +2,21 @@ package dao
 
 // User Model.
 type User struct {
-	ID   uint64 `gorm:"primary_key"`
-	Name string `gorm:"size:255"` // string默认长度为255, 使用这种tag重设。
+	UserID       uint64 `gorm:"primary_key; not null"`
+	Username     string `gorm:"size:15; not null"`
+	Password     string `gorm:"size:20; not null"`
+	Email        string `gorm:"size:20; not null"`
+	Usertype     int    `gorm:"not null"`
+	BasicInfo    string `gorm:"size:100"`
+	Interdiction bool
+
+	//User_type Profile `gorm:"ForeignKey:UserRefer"` 指定外键
 }
 
-// Student model for test.
+// Student model for test.Not important, just for test in server.
 type Student struct {
 	ID   uint64 `gorm:"primary_key"`
 	Name string `gorm:"size:255"`
 	Age  uint64
+	//User_type Profile `gorm:"ForeignKey:UserRefer"` 指定外键
 }

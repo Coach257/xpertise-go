@@ -17,13 +17,14 @@ func InitMySQL() (err error) {
 	}
 
 	// 为模型`User`创建表
-	// DB.CreateTable(&User{})
+	DB.CreateTable(&User{})
+
+	// 自动表迁移
+	DB.CreateTable(&Student{})
+	DB.AutoMigrate(&Student{})
 
 	// 创建表`users'时将“ENGINE = InnoDB”附加到SQL语句
 	// DB.Set("gorm:table_options", "ENGINE=InnoDB").CreateTable(&User{})
-
-	// 自动表迁移
-	// DB.AutoMigrate(&Student{})
 
 	return DB.DB().Ping()
 }
