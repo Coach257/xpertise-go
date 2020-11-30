@@ -13,10 +13,8 @@ type User struct {
 	//User_type Profile `gorm:"ForeignKey:UserRefer"` 指定外键
 }
 
-// Student model for test.Not important, just for test in server.
 type Student struct {
 	ID   uint64 `gorm:"primary_key"`
 	Name string `gorm:"size:255"`
 	Age  uint64
-	//User_type Profile `gorm:"ForeignKey:UserRefer"` 指定外键
 }

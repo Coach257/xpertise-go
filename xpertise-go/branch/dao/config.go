@@ -18,11 +18,10 @@ func InitMySQL() (error error) {
 		panic(error)
 	}
 	// 为模型`User`创建表
-	//DB.CreateTable(&User{})
-	//DB.DropTable("comments")
-	//DB.CreateTable(&Comment{})
-	//DB.CreateTable(&Document{})
-	//DB.CreateTable(&LikeDislikeRecord{})
+	DB.DropTable("comments")
+	DB.CreateTable(&Comment{})
+	DB.CreateTable(&Document{})
+	DB.CreateTable(&LikeDislikeRecord{})
 	doc1 := Document{PublishTime: time.Now(), AuthorList: "[ztx]", Abstract: "这是一篇文章"}
 	DB.Create(&doc1)
 	com1 := Comment{DocID: doc1.ID, Content: "这是第一篇文章的第一篇评论"}
