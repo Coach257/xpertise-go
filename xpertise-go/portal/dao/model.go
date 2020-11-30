@@ -2,8 +2,9 @@ package dao
 
 import (
 	"database/sql/driver"
-	"github.com/json-iterator/go"
 	"time"
+
+	jsoniter "github.com/json-iterator/go"
 )
 
 // customized type for string array store & read
@@ -32,19 +33,6 @@ func (l *UintList) Scan(data interface{}) error {
 		print((*l)[i])
 	}
 	return err
-}
-
-// User Model.
-type User struct {
-	ID   uint64 `gorm:"primary_key"`
-	Name string `gorm:"size:255"` // string默认长度为255, 使用这种tag重设。
-}
-
-// Student model for test.
-type Student struct {
-	ID   uint64 `gorm:"primary_key"`
-	Name string `gorm:"size:255"`
-	Age  uint64
 }
 
 // Organization Model.

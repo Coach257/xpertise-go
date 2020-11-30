@@ -18,8 +18,6 @@ func InitMySQL() (err error) {
 
 	// 为模型`User`创建表
 	DB.CreateTable(&User{})
-	// 自动表迁移
-	DB.CreateTable(&Student{})
 
 	user := User{UserID: 18373059, Username: "IAmParasite", Password: "123", Email: "1004181396@qq.com",
 		Usertype: 1}
