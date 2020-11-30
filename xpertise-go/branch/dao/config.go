@@ -12,11 +12,10 @@ var (
 )
 
 // InitMySQL means initialize database.
-func InitMySQL() (err1 error) {
-
-	DB, err1 = gorm.Open("mysql", "root:@buaa21@tcp(101.132.227.56:3306)/branch_db?charset=utf8&parseTime=True&loc=Local")
-	if err1 != nil {
-		panic(err1)
+func InitMySQL() (error error) {
+	DB, error = gorm.Open("mysql", "root:@buaa21@tcp(101.132.227.56:3306)/branch_db?charset=utf8&parseTime=True&loc=Local")
+	if error != nil {
+		panic(error)
 	}
 	// 为模型`User`创建表
 	//DB.CreateTable(&User{})
