@@ -6,7 +6,7 @@ type User struct {
 	Username     string `gorm:"size:15; not null"`
 	Password     string `gorm:"size:20; not null"`
 	Email        string `gorm:"size:20; not null"`
-	Usertype     int    `gorm:"not null"`
+	Usertype     int    `gorm:"not null;default:1"`
 	BasicInfo    string `gorm:"size:100"`
 	Interdiction bool
 
