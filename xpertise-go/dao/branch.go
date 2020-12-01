@@ -4,7 +4,7 @@ import "time"
 
 type Comment struct {
 	//gorm.Model
-	ID        uint64 `gorm:"primary_key;column:com_id"`
+	ComID     uint64 `gorm:"primary_key;column:com_id"`
 	UserID    uint64 `gorm:"column:user_id"`
 	DocID     uint64 `gorm:"column:doc_id"`
 	CreatedAt time.Time
@@ -31,7 +31,7 @@ type Comment struct {
 // }
 
 type LikeDislikeRecord struct {
-	ComID       uint64 `gorm:"column:com_id"`
+	ComID       uint64 `gorm:"column:com_id;ForeignKey:ComID"`
 	UserID      uint64 `gorm:"column:user_id"`
 	IsLikeOrDis bool
 }
