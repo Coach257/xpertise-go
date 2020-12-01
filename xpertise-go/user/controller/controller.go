@@ -77,7 +77,7 @@ func Register(c *gin.Context) {
 	email := c.Request.FormValue("email")
 	info := c.Request.FormValue("info")
 
-	if user1,_ :=server.QueryAUserByUsername(username) ; user1!=(dao.User{}) {
+	if _, notfound := server.QueryAUserByUsername(username); notfound != true {
 		c.JSON(200, gin.H{"success": false, "message": "用户名已被占用"})
 		return
 	}
@@ -89,7 +89,7 @@ func Register(c *gin.Context) {
 		c.JSON(200, gin.H{"success": false, "message": "未输入邮箱"})
 		return
 	}
-	if user2,_:=server.QueryAUserByEmail(email); user2!=(dao.User{}) {
+	if _, notfound := server.QueryAUserByEmail(email); notfound != true {
 		c.JSON(200, gin.H{"success": false, "message": "邮箱已被占用"})
 		return
 	}
@@ -99,13 +99,13 @@ func Register(c *gin.Context) {
 	c.JSON(200, gin.H{"success": true, "message": "用户创建成功"})
 }
 
-type LoginResult struct{
-	Token 		 string `json:"token"`
+type LoginResult struct {
+	Token        string `json:"token"`
 	Userid       uint64 `json:"userid"`
-	Username 	 string `json:"username"`
-	Email		 string `json:"email"`
+	Username     string `json:"username"`
+	Email        string `json:"email"`
 	Usertype     int    `json:"usertype"`
-	Info   		 string `json:"info"`
+	Info         string `json:"info"`
 	Interdiction bool   `json:"interdiction"`
 }
 
@@ -123,19 +123,18 @@ func Login(c *gin.Context) {
 	email := c.Request.FormValue("email")
 	password := c.Request.FormValue("password")
 
-
 	//debug
 	fmt.Println(username)
 	fmt.Println(email)
 	fmt.Println(password)
 
 	var user dao.User
-	var err error
+	var notfound bool
 
 	if username != "" {
-		user,err = server.QueryAUserByUsername(username)
+		user, notfound = server.QueryAUserByUsername(username)
 	} else if email != "" {
-		user,err = server.QueryAUserByEmail(email)
+		user, notfound = server.QueryAUserByEmail(email)
 	} else {
 		c.JSON(200, gin.H{
 			"success": false,
@@ -144,7 +143,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	if user == (dao.User{}) {
+	if notfound {
 		c.JSON(200, gin.H{
 			"success": false,
 			"message": "用户或邮箱不存在",
@@ -160,12 +159,12 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	token,err :=generateToken(c,user)
+	token, err := generateToken(c, user)
 
 	// debug
 	log.Println(token)
 
-	if err!=nil{
+	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": err.Error(),
@@ -175,41 +174,40 @@ func Login(c *gin.Context) {
 
 	//登录成功
 	loginresult := LoginResult{
-		Token: token,
-		Userid: user.UserID,
-		Username: user.Username,
-		Email:user.Email,
-		Usertype: user.Usertype,
-		Info:user.BasicInfo,
+		Token:        token,
+		Userid:       user.UserID,
+		Username:     user.Username,
+		Email:        user.Email,
+		Usertype:     user.Usertype,
+		Info:         user.BasicInfo,
 		Interdiction: user.Interdiction,
 	}
 
-	c.JSON(http.StatusOK,gin.H{
-		"success":true,
-		"message":"登录成功",
-		"data":loginresult,
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "登录成功",
+		"data":    loginresult,
 	})
 
 }
 
-func generateToken(c *gin.Context,user dao.User) (string,error){
+func generateToken(c *gin.Context, user dao.User) (string, error) {
 	j := &auth.JWT{
 		[]byte("buaa21xpertise"),
 	}
-	claims:=auth.CustomClaims{
-		UserID: user.UserID,
+	claims := auth.CustomClaims{
+		UserID:   user.UserID,
 		Username: user.Username,
-		Email: user.Email,
-		StandardClaims:jwtgo.StandardClaims{
-			NotBefore: int64(time.Now().Unix()-1000), //签名生效时间
-			ExpiresAt: int64(time.Now().Unix()+3600), //过期时间 一小时
-			Issuer: "buaa21xpertise",				  //签名发行者
+		Email:    user.Email,
+		StandardClaims: jwtgo.StandardClaims{
+			NotBefore: int64(time.Now().Unix() - 1000), //签名生效时间
+			ExpiresAt: int64(time.Now().Unix() + 3600), //过期时间 一小时
+			Issuer:    "buaa21xpertise",                //签名发行者
 		},
 	}
 
 	//创建一个token
-	token,err :=j.CreateToken(claims)
+	token, err := j.CreateToken(claims)
 
-	return token,err
+	return token, err
 }
-

@@ -9,8 +9,26 @@ type User struct {
 	BasicInfo    string `gorm:"size:100"`
 	Interdiction bool   `gorm:"default:false"`
 
+	Folders    []Folder	`gorm:"ForeignKey:UserID"`//User包含多个Folders
 	//User_type Profile `gorm:"ForeignKey:UserRefer"` 指定外键
 }
+
+type Folder struct{
+	FolderID 	uint64 `gorm:"primary_key"`
+	Foldername	string `gorm:"size:15;not null"`
+	Folderinfo  string `gorm:"size:100"`
+	UserID      uint64  //外键
+
+	Favorites []Favorite `gorm:"ForeignKey:FolderID"`//Folder包含多个Favorites
+}
+
+type Favorite struct{
+	FavorID 	uint64 `gorm:"primary_key"`
+	FolderID	uint64 //外键
+	DocID		uint64 //外键
+	Docinfo		string `gorm:"size:100"`
+}
+
 
 type Student struct {
 	ID   uint64 `gorm:"primary_key"`

@@ -17,6 +17,8 @@ func InitMySQL() (error error) {
 	}
 	// AutoMigrate为自动更新，修改某些字段后可能需要先drop原来的table才可以应用更新
 	DB.AutoMigrate(&User{})
+	DB.AutoMigrate(&Folder{})
+	DB.AutoMigrate(&Favorite{})
 	DB.DropTable("comments")
 	DB.CreateTable(&Comment{})
 	DB.CreateTable(&Document{})
