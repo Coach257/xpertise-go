@@ -1,6 +1,6 @@
 package server
 
-import "xpertise-go/branch/dao"
+import "xpertise-go/dao"
 
 // CreatAComment 创建一条评论
 func CreateAComment(comm *dao.Comment) (err error) {

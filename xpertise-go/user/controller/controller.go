@@ -1,9 +1,8 @@
 package controller
 
 import (
-	"fmt"
 	"strconv"
-	"xpertise-go/user/dao"
+	"xpertise-go/dao"
 	"xpertise-go/user/server"
 
 	"github.com/gin-gonic/gin"
@@ -55,80 +54,38 @@ func QueryStudentsByAge(c *gin.Context) {
 	c.IndentedJSON(200, student)
 }
 
-func Register(c *gin.Context)  {
+func Register(c *gin.Context) {
 	/*
-	request:
-	{
-		"username":string,
-		"password":string,
-		"password2":string,
-		"email":string,
-		"info":string
-	}
+		request:
+		{
+			"username":string,
+			"password":string,
+			"password2":string,
+			"email":string,
+			"info":string
+		}
 	*/
 
-	username :=c.Request.FormValue("username")
-	password :=c.Request.FormValue("password")
-	password2 :=c.Request.FormValue("password2")
-	email :=c.Request.FormValue("email")
-	info :=c.Request.FormValue("info")
+	username := c.Request.FormValue("username")
+	password := c.Request.FormValue("password")
+	password2 := c.Request.FormValue("password2")
+	email := c.Request.FormValue("email")
+	info := c.Request.FormValue("info")
 
-	if server.QueryAUserByUsername(username) !=nil{
-		c.JSON(200,gin.H{"success":false,"message":"用户名已被占用"})
+	if server.QueryAUserByUsername(username) != nil {
+		c.JSON(200, gin.H{"success": false, "message": "用户名已被占用"})
 	}
-	if password != password2{
-		c.JSON(200,gin.H{"success":false,"message":"两次密码不一致"})
+	if password != password2 {
+		c.JSON(200, gin.H{"success": false, "message": "两次密码不一致"})
 	}
-	if email == ""{
-		c.JSON(200,gin.H{"success":false,"message":"未输入邮箱"})
+	if email == "" {
+		c.JSON(200, gin.H{"success": false, "message": "未输入邮箱"})
 	}
-	if server.QueryAUserByEmail(email) !=nil {
-		c.JSON(200,gin.H{"success":false,"message":"邮箱已被占用"})
+	if server.QueryAUserByEmail(email) != nil {
+		c.JSON(200, gin.H{"success": false, "message": "邮箱已被占用"})
 	}
 
-	user:=dao.User{Username: username,Password: password,Email:email,BasicInfo:info}
+	user := dao.User{Username: username, Password: password, Email: email, BasicInfo: info}
 	server.CreateAUser(&user)
-	c.JSON(200,gin.H{"success":true,"message":"用户创建成功"})
-}
-
-func Login(c *gin.Context){
-	/*
-	request:
-	{
-		"username":string,
-		"email":string,
-		"password":string
-	}
-	*/
-
-	username :=c.Request.FormValue("username")
-	email :=c.Request.FormValue("email")
-	password :=c.Request.FormValue("password")
-
-	var user *dao.User
-
-	fmt.Println(username)
-	fmt.Println(email)
-	fmt.Println(password)
-
-	if username != ""{
-		user =server.QueryAUserByUsername(username)
-	}else if email != ""{
-		user =server.QueryAUserByEmail(email)
-	}else {
-		c.JSON(200,gin.H{"success":false,"message":"不可同时为空"})
-		return
-	}
-
-	if user == nil{
-		c.JSON(200,gin.H{"success":false,"message":"用户或邮箱不存在"})
-		return
-	}
-
-	if user.Password!=password{
-		c.JSON(200,gin.H{"success":false,"message":"用户名或密码错误"})
-		return
-	}
-
-	c.JSON(200,gin.H{"success":true,"message":"登录成功"})
+	c.JSON(200, gin.H{"success": true, "message": "用户创建成功"})
 }

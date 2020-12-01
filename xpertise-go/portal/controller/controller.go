@@ -2,7 +2,7 @@ package controller
 
 import (
 	"time"
-	"xpertise-go/portal/dao"
+	"xpertise-go/dao"
 	"xpertise-go/portal/server"
 
 	"github.com/gin-gonic/gin"

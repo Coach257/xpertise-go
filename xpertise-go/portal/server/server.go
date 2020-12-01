@@ -1,6 +1,6 @@
 package server
 
-import "xpertise-go/portal/dao"
+import "xpertise-go/dao"
 
 // CreateADocument is a test service
 func CreateADocument(doc *dao.Document) (err error) {

@@ -59,6 +59,8 @@ type Document struct {
 	PublishTime time.Time
 	Source      string `gorm:"size:30"`
 	Original    string `gorm:"size:100"`
+
+	// comments & content要吗，你们商量下
 }
 
 // OrgDocument Model.

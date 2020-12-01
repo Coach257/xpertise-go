@@ -1,6 +1,5 @@
 package dao
 
-// User Model.
 type User struct {
 	UserID       uint64 `gorm:"primary_key; not null"`
 	Username     string `gorm:"size:15; not null"`
