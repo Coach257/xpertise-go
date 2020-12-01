@@ -15,7 +15,7 @@ func InitMySQL() (error error) {
 	if error != nil {
 		panic(error)
 	}
-	// 为模型`User`创建表
+	// AutoMigrate为自动更新，修改某些字段后可能需要先drop原来的table才可以应用更新
 	DB.AutoMigrate(&User{})
 	DB.DropTable("comments")
 	DB.CreateTable(&Comment{})

@@ -2,11 +2,15 @@ package controller
 
 import (
 	"fmt"
-	"strconv"
-	"xpertise-go/dao"
-	"xpertise-go/user/server"
-
+	jwtgo "github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
+	"log"
+	"net/http"
+	"strconv"
+	"time"
+	"xpertise-go/dao"
+	auth "xpertise-go/user/auth"
+	"xpertise-go/user/server"
 )
 
 func Index(c *gin.Context) {
@@ -73,22 +77,31 @@ func Register(c *gin.Context) {
 	email := c.Request.FormValue("email")
 	info := c.Request.FormValue("info")
 
-	if server.QueryAUserByUsername(username) != nil {
+	if user1,_ :=server.QueryAUserByUsername(username) ; user1!=(dao.User{}) {
 		c.JSON(200, gin.H{"success": false, "message": "用户名已被占用"})
+		return
 	}
 	if password != password2 {
 		c.JSON(200, gin.H{"success": false, "message": "两次密码不一致"})
+		return
 	}
 	if email == "" {
 		c.JSON(200, gin.H{"success": false, "message": "未输入邮箱"})
+		return
 	}
-	if server.QueryAUserByEmail(email) != nil {
+	if user2,_:=server.QueryAUserByEmail(email); user2!=(dao.User{}) {
 		c.JSON(200, gin.H{"success": false, "message": "邮箱已被占用"})
+		return
 	}
 
 	user := dao.User{Username: username, Password: password, Email: email, BasicInfo: info}
 	server.CreateAUser(&user)
 	c.JSON(200, gin.H{"success": true, "message": "用户创建成功"})
+}
+
+type LoginResult struct{
+	Token string `json:"token"`
+	dao.User
 }
 
 func Login(c *gin.Context) {
@@ -105,30 +118,88 @@ func Login(c *gin.Context) {
 	email := c.Request.FormValue("email")
 	password := c.Request.FormValue("password")
 
-	var user *dao.User
 
+	//debug
 	fmt.Println(username)
 	fmt.Println(email)
 	fmt.Println(password)
 
+	var user dao.User
+	var err error
+
 	if username != "" {
-		user = server.QueryAUserByUsername(username)
+		user,err = server.QueryAUserByUsername(username)
 	} else if email != "" {
-		user = server.QueryAUserByEmail(email)
+		user,err = server.QueryAUserByEmail(email)
 	} else {
-		c.JSON(200, gin.H{"success": false, "message": "不可同时为空"})
+		c.JSON(200, gin.H{
+			"success": false,
+			"message": "不可同时为空",
+		})
 		return
 	}
 
-	if user == nil {
-		c.JSON(200, gin.H{"success": false, "message": "用户或邮箱不存在"})
+	if user == (dao.User{}) {
+		c.JSON(200, gin.H{
+			"success": false,
+			"message": "用户或邮箱不存在",
+		})
 		return
 	}
 
 	if user.Password != password {
-		c.JSON(200, gin.H{"success": false, "message": "用户名或密码错误"})
+		c.JSON(200, gin.H{
+			"success": false,
+			"message": "用户名或密码错误",
+		})
 		return
 	}
 
-	c.JSON(200, gin.H{"success": true, "message": "登录成功"})
+	token,err :=generateToken(c,user)
+
+	// debug
+	log.Println(token)
+
+	if err!=nil{
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
+		})
+		return
+	}
+
+	//登录成功
+	data := LoginResult{
+		User:user,
+		Token: token,
+	}
+
+	c.JSON(http.StatusOK,gin.H{
+		"success":true,
+		"message":"登录成功",
+		"data":data,
+	})
+
 }
+
+func generateToken(c *gin.Context,user dao.User) (string,error){
+	j := &auth.JWT{
+		[]byte("buaa21xpertise"),
+	}
+	claims:=auth.CustomClaims{
+		UserID: user.UserID,
+		Username: user.Username,
+		Email: user.Email,
+		StandardClaims:jwtgo.StandardClaims{
+			NotBefore: int64(time.Now().Unix()-1000), //签名生效时间
+			ExpiresAt: int64(time.Now().Unix()+3600), //过期时间 一小时
+			Issuer: "buaa21xpertise",				  //签名发行者
+		},
+	}
+
+	//创建一个token
+	token,err :=j.CreateToken(claims)
+
+	return token,err
+}
+
