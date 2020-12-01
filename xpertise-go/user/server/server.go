@@ -10,14 +10,16 @@ func CreateAUser(user *dao.User) (err error) {
 	return
 }
 
-func QueryAUserByUsername(username string) (user *dao.User) {
+func QueryAUserByUsername(username string) *dao.User {
+	var user dao.User
 	dao.DB.Where("Username=?", username).First(&user)
-	return user
+	return &user
 }
 
-func QueryAUserByEmail(email string) (user *dao.User) {
+func QueryAUserByEmail(email string) *dao.User {
+	var user dao.User
 	dao.DB.Where("Email=?", email).First(&user)
-	return user
+	return &user
 }
 
 func DeleteAStudentByID(StudentID uint64) {

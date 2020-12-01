@@ -16,6 +16,7 @@ func InitMySQL() (error error) {
 		panic(error)
 	}
 	// 为模型`User`创建表
+	DB.AutoMigrate(&User{})
 	DB.DropTable("comments")
 	DB.CreateTable(&Comment{})
 	DB.CreateTable(&Document{})
