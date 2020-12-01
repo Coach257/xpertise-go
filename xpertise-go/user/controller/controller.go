@@ -100,8 +100,13 @@ func Register(c *gin.Context) {
 }
 
 type LoginResult struct{
-	Token string `json:"token"`
-	dao.User
+	Token 		 string `json:"token"`
+	Userid       uint64 `json:"userid"`
+	Username 	 string `json:"username"`
+	Email		 string `json:"email"`
+	Usertype     int    `json:"usertype"`
+	Info   		 string `json:"info"`
+	Interdiction bool   `json:"interdiction"`
 }
 
 func Login(c *gin.Context) {
@@ -169,15 +174,20 @@ func Login(c *gin.Context) {
 	}
 
 	//登录成功
-	data := LoginResult{
-		User:user,
+	loginresult := LoginResult{
 		Token: token,
+		Userid: user.UserID,
+		Username: user.Username,
+		Email:user.Email,
+		Usertype: user.Usertype,
+		Info:user.BasicInfo,
+		Interdiction: user.Interdiction,
 	}
 
 	c.JSON(http.StatusOK,gin.H{
 		"success":true,
 		"message":"登录成功",
-		"data":data,
+		"data":loginresult,
 	})
 
 }
