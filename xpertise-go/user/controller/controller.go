@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"strconv"
 	"xpertise-go/user/dao"
 	"xpertise-go/user/server"
@@ -88,4 +89,46 @@ func Register(c *gin.Context)  {
 	user:=dao.User{Username: username,Password: password,Email:email,BasicInfo:info}
 	server.CreateAUser(&user)
 	c.JSON(200,gin.H{"success":true,"message":"用户创建成功"})
+}
+
+func Login(c *gin.Context){
+	/*
+	request:
+	{
+		"username":string,
+		"email":string,
+		"password":string
+	}
+	*/
+
+	username :=c.Request.FormValue("username")
+	email :=c.Request.FormValue("email")
+	password :=c.Request.FormValue("password")
+
+	var user *dao.User
+
+	fmt.Println(username)
+	fmt.Println(email)
+	fmt.Println(password)
+
+	if username != ""{
+		user =server.QueryAUserByUsername(username)
+	}else if email != ""{
+		user =server.QueryAUserByEmail(email)
+	}else {
+		c.JSON(200,gin.H{"success":false,"message":"不可同时为空"})
+		return
+	}
+
+	if user == nil{
+		c.JSON(200,gin.H{"success":false,"message":"用户或邮箱不存在"})
+		return
+	}
+
+	if user.Password!=password{
+		c.JSON(200,gin.H{"success":false,"message":"用户名或密码错误"})
+		return
+	}
+
+	c.JSON(200,gin.H{"success":true,"message":"登录成功"})
 }

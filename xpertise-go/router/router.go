@@ -28,6 +28,7 @@ func SetupRouter() *gin.Engine {
 		userV1.GET("/query/id", userController.QueryStudentByID)
 		userV1.GET("/query/age", userController.QueryStudentsByAge)
 		userV1.POST("/register",userController.Register)
+		userV1.POST("/login",userController.Login)
 	}
 
 	return r
