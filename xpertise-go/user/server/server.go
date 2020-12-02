@@ -13,18 +13,24 @@ func CreateAUser(user *dao.User) (err error) {
 	return
 }
 
-func QueryAUserByUsername(username string) (user dao.User,Notfound bool) {
+func QueryAUserByUsername(username string) (user dao.User, Notfound bool) {
 	fmt.Println("username:", username)
 	fmt.Println("QueryAUserByUsername")
-	Notfound =dao.DB.Where("username = ?", username).First(&user).RecordNotFound()
-	return user,Notfound
+	Notfound = dao.DB.Where("username = ?", username).First(&user).RecordNotFound()
+	return user, Notfound
 }
 
-func QueryAUserByEmail(email string) (user dao.User,Notfound bool) {
+func QueryAUserByEmail(email string) (user dao.User, Notfound bool) {
 	fmt.Println("email", email)
 	fmt.Println("QueryAUserByEmail")
 	Notfound = dao.DB.Where("email = ?", email).First(&user).RecordNotFound()
-	return user,Notfound
+	return user, Notfound
+}
+
+func UpdateAUserPassword(user *dao.User, newpassword string) error {
+	user.Password = newpassword
+	err := dao.DB.Save(user).Error
+	return err
 }
 
 func DeleteAStudentByID(StudentID uint64) {
