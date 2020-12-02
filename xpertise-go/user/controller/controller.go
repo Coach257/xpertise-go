@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 	"xpertise-go/dao"
-	auth "xpertise-go/user/auth"
+	"xpertise-go/user/auth"
 	"xpertise-go/user/server"
 
 	jwtgo "github.com/dgrijalva/jwt-go"
@@ -355,6 +355,8 @@ func ResetAccountInfo(c *gin.Context) {
 
 */
 func CreateAFolder(c *gin.Context) {
+	claims := c.MustGet("claims").(*auth.CustomClaims)
+
 	userid := c.Request.FormValue("userid")
 	foldername := c.Request.FormValue("foldername")
 	folderinfo := c.Request.FormValue("folderinfo")
@@ -387,6 +389,7 @@ func CreateAFolder(c *gin.Context) {
 			"success": true,
 			"message": "收藏夹创建成功",
 			"data":    data,
+			"claims":  claims,
 		})
 	}
 }
@@ -395,12 +398,48 @@ func CreateAFolder(c *gin.Context) {
 /*
 	request:
 	{
-		"userid":int,
 		"folderid":int,
 		"docid":int,
+		"docinfo":string,
 	}
 */
 
-func AddToMyFavorite(){
+func AddToMyFolder(c *gin.Context) {
+	claims := c.MustGet("claims").(*auth.CustomClaims)
 
+	if claims ==nil{
+		c.JSON(http.StatusOK,gin.H{
+			"success":false,
+			"message":"令牌无效",
+		})
+		return
+	}
+
+	folderId:=c.Request.FormValue("folderid")
+	docId,_:=strconv.ParseUint(c.Request.FormValue("docid"),0,64)
+	docInfo:=c.Request.FormValue("docinfo")
+
+	folder,notFound :=server.QueryAFolderByID(folderId)
+	if notFound{
+		c.JSON(http.StatusOK,gin.H{
+			"success":false,
+			"message":"收藏夹不存在",
+		})
+		return
+	}
+
+	err,_:=server.CreateAFavorite(folder.FolderID,docId,docInfo)
+	if err!=nil{
+		c.JSON(http.StatusOK,gin.H{
+			"success":false,
+			"message":err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK,gin.H{
+		"success":true,
+		"message":"已收藏",
+	})
+	return
 }

@@ -71,8 +71,7 @@ func (j *JWT) ParseToken(tokenString string) (*CustomClaims,error){
 
 
 // jwt中间件，用于检查token
-
-func jwtAuth() gin.HandlerFunc {
+func JwtAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// 尝试获取请求头部的token
 		token := c.Request.Header.Get("token")
