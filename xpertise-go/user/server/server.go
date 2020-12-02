@@ -48,6 +48,12 @@ func UpdateAUser(user *dao.User,username string,email string,info string)error{
 	return err
 }
 
+func CreateAFolder(foldername string,folderinfo string,user *dao.User)(error,uint64){
+	folder := dao.Folder{Foldername: foldername,Folderinfo: folderinfo,UserID: user.UserID}
+	err:=dao.DB.Create(&folder).Error
+	return err,folder.FolderID
+}
+
 func DeleteAStudentByID(StudentID uint64) {
 	dao.DB.Where("ID = ?", StudentID).Delete(&dao.Student{})
 	return

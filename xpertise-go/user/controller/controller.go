@@ -71,17 +71,17 @@ func generateToken(c *gin.Context, user dao.User) (string, error) {
 	return token, err
 }
 
-func InputBlankCheck(username string,email string)(bool,string){
+func InputBlankCheck(username string, email string) (bool, string) {
 	if username == "" {
-		return true,"未输入用户名"
+		return true, "未输入用户名"
 	}
 	if email == "" {
-		return true,"未输入邮箱"
+		return true, "未输入邮箱"
 	}
-	return false,""
+	return false, ""
 }
 
-func DuplicateCheck(c *gin.Context)(bool){
+func DuplicateCheck(c *gin.Context) bool {
 	username := c.Request.FormValue("username")
 	email := c.Request.FormValue("email")
 
@@ -116,13 +116,15 @@ func Register(c *gin.Context) {
 	email := c.Request.FormValue("email")
 	info := c.Request.FormValue("info")
 
-	if blank,message:=InputBlankCheck(username,email);blank{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":message,
+	if blank, message := InputBlankCheck(username, email); blank {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": message,
 		})
 	}
-	if duplicate:=DuplicateCheck(c);duplicate{return}
+	if duplicate := DuplicateCheck(c); duplicate {
+		return
+	}
 	if password != password2 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
@@ -137,7 +139,7 @@ func Register(c *gin.Context) {
 }
 
 //验证账户信息
-func AccountCheck(c *gin.Context) (bool,dao.User) {
+func AccountCheck(c *gin.Context) (bool, dao.User) {
 	var user dao.User
 	var notfound bool
 
@@ -159,7 +161,7 @@ func AccountCheck(c *gin.Context) (bool,dao.User) {
 			"success": false,
 			"message": "请输入邮箱或用户名",
 		})
-		return false,user
+		return false, user
 	}
 
 	if notfound {
@@ -167,7 +169,7 @@ func AccountCheck(c *gin.Context) (bool,dao.User) {
 			"success": false,
 			"message": "用户或邮箱不存在",
 		})
-		return false,user
+		return false, user
 	}
 
 	if user.Password != password {
@@ -175,12 +177,11 @@ func AccountCheck(c *gin.Context) (bool,dao.User) {
 			"success": false,
 			"message": "用户名或密码错误",
 		})
-		return false,user
+		return false, user
 	}
 
-	return true,user
+	return true, user
 }
-
 
 type LoginResult struct {
 	Token        string `json:"token"`
@@ -202,7 +203,7 @@ type LoginResult struct {
 	}
 */
 func Login(c *gin.Context) {
-	pass,user:=AccountCheck(c)
+	pass, user := AccountCheck(c)
 
 	if !pass {
 		return
@@ -248,38 +249,38 @@ func Login(c *gin.Context) {
 	}
 */
 func ResetPassword(c *gin.Context) {
-	pass,user :=AccountCheck(c)
-	if !pass{
+	pass, user := AccountCheck(c)
+	if !pass {
 		return
 	}
 
 	newpassword := c.Request.FormValue("newpassword")
 	newpassword2 := c.Request.FormValue("newpassword2")
-	if newpassword!=newpassword2{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":"密码不一致",
+	if newpassword != newpassword2 {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "密码不一致",
 		})
 		return
 	}
 
-	err:=server.UpdateAUserPassword(&user,newpassword)
-	if err!=nil{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":err.Error(),
+	err := server.UpdateAUserPassword(&user, newpassword)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
 		})
 		return
 	}
 
-	c.JSON(http.StatusOK,gin.H{
-		"success":true,
-		"message":"密码修改成功",
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "密码修改成功",
 	})
 	return
 }
 
-//用户个人信息修改
+//用户个人信息修改（暂未实现登录状态验证）
 /*
 	request:
 	{
@@ -290,46 +291,91 @@ func ResetPassword(c *gin.Context) {
 	}
 */
 
-func ResetAccountInfo(c *gin.Context){
-	userid:=c.Request.FormValue("userid")
-	username :=c.Request.FormValue("username")
-	email :=c.Request.FormValue("email")
-	info :=c.Request.FormValue("info")
+func ResetAccountInfo(c *gin.Context) {
+	userid := c.Request.FormValue("userid")
+	username := c.Request.FormValue("username")
+	email := c.Request.FormValue("email")
+	info := c.Request.FormValue("info")
 
 	var user dao.User
 	var notfound bool
 
-	if user,notfound =server.QueryAUerById(userid);notfound{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":"用户id不存在",
+	if user, notfound = server.QueryAUerById(userid); notfound {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "用户id不存在",
 		})
 		return
 	}
 
-	if blank,message:=InputBlankCheck(username,email);blank{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":message,
+	if blank, message := InputBlankCheck(username, email); blank {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": message,
 		})
 	}
-	if duplicate :=DuplicateCheck(c);duplicate{return}
+	if duplicate := DuplicateCheck(c); duplicate {
+		return
+	}
 
-	if err:=server.UpdateAUser(&user,username,email,info);err!=nil{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":err.Error(),
+	if err := server.UpdateAUser(&user, username, email, info); err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
 		})
 		return
 	}
 
-	c.JSON(http.StatusOK,gin.H{
-		"success":true,
-		"message":"用户信息已更新",
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "用户信息已更新",
 	})
 	return
 }
 
-func CreateAFolder(c *gin.Context){
-}
+//创建收藏夹（暂未实现登录状态验证）
+/*
+	request:
+	{
+		"userid":int,
+		"foldername":string,
+		"folderinfo":string,
+	}
 
+*/
+func CreateAFolder(c *gin.Context) {
+	userid := c.Request.FormValue("userid")
+	foldername := c.Request.FormValue("foldername")
+	folderinfo := c.Request.FormValue("folderinfo")
+
+	var user dao.User
+	var notfound bool
+
+	if user, notfound = server.QueryAUerById(userid); notfound {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "用户id不存在",
+		})
+		return
+	}
+
+	if err,folderid := server.CreateAFolder(foldername, folderinfo, &user);err!=nil{
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
+		})
+		return
+	}else{
+		data:=dao.Folder{
+			FolderID: folderid,
+			Foldername: foldername,
+			Folderinfo: folderinfo,
+			UserID: user.UserID,
+		}
+		c.JSON(http.StatusOK,gin.H{
+			"success":true,
+			"message":"收藏夹创建成功",
+			"data":data,
+		})
+	}
+}
