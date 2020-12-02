@@ -15,20 +15,14 @@ func InitMySQL() (error error) {
 	if error != nil {
 		panic(error)
 	}
-	// AutoMigrate为自动更新，修改某些字段后可能需要先drop原来的table才可以应用更新
-	DB.AutoMigrate(&User{})
-	DB.AutoMigrate(&Folder{})
-	DB.AutoMigrate(&Favorite{})
-	DB.DropTable("comments")
-	DB.CreateTable(&Comment{})
-	DB.CreateTable(&Document{})
-	DB.CreateTable(&LikeDislikeRecord{})
 
-	// 创建表`users'时将“ENGINE = InnoDB”附加到SQL语句
-	// DB.Set("gorm:table_options", "ENGINE=InnoDB").CreateTable(&User{})
-
-	// 自动表迁移
-	// DB.AutoMigrate(&Student{})
+	// migration usage see: [https://gorm.io/docs/migration.html]
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&User{})
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Folder{})
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Favorite{})
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Comment{})
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Document{})
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&LikeDislikeRecord{})
 
 	return DB.DB().Ping()
 }
