@@ -17,6 +17,14 @@ func SetupRouter() *gin.Engine {
 	branchV1 := r.Group("api/v1/branch")
 	{
 		branchV1.POST("/create", branchController.CreateAComment)
+		branchV1.DELETE("/delete/:id", branchController.DeleteACommentByID)
+		branchV1.POST("/thumbup", branchController.AddLike)              //post requires docid userid  两个参数
+		branchV1.POST("/revert_thumbup", branchController.RevertAddLike) // post requires docid userid  两个参数 确保已经点赞
+		branchV1.POST("/thumbdown", branchController.AddDisLike)
+		branchV1.POST("/revert_thumbdown", branchController.RevertAddDisLike)
+		branchV1.GET("/query/thumbup/id", branchController.QueryThumbUp) //id 还没弄好 = =
+		branchV1.GET("/query/thumbdown/id", branchController.QueryThumbDown)
+
 	}
 
 	portalV1 := r.Group("api/v1/portal")
