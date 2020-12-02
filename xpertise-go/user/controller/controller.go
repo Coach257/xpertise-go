@@ -59,6 +59,27 @@ func QueryStudentsByAge(c *gin.Context) {
 	c.IndentedJSON(200, student)
 }
 
+func generateToken(c *gin.Context, user dao.User) (string, error) {
+	j := &auth.JWT{
+		[]byte("buaa21xpertise"),
+	}
+	claims := auth.CustomClaims{
+		UserID:   user.UserID,
+		Username: user.Username,
+		Email:    user.Email,
+		StandardClaims: jwtgo.StandardClaims{
+			NotBefore: int64(time.Now().Unix() - 1000), //签名生效时间
+			ExpiresAt: int64(time.Now().Unix() + 3600), //过期时间 一小时
+			Issuer:    "buaa21xpertise",                //签名发行者
+		},
+	}
+
+	//创建一个token
+	token, err := j.CreateToken(claims)
+
+	return token, err
+}
+
 func Register(c *gin.Context) {
 	/*
 		request:
@@ -109,15 +130,10 @@ type LoginResult struct {
 	Interdiction bool   `json:"interdiction"`
 }
 
-func Login(c *gin.Context) {
-	/*
-		request:
-		{
-			"username":string,
-			"email":string,
-			"password":string
-		}
-	*/
+//验证账户信息
+func AccountCheck(c *gin.Context) (bool,dao.User) {
+	var user dao.User
+	var notfound bool
 
 	username := c.Request.FormValue("username")
 	email := c.Request.FormValue("email")
@@ -128,9 +144,6 @@ func Login(c *gin.Context) {
 	fmt.Println(email)
 	fmt.Println(password)
 
-	var user dao.User
-	var notfound bool
-
 	if username != "" {
 		user, notfound = server.QueryAUserByUsername(username)
 	} else if email != "" {
@@ -138,9 +151,9 @@ func Login(c *gin.Context) {
 	} else {
 		c.JSON(200, gin.H{
 			"success": false,
-			"message": "不可同时为空",
+			"message": "请输入邮箱或用户名",
 		})
-		return
+		return false,user
 	}
 
 	if notfound {
@@ -148,7 +161,7 @@ func Login(c *gin.Context) {
 			"success": false,
 			"message": "用户或邮箱不存在",
 		})
-		return
+		return false,user
 	}
 
 	if user.Password != password {
@@ -156,6 +169,25 @@ func Login(c *gin.Context) {
 			"success": false,
 			"message": "用户名或密码错误",
 		})
+		return false,user
+	}
+
+	return true,user
+}
+
+func Login(c *gin.Context) {
+	/*
+		request:
+		{
+			"username":string,
+			"email":string,
+			"password":string
+		}
+	*/
+
+	pass,user:=AccountCheck(c)
+
+	if !pass {
 		return
 	}
 
@@ -191,23 +223,47 @@ func Login(c *gin.Context) {
 
 }
 
-func generateToken(c *gin.Context, user dao.User) (string, error) {
-	j := &auth.JWT{
-		[]byte("buaa21xpertise"),
-	}
-	claims := auth.CustomClaims{
-		UserID:   user.UserID,
-		Username: user.Username,
-		Email:    user.Email,
-		StandardClaims: jwtgo.StandardClaims{
-			NotBefore: int64(time.Now().Unix() - 1000), //签名生效时间
-			ExpiresAt: int64(time.Now().Unix() + 3600), //过期时间 一小时
-			Issuer:    "buaa21xpertise",                //签名发行者
-		},
+func ResetPassword(c *gin.Context) {
+	/*
+		request:
+		{
+			"email":string,
+			"password":string,
+			"newpassword":string,
+			"newpassword2":string,
+		}
+	*/
+	pass,user :=AccountCheck(c)
+
+	if !pass{
+		return
 	}
 
-	//创建一个token
-	token, err := j.CreateToken(claims)
+	newpassword := c.Request.FormValue("newpassword")
+	newpassword2 := c.Request.FormValue("newpassword2")
 
-	return token, err
+	if newpassword!=newpassword2{
+		c.JSON(http.StatusOK,gin.H{
+			"success":false,
+			"message":"密码不一致",
+		})
+		return
+	}
+
+	err:=server.UpdateAUserPassword(&user,newpassword)
+
+	if err!=nil{
+		c.JSON(http.StatusOK,gin.H{
+			"success":false,
+			"message":err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK,gin.H{
+		"success":true,
+		"message":"密码修改成功",
+	})
+
+	return
 }
