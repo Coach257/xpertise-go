@@ -13,6 +13,13 @@ func CreateAUser(user *dao.User) (err error) {
 	return
 }
 
+func QueryAUerById(userid string)(user dao.User,Notfound bool)  {
+	fmt.Println("userid:", userid)
+	fmt.Println("QueryAUserByID")
+	Notfound = dao.DB.First(&user,userid).RecordNotFound()
+	return user, Notfound
+}
+
 func QueryAUserByUsername(username string) (user dao.User, Notfound bool) {
 	fmt.Println("username:", username)
 	fmt.Println("QueryAUserByUsername")
@@ -31,6 +38,20 @@ func UpdateAUserPassword(user *dao.User, newpassword string) error {
 	user.Password = newpassword
 	err := dao.DB.Save(user).Error
 	return err
+}
+
+func UpdateAUser(user *dao.User,username string,email string,info string)error{
+	user.Username=username
+	user.Email=email
+	user.BasicInfo=info
+	err:=dao.DB.Save(user).Error
+	return err
+}
+
+func CreateAFolder(foldername string,folderinfo string,user *dao.User)(error,uint64){
+	folder := dao.Folder{Foldername: foldername,Folderinfo: folderinfo,UserID: user.UserID}
+	err:=dao.DB.Create(&folder).Error
+	return err,folder.FolderID
 }
 
 func DeleteAStudentByID(StudentID uint64) {

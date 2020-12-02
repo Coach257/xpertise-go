@@ -20,15 +20,6 @@ func Index(c *gin.Context) {
 	})
 }
 
-func CreateAUser(c *gin.Context) {
-	user := dao.User{Username: "Rolin", Password: "123456", Email: "1207640183@qq.com"}
-	if err := server.CreateAUser(&user); err != nil {
-		c.JSON(0, gin.H{"message": err})
-	} else {
-		c.JSON(200, gin.H{"message": "success"})
-	}
-}
-
 func DeleteAStudentByID(c *gin.Context) {
 	sid, _ := strconv.ParseUint(c.Param("id"), 0, 64)
 	server.DeleteAStudentByID(sid)
@@ -81,54 +72,71 @@ func generateToken(c *gin.Context, user dao.User) (string, error) {
 	return token, err
 }
 
-func Register(c *gin.Context) {
-	/*
-		request:
-		{
-			"username":string,
-			"password":string,
-			"password2":string,
-			"email":string,
-			"info":string
-		}
-	*/
+func InputBlankCheck(username string, email string) (bool, string) {
+	if username == "" {
+		return true, "未输入用户名"
+	}
+	if email == "" {
+		return true, "未输入邮箱"
+	}
+	return false, ""
+}
 
+func DuplicateCheck(c *gin.Context) bool {
+	username := c.Request.FormValue("username")
+	email := c.Request.FormValue("email")
+
+	if _, notfound := server.QueryAUserByUsername(username); notfound != true {
+		c.JSON(200, gin.H{"success": false, "message": "用户名已被占用"})
+		return true
+	}
+
+	if _, notfound := server.QueryAUserByEmail(email); notfound != true {
+		c.JSON(200, gin.H{"success": false, "message": "邮箱已被占用"})
+		return true
+	}
+
+	return false
+}
+
+//用户注册
+/*
+	request:
+	{
+		"username":string,
+		"password":string,
+		"password2":string,
+		"email":string,
+		"info":string
+	}
+*/
+func Register(c *gin.Context) {
 	username := c.Request.FormValue("username")
 	password := c.Request.FormValue("password")
 	password2 := c.Request.FormValue("password2")
 	email := c.Request.FormValue("email")
 	info := c.Request.FormValue("info")
 
-	if _, notfound := server.QueryAUserByUsername(username); notfound != true {
-		c.JSON(200, gin.H{"success": false, "message": "用户名已被占用"})
+	if blank, message := InputBlankCheck(username, email); blank {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": message,
+		})
+	}
+	if duplicate := DuplicateCheck(c); duplicate {
 		return
 	}
 	if password != password2 {
-		c.JSON(200, gin.H{"success": false, "message": "两次密码不一致"})
-		return
-	}
-	if email == "" {
-		c.JSON(200, gin.H{"success": false, "message": "未输入邮箱"})
-		return
-	}
-	if _, notfound := server.QueryAUserByEmail(email); notfound != true {
-		c.JSON(200, gin.H{"success": false, "message": "邮箱已被占用"})
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "两次密码不一致",
+		})
 		return
 	}
 
 	user := dao.User{Username: username, Password: password, Email: email, BasicInfo: info}
 	server.CreateAUser(&user)
 	c.JSON(200, gin.H{"success": true, "message": "用户创建成功"})
-}
-
-type LoginResult struct {
-	Token        string `json:"token"`
-	Userid       uint64 `json:"userid"`
-	Username     string `json:"username"`
-	Email        string `json:"email"`
-	Usertype     int    `json:"usertype"`
-	Info         string `json:"info"`
-	Interdiction bool   `json:"interdiction"`
 }
 
 //验证账户信息
@@ -176,16 +184,26 @@ func AccountCheck(c *gin.Context) (bool, dao.User) {
 	return true, user
 }
 
-func Login(c *gin.Context) {
-	/*
-		request:
-		{
-			"username":string,
-			"email":string,
-			"password":string
-		}
-	*/
+type LoginResult struct {
+	Token        string `json:"token"`
+	Userid       uint64 `json:"userid"`
+	Username     string `json:"username"`
+	Email        string `json:"email"`
+	Usertype     int    `json:"usertype"`
+	Info         string `json:"info"`
+	Interdiction bool   `json:"interdiction"`
+}
 
+//用户登录
+/*
+	request:
+	{
+		"username":string,
+		"email":string,
+		"password":string
+	}
+*/
+func Login(c *gin.Context) {
 	pass, user := AccountCheck(c)
 
 	if !pass {
@@ -193,10 +211,8 @@ func Login(c *gin.Context) {
 	}
 
 	token, err := generateToken(c, user)
-
 	// debug
 	log.Println(token)
-
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
@@ -215,7 +231,6 @@ func Login(c *gin.Context) {
 		Info:         user.BasicInfo,
 		Interdiction: user.Interdiction,
 	}
-
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
 		"message": "登录成功",
@@ -224,6 +239,16 @@ func Login(c *gin.Context) {
 
 }
 
+//修改密码
+/*
+	request:
+	{
+		"email":string,
+		"password":string,
+		"newpassword":string,
+		"newpassword2":string,
+	}
+*/
 func ResetPassword(c *gin.Context) {
 	/*
 		request:
@@ -242,7 +267,6 @@ func ResetPassword(c *gin.Context) {
 
 	newpassword := c.Request.FormValue("newpassword")
 	newpassword2 := c.Request.FormValue("newpassword2")
-
 	if newpassword != newpassword2 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
@@ -252,7 +276,6 @@ func ResetPassword(c *gin.Context) {
 	}
 
 	err := server.UpdateAUserPassword(&user, newpassword)
-
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
@@ -265,6 +288,105 @@ func ResetPassword(c *gin.Context) {
 		"success": true,
 		"message": "密码修改成功",
 	})
-
 	return
+}
+
+//用户个人信息修改（暂未实现登录状态验证）
+/*
+	request:
+	{
+		"userid":int,
+		"username":string,
+		"email":string,
+		"info":string,
+	}
+*/
+
+func ResetAccountInfo(c *gin.Context) {
+	userid := c.Request.FormValue("userid")
+	username := c.Request.FormValue("username")
+	email := c.Request.FormValue("email")
+	info := c.Request.FormValue("info")
+
+	var user dao.User
+	var notfound bool
+
+	if user, notfound = server.QueryAUerById(userid); notfound {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "用户id不存在",
+		})
+		return
+	}
+
+	if blank, message := InputBlankCheck(username, email); blank {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": message,
+		})
+	}
+	if duplicate := DuplicateCheck(c); duplicate {
+		return
+	}
+
+	if err := server.UpdateAUser(&user, username, email, info); err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "用户信息已更新",
+	})
+	return
+}
+
+//创建收藏夹（暂未实现登录状态验证）
+/*
+	request:
+	{
+		"userid":int,
+		"foldername":string,
+		"folderinfo":string,
+	}
+
+*/
+func CreateAFolder(c *gin.Context) {
+	userid := c.Request.FormValue("userid")
+	foldername := c.Request.FormValue("foldername")
+	folderinfo := c.Request.FormValue("folderinfo")
+
+	var user dao.User
+	var notfound bool
+
+	if user, notfound = server.QueryAUerById(userid); notfound {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "用户id不存在",
+		})
+		return
+	}
+
+	if err, folderid := server.CreateAFolder(foldername, folderinfo, &user); err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
+		})
+		return
+	} else {
+		data := dao.Folder{
+			FolderID:   folderid,
+			Foldername: foldername,
+			Folderinfo: folderinfo,
+			UserID:     user.UserID,
+		}
+		c.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"message": "收藏夹创建成功",
+			"data":    data,
+		})
+	}
 }

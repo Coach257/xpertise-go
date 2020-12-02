@@ -26,15 +26,17 @@ func SetupRouter() *gin.Engine {
 	}
 	userV1 := r.Group("api/v1/user")
 	{
-		userV1.POST("/create", userController.CreateAUser)
 		userV1.DELETE("/delete/:id", userController.DeleteAStudentByID)
 		userV1.PUT("/update/age", userController.UpdateAStudentByAge)
 		userV1.GET("/query/all", userController.QueryAllStudents)
 		userV1.GET("/query/id", userController.QueryStudentByID)
 		userV1.GET("/query/age", userController.QueryStudentsByAge)
 		userV1.POST("/register", userController.Register)
-		userV1.GET("/login", userController.Login)
-		userV1.PUT("/resetpassword", userController.ResetPassword)
+		userV1.POST("/login", userController.Login)
+		userV1.POST("/password/reset", userController.ResetPassword)
+		userV1.POST("/folder/create", userController.CreateAFolder)
+		userV1.POST("/account_info/reset", userController.ResetAccountInfo)
+		userV1.POST("/folder/create", userController.CreateAFolder)
 	}
 
 	return r
