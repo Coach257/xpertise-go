@@ -54,6 +54,20 @@ func CreateAFolder(foldername string,folderinfo string,user *dao.User)(error,uin
 	return err,folder.FolderID
 }
 
+func QueryAFolderByID(folderId string)(folder dao.Folder,notFound bool){
+	fmt.Println("folderId",folderId)
+	fmt.Println("QueryAFolderByID")
+	notFound=dao.DB.First(&folder,folderId).RecordNotFound()
+	return folder,notFound
+}
+
+func CreateAFavorite(folderId uint64,docId uint64,docInfo string)(error,uint64){
+	favorite :=dao.Favorite{FolderID: folderId,DocID: docId,Docinfo: docInfo}
+	err :=dao.DB.Create(&favorite).Error
+	return err,favorite.FavorID
+}
+
+
 func DeleteAStudentByID(StudentID uint64) {
 	dao.DB.Where("ID = ?", StudentID).Delete(&dao.Student{})
 	return

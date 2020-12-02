@@ -25,7 +25,7 @@ type Folder struct {
 type Favorite struct {
 	FavorID  uint64 `gorm:"primary_key"`
 	FolderID uint64 //外键
-	DocID    uint64 //外键
+	DocID    uint64
 	Docinfo  string `gorm:"size:100"`
 }
 
