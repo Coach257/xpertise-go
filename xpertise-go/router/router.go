@@ -36,7 +36,6 @@ func SetupRouter() *gin.Engine {
 		userV1.POST("/password/reset", userController.ResetPassword)
 		userV1.POST("/folder/create", userController.CreateAFolder)
 		userV1.POST("/account_info/reset", userController.ResetAccountInfo)
-		userV1.POST("/folder/create", userController.CreateAFolder)
 	}
 
 	return r
