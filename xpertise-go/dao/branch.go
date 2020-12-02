@@ -1,18 +1,20 @@
 package dao
 
-import "time"
+import (
+	"time"
+)
 
 type Comment struct {
 	//gorm.Model
 	ComID     uint64 `gorm:"primary_key;column:com_id"`
-	UserID    uint64 `gorm:"column:user_id"`
-	DocID     uint64 `gorm:"column:doc_id"`
+	UserID    uint64 `gorm:"column:user_id;not null;ForeignKey:UserID"`
+	DocID     uint64 `gorm:"column:doc_id;not null;ForeignKey:DocID"`
 	CreatedAt time.Time
 	Content   string `gorm:"column:content;size:255"` // string默认长度为255, 使用这种tag重设。
 
 	//PreCom  uint64 `gorm:"column:pre_comment"`
-	Like    uint64
-	DisLike uint64
+	Like    uint64 `gorm:"default:0"`
+	DisLike uint64 `gorm:"default:0"`
 }
 
 // 在portal里重复定义了Document，这边的先注视掉
@@ -32,6 +34,6 @@ type Comment struct {
 
 type LikeDislikeRecord struct {
 	ComID       uint64 `gorm:"column:com_id;ForeignKey:ComID"`
-	UserID      uint64 `gorm:"column:user_id"`
+	UserID      uint64 `gorm:"column:user_id;ForeignKey:UserID"`
 	IsLikeOrDis bool
 }

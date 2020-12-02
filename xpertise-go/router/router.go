@@ -1,6 +1,7 @@
 package router
 
 import (
+	branchController "xpertise-go/branch/controller"
 	portalController "xpertise-go/portal/controller"
 	userController "xpertise-go/user/controller"
 
@@ -13,7 +14,10 @@ func SetupRouter() *gin.Engine {
 
 	// adminV1 := r.Group("api/v1/admin")
 
-	// branchV1 := r.Group("api/v1/branch")
+	branchV1 := r.Group("api/v1/branch")
+	{
+		branchV1.POST("/create", branchController.CreateAComment)
+	}
 
 	portalV1 := r.Group("api/v1/portal")
 	{
