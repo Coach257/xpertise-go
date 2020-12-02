@@ -17,6 +17,7 @@ func InitMySQL() (error error) {
 	}
 
 	// migration usage see: [https://gorm.io/docs/migration.html]
+	// 仅仅新增新增的字段，不会进行修改已有的字段类型，删除字段的操作
 	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&User{})
 	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Folder{})
 	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Favorite{})

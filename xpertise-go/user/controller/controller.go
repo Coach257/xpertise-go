@@ -2,8 +2,6 @@ package controller
 
 import (
 	"fmt"
-	jwtgo "github.com/dgrijalva/jwt-go"
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"strconv"
@@ -11,6 +9,9 @@ import (
 	"xpertise-go/dao"
 	auth "xpertise-go/user/auth"
 	"xpertise-go/user/server"
+
+	jwtgo "github.com/dgrijalva/jwt-go"
+	"github.com/gin-gonic/gin"
 )
 
 func Index(c *gin.Context) {
@@ -131,7 +132,7 @@ type LoginResult struct {
 }
 
 //验证账户信息
-func AccountCheck(c *gin.Context) (bool,dao.User) {
+func AccountCheck(c *gin.Context) (bool, dao.User) {
 	var user dao.User
 	var notfound bool
 
@@ -153,7 +154,7 @@ func AccountCheck(c *gin.Context) (bool,dao.User) {
 			"success": false,
 			"message": "请输入邮箱或用户名",
 		})
-		return false,user
+		return false, user
 	}
 
 	if notfound {
@@ -161,7 +162,7 @@ func AccountCheck(c *gin.Context) (bool,dao.User) {
 			"success": false,
 			"message": "用户或邮箱不存在",
 		})
-		return false,user
+		return false, user
 	}
 
 	if user.Password != password {
@@ -169,10 +170,10 @@ func AccountCheck(c *gin.Context) (bool,dao.User) {
 			"success": false,
 			"message": "用户名或密码错误",
 		})
-		return false,user
+		return false, user
 	}
 
-	return true,user
+	return true, user
 }
 
 func Login(c *gin.Context) {
@@ -185,7 +186,7 @@ func Login(c *gin.Context) {
 		}
 	*/
 
-	pass,user:=AccountCheck(c)
+	pass, user := AccountCheck(c)
 
 	if !pass {
 		return
@@ -205,7 +206,7 @@ func Login(c *gin.Context) {
 	}
 
 	//登录成功
-	loginresult := LoginResult{
+	loginResult := LoginResult{
 		Token:        token,
 		Userid:       user.UserID,
 		Username:     user.Username,
@@ -218,7 +219,7 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
 		"message": "登录成功",
-		"data":    loginresult,
+		"data":    loginResult,
 	})
 
 }
@@ -233,36 +234,36 @@ func ResetPassword(c *gin.Context) {
 			"newpassword2":string,
 		}
 	*/
-	pass,user :=AccountCheck(c)
+	pass, user := AccountCheck(c)
 
-	if !pass{
+	if !pass {
 		return
 	}
 
 	newpassword := c.Request.FormValue("newpassword")
 	newpassword2 := c.Request.FormValue("newpassword2")
 
-	if newpassword!=newpassword2{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":"密码不一致",
+	if newpassword != newpassword2 {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "密码不一致",
 		})
 		return
 	}
 
-	err:=server.UpdateAUserPassword(&user,newpassword)
+	err := server.UpdateAUserPassword(&user, newpassword)
 
-	if err!=nil{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":err.Error(),
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
 		})
 		return
 	}
 
-	c.JSON(http.StatusOK,gin.H{
-		"success":true,
-		"message":"密码修改成功",
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "密码修改成功",
 	})
 
 	return

@@ -17,7 +17,7 @@ type Comment struct {
 	DisLike uint64 `gorm:"default:0"`
 }
 
-// 在portal里重复定义了Document，这边的先注视掉
+// 在portal里重复定义了Document，这边的先注释掉
 // type Document struct {
 // 	//gorm.Model
 // 	ID          uint64    `gorm:"primary_key;column:doc_id"`

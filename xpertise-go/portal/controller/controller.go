@@ -36,6 +36,6 @@ func CreateADocument(c *gin.Context) {
 
 func QueryDocumentByID(c *gin.Context) {
 	//id, _ := strconv.ParseUint(c.PostForm("id"), 0, 64)
-	student := server.QueryDocument(1)
+	student := server.QueryDocumentByID(1)
 	c.IndentedJSON(200, student)
 }
