@@ -2,8 +2,6 @@ package controller
 
 import (
 	"fmt"
-	jwtgo "github.com/dgrijalva/jwt-go"
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"strconv"
@@ -11,6 +9,9 @@ import (
 	"xpertise-go/dao"
 	auth "xpertise-go/user/auth"
 	"xpertise-go/user/server"
+
+	jwtgo "github.com/dgrijalva/jwt-go"
+	"github.com/gin-gonic/gin"
 )
 
 func Index(c *gin.Context) {
@@ -221,7 +222,7 @@ func Login(c *gin.Context) {
 	}
 
 	//登录成功
-	loginresult := LoginResult{
+	loginResult := LoginResult{
 		Token:        token,
 		Userid:       user.UserID,
 		Username:     user.Username,
@@ -233,7 +234,7 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
 		"message": "登录成功",
-		"data":    loginresult,
+		"data":    loginResult,
 	})
 
 }
@@ -249,7 +250,17 @@ func Login(c *gin.Context) {
 	}
 */
 func ResetPassword(c *gin.Context) {
+	/*
+		request:
+		{
+			"email":string,
+			"password":string,
+			"newpassword":string,
+			"newpassword2":string,
+		}
+	*/
 	pass, user := AccountCheck(c)
+
 	if !pass {
 		return
 	}
@@ -367,8 +378,8 @@ func CreateAFolder(c *gin.Context) {
 		return
 	} else {
 		data := dao.Folder{
-			Foldername: foldername, FolderID: folderid,
-
+			FolderID:   folderid,
+			Foldername: foldername,
 			Folderinfo: folderinfo,
 			UserID:     user.UserID,
 		}

@@ -12,7 +12,7 @@ func CreateADocument(doc *dao.Document) (err error) {
 }
 
 // QueryDocument is a test service
-func QueryDocument(id uint64) (doc []*dao.Document) {
+func QueryDocumentByID(id uint64) (doc dao.Document) {
 	dao.DB.First(&doc, id)
 	return doc
 }
