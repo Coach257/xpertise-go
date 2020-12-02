@@ -359,23 +359,37 @@ func CreateAFolder(c *gin.Context) {
 		return
 	}
 
-	if err,folderid := server.CreateAFolder(foldername, folderinfo, &user);err!=nil{
+	if err, folderid := server.CreateAFolder(foldername, folderinfo, &user); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": err.Error(),
 		})
 		return
-	}else{
-		data:=dao.Folder{
-			FolderID: folderid,
-			Foldername: foldername,
+	} else {
+		data := dao.Folder{
+			Foldername: foldername, FolderID: folderid,
+
 			Folderinfo: folderinfo,
-			UserID: user.UserID,
+			UserID:     user.UserID,
 		}
-		c.JSON(http.StatusOK,gin.H{
-			"success":true,
-			"message":"收藏夹创建成功",
-			"data":data,
+		c.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"message": "收藏夹创建成功",
+			"data":    data,
 		})
 	}
+}
+
+//添加收藏
+/*
+	request:
+	{
+		"userid":int,
+		"folderid":int,
+		"docid":int,
+	}
+*/
+
+func AddToMyFavorite(){
+
 }
