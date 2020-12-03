@@ -23,7 +23,9 @@ func InitMySQL() (error error) {
 	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Favorite{})
 	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Comment{})
 	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Document{})
-
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&Organization{})
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&OrgPatent{})
+	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&OrgDocument{})
 	DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&LikeDislikeRecord{})
 
 	return DB.DB().Ping()
