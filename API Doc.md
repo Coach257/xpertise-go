@@ -188,6 +188,161 @@ response:
 	}
 ```
 
+
+## Branch
+
+### 创建评论
+```go
+填写评论信息，创建新评论
+request url:api/v1/branch/create 
+request method:POST
+request header:需要token
+request body:
+	{
+		"UserID":int,
+		"DocID":int,
+		"Content":string,
+	}
+response:
+	{
+		"success":bool,
+		"message":string,
+	}
+```
+
+
+### 删除评论
+```go
+删除评论
+request url:api/v1/branch/delete
+request method:DELETE
+request header:不需要token
+request body:
+	{
+		
+		"id":int,
+		
+	}
+response:
+	{
+		"success":bool,
+		"message":string,
+	}
+```
+
+### 点赞评论
+```go
+对具体评论点赞
+request url:api/v1/branch/thumbup
+request method:POST
+request header:需要token
+request body:
+	{
+		"UserID":int,
+		"ComID":int,
+		
+	}
+response:
+	{
+		"success":bool,
+		"message":string,
+	}
+```
+
+### 踩评论
+```go
+对具体评论踩
+request url:api/v1/branch/thumbdown
+request method:POST
+request header:需要token
+request body:
+	{
+		"UserID":int,
+		"ComID":int,
+		
+	}
+response:
+	{
+		"success":bool,
+		"message":string,
+	}
+```
+
+### 取消赞
+```go
+取消对具体评论的点赞
+request url:api/v1/branch/revert_thumbup
+request method:POST
+request header:需要token
+request body:
+	{
+		"UserID":int,
+		"ComID":int,
+		
+	}
+response:
+	{
+		"success":bool,
+		"message":string,
+	}
+```
+
+### 取消踩
+```go
+取消对具体评论的踩
+request url:api/v1/branch/revert_thumbdown
+request method:POST
+request header:需要token
+request body:
+	{
+		"UserID":int,
+		"ComID":int,
+		
+	}
+response:
+	{
+		"success":bool,
+		"message":string,
+	}
+```
+
+
+### 查找评论的赞总数
+```go
+获得该评论的赞总数
+request url:api/v1/branch/query/thumbup
+request method:GET
+request header:需要token
+request body:
+	{
+		
+		"id":int,
+		
+	}
+response:
+	{
+		"like":int,
+	}
+```
+
+### 查找评论的踩总数
+```go
+获得该评论的踩总数
+request url:api/v1/branch/query/thumbdown
+request method:GET
+request header:需要token
+request body:
+	{
+		
+		"id":int,
+		
+	}
+response:
+	{
+		"dislike":int,
+	}
+```
+
 ## Search
 
 ### 搜索作者
