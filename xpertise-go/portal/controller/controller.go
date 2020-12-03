@@ -68,6 +68,9 @@ func QueryOrganizationByID(c *gin.Context) {
 	if err := c.ShouldBindJSON(&arg); err != nil {
 		c.JSON(0, gin.H{"message": err})
 	}
+	if arg.Id == 0 {
+		c.JSON(0, gin.H{"message": "Invalid Query ID."})
+	}
 	organization := server.OrgQueryID(arg.Id)
 
 	c.IndentedJSON(200, organization)
@@ -78,6 +81,9 @@ func QueryDocumentsByTitle(c *gin.Context) {
 	if err := c.ShouldBindJSON(&arg); err != nil {
 		c.JSON(0, gin.H{"message": err})
 	}
+	if arg.Title == "" {
+		c.JSON(0, gin.H{"message": "Invalid Query Title."})
+	}
 	documents := server.DocQueryTitle(arg.Title)
 
 	c.IndentedJSON(200, documents)
@@ -85,8 +91,11 @@ func QueryDocumentsByTitle(c *gin.Context) {
 
 func QueryOrganizationByName(c *gin.Context) {
 	var arg queryParams
-	if err := c.ShouldBindJSON(&arg); err != nil {
+	if err := c.ShouldBindJSON(&arg); err != nil || arg.Name == "" {
 		c.JSON(0, gin.H{"message": err})
+	}
+	if arg.Name == "" {
+		c.JSON(0, gin.H{"message": "Invalid Query Name."})
 	}
 	organizations := server.OrgQueryName(arg.Name)
 
