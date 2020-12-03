@@ -1,11 +1,12 @@
 package router
 
 import (
-	"github.com/gin-gonic/gin"
 	branchController "xpertise-go/branch/controller"
 	portalController "xpertise-go/portal/controller"
 	"xpertise-go/user/auth"
 	userController "xpertise-go/user/controller"
+
+	"github.com/gin-gonic/gin"
 )
 
 // SetupRouter contains all the api that will be used.
@@ -22,8 +23,8 @@ func SetupRouter() *gin.Engine {
 		branchV1.POST("/revert_thumbup", branchController.RevertAddLike) // post requires docid userid  两个参数 确保已经点赞
 		branchV1.POST("/thumbdown", branchController.AddDisLike)
 		branchV1.POST("/revert_thumbdown", branchController.RevertAddDisLike)
-		branchV1.GET("/query/thumbup/id", branchController.QueryThumbUp) //id 还没弄好 = =
-		branchV1.GET("/query/thumbdown/id", branchController.QueryThumbDown)
+		branchV1.GET("/query/thumbup", branchController.QueryThumbUp)
+		branchV1.GET("/query/thumbdown", branchController.QueryThumbDown)
 
 	}
 
@@ -42,10 +43,10 @@ func SetupRouter() *gin.Engine {
 		userV1.POST("/register", userController.Register)
 		userV1.POST("/login", userController.Login)
 
-		userV1.POST("/password/reset",userController.ResetPassword)
-		userV1.POST("/folder/create", auth.JwtAuth(),userController.CreateAFolder)
-		userV1.POST("/folder/add",auth.JwtAuth(),userController.AddToMyFolder)
-		userV1.POST("/account_info/reset",userController.ResetAccountInfo)
+		userV1.POST("/password/reset", userController.ResetPassword)
+		userV1.POST("/folder/create", auth.JwtAuth(), userController.CreateAFolder)
+		userV1.POST("/folder/add", auth.JwtAuth(), userController.AddToMyFolder)
+		userV1.POST("/account_info/reset", userController.ResetAccountInfo)
 	}
 	return r
 }
