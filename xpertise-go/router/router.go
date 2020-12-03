@@ -1,6 +1,7 @@
 package router
 
 import (
+	adminController "xpertise-go/admin/controller"
 	branchController "xpertise-go/branch/controller"
 	portalController "xpertise-go/portal/controller"
 	"xpertise-go/user/auth"
@@ -13,7 +14,11 @@ import (
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
-	// adminV1 := r.Group("api/v1/admin")
+	adminV1 := r.Group("api/v1/admin")
+	{
+		adminV1.POST("/forbid/user", adminController.ForbidAUser)
+		adminV1.POST("/report/comment", adminController.DealWithAComReport)
+	}
 
 	branchV1 := r.Group("api/v1/branch")
 	{
@@ -49,7 +54,7 @@ func SetupRouter() *gin.Engine {
 		userV1.POST("/login", userController.Login)
 		userV1.POST("/reset/password", userController.ResetPassword)
 
-		userV1.POST("/reset/account_info", auth.JwtAuth(),userController.ResetAccountInfo)
+		userV1.POST("/reset/account_info", auth.JwtAuth(), userController.ResetAccountInfo)
 		userV1.POST("/folder/create", auth.JwtAuth(), userController.CreateAFolder)
 		userV1.POST("/folder/add", auth.JwtAuth(), userController.AddToMyFolder)
 
