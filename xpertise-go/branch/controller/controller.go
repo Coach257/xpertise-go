@@ -137,13 +137,13 @@ func RevertAddDisLike(c *gin.Context) {
 }
 
 func QueryThumbUp(c *gin.Context) {
-	cid, _ := strconv.ParseUint(c.Param("id"), 0, 64)
+	cid, _ := strconv.ParseUint(c.Request.FormValue("id"), 0, 64)
 	thumbUp := server.QueryComThumbUp(cid)
 	c.IndentedJSON(200, thumbUp)
 }
 
 func QueryThumbDown(c *gin.Context) {
-	cid, _ := strconv.ParseUint(c.Param("id"), 0, 64)
+	cid, _ := strconv.ParseUint(c.Request.FormValue("id"), 0, 64)
 	thumbDown := server.QueryComThumbDown(cid)
 	c.IndentedJSON(200, thumbDown)
 }

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
+	"strconv"
 )
 
 type JWT struct {
@@ -21,7 +21,7 @@ var (
 )
 
 type CustomClaims struct {
-	UserID 	 uint64 `json:"userid"`
+	UserID 	 uint64 `json:"user_id"`
 	Username string `json:"username"`
 	Email	 string `json:"email"`
 	jwt.StandardClaims
@@ -87,8 +87,6 @@ func JwtAuth() gin.HandlerFunc {
 		}
 
 		// 如果获取到了token
-		// debug
-		log.Println("get token: ", token)
 
 		// 新建一个jwt实例
 		j := NewJWT()
@@ -117,7 +115,21 @@ func JwtAuth() gin.HandlerFunc {
 			return
 		}
 
-		// 如果没有报错，那就继续交由下一个路由处理解析出的信息
+		// 如果没有报错，比对请求者id与token中id是否一致
+		userIdFromToken := claims.UserID
+		userId,_:=strconv.ParseUint(c.Request.FormValue("user_id"),0,64)
+		if userId!=userIdFromToken{
+			c.JSON(http.StatusOK,gin.H{
+				"success":false,
+				"message":"请求用户与token记录的用户不一致",
+			})
+			c.Abort()
+			return
+		}
+
+		//没有任何问题，就将claims中的信息传给下一个handler
 		c.Set("claims",claims)
+		c.Next()
 	}
 }
+
