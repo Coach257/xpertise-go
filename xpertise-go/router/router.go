@@ -29,9 +29,14 @@ func SetupRouter() *gin.Engine {
 
 	portalV1 := r.Group("api/v1/portal")
 	{
-		portalV1.POST("/document/create", portalController.CreateADocument)
-		portalV1.GET("/document/query", portalController.QueryDocumentByID)
+		portalV1.POST("/doc/create", portalController.CreateDocument)
+		portalV1.GET("/doc/query/id", portalController.QueryDocumentByID)
+		portalV1.GET("/doc/query/title", portalController.QueryDocumentsByTitle)
+		portalV1.POST("/org/create", portalController.CreateOrganization)
+		portalV1.GET("/org/query/id", portalController.QueryOrganizationByID)
+		portalV1.GET("/org/query/name", portalController.QueryOrganizationByName)
 	}
+
 	userV1 := r.Group("api/v1/user")
 	{
 		userV1.DELETE("/delete/:id", userController.DeleteAStudentByID)
@@ -42,10 +47,10 @@ func SetupRouter() *gin.Engine {
 		userV1.POST("/register", userController.Register)
 		userV1.POST("/login", userController.Login)
 
-		userV1.POST("/password/reset",userController.ResetPassword)
-		userV1.POST("/folder/create", auth.JwtAuth(),userController.CreateAFolder)
-		userV1.POST("/folder/add",auth.JwtAuth(),userController.AddToMyFolder)
-		userV1.POST("/account_info/reset",userController.ResetAccountInfo)
+		userV1.POST("/password/reset", userController.ResetPassword)
+		userV1.POST("/folder/create", auth.JwtAuth(), userController.CreateAFolder)
+		userV1.POST("/folder/add", auth.JwtAuth(), userController.AddToMyFolder)
+		userV1.POST("/account_info/reset", userController.ResetAccountInfo)
 	}
 	return r
 }
