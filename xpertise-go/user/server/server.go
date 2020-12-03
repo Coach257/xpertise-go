@@ -1,7 +1,6 @@
 package server
 
 import (
-	"fmt"
 	"xpertise-go/dao"
 )
 
@@ -13,29 +12,23 @@ func CreateAUser(user *dao.User) (err error) {
 	return
 }
 
-func QueryAUerById(userid string)(user dao.User,Notfound bool)  {
-	fmt.Println("userid:", userid)
-	fmt.Println("QueryAUserByID")
-	Notfound = dao.DB.First(&user,userid).RecordNotFound()
-	return user, Notfound
+func QueryAUerById(userid uint64)(user dao.User,NotFound bool)  {
+	NotFound = dao.DB.First(&user,userid).RecordNotFound()
+	return user, NotFound
 }
 
-func QueryAUserByUsername(username string) (user dao.User, Notfound bool) {
-	fmt.Println("username:", username)
-	fmt.Println("QueryAUserByUsername")
-	Notfound = dao.DB.Where("username = ?", username).First(&user).RecordNotFound()
-	return user, Notfound
+func QueryAUserByUsername(username string) (user dao.User, NotFound bool) {
+	NotFound = dao.DB.Where("username = ?", username).First(&user).RecordNotFound()
+	return user, NotFound
 }
 
-func QueryAUserByEmail(email string) (user dao.User, Notfound bool) {
-	fmt.Println("email", email)
-	fmt.Println("QueryAUserByEmail")
-	Notfound = dao.DB.Where("email = ?", email).First(&user).RecordNotFound()
-	return user, Notfound
+func QueryAUserByEmail(email string) (user dao.User, NotFound bool) {
+	NotFound = dao.DB.Where("email = ?", email).First(&user).RecordNotFound()
+	return user, NotFound
 }
 
-func UpdateAUserPassword(user *dao.User, newpassword string) error {
-	user.Password = newpassword
+func UpdateAUserPassword(user *dao.User, newPassword string) error {
+	user.Password = newPassword
 	err := dao.DB.Save(user).Error
 	return err
 }
@@ -48,21 +41,29 @@ func UpdateAUser(user *dao.User,username string,email string,info string)error{
 	return err
 }
 
-func CreateAFolder(foldername string,folderinfo string,user *dao.User)(error,uint64){
-	folder := dao.Folder{Foldername: foldername,Folderinfo: folderinfo,UserID: user.UserID}
+func CountUsersByUsername(username string)(count int,err error){
+	dao.DB.Where("username = ? ",username).Count(&count)
+	return count,err
+}
+
+func CountUsersByEmail(email string)(count int,err error){
+	dao.DB.Where("email = ? ",email).Count(&count)
+	return count,err
+}
+
+func CreateAFolder(folderName string,folderInfo string,userId uint64)(error,uint64){
+	folder := dao.Folder{FolderName: folderName,FolderInfo: folderInfo,UserID: userId}
 	err:=dao.DB.Create(&folder).Error
 	return err,folder.FolderID
 }
 
-func QueryAFolderByID(folderId string)(folder dao.Folder,notFound bool){
-	fmt.Println("folderId",folderId)
-	fmt.Println("QueryAFolderByID")
-	notFound=dao.DB.First(&folder,folderId).RecordNotFound()
-	return folder,notFound
+func QueryAFolderByID(folderId string)(folder dao.Folder,NotFound bool){
+	NotFound=dao.DB.First(&folder,folderId).RecordNotFound()
+	return folder,NotFound
 }
 
 func CreateAFavorite(folderId uint64,docId uint64,docInfo string)(error,uint64){
-	favorite :=dao.Favorite{FolderID: folderId,DocID: docId,Docinfo: docInfo}
+	favorite :=dao.Favorite{FolderID: folderId,DocID: docId,DocInfo: docInfo}
 	err :=dao.DB.Create(&favorite).Error
 	return err,favorite.FavorID
 }

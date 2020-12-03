@@ -42,11 +42,12 @@ func SetupRouter() *gin.Engine {
 		userV1.GET("/query/age", userController.QueryStudentsByAge)
 		userV1.POST("/register", userController.Register)
 		userV1.POST("/login", userController.Login)
+		userV1.POST("/reset/password", userController.ResetPassword)
 
-		userV1.POST("/password/reset", userController.ResetPassword)
+		userV1.POST("/reset/account_info", auth.JwtAuth(),userController.ResetAccountInfo)
 		userV1.POST("/folder/create", auth.JwtAuth(), userController.CreateAFolder)
 		userV1.POST("/folder/add", auth.JwtAuth(), userController.AddToMyFolder)
-		userV1.POST("/account_info/reset", userController.ResetAccountInfo)
+
 	}
 	return r
 }
