@@ -3,13 +3,14 @@ package router
 import (
 	"gin-project/controller"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 // SetupRouter contains all the api that will be used.
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-
+	r.Use(cors.Default())
 	r.GET("/", controller.Index)
 	// api
 	v1 := r.Group("api/v1/student")
