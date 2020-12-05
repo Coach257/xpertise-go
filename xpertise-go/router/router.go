@@ -1,20 +1,41 @@
 package router
 
 import (
+	"net/http"
 	adminController "xpertise-go/admin/controller"
 	branchController "xpertise-go/branch/controller"
 	portalController "xpertise-go/portal/controller"
 	"xpertise-go/user/auth"
 	userController "xpertise-go/user/controller"
 
-	"github.com/gin-contrib/cors"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
+
+//Cors solve cors problem.
+func Cors() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		method := c.Request.Method
+		origin := c.Request.Header.Get("Origin")
+		if origin != "" {
+			c.Header("Access-Control-Allow-Origin", "*") // 可将将 * 替换为指定的域名
+			c.Header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, UPDATE")
+			c.Header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
+			c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Cache-Control, Content-Language, Content-Type")
+			c.Header("Access-Control-Allow-Credentials", "true")
+		}
+		if method == "OPTIONS" {
+			c.AbortWithStatus(http.StatusNoContent)
+		}
+		c.Next()
+	}
+}
 
 // SetupRouter contains all the api that will be used.
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-	r.Use(cors.Default())
+	r.Use(Cors())
 	adminV1 := r.Group("api/v1/admin")
 	{
 		adminV1.POST("/forbid/user", adminController.ForbidAUser)
