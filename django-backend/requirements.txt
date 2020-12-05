@@ -1,3 +1,0 @@
-django
-gunicorn==20.0.4
-scholarly
