@@ -8,8 +8,6 @@ import (
 	"xpertise-go/user/auth"
 	userController "xpertise-go/user/controller"
 
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
