@@ -7,13 +7,14 @@ import (
 	"xpertise-go/user/auth"
 	userController "xpertise-go/user/controller"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 // SetupRouter contains all the api that will be used.
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-
+	r.Use(cors.Default())
 	adminV1 := r.Group("api/v1/admin")
 	{
 		adminV1.POST("/forbid/user", adminController.ForbidAUser)
