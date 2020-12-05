@@ -25,9 +25,9 @@ func DeleteAStudentByID(c *gin.Context) {
 	c.JSON(200, gin.H{"message": "success"})
 }
 
-func QueryAllStudents(c *gin.Context) {
-	students := server.QueryAllStudents()
-	c.IndentedJSON(200, students)
+func QueryAllUsers(c *gin.Context) {
+	users := server.QueryAllUsers()
+	c.IndentedJSON(200, users)
 }
 
 func UpdateAStudentByAge(c *gin.Context) {
@@ -326,7 +326,7 @@ func ResetAccountInfo(c *gin.Context) {
 			"message": message,
 		})
 	}
-	if duplicate := DuplicateCheck(c, userId,username,email,"ResetAccountInfo"); duplicate {
+	if duplicate := DuplicateCheck(c, userId, username, email, "ResetAccountInfo"); duplicate {
 		return
 	}
 
