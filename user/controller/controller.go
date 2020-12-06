@@ -294,17 +294,17 @@ func ResetPassword(c *gin.Context) {
 /*
 	request:
 	{
-		"user_id":int,
+		"id":int,
 	}
 */
 func ReturnAccountInfo(c *gin.Context) {
-	userId, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	userID, _ := strconv.ParseUint(c.Param("id"), 0, 64)
 
-	if user, notfound := server.QueryAUerById(userId); notfound {
+	if user, notfound := server.QueryAUerById(userID); notfound {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "用户id不存在",
-			"userid":  c.Request.FormValue("user_id"),
+			"userid":  userID,
 		})
 	} else {
 		c.JSON(http.StatusOK, gin.H{
