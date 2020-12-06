@@ -6,7 +6,7 @@
 
 ```go
 填写注册信息，创建新用户
-request url:api/v1/user/register 
+request url:api/v1/user/register
 request method:POST
 request header:不需要token
 request body:
@@ -28,7 +28,7 @@ response:
 
 ```go
 填写登录信息，登录账号
-request url:api/v1/user/login 
+request url:api/v1/user/login
 request method:POST
 request header:不需要token
 request body:
