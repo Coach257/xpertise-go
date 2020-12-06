@@ -15,5 +15,5 @@ func main() {
 	defer dao.Close()
 
 	r := router.SetupRouter()
-	r.Run()
+	r.Run(":8080")
 }
