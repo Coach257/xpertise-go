@@ -73,6 +73,7 @@ func SetupRouter() *gin.Engine {
 		userV1.POST("/register", userController.Register)
 		userV1.POST("/login", userController.Login)
 		userV1.POST("/reset/password", userController.ResetPassword)
+		userV1.GET("/return/account_info",userController.ReturnAccountInfo)
 
 		userV1.POST("/reset/account_info", auth.JwtAuth(), userController.ResetAccountInfo)
 		userV1.POST("/folder/create", auth.JwtAuth(), userController.CreateAFolder)

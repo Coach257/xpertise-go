@@ -125,6 +125,40 @@ response:
 	}
 ```
 
+### 返回用户信息
+
+```go
+填写相关字段，修改用户信息
+request url:api/v1/user/return/account_info
+request method:GET
+request header:不需要token
+request body:
+	{
+		"user_id":int,
+	}
+response:
+如果成功，返回
+	{
+		"success":bool,
+		"message":string,
+    	"data":
+        		{
+            		"token":string,
+                    "user_id":int,
+                    "username":string,
+                    "email":string,
+                    "user_type":int,
+                    "info":string,
+                    "interdiction":bool
+        		}
+	}
+如果失败，返回
+	{
+		"success":bool,
+		"message":string,
+    }
+```
+
 ### 修改用户信息
 
 ```go
