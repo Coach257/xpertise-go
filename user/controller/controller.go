@@ -297,23 +297,23 @@ func ResetPassword(c *gin.Context) {
 		"user_id":int,
 	}
 */
-func ReturnAccountInfo(c *gin.Context){
-	userId,_:=strconv.ParseUint(c.Request.FormValue("user_id"),0,64)
+func ReturnAccountInfo(c *gin.Context) {
+	userId, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 
-	if user,notfound:=server.QueryAUerById(userId);notfound{
-		c.JSON(http.StatusOK,gin.H{
-			"success":false,
-			"message":"用户id不存在",
+	if user, notfound := server.QueryAUerById(userId); notfound {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "用户id不存在",
+			"userid":  c.Request.FormValue("user_id"),
 		})
-	}else{
-		c.JSON(http.StatusOK,gin.H{
-			"success":true,
-			"message":"",
-			"data":user,
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"message": "",
+			"data":    user,
 		})
 	}
 }
-
 
 //用户个人信息修改（需要登录状态验证）
 /*
