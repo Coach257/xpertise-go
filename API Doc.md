@@ -192,6 +192,7 @@ response:
 ## Branch
 
 ### 创建评论
+
 ```go
 填写评论信息，创建新评论
 request url:api/v1/branch/create 
@@ -250,6 +251,7 @@ response:
 ```
 
 ### 踩评论
+
 ```go
 对具体评论踩
 request url:api/v1/branch/thumbdown
@@ -288,6 +290,7 @@ response:
 ```
 
 ### 取消踩
+
 ```go
 取消对具体评论的踩
 request url:api/v1/branch/revert_thumbdown
