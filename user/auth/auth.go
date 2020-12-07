@@ -75,7 +75,6 @@ func JwtAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// 尝试获取请求头部的token
 		token := c.Request.Header.Get("authorization")
-		//token:=c.Request.FormValue("token")
 
 		// 如果token为空，那就直接return
 		if token == "" {
