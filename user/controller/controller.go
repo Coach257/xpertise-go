@@ -334,6 +334,8 @@ func ResetAccountInfo(c *gin.Context) {
 	email := c.Request.FormValue("email")
 	info := c.Request.FormValue("info")
 
+	fmt.Println("email: ",email)
+
 	var user dao.User
 	var notfound bool
 
