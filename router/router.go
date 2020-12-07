@@ -43,7 +43,7 @@ func SetupRouter() *gin.Engine {
 	branchV1 := r.Group("api/v1/branch")
 	{
 		branchV1.POST("/create", branchController.CreateAComment)             //post requires comid userid content
-		branchV1.DELETE("/delete/id", branchController.DeleteACommentByID)    //delete/3
+		branchV1.DELETE("/delete/:id", branchController.DeleteACommentByID)   //delete/3
 		branchV1.POST("/thumbup", branchController.AddLike)                   //post requires docid userid  两个参数
 		branchV1.POST("/revert_thumbup", branchController.RevertAddLike)      // post requires docid userid  两个参数 确保已经点赞
 		branchV1.POST("/thumbdown", branchController.AddDisLike)              // post requires docid userid  两个参数
@@ -56,11 +56,11 @@ func SetupRouter() *gin.Engine {
 	portalV1 := r.Group("api/v1/portal")
 	{
 		portalV1.POST("/doc/create", portalController.CreateDocument)
-		portalV1.GET("/doc/query/id", portalController.QueryDocumentByID)
-		portalV1.GET("/doc/query/title", portalController.QueryDocumentsByTitle)
+		portalV1.GET("/doc/query/:id", portalController.QueryDocumentByID)
+		portalV1.GET("/doc/query/:title", portalController.QueryDocumentsByTitle)
 		portalV1.POST("/org/create", portalController.CreateOrganization)
-		portalV1.GET("/org/query/id", portalController.QueryOrganizationByID)
-		portalV1.GET("/org/query/name", portalController.QueryOrganizationByName)
+		portalV1.GET("/org/query/:id", portalController.QueryOrganizationByID)
+		portalV1.GET("/org/query/:name", portalController.QueryOrganizationByName)
 	}
 
 	userV1 := r.Group("api/v1/user")
@@ -68,8 +68,8 @@ func SetupRouter() *gin.Engine {
 		userV1.DELETE("/delete/id", userController.DeleteAStudentByID)
 		userV1.PUT("/update/age", userController.UpdateAStudentByAge)
 		userV1.GET("/query/all", userController.QueryAllUsers)
-		userV1.GET("/query/id", userController.QueryStudentByID)
-		userV1.GET("/query/age", userController.QueryStudentsByAge)
+		userV1.GET("/query/:id", userController.QueryStudentByID)
+		userV1.GET("/query/:age", userController.QueryStudentsByAge)
 		userV1.POST("/register", userController.Register)
 		userV1.POST("/login", userController.Login)
 		userV1.POST("/reset/password", userController.ResetPassword)
