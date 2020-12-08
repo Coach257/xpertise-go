@@ -10,5 +10,4 @@ require (
 	github.com/swaggo/files v0.0.0-20190704085106-630677cd5c14
 	github.com/swaggo/gin-swagger v1.3.0
 	github.com/swaggo/swag v1.7.0
-	github.com/swaggo/swag/example/celler v0.0.0-20201208055802-98b8c7075fb1
 )
