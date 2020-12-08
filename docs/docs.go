@@ -56,7 +56,7 @@ var doc = `{
                 }
             }
         },
-        "/user/modify_user": {
+        "/user/modify": {
             "post": {
                 "description": "修改用户信息",
                 "tags": [

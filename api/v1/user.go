@@ -101,7 +101,7 @@ func Login(c *gin.Context) {
 // @Param email formData string true "邮箱"
 // @Param info formData string true "个人信息"
 // @Success 200 {string} string "{"success": true, "message": "登录成功", "data": "model.User的所有信息"}"
-// @Router /user/modify_user [post]
+// @Router /user/modify [post]
 func ModifyUser(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	username := c.Request.FormValue("username")
