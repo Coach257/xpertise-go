@@ -1,0 +1,67 @@
+info:
+  contact: {}
+  description: Xpertise Scholar
+  title: Xpertise Scholar Golang Backend
+  version: "1.0"
+paths:
+  /user/login:
+    post:
+      description: 用户登录
+      parameters:
+      - description: 用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "登录成功", "data": "model.User的所有信息"}'
+          schema:
+            type: string
+      tags:
+      - user
+  /user/register:
+    post:
+      description: 注册
+      parameters:
+      - description: 用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 密码1
+        in: formData
+        name: password
+        required: true
+        type: string
+      - description: 密码2
+        in: formData
+        name: password2
+        required: true
+        type: string
+      - description: 邮箱
+        in: formData
+        name: email
+        required: true
+        type: string
+      - description: 个人信息
+        in: formData
+        name: info
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "用户创建成功"}'
+          schema:
+            type: string
+      tags:
+      - user
+schemes:
+- http
+- https
+swagger: "2.0"

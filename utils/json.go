@@ -1,4 +1,4 @@
-package dao
+package utils
 
 import (
 	"database/sql/driver"
