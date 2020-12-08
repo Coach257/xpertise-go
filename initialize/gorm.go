@@ -25,7 +25,7 @@ func InitMySQL() (error error) {
 		&model.Document{},
 
 		// branch
-		&model.Document{},
+		&model.Comment{},
 
 		// admin
 	)
