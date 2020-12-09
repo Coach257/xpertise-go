@@ -7,7 +7,6 @@ import (
 	"xpertise-go/service"
 
 	"github.com/gin-gonic/gin"
-	jsoniter "github.com/json-iterator/go"
 )
 
 // Register doc
@@ -67,7 +66,7 @@ func Login(c *gin.Context) {
 	if notFound {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "用户不存在",
+			"message": "用户名不存在",
 		})
 		return
 	}
@@ -75,17 +74,17 @@ func Login(c *gin.Context) {
 	if user.Password != password {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "用户名或密码错误",
+			"message": "密码错误",
 		})
 		return
 	}
 
-	data, _ := jsoniter.Marshal(&user)
+	//data, _ := jsoniter.Marshal(&user)
 
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
 		"message": "登录成功",
-		"data":    string(data),
+		"data":    user,
 	})
 
 	return
@@ -113,7 +112,7 @@ func ModifyUser(c *gin.Context) {
 	if notFoundUserByID {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "用户不存在",
+			"message": "用户ID不存在",
 		})
 		return
 	}
@@ -148,11 +147,71 @@ func ModifyUser(c *gin.Context) {
 		})
 		return
 	}
-	data, _ := jsoniter.Marshal(&user)
+	//data, _ := jsoniter.Marshal(&user)
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
 		"message": "用户信息修改成功",
-		"data":    string(data),
+		"data":    user,
 	})
 	return
+}
+
+func TellUserInfo(c *gin.Context) {
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	user, _ := service.QueryAUserByID(userID)
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "查看用户信息成功",
+		"data":    user,
+	})
+	return
+}
+
+func CreateAFolder(c *gin.Context) {
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	folderName := c.Request.FormValue("folder_name")
+	folderInfo := c.Request.FormValue("folder_info")
+
+	_, notFound := service.QueryAUserByID(userID)
+	if notFound {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "用户ID不存在",
+		})
+		return
+	}
+
+	folder, err := service.CreateAFolder(folderName, folderInfo, userID)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
+		})
+		return
+	}
+	//user.Folders[0] = folder
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "收藏夹创建成功",
+		"data":    folder,
+		//"user_info": user,
+	})
+
+	return
+}
+
+func DeleteAUserByID(c *gin.Context) {
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	err := service.DeleteAUserByID(userID)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "删除用户失败",
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "删除用户成功",
+	})
 }

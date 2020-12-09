@@ -47,10 +47,10 @@ func CountUsersByEmail(email string) (count int, err error) {
 	return count, err
 }
 
-func CreateAFolder(folderName string, folderInfo string, userID uint64) (uint64, error) {
-	folder := model.Folder{FolderName: folderName, FolderInfo: folderInfo, UserID: userID}
-	err := global.DB.Create(&folder).Error
-	return folder.FolderID, err
+func CreateAFolder(folderName string, folderInfo string, userID uint64) (folder model.Folder, err error) {
+	folder = model.Folder{FolderName: folderName, FolderInfo: folderInfo, UserID: userID}
+	err = global.DB.Create(&folder).Error
+	return folder, err
 }
 
 func QueryAFolderByID(folderID string) (folder model.Folder, notFound bool) {
@@ -62,4 +62,9 @@ func CreateAFavorite(folderID uint64, doc model.Document) (uint64, error) {
 	favorite := model.Favorite{FolderID: folderID, Document: doc}
 	err := global.DB.Create(&favorite).Error
 	return favorite.FavorID, err
+}
+func DeleteAUserByID(userID uint64) (err error) {
+	user, _ := QueryAUserByID(userID)
+	err = global.DB.Delete(&user).Error
+	return err
 }
