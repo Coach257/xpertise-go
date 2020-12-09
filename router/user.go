@@ -14,6 +14,6 @@ func InitUserRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/modify", v1.ModifyUser)
 		UserRouter.POST("/create_folder", v1.CreateAFolder)
 		UserRouter.POST("/info", v1.TellUserInfo)
-		UserRouter.POST("delete", v1.DeleteAUserByID)
+		UserRouter.POST("/delete", v1.DeleteAUserByID)
 	}
 }
