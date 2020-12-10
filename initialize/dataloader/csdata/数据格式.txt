@@ -1,0 +1,8 @@
+数据共有6个文件，每个文件中每行都代表一条数据，每行中各列之间以tab分隔
+
+papers.txt：每行代表一篇论文，各列信息分别为：PaperID	Title	PaperPublishYear	ConferenceID，表示ID为'PaperID'的论文的题目为'Title'，并于'PaperPublishYear'年发表在'ConferenceID'这个会议上。
+authors.txt：每行代表一位学者，各列信息分别为：AuthorID	AuthorName
+conferences.txt：每行代表一个会议，各列信息分别为：ConferenceID	ConferenceName
+affiliations.txt：每行代表一个机构，各列信息分别为：AffiliationID	AffiliationName
+paper_author_affiliation.txt：每行代表一条论文、学者、机构的关系，各列信息分别为：PaperID	AuthorID	AffiliationID	AuthorSequence，表示ID为'AuthorID'的人在ID为'AffiliationID'的机构中以第'AuthorSequence'的作者次序发表了ID为'PaperID'的论文。
+paper_reference.txt：每行代表一条引用关系，各列信息分别为：PaperID	ReferenceID，代表ID为'PaperID'的论文有一条指向ID为'ReferenceID'的论文的引用记录
