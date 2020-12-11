@@ -8,17 +8,18 @@ import (
 )
 
 func QueryAPaperByID(c *gin.Context) {
-	paper, err := service.QueryAPaperByID("0000F1CF")
+	paper, err := service.QueryAPaperByID("000127EC")
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
-			"success": true,
-			"message": paper,
+			"success": false,
+			"message": err,
 		})
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{
-		"success": false,
-		"message": err,
+		"success": true,
+		"message": paper,
 	})
 	return
+
 }
