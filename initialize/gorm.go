@@ -22,7 +22,7 @@ func InitMySQL() (error error) {
 		&model.Favorite{},
 
 		// potal
-		&model.Document{},
+		&model.Paper{},
 
 		// branch
 		&model.Comment{},

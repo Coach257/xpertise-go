@@ -21,7 +21,7 @@ type Folder struct {
 }
 
 type Favorite struct {
-	FavorID  uint64   `gorm:"primary_key" json:"favor_id"`
-	FolderID uint64   `json:"folder_id"` //外键
-	Document Document `json:"document"`
+	FavorID  uint64 `gorm:"primary_key" json:"favor_id"`
+	FolderID uint64 `json:"folder_id"` //外键
+	//Document Document `json:"document"`
 }

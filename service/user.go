@@ -58,11 +58,11 @@ func QueryAFolderByID(folderID string) (folder model.Folder, notFound bool) {
 	return folder, notFound
 }
 
-func CreateAFavorite(folderID uint64, doc model.Document) (uint64, error) {
-	favorite := model.Favorite{FolderID: folderID, Document: doc}
-	err := global.DB.Create(&favorite).Error
-	return favorite.FavorID, err
-}
+// func CreateAFavorite(folderID uint64, doc model.Document) (uint64, error) {
+// 	favorite := model.Favorite{FolderID: folderID, Document: doc}
+// 	err := global.DB.Create(&favorite).Error
+// 	return favorite.FavorID, err
+// }
 func DeleteAUserByID(userID uint64) (err error) {
 	user, _ := QueryAUserByID(userID)
 	err = global.DB.Delete(&user).Error
