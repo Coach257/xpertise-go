@@ -13,7 +13,7 @@ func SetupRouter() *gin.Engine {
 	Group := r.Group("")
 	{
 		router.InitUserRouter(Group) // 注册用户路由
-		//router.InitAdminRouter(Group)
+		router.InitPortalRouter(Group)
 	}
 	return r
 }
