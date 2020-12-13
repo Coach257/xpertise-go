@@ -28,3 +28,8 @@ type PaperAuthorAffiliation struct {
 	AffiliationID  string `gorm:"type:varchar(10)" json:"affiliation_id"`
 	AuthorSequence string `gorm:"type:varchar(3);primary_key" json:"author_sequence"`
 }
+
+type PaperReference struct {
+	PaperID     string `gorm:"type:varchar(10);primary_key" json:"paper_id"`
+	ReferenceID string `gorm:"type:varchar(10);primary_key" json:"reference_id"`
+}
