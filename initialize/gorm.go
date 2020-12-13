@@ -23,6 +23,10 @@ func InitMySQL() (error error) {
 
 		// potal
 		&model.Paper{},
+		&model.Affiliation{},
+		&model.Author{},
+		&model.Conference{},
+		&model.PaperAuthorAffiliation{},
 
 		// branch
 		&model.Comment{},

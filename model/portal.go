@@ -6,3 +6,25 @@ type Paper struct {
 	PaperPublishYear string `gorm:"type:varchar(5)" json:"paper_publish_year"`
 	ConferenceID     string `gorm:"type:varchar(10)" json:"conference_id"`
 }
+
+type Affiliation struct {
+	AffiliationID   string `gorm:"type:varchar(10);primary_key;" json:"affiliation_id"`
+	AffiliationName string `gorm:"type:varchar(150)" json:"affiliation_name"`
+}
+
+type Author struct {
+	AuthorID   string `gorm:"type:varchar(10);primary_key;" json:"author_id"`
+	AuthorName string `gorm:"type:varchar(100)" json:"author_name"`
+}
+
+type Conference struct {
+	ConferenceID   string `gorm:"type:varchar(10);primary_key;" json:"conference_id"`
+	ConferenceName string `gorm:"type:varchar(10)" json:"conference_name"`
+}
+
+type PaperAuthorAffiliation struct {
+	PaperID        string `gorm:"type:varchar(10);primary_key" json:"paper_id"`
+	AuthorID       string `gorm:"type:varchar(10)" json:"author_id"`
+	AffiliationID  string `gorm:"type:varchar(10)" json:"affiliation_id"`
+	AuthorSequence string `gorm:"type:varchar(3);primary_key" json:"author_sequence"`
+}
