@@ -1,4 +1,8 @@
-thb paper:
+# XpertiseDB Data Format
+
+## thb Paper
+
+```json
 {
     id:
     title:
@@ -25,8 +29,11 @@ thb paper:
     url:[""]原文地址
     abstract:
 }
+```
 
-thb author:
+## thb Author
+
+```json
 {
     id:
     name:
@@ -50,8 +57,11 @@ thb author:
     orgs:机构列表
     ["",""]
 }
+```
 
-计算机文献:
+## cs Paper
+
+```json
 {
     id:PaperID,
     title:Title,
@@ -78,8 +88,11 @@ thb author:
     abstract: scholarly
     reference: 引用文献id列表[]
 }
+```
 
-计算机作者:
+## cs Author
+
+```json
 {
     id:AuthorID,
     name:AuthorName,
@@ -100,8 +113,11 @@ thb author:
         }
     ]
 }
+```
 
-计算机机构:
+## cs Affiliation
+
+```json
 {
     id:AffiliationID,
     name:AffiliationName,
@@ -121,3 +137,4 @@ thb author:
         }
     ]
 }
+```
