@@ -23,3 +23,13 @@ func QueryAPaperByID(c *gin.Context) {
 	return
 
 }
+
+func TellAuthorInfo(c *gin.Context) {
+	author, _ := service.QueryAnAuthorByID(c.Request.FormValue("author_id"))
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "查看作者信息成功",
+		"data":    author,
+	})
+	return
+}
