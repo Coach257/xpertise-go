@@ -12,7 +12,7 @@
             id:
         }
     ]
-    venue:发表地址
+    venue:领域
     {
         raw:
         id:
@@ -71,6 +71,10 @@
             id:AuthorID,
         }
     ],
+    conference:{
+        raw:ConferenceName,
+        id:ConferenceID,
+    }
     venue:{
         raw:ConferenceName,
         id:ConferenceID,
