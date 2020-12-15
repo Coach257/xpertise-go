@@ -198,7 +198,7 @@ func AddToFavorites(c *gin.Context) {
 // @Tags user
 // @Param user_id formData string true "用户ID"
 // @Success 200 {string} string "{"success":true, "message":"查询成功","data":"user的所有收藏"}"
-// @Router /user/favorite/list [get]
+// @Router /user/favorite/list [post]
 func ListAllFavorites(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	user := service.QueryAllFavorites(userID)

@@ -4,6 +4,48 @@ info:
   title: Xpertise Scholar Golang Backend
   version: "1.0"
 paths:
+  /user/favorite/add:
+    post:
+      description: 添加收藏
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      - description: 文献ID
+        in: formData
+        name: paper_id
+        required: true
+        type: string
+      - description: 文献描述
+        in: formData
+        name: paper_info
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true, "message":"收藏成功"}'
+          schema:
+            type: string
+      tags:
+      - user
+  /user/favorite/list:
+    post:
+      description: 获取收藏列表
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true, "message":"查询成功","data":"user的所有收藏"}'
+          schema:
+            type: string
+      tags:
+      - user
   /user/info:
     post:
       description: 查看用户个人信息

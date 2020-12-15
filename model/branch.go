@@ -6,7 +6,7 @@ import (
 
 type Comment struct {
 	//gorm.Model
-	CommentID  uint64    `gorm:"primary_key" json:"comment_id"`
+	CommentID  uint64    `gorm:"primary_key;" json:"comment_id"`
 	UserID     uint64    `gorm:"not null;ForeignKey:UserID" json:"user_id"`
 	DocumentID uint64    `gorm:"not null;ForeignKey:DocumentID" json:"document_id"` // 外键
 	CreatedAt  time.Time `json:"created_at"`
