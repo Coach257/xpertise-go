@@ -173,7 +173,15 @@ func TellUserInfo(c *gin.Context) {
 	return
 }
 
-func AddToFavorties(c *gin.Context) {
+// AddToFavorites doc
+// @description 添加收藏
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Param paper_id formData string true "文献ID"
+// @Param paper_info formData string true "文献描述"
+// @Success 200 {string} string "{"success":true, "message":"收藏成功"}"
+// @Router /user/favorite/add [post]
+func AddToFavorites(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	paperID := c.Request.FormValue("paper_id")
 	paperInfo := c.Request.FormValue("paper_info")
@@ -185,6 +193,12 @@ func AddToFavorties(c *gin.Context) {
 	}
 }
 
+// ListAllFavorites doc
+// @description 获取收藏列表
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Success 200 {string} string "{"success":true, "message":"查询成功","data":"user的所有收藏"}"
+// @Router /user/favorite/list [get]
 func ListAllFavorites(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	user := service.QueryAllFavorites(userID)
