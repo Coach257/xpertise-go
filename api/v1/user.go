@@ -173,37 +173,22 @@ func TellUserInfo(c *gin.Context) {
 	return
 }
 
-func CreateAFolder(c *gin.Context) {
+func AddToFavorties(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
-	folderName := c.Request.FormValue("folder_name")
-	folderInfo := c.Request.FormValue("folder_info")
+	paperID := c.Request.FormValue("paper_id")
+	paperInfo := c.Request.FormValue("paper_info")
 
-	_, notFound := service.QueryAUserByID(userID)
-	if notFound {
-		c.JSON(http.StatusOK, gin.H{
-			"success": false,
-			"message": "用户ID不存在",
-		})
-		return
+	if err := service.CreateAFavorite(userID, paperID, paperInfo); err != nil {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "收藏成功"})
 	}
+}
 
-	folder, err := service.CreateAFolder(folderName, folderInfo, userID)
-	if err != nil {
-		c.JSON(http.StatusOK, gin.H{
-			"success": false,
-			"message": err.Error(),
-		})
-		return
-	}
-	//user.Folders[0] = folder
-	c.JSON(http.StatusOK, gin.H{
-		"success": true,
-		"message": "收藏夹创建成功",
-		"data":    folder,
-		//"user_info": user,
-	})
-
-	return
+func ListAllFavorites(c *gin.Context) {
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	user := service.QueryAllFavorites(userID)
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": user.Favorites})
 }
 
 func DeleteAUserByID(c *gin.Context) {

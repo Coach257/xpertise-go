@@ -12,8 +12,10 @@ func InitUserRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/register", v1.Register)
 		UserRouter.POST("/login", v1.Login)
 		UserRouter.POST("/modify", v1.ModifyUser)
-		UserRouter.POST("/create_folder", v1.CreateAFolder)
 		UserRouter.POST("/info", v1.TellUserInfo)
 		UserRouter.POST("/delete", v1.DeleteAUserByID)
+		UserRouter.POST("/favorite/add", v1.AddToFavorties)
+		UserRouter.GET("/favorite/list", v1.ListAllFavorites)
+
 	}
 }

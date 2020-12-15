@@ -18,7 +18,6 @@ func InitMySQL() (error error) {
 	global.DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(
 		// user
 		&model.User{},
-		&model.Folder{},
 		&model.Favorite{},
 
 		// potal
