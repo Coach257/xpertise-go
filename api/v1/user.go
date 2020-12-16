@@ -188,7 +188,6 @@ func AddToFavorites(c *gin.Context) {
 
 	if err := service.CreateAFavorite(userID, paperID, paperInfo); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
-		return
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "收藏成功"})
 	}
@@ -289,4 +288,55 @@ func DeleteAUserByID(c *gin.Context) {
 		"success": true,
 		"message": "删除用户成功",
 	})
+}
+
+// GetUserAllAuthorizationRequest doc
+// @description 获取用户的（所有）请求认证
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Success 200 {string} string "{"success": true, "message": "获取申请信息成功。", "data": "请求认证的所有信息。"}"
+// @Router /user/authorize/get [post]
+func GetUserAllAuthorizationRequest(c *gin.Context) {
+	userIDStr := c.Request.FormValue("user_id")
+	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
+	aureqs, err := service.QueryAuthorizationRequestsByUserID(userID)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "获取申请信息失败。",
+			"data":    aureqs,
+		})
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"message": "获取申请信息成功。",
+			"data":    aureqs,
+		})
+	}
+}
+
+// ReadAUserAuthorizationRequest doc
+// @description 已读一条请求认证
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Param authreq_id formData string true "请求认证ID"
+// @Success 200 {string} string "{"success": true, "message": "标记已读成功！"}"
+// @Router /user/authorize/read [post]
+func ReadAUserAuthorizationRequest(c *gin.Context) {
+	userIDStr := c.Request.FormValue("user_id")
+	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
+	authreqIDStr := c.Request.FormValue("authreq_id")
+	authreqID, _ := strconv.ParseUint(authreqIDStr, 0, 64)
+	err := service.DeleteAnAuthorizationRequest(authreqID, userID)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "标记已读失败。",
+		})
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"message": "标记已读成功！",
+		})
+	}
 }
