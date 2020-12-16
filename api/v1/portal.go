@@ -68,3 +68,23 @@ func ListAllFromAColumn(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": columnPapers})
 	return
 }
+
+// RemovePaperFromColumn doc
+// @description 删除专栏中的某条论文
+// @Tags portal
+// @Param column_id formData string true "专栏ID"
+// @Param paper_id formData string true "论文ID"
+// @Success 200 {string} string "{"success": true, "message": "删除成功"}"
+// @Router /portal/remove_from_column [post]
+func RemovePaperFromColumn(c *gin.Context) {
+	columnID, _ := strconv.ParseUint(c.Request.FormValue("column_id"), 0, 64)
+	paperID := c.Request.FormValue("paper_id")
+
+	if err := service.DeleteOnePaperFromAColumn(columnID, paperID); err != nil {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
+		return
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "删除成功"})
+	}
+
+}
