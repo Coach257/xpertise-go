@@ -11,6 +11,278 @@
         "version": "1.0"
     },
     "paths": {
+        "/admin/authorize/all": {
+            "get": {
+                "description": "获取用户申请条目",
+                "tags": [
+                    "admin"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"获取条目成功。\", \"data\": \"model.AuthorizationRequest的所有信息\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/authorize/deal": {
+            "post": {
+                "description": "处理用户申请认证",
+                "tags": [
+                    "admin"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户申请认证ID",
+                        "name": "authreq_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Accept/Reject",
+                        "name": "action",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"已通过认证请求。\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/authorize/request": {
+            "post": {
+                "description": "发送请求认证",
+                "tags": [
+                    "admin"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户名",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"申请认证成功。\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/branch/comment/create": {
+            "post": {
+                "description": "创建一条评论",
+                "tags": [
+                    "branch"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户名",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "评论内容",
+                        "name": "content",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"用户评论成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/branch/comment/operate": {
+            "post": {
+                "description": "操作评论",
+                "tags": [
+                    "branch"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "评论ID",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "对评论的操作方法，1为置顶，2为取消置顶，3为删除",
+                        "name": "method",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"操作成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/add_to_column": {
+            "post": {
+                "description": "添加某篇文章到专栏",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "专栏ID",
+                        "name": "column_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true, \"message\":\"添加到专栏成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/create_column": {
+            "post": {
+                "description": "创建一个专栏",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "专栏名字",
+                        "name": "column_name",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"创建专栏成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/list_all_from_column": {
+            "post": {
+                "description": "获取某个专栏的所有内容",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "专栏ID",
+                        "name": "column_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"专栏中的所有论文ID\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/remove_from_column": {
+            "post": {
+                "description": "删除专栏中的某条论文",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "专栏ID",
+                        "name": "column_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "论文ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"删除成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/user/favorite/add": {
             "post": {
                 "description": "添加收藏",
@@ -68,6 +340,31 @@
                 "responses": {
                     "200": {
                         "description": "{\"success\":true, \"message\":\"查询成功\",\"data\":\"user的所有收藏\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/favorite/remove": {
+            "post": {
+                "description": "移除收藏",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "收藏ID",
+                        "name": "favor_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true, \"message\":\"删除成功\"}",
                         "schema": {
                             "type": "string"
                         }

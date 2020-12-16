@@ -57,3 +57,15 @@ func DeleteOnePaperFromAColumn(columnID uint64, paperID string) (err error) {
 	err = global.DB.Delete(&columnPaper).Error
 	return err
 }
+
+// CreateAPortal 初始化门户
+func CreateAPortal(userID uint64, authorID string) (err error) {
+	portal := model.Portal{
+		UserID:   userID,
+		AuthorID: authorID,
+	}
+	if global.DB.Create(&portal).Error != nil {
+		return err
+	}
+	return
+}
