@@ -15,5 +15,5 @@ type Favorite struct {
 	FavorID   uint64 `gorm:"primary_key;" json:"favor_id"`
 	UserID    uint64 `gorm:"not null" json:"user_id"`
 	PaperID   string `gorm:"size:10;not null" json:"paper_id"`
-	PaperInfo string `gorm:"size:256" json:"paper_info"`
+	PaperInfo string `gorm:"size:2560" json:"paper_info"`
 }
