@@ -203,7 +203,7 @@ func AddToFavorites(c *gin.Context) {
 func ListAllFavorites(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	user := service.QueryAllFavorites(userID)
-	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": user})
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": user.Favorites})
 }
 
 // RemoveFavorite doc
@@ -220,6 +220,58 @@ func RemoveFavorite(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "删除成功"})
 	}
+
+}
+
+// AddToWishes doc
+// @description 添加至清单
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Param paper_id formData string true "文献ID"
+// @Param title formData string true "文献辩题"
+// @Success 200 {string} string "{"success":true, "message":"已添加至清单"}"
+// @Router /user/wish/add [post]
+func AddToWishes(c *gin.Context){
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	paperID:=c.Request.FormValue("paper_id")
+	title:=c.Request.FormValue("title")
+	url:=c.Request.FormValue("url")
+
+	if err:=service.CreateAWish(userID,paperID,title,url);err!=nil{
+		c.JSON(http.StatusOK,gin.H{"success":false,"message":err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK,gin.H{"success":true,"message":"已添加至清单"})
+}
+
+// RemoveFromWishes doc
+// @description 移出清单
+// @Tags user
+// @Param wish_id formData string true "心愿ID"
+// @Success 200 {string} string "{"success":true, "message":"已移出清单"}"
+// @Router /user/wish/remove [post]
+func RemoveFromWishes(c *gin.Context){
+	wishID, _ := strconv.ParseUint(c.Request.FormValue("wish_id"), 0, 64)
+
+	if err:=service.DeleteAWish(wishID);err!=nil{
+		c.JSON(http.StatusOK,gin.H{"success":false,"message":err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK,gin.H{"success":true,"message":"已移出清单"})
+}
+
+// ListAllWishes doc
+// @description 获取收藏列表
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Success 200 {string} string "{"success":true, "message":"查询成功","data":"user的清单"}"
+// @Router /user/wish/list [post]
+func ListAllWishes(c *gin.Context){
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+
+	user:=service.QueryAllWishes(userID)
+
+	c.JSON(http.StatusOK,gin.H{"success":true,"message":"查询成功","data":user.Wishes})
 
 }
 

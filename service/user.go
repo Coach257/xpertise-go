@@ -59,7 +59,7 @@ func CreateAFavorite(userID uint64, paperID string, paperInfo string) (err error
 func DeleteAFavorite(favorID uint64) (err error) {
 	var favorite model.Favorite
 	notFound := global.DB.First(&favorite, favorID).RecordNotFound()
-	if notFound{
+	if notFound {
 		return gorm.ErrRecordNotFound
 	}
 	err = global.DB.Delete(&favorite).Error
@@ -69,6 +69,27 @@ func DeleteAFavorite(favorID uint64) (err error) {
 func QueryAllFavorites(userID uint64) model.User {
 	user, _ := QueryAUserByID(userID)
 	global.DB.Model(&user).Association("Favorites").Find(&user.Favorites)
+	return user
+}
+
+func CreateAWish(userID uint64, paperID string, title string, url string) error {
+	wish := model.Wish{UserID: userID, PaperID: paperID, Title: title, Url: url}
+	err := global.DB.Create(&wish).Error
+	return err
+}
+
+func DeleteAWish(wishID uint64) error {
+	var wish model.Wish
+	if notFound := global.DB.First(&wish, wishID).RecordNotFound(); notFound {
+		return gorm.ErrRecordNotFound
+	}
+	err := global.DB.Delete(&wish).Error
+	return err
+}
+
+func QueryAllWishes(userID uint64) model.User {
+	user, _ := QueryAUserByID(userID)
+	global.DB.Model(&user).Association("Wishes").Find(&user.Wishes)
 	return user
 }
 

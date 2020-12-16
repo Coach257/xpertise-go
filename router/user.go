@@ -17,5 +17,8 @@ func InitUserRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/favorite/add", v1.AddToFavorites)
 		UserRouter.POST("/favorite/list", v1.ListAllFavorites)
 		UserRouter.POST("/favorite/remove", v1.RemoveFavorite)
+		UserRouter.POST("/wish/add", v1.AddToWishes)
+		UserRouter.POST("/wish/remove", v1.RemoveFromWishes)
+		UserRouter.POST("/wish/list", v1.ListAllWishes)
 	}
 }

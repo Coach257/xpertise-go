@@ -19,6 +19,7 @@ func InitMySQL() (error error) {
 		// user
 		&model.User{},
 		&model.Favorite{},
+		&model.Wish{},
 
 		// potal
 		&model.Paper{},
