@@ -5,7 +5,7 @@ type AuthorizationRequest struct {
 	AuthReqID uint64 `gorm:"primary_key; not null;" json:"authreq_id"`
 	UserID    uint64 `gorm:"not null;" json:"user_id"`
 	AuthorID  string `gorm:"type:varchar(10)" json:"author_id"`
-	// Status        uint64 `gorm:"not null;" json:"status"`
+	Status    string `gorm:"type:varchar(10)" json:"status"`
 }
 
 // // ForbidSpeak 禁言用户

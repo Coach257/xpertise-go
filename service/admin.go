@@ -7,11 +7,12 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-// 创建一条认证申请
-func CreateAnAuthorizationRequest(userID uint64, authorID string) (err error) {
+// CreateAnAuthorizationRequest 创建一条认证申请
+func CreateAnAuthorizationRequest(userID uint64) (err error) {
 	authreq := model.AuthorizationRequest{
 		UserID:   userID,
-		AuthorID: authorID,
+		AuthorID: "",
+		Status:   "TODO",
 	}
 	if err = global.DB.Create(&authreq).Error; err != nil {
 		return err
@@ -19,7 +20,7 @@ func CreateAnAuthorizationRequest(userID uint64, authorID string) (err error) {
 	return
 }
 
-// 获取一条认证申请
+// QueryAnAuthorizationRequest 获取一条认证申请
 func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationRequest, err error) {
 	notFound := global.DB.First(&authreq, authreqID).RecordNotFound()
 	if notFound {
@@ -28,8 +29,23 @@ func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationR
 	return authreq, err
 }
 
-// DeleteAuthorizationRequest 删除一条认证申请
-func DeleteAuthorizationRequest(authreqID uint64) (err error) {
+// UpdateAnAuthorizationRequest 更新一条认证申请
+func UpdateAnAuthorizationRequest(authreqID uint64, status string, authorID string) (err error) {
+	var authreq model.AuthorizationRequest
+	notFound := global.DB.First(&authreq, authreqID).RecordNotFound()
+	if notFound {
+		return gorm.ErrRecordNotFound
+	}
+	authreq.Status = status
+	if status == "Accepted" {
+		authreq.AuthorID = authorID
+	}
+	err = global.DB.Update(authreq).Error
+	return err
+}
+
+// DeleteAnAuthorizationRequest 删除一条认证申请
+func DeleteAnAuthorizationRequest(authreqID uint64) (err error) {
 	var authreq model.AuthorizationRequest
 	notFound := global.DB.First(&authreq, authreqID).RecordNotFound()
 	if notFound {

@@ -12,14 +12,12 @@ import (
 // @description 发送请求认证
 // @Tags admin
 // @Param user_id formData string true "用户名"
-// @Param author_id formData string true "作者ID"
 // @Success 200 {string} string "{"success": true, "message": "申请认证成功。"}"
 // @Router /admin/authorize/request [post]
 func RequestForAuthorization(c *gin.Context) {
 	userIDStr := c.Request.FormValue("user_id")
 	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
-	authorID := c.Request.FormValue("author_id")
-	if service.CreateAnAuthorizationRequest(userID, authorID) == nil {
+	if service.CreateAnAuthorizationRequest(userID) == nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "申请认证失败。",
@@ -38,6 +36,7 @@ func RequestForAuthorization(c *gin.Context) {
 // @Tags admin
 // @Param authreq_id formData string true "用户申请认证ID"
 // @Param action formData string true "Accept/Reject"
+// @Param author_id formData string true "对应作者ID"
 // @Success 200 {string} string "{"success": true, "message": "已通过认证请求。"}"
 // @Router /admin/authorize/deal [post]
 func DealWithAuthorizationRequest(c *gin.Context) {
@@ -52,18 +51,19 @@ func DealWithAuthorizationRequest(c *gin.Context) {
 		})
 	}
 	if action == "Accept" {
+		authorID := c.Request.FormValue("author_id")
+		service.UpdateAnAuthorizationRequest(authreqID, "Accepted", authorID)
 		service.CreateAPortal(authreq.UserID, authreq.AuthorID)
 		c.JSON(http.StatusOK, gin.H{
 			"success": true,
 			"message": "已通过认证请求。",
 		})
-		service.DeleteAuthorizationRequest(authreqID)
 	} else if action == "Reject" {
+		service.UpdateAnAuthorizationRequest(authreqID, "Rejected", "")
 		c.JSON(http.StatusOK, gin.H{
 			"success": true,
 			"message": "已拒绝认证请求。",
 		})
-		service.DeleteAuthorizationRequest(authreqID)
 	} else {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
