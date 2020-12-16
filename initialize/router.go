@@ -15,6 +15,7 @@ func SetupRouter() *gin.Engine {
 		router.InitUserRouter(Group) // 注册用户路由
 		router.InitPortalRouter(Group)
 		router.InitBranchRouter(Group)
+		router.InitAdminRouter(Group)
 	}
 	return r
 }
