@@ -188,6 +188,7 @@ func AddToFavorites(c *gin.Context) {
 
 	if err := service.CreateAFavorite(userID, paperID, paperInfo); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
+		return
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "收藏成功"})
 	}
@@ -202,7 +203,24 @@ func AddToFavorites(c *gin.Context) {
 func ListAllFavorites(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	user := service.QueryAllFavorites(userID)
-	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": user.Favorites})
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": user})
+}
+
+// RemoveFavorite doc
+// @description 移除收藏
+// @Tags user
+// @Param favor_id formData string true "收藏ID"
+// @Success 200 {string} string "{"success":true, "message":"删除成功"}"
+// @Router /user/favorite/remove [post]
+func RemoveFavorite(c *gin.Context) {
+	favorID, _ := strconv.ParseUint(c.Request.FormValue("favor_id"), 0, 64)
+	if err := service.DeleteAFavorite(favorID); err != nil {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
+		return
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "删除成功"})
+	}
+
 }
 
 func DeleteAUserByID(c *gin.Context) {

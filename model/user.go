@@ -8,7 +8,7 @@ type User struct {
 	UserType  int        `gorm:"not null;default:1" json:"user_type"`
 	BasicInfo string     `gorm:"size:100" json:"basic_info"`
 	Ban       bool       `gorm:"default:false" json:"ban"`
-	Favorites []Favorite `gorm:"ForeignKey:UserID;AssociationForeignKey:FavorID"`
+	Favorites []Favorite `gorm:"ForeignKey:UserID;AssociationForeignKey:UserID" json:"favorites"`
 }
 
 type Favorite struct {

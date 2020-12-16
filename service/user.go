@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/jinzhu/gorm"
 	"xpertise-go/global"
 	"xpertise-go/model"
 )
@@ -55,9 +56,19 @@ func CreateAFavorite(userID uint64, paperID string, paperInfo string) (err error
 	return
 }
 
+func DeleteAFavorite(favorID uint64) (err error) {
+	var favorite model.Favorite
+	notFound := global.DB.First(&favorite, favorID).RecordNotFound()
+	if notFound{
+		return gorm.ErrRecordNotFound
+	}
+	err = global.DB.Delete(&favorite).Error
+	return err
+}
+
 func QueryAllFavorites(userID uint64) model.User {
 	user, _ := QueryAUserByID(userID)
-	global.DB.Model(&user).Related(&user.Favorites).Find(&user.Favorites)
+	global.DB.Model(&user).Association("Favorites").Find(&user.Favorites)
 	return user
 }
 
