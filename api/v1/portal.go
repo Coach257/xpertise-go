@@ -50,3 +50,21 @@ func AddToColumn(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "添加到专栏成功"})
 	return
 }
+
+// ListAllFromAColumn doc
+// @description 获取某个专栏的所有内容
+// @Tags portal
+// @Param column_id formData string true "专栏ID"
+// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "专栏中的所有论文ID"}"
+// @Router /portal/list_all_from_column [post]
+func ListAllFromAColumn(c *gin.Context) {
+	columnID, _ := strconv.ParseUint(c.Request.FormValue("column_id"), 0, 64)
+	columnPapers := service.QueryAllFromAColumn(columnID)
+
+	if len(columnPapers) == 0 {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": "没查询到内容", "data": columnPapers})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": columnPapers})
+	return
+}

@@ -11,5 +11,6 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 	{
 		UserRouter.POST("/create_column", v1.CreateSpecialColumn)
 		UserRouter.POST("/add_to_column", v1.AddToColumn)
+		UserRouter.POST("/list_all_from_column", v1.ListAllFromAColumn)
 	}
 }

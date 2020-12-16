@@ -37,3 +37,8 @@ func QueryItemFromColumnPaper(columnID uint64, paperID string) (columnPaper mode
 	notFound = global.DB.Where("column_id = ?", columnID).Where("paper_id = ?", paperID).First(&columnPaper).RecordNotFound()
 	return columnPaper, notFound
 }
+
+func QueryAllFromAColumn(columnID uint64) (columnPapers []model.ColumnPaper) {
+	global.DB.Where("column_id = ?", columnID).Find(&columnPapers)
+	return columnPapers
+}
