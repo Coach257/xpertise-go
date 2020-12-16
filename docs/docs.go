@@ -104,41 +104,9 @@ var doc = `{
                 }
             }
         },
-        "/branch/admin_comment": {
+        "/branch/comment/create": {
             "post": {
-                "description": "操作评论",
-                "tags": [
-                    "branch"
-                ],
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "评论ID",
-                        "name": "username",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "对评论的操作方法，1为置顶，2为取消置顶，3为删除",
-                        "name": "method",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{\"success\": true, \"message\": \"操作成功\"}",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/branch/comment": {
-            "post": {
-                "description": "评论",
+                "description": "创建一条评论",
                 "tags": [
                     "branch"
                 ],
@@ -168,6 +136,38 @@ var doc = `{
                 "responses": {
                     "200": {
                         "description": "{\"success\": true, \"message\": \"用户评论成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/branch/comment/operate": {
+            "post": {
+                "description": "操作评论",
+                "tags": [
+                    "branch"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "评论ID",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "对评论的操作方法，1为置顶，2为取消置顶，3为删除",
+                        "name": "method",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"操作成功\"}",
                         "schema": {
                             "type": "string"
                         }

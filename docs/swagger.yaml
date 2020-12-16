@@ -56,30 +56,9 @@ paths:
             type: string
       tags:
       - admin
-  /branch/admin_comment:
+  /branch/comment/create:
     post:
-      description: 操作评论
-      parameters:
-      - description: 评论ID
-        in: formData
-        name: username
-        required: true
-        type: string
-      - description: 对评论的操作方法，1为置顶，2为取消置顶，3为删除
-        in: formData
-        name: method
-        required: true
-        type: string
-      responses:
-        "200":
-          description: '{"success": true, "message": "操作成功"}'
-          schema:
-            type: string
-      tags:
-      - branch
-  /branch/comment:
-    post:
-      description: 评论
+      description: 创建一条评论
       parameters:
       - description: 用户名
         in: formData
@@ -99,6 +78,27 @@ paths:
       responses:
         "200":
           description: '{"success": true, "message": "用户评论成功"}'
+          schema:
+            type: string
+      tags:
+      - branch
+  /branch/comment/operate:
+    post:
+      description: 操作评论
+      parameters:
+      - description: 评论ID
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 对评论的操作方法，1为置顶，2为取消置顶，3为删除
+        in: formData
+        name: method
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "操作成功"}'
           schema:
             type: string
       tags:

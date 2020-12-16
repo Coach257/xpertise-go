@@ -9,7 +9,7 @@ import (
 func InitBranchRouter(Router *gin.RouterGroup) {
 	UserRouter := Router.Group("api/v1/branch")
 	{
-		UserRouter.POST("/comment", v1.Comment) // 注意不用加逗号
-		UserRouter.POST("/admin_comment", v1.AdminComment)
+		UserRouter.POST("/comment/create", v1.CreateAComment) // 注意不用加逗号
+		UserRouter.POST("/comment/operate", v1.OperateComment)
 	}
 }
