@@ -33,3 +33,9 @@ type PaperReference struct {
 	PaperID     string `gorm:"type:varchar(10);primary_key" json:"paper_id"`
 	ReferenceID string `gorm:"type:varchar(10);primary_key" json:"reference_id"`
 }
+
+type SpecialColumn struct {
+	ColumnID   uint64 `gorm:"primary_key; not null;" json:"column_id"`
+	AuthorID   string `gorm:"type:varchar(10);primary_key;" json:"author_id"`
+	ColumnName string `gorm:"type:varchar(100)" json:"column_name"`
+}

@@ -9,7 +9,6 @@ import (
 func InitPortalRouter(Router *gin.RouterGroup) {
 	UserRouter := Router.Group("api/v1/portal")
 	{
-		UserRouter.POST("/query_paper", v1.QueryAPaperByID)
-		UserRouter.POST("/author_info", v1.TellAuthorInfo)
+		UserRouter.POST("/create_column", v1.CreateSpecialColumn)
 	}
 }
