@@ -6,11 +6,10 @@ import (
 
 type Comment struct {
 	//gorm.Model
-	CommentID  uint64    `gorm:"primary_key;" json:"comment_id"`
-	UserID     uint64    `gorm:"not null;ForeignKey:UserID" json:"user_id"`
-	DocumentID uint64    `gorm:"not null;ForeignKey:DocumentID" json:"document_id"` // 外键
-	CreatedAt  time.Time `json:"created_at"`
-	Content    string    `gorm:"column:content;size:255" json:"content"` // string默认长度为255, 使用这种tag重设。
-	Like       uint64    `gorm:"default:0" json:"like"`
-	DisLike    uint64    `gorm:"default:0" json:"dislike"`
+	CommentID   uint64    `gorm:"primary_key;" json:"comment_id"`
+	Username    string    `gorm:"size:15" json:"username"`
+	PaperID     string    `gorm:"size:10" json:"paper_id"`
+	CommentTime time.Time `json:"comment_time"`
+	Content     string    `gorm:"size:255" json:"content"`
+	OnTop       bool      `gorm:"default:false" json:"on_top"`
 }
