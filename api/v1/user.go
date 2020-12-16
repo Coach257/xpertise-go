@@ -188,7 +188,6 @@ func AddToFavorites(c *gin.Context) {
 
 	if err := service.CreateAFavorite(userID, paperID, paperInfo); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
-		return
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "收藏成功"})
 	}

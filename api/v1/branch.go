@@ -2,6 +2,7 @@ package v1
 
 import (
 	"net/http"
+	"strconv"
 	"time"
 	"xpertise-go/model"
 	"xpertise-go/service"
@@ -32,5 +33,35 @@ func Comment(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "用户评论成功"})
+	return
+}
+
+// AdminComment doc
+// @description 操作评论
+// @Tags branch
+// @Param username formData string true "评论ID"
+// @Param method formData string true "对评论的操作方法，1为置顶，2为取消置顶，3为删除"
+// @Success 200 {string} string "{"success": true, "message": "操作成功"}"
+// @Router /branch/admin_comment [post]
+func AdminComment(c *gin.Context) {
+	commentID, _ := strconv.ParseUint(c.Request.FormValue("comment_id"), 0, 64)
+	method, _ := strconv.ParseUint(c.Request.FormValue("method"), 0, 64)
+	var err error
+	switch method {
+	case 1:
+		err = service.PutCommentToTop(commentID)
+	case 2:
+		err = service.CancelCommentToTop(commentID)
+	case 3:
+		err = service.DeleteAComment(commentID)
+	}
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "操作成功"})
 	return
 }
