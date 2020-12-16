@@ -47,6 +47,13 @@
                         "name": "action",
                         "in": "formData",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "对应作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -70,13 +77,6 @@
                         "type": "string",
                         "description": "用户名",
                         "name": "user_id",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "作者ID",
-                        "name": "author_id",
                         "in": "formData",
                         "required": true
                     }
@@ -276,6 +276,63 @@
                 "responses": {
                     "200": {
                         "description": "{\"success\": true, \"message\": \"删除成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/authorize/get": {
+            "post": {
+                "description": "获取用户的（所有）请求认证",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"获取申请信息成功。\", \"data\": \"请求认证的所有信息。\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/authorize/read": {
+            "post": {
+                "description": "已读一条请求认证",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "请求认证ID",
+                        "name": "authreq_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"标记已读成功！\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -535,6 +592,95 @@
                 "responses": {
                     "200": {
                         "description": "{\"success\": true, \"message\": \"用户创建成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/wish/add": {
+            "post": {
+                "description": "添加至清单",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献辩题",
+                        "name": "title",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true, \"message\":\"已添加至清单\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/wish/list": {
+            "post": {
+                "description": "获取收藏列表",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true, \"message\":\"查询成功\",\"data\":\"user的清单\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/wish/remove": {
+            "post": {
+                "description": "移出清单",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "心愿ID",
+                        "name": "wish_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true, \"message\":\"已移出清单\"}",
                         "schema": {
                             "type": "string"
                         }

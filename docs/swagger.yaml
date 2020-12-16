@@ -28,6 +28,11 @@ paths:
         name: action
         required: true
         type: string
+      - description: 对应作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
       responses:
         "200":
           description: '{"success": true, "message": "已通过认证请求。"}'
@@ -42,11 +47,6 @@ paths:
       - description: 用户名
         in: formData
         name: user_id
-        required: true
-        type: string
-      - description: 作者ID
-        in: formData
-        name: author_id
         required: true
         type: string
       responses:
@@ -182,6 +182,43 @@ paths:
             type: string
       tags:
       - portal
+  /user/authorize/get:
+    post:
+      description: 获取用户的（所有）请求认证
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "获取申请信息成功。", "data": "请求认证的所有信息。"}'
+          schema:
+            type: string
+      tags:
+      - user
+  /user/authorize/read:
+    post:
+      description: 已读一条请求认证
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      - description: 请求认证ID
+        in: formData
+        name: authreq_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "标记已读成功！"}'
+          schema:
+            type: string
+      tags:
+      - user
   /user/favorite/add:
     post:
       description: 添加收藏
@@ -350,6 +387,64 @@ paths:
       responses:
         "200":
           description: '{"success": true, "message": "用户创建成功"}'
+          schema:
+            type: string
+      tags:
+      - user
+  /user/wish/add:
+    post:
+      description: 添加至清单
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      - description: 文献ID
+        in: formData
+        name: paper_id
+        required: true
+        type: string
+      - description: 文献辩题
+        in: formData
+        name: title
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true, "message":"已添加至清单"}'
+          schema:
+            type: string
+      tags:
+      - user
+  /user/wish/list:
+    post:
+      description: 获取收藏列表
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true, "message":"查询成功","data":"user的清单"}'
+          schema:
+            type: string
+      tags:
+      - user
+  /user/wish/remove:
+    post:
+      description: 移出清单
+      parameters:
+      - description: 心愿ID
+        in: formData
+        name: wish_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true, "message":"已移出清单"}'
           schema:
             type: string
       tags:
