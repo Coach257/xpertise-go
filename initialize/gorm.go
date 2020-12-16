@@ -21,19 +21,22 @@ func InitMySQL() (error error) {
 		&model.Favorite{},
 
 		// potal
+		&model.ColumnPaper{},
+		&model.Portal{},
+		&model.SpecialColumn{},
+
+		// branch
 		&model.Paper{},
 		&model.Affiliation{},
 		&model.Author{},
 		&model.Conference{},
 		&model.PaperAuthorAffiliation{},
 		&model.PaperReference{},
-		&model.SpecialColumn{},
-		&model.ColumnPaper{},
 
-		// branch
 		&model.Comment{},
 
 		// admin
+		&model.AuthorizationRequest{},
 	)
 
 	return global.DB.DB().Ping()

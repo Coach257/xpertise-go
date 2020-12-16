@@ -19,7 +19,7 @@ func RequestForAuthorization(c *gin.Context) {
 	userIDStr := c.Request.FormValue("user_id")
 	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
 	authorID := c.Request.FormValue("author_id")
-	if service.CreateAuthorizationRequest(userID, authorID) == nil {
+	if service.CreateAnAuthorizationRequest(userID, authorID) == nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "申请认证失败。",
@@ -44,7 +44,7 @@ func DealWithAuthorizationRequest(c *gin.Context) {
 	authreqIDStr := c.Request.FormValue("authreq_id")
 	authreqID, _ := strconv.ParseUint(authreqIDStr, 0, 64)
 	action := c.Request.FormValue("action")
-	authreq, err := service.QueryAAuthorizationRequest(authreqID)
+	authreq, err := service.QueryAnAuthorizationRequest(authreqID)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
