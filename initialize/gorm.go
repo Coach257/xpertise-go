@@ -28,6 +28,7 @@ func InitMySQL() (error error) {
 		&model.PaperAuthorAffiliation{},
 		&model.PaperReference{},
 		&model.SpecialColumn{},
+		&model.ColumnPaper{},
 
 		// branch
 		&model.Comment{},

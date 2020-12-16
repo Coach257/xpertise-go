@@ -24,3 +24,16 @@ func CreateAColumn(authorID string, columnName string) (err error) {
 	}
 	return
 }
+
+func AddPaperToColumn(columnID uint64, paperID string) (err error) {
+	columnPaper := model.ColumnPaper{ColumnID: columnID, PaperID: paperID}
+	if err = global.DB.Create(&columnPaper).Error; err != nil {
+		return err
+	}
+	return
+}
+
+func QueryItemFromColumnPaper(columnID uint64, paperID string) (columnPaper model.ColumnPaper, notFound bool) {
+	notFound = global.DB.Where("column_id = ?", columnID).Where("paper_id = ?", paperID).First(&columnPaper).RecordNotFound()
+	return columnPaper, notFound
+}
