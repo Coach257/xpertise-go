@@ -29,6 +29,15 @@ func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationR
 	return authreq, err
 }
 
+// QueryAuthorizationRequestsByUserID 获取某个用户的所有认证申请
+func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.AuthorizationRequest, err error) {
+	notFound := global.DB.Find(&authreqs, userID).RecordNotFound()
+	if notFound {
+		return authreqs, gorm.ErrRecordNotFound
+	}
+	return authreqs, err
+}
+
 // UpdateAnAuthorizationRequest 更新一条认证申请
 func UpdateAnAuthorizationRequest(authreqID uint64, status string, authorID string) (err error) {
 	var authreq model.AuthorizationRequest
@@ -45,9 +54,9 @@ func UpdateAnAuthorizationRequest(authreqID uint64, status string, authorID stri
 }
 
 // DeleteAnAuthorizationRequest 删除一条认证申请
-func DeleteAnAuthorizationRequest(authreqID uint64) (err error) {
+func DeleteAnAuthorizationRequest(authreqID uint64, userID uint64) (err error) {
 	var authreq model.AuthorizationRequest
-	notFound := global.DB.First(&authreq, authreqID).RecordNotFound()
+	notFound := global.DB.First(&authreq, authreqID, userID).RecordNotFound()
 	if notFound {
 		return gorm.ErrRecordNotFound
 	}
