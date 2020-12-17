@@ -100,7 +100,7 @@ func SearchAuthor(c *gin.Context) {
 	authorID := c.Request.FormValue("id")
 
 	if au, notFound := service.QueryAnAuthorByID(authorID); notFound == true {
-		c.JSON(http.StatusOK, gin.H{"fail": false, "message": "cuowu"})
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": "cuowu"})
 
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": au})
