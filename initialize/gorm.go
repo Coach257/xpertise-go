@@ -36,6 +36,7 @@ func InitMySQL() (error error) {
 		&model.PaperReference{},
 
 		&model.Comment{},
+		&model.CommentLike{},
 
 		// admin
 		&model.AuthorizationRequest{},

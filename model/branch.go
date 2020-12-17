@@ -51,3 +51,9 @@ type Comment struct {
 	Like        uint64    `json:"like"`
 	Dislike     uint64    `json:"dislike"`
 }
+
+type CommentLike struct {
+	CommentID     uint64 `gorm:"primary_key;" json:"comment_id"`
+	UserID        uint64 `gorm:"primary_key;" json:"user_id"`
+	LikeOrDislike bool   `json:"like_or_dislike"`
+}
