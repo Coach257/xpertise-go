@@ -18,3 +18,11 @@ type Portal struct {
 	AuthorID       string          `gorm:"type:varchar(10);primary_key" json:"author_id"`
 	SpecialColumns []SpecialColumn `gorm:"ForeignKey:SpecialColumn;AssociationForeignKey:SpecialColumn" json:"special_column"`
 }
+
+// 推荐表，记录认证用户推荐的内容
+type Recommend struct {
+	AuthorID   string `gorm:"type:varchar(10);primary_key" json:"author_id"`
+	PaperID    string `gorm:"type:varchar(10);primary_key" json:"paper_id"`
+	AuthorName string `gorm:"type:varchar(100)" json:"author_name"`
+	Reason     string `gorm:"type:varchar(255)" json:"reason"`
+}

@@ -25,6 +25,7 @@ func InitMySQL() (error error) {
 		&model.ColumnPaper{},
 		&model.Portal{},
 		&model.SpecialColumn{},
+		&model.Recommend{},
 
 		// branch
 		&model.Paper{},

@@ -46,4 +46,6 @@ type Comment struct {
 	CommentTime time.Time `json:"comment_time"`
 	Content     string    `gorm:"size:255" json:"content"`
 	OnTop       bool      `gorm:"default:false" json:"on_top"`
+	Like        uint64    `json:"like"`
+	Dislike     uint64    `json:"dislike"`
 }
