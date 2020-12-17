@@ -40,6 +40,15 @@ type PaperReference struct {
 	ReferencePaperTitle string `gorm:"type:varchar(400);" json:"reference_paper_title"`
 }
 
+type Connection struct {
+	Author1ID   string `gorm:"type:varchar(10)" json:"author_1_id"`
+	Author1Name string `gorm:"type:varchar(10)" json:"author_1_name"`
+	Author2ID   string `gorm:"type:varchar(10)" json:"author_2_id"`
+	Author2Name string `gorm:"type:varchar(10)" json:"author_2_name"`
+	PaperID     string `gorm:"type:varchar(10)" json:"paper_id"`
+	PaperTitle  string `gorm:"type:varchar(400);" json:"paper_title"`
+}
+
 type Comment struct {
 	//gorm.Model
 	CommentID   uint64    `gorm:"primary_key;" json:"comment_id"`
