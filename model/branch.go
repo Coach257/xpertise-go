@@ -34,8 +34,10 @@ type PaperAuthorAffiliation struct {
 }
 
 type PaperReference struct {
-	PaperID     string `gorm:"type:varchar(10);primary_key" json:"paper_id"`
-	ReferenceID string `gorm:"type:varchar(10);primary_key" json:"reference_id"`
+	PaperID             string `gorm:"type:varchar(10);" json:"paper_id"`
+	PaperTitle          string `gorm:"type:varchar(400);" json:"paper_title"`
+	ReferenceID         string `gorm:"type:varchar(10);" json:"reference_id"`
+	ReferencePaperTitle string `gorm:"type:varchar(400);" json:"reference_paper_title"`
 }
 
 type Comment struct {
