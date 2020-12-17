@@ -30,12 +30,12 @@ func CreateSpecialColumn(c *gin.Context) {
 // @Tags portal
 // @Param author_id formData string true "作者ID"
 /
-// @Success 200 {string} string "{"success": true, "message": "创建专栏成功"}"
-// @Router /portal/create_column [post]
+// @Success 200 {string} string "{"success": true, "message": "返回专栏成功"}"
+// @Router /portal/searchcol [post]
 func SearchSpecialColumn(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	
-	if data,err := service.QueryAColumnByID(authorID); err != nil {
+	if data,err := service.QueryAColumnByID(authorID); err != true {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
 	}
