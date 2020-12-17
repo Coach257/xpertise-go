@@ -88,3 +88,22 @@ func RemovePaperFromColumn(c *gin.Context) {
 	}
 
 }
+
+// SearchAuthor doc
+// @description 查找作者是否存在
+// @Tags portal
+// @Param column_id formData string true "作者ID"
+// @Success 200 {string} string "{"success": true, "message": "删除成功"}"
+// @Router /portal/remove_from_column [post]
+func SearchAuthor(c *gin.Context) {
+	//authorID, _ := strconv.ParseUint(c.Request.FormValue("id"), 0, 64)
+	authorID := c.Request.FormValue("id")
+
+	if au, notFound := service.QueryAnAuthorByID(authorID); notFound == true {
+		c.JSON(http.StatusOK, gin.H{"fail": false, "message": "cuowu"})
+
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": au})
+	}
+	return
+}

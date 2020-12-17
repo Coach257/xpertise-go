@@ -13,5 +13,6 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/add_to_column", v1.AddToColumn)
 		UserRouter.POST("/list_all_from_column", v1.ListAllFromAColumn)
 		UserRouter.POST("/remove_from_column", v1.RemovePaperFromColumn)
+		UserRouter.POST("/author", v1.SearchAuthor)
 	}
 }
