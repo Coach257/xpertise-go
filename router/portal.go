@@ -14,5 +14,6 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/list_all_from_column", v1.ListAllFromAColumn)
 		UserRouter.POST("/remove_from_column", v1.RemovePaperFromColumn)
 		UserRouter.POST("/author", v1.SearchAuthor)
+		UserRouter.POST("/searchcol", v1.SearchSpecialColumn)
 	}
 }
