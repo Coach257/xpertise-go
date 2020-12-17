@@ -32,7 +32,7 @@ func CreateSpecialColumn(c *gin.Context) {
 /
 // @Success 200 {string} string "{"success": true, "message": "创建专栏成功"}"
 // @Router /portal/create_column [post]
-func CreateSpecialColumn(c *gin.Context) {
+func SearchSpecialColumn(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	
 	if data,err := service.QueryAColumnByID(authorID); err != nil {
