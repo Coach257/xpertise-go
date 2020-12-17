@@ -12,12 +12,16 @@ import (
 // @description 发送请求认证
 // @Tags admin
 // @Param user_id formData string true "用户名"
+// @Param citizen_id formData string true "身份证号"
+// @Param organization formData string true "工作单位"
 // @Success 200 {string} string "{"success": true, "message": "申请认证成功。"}"
 // @Router /admin/authorize/request [post]
 func RequestForAuthorization(c *gin.Context) {
 	userIDStr := c.Request.FormValue("user_id")
 	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
-	if service.CreateAnAuthorizationRequest(userID) == nil {
+	citizenID := c.Request.FormValue("citizen_id")
+	organization := c.Request.FormValue("organization")
+	if service.CreateAnAuthorizationRequest(userID, citizenID, organization) == nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "申请认证失败。",

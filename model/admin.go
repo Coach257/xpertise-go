@@ -2,10 +2,12 @@ package model
 
 // AuthorizationRequest 申请认证
 type AuthorizationRequest struct {
-	AuthReqID uint64 `gorm:"primary_key; not null;" json:"authreq_id"`
-	UserID    uint64 `gorm:"not null;" json:"user_id"`
-	AuthorID  string `gorm:"type:varchar(10)" json:"author_id"`
-	Status    string `gorm:"type:varchar(10)" json:"status"`
+	AuthReqID    uint64 `gorm:"primary_key; not null;" json:"authreq_id"`
+	UserID       uint64 `gorm:"not null;" json:"user_id"`
+	AuthorID     string `gorm:"type:varchar(10)" json:"author_id"`
+	CitizenID    string `gorm:"type:varchar(20)" json:"citizen_id"`
+	Organization string `gorm:"type:varchar(256)" json:"organization"`
+	Status       string `gorm:"type:varchar(10)" json:"status"`
 }
 
 // // ForbidSpeak 禁言用户

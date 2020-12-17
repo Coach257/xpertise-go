@@ -8,11 +8,13 @@ import (
 )
 
 // CreateAnAuthorizationRequest 创建一条认证申请
-func CreateAnAuthorizationRequest(userID uint64) (err error) {
+func CreateAnAuthorizationRequest(userID uint64, citizenID string, organization string) (err error) {
 	authreq := model.AuthorizationRequest{
-		UserID:   userID,
-		AuthorID: "",
-		Status:   "TODO",
+		UserID:       userID,
+		AuthorID:     "",
+		CitizenID:    citizenID,
+		Organization: organization,
+		Status:       "TODO",
 	}
 	if err = global.DB.Create(&authreq).Error; err != nil {
 		return err
