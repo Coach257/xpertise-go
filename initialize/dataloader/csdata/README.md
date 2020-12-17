@@ -8,3 +8,4 @@
 - affiliations.txt：每行代表一个机构，各列信息分别为：affiliation_id AffiliationName
 - paper_author_affiliation.txt：每行代表一条论文、学者、机构的关系，各列信息分别为：paper_id author_id affiliation_id author_sequence，表示ID为'author_id'的人在ID为'affiliation_id'的机构中以第'author_sequence'的作者次序发表了ID为'paper_id'的论文。
 - paper_reference.txt：每行代表一条引用关系，各列信息分别为：paper_id reference_id，代表ID为'paper_id'的论文有一条指向ID为'reference_id'的论文的引用记录
+- reference.txt: 在paper_reference的基础上，添加了PaperName
