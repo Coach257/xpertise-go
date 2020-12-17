@@ -36,7 +36,7 @@ func CreateSpecialColumn(c *gin.Context) {
 func SearchSpecialColumn(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	data, err := service.QueryAColumnByID(authorID)
-	if err != true {
+	if err == true {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": "不对"})
 		return
 	}
