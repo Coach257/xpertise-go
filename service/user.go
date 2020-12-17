@@ -1,9 +1,10 @@
 package service
 
 import (
-	"github.com/jinzhu/gorm"
 	"xpertise-go/global"
 	"xpertise-go/model"
+
+	"github.com/jinzhu/gorm"
 )
 
 func CreateAUser(user *model.User) (err error) {
@@ -38,6 +39,14 @@ func UpdateAUser(user *model.User, username string, password string, email strin
 	err := global.DB.Save(user).Error
 	return err
 }
+
+// UpdateAUserUserType 更新用户状态
+func UpdateAUserUserType(user *model.User, userType int) error {
+	user.UserType = userType
+	err := global.DB.Update(user).Error
+	return err
+}
+
 func CountUsersByUsername(username string) (count int, err error) {
 	global.DB.Where("username = ? ", username).Count(&count)
 	return count, err
