@@ -15,7 +15,7 @@ crusor.execute('CREATE TABLE `connections`( \
                `author_b_id` VARCHAR(10) ,\
                 `author_b_name` VARCHAR(100) ,\
                `paper_id` VARCHAR(10) ,\
-               `paper_title` VARCHAR(400))  ,\
+               `paper_title` VARCHAR(400))\
                ENGINE = InnoDB,\
                DEFAULT CHARACTER SET = utf8mb4')
 conn.commit()
