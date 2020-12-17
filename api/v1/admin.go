@@ -58,10 +58,21 @@ func DealWithAuthorizationRequest(c *gin.Context) {
 		authorID := c.Request.FormValue("author_id")
 		service.UpdateAnAuthorizationRequest(authreqID, "Accepted", authorID)
 		service.CreateAPortal(authreq.UserID, authreq.AuthorID)
-		c.JSON(http.StatusOK, gin.H{
-			"success": true,
-			"message": "已通过认证请求。",
-		})
+		userID := authreq.UserID
+		user, notFound := service.QueryAUserByID(userID)
+		if notFound {
+			c.JSON(http.StatusOK, gin.H{
+				"success": false,
+				"message": "用户不存在。",
+			})
+		} else {
+			// 更新UserType
+			service.UpdateAUserUserType(&user, 2)
+			c.JSON(http.StatusOK, gin.H{
+				"success": true,
+				"message": "已通过认证请求。",
+			})
+		}
 	} else if action == "Reject" {
 		service.UpdateAnAuthorizationRequest(authreqID, "Rejected", "")
 		c.JSON(http.StatusOK, gin.H{
