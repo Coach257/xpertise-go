@@ -74,7 +74,7 @@ func DealWithAuthorizationRequest(c *gin.Context) {
 			})
 		}
 	} else if action == "Reject" {
-		service.UpdateAnAuthorizationRequest(authreqID, "Rejected", "")
+		service.UpdateAnAuthorizationRequest(&authreq, "Rejected", "")
 		c.JSON(http.StatusOK, gin.H{
 			"success": true,
 			"message": "已拒绝认证请求。",
