@@ -1,6 +1,7 @@
 package service
 
 import (
+	"time"
 	"xpertise-go/global"
 	"xpertise-go/model"
 
@@ -14,6 +15,7 @@ func CreateAnAuthorizationRequest(userID uint64, citizenID string, organization 
 		AuthorID:     "",
 		CitizenID:    citizenID,
 		Organization: organization,
+		ReqTime:      time.Now(),
 		Status:       "TODO",
 	}
 	if err = global.DB.Create(&authreq).Error; err != nil {
