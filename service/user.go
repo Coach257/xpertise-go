@@ -107,3 +107,8 @@ func DeleteAUserByID(userID uint64) (err error) {
 	err = global.DB.Delete(&user).Error
 	return err
 }
+
+func FindFavByUPID(userID string, paperID string) (favorite model.Favorite, notFound bool) {
+	notFound = global.DB.Where("user_id = ?", userID).Where("paper_id = ?", paperID).First(&favorite).RecordNotFound()
+	return favorite, notFound
+}

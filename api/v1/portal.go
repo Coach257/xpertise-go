@@ -213,7 +213,7 @@ func ListTopSevenPapers(c *gin.Context) {
 // @Param author_id formData string true "作者ID"
 // @Success 200 {string} string "{"success": true, "message": "true"}"
 // @Success 200 {string} string "{"success": true, "message": "false"}"
-// @Router /portal/recommend/top [post]
+// @Router /portal/issettled [post]
 func IsSettled(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	_, notFound := service.FindPortalByID(authorID)

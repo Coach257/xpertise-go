@@ -215,11 +215,28 @@ func RemoveFavorite(c *gin.Context) {
 	favorID, _ := strconv.ParseUint(c.Request.FormValue("favor_id"), 0, 64)
 	if err := service.DeleteAFavorite(favorID); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
-		return
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "删除成功"})
 	}
+	return
+}
 
+// IsFavorite doc
+// @description 判断是否已经被收藏
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Param paper_id formData string true "文献ID"
+// @Success 200 {string} string "{"success":true, "message":"true"}"
+// @Router /user/favorite/isfav [post]
+func IsFavorite(c *gin.Context) {
+	userID := c.Request.FormValue("user_id")
+	paperID := c.Request.FormValue("paper_id")
+	_, notFound := service.FindFavByUPID(userID, paperID)
+	if notFound {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "false"})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "true"})
+	}
 }
 
 // AddToWishes doc
