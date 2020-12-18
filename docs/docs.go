@@ -573,13 +573,22 @@ var doc = `{
         },
         "/portal/recommend/top": {
             "post": {
-                "description": "获取推荐数最多的前七篇文献",
+                "description": "判断该作者是否入驻",
                 "tags": [
                     "portal"
                 ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
+                        "description": "{\"success\": true, \"message\": \"false\"}",
                         "schema": {
                             "type": "string"
                         }
