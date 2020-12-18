@@ -92,6 +92,20 @@ var doc = `{
                         "name": "user_id",
                         "in": "formData",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "身份证号",
+                        "name": "citizen_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "工作单位",
+                        "name": "organization",
+                        "in": "formData",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -143,6 +157,70 @@ var doc = `{
                 }
             }
         },
+        "/branch/comment/give_a_like_or_dislike": {
+            "post": {
+                "description": "点赞或点踩",
+                "tags": [
+                    "branch"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "评论ID",
+                        "name": "comment_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "对评论的操作选择，1为点赞，2为点踩",
+                        "name": "method",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"用户操作成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/branch/comment/list_all_comments": {
+            "post": {
+                "description": "列出某条文献的全部评论",
+                "tags": [
+                    "branch"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"操作成功\", \"data\": \"某文献的所有评论\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/branch/comment/operate": {
             "post": {
                 "description": "操作评论",
@@ -153,7 +231,7 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "评论ID",
-                        "name": "username",
+                        "name": "comment_id",
                         "in": "formData",
                         "required": true
                     },
@@ -175,7 +253,32 @@ var doc = `{
                 }
             }
         },
-        "/portal/add_to_column": {
+        "/portal/author": {
+            "post": {
+                "description": "查找作者是否存在",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "column_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"删除成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/column/add_to_column": {
             "post": {
                 "description": "添加某篇文章到专栏",
                 "tags": [
@@ -207,7 +310,7 @@ var doc = `{
                 }
             }
         },
-        "/portal/create_column": {
+        "/portal/column/create_column": {
             "post": {
                 "description": "创建一个专栏",
                 "tags": [
@@ -239,7 +342,7 @@ var doc = `{
                 }
             }
         },
-        "/portal/list_all_from_column": {
+        "/portal/column/list_all_from_column": {
             "post": {
                 "description": "获取某个专栏的所有内容",
                 "tags": [
@@ -264,7 +367,7 @@ var doc = `{
                 }
             }
         },
-        "/portal/remove_from_column": {
+        "/portal/column/remove_from_column": {
             "post": {
                 "description": "删除专栏中的某条论文",
                 "tags": [
@@ -289,6 +392,162 @@ var doc = `{
                 "responses": {
                     "200": {
                         "description": "{\"success\": true, \"message\": \"删除成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/column/remove_recommend": {
+            "post": {
+                "description": "删除某条推荐",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"删除成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/column/searchcol": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"返回专栏成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/recommend/create_recommend": {
+            "post": {
+                "description": "创建一条推荐",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "作者名字",
+                        "name": "author_name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "推荐理由",
+                        "name": "reason",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"推荐成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/recommend/recommends_from_one_author": {
+            "post": {
+                "description": "获取作者推荐的所有内容",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"作者的所有推荐\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/recommend/recommends_from_one_paper": {
+            "post": {
+                "description": "获取所有对某文章的推荐",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"文献的所有推荐\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/recommend/top": {
+            "post": {
+                "description": "获取推荐数最多的前七篇文献",
+                "tags": [
+                    "portal"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
                         "schema": {
                             "type": "string"
                         }
