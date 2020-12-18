@@ -21,7 +21,7 @@ func RequestForAuthorization(c *gin.Context) {
 	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
 	citizenID := c.Request.FormValue("citizen_id")
 	organization := c.Request.FormValue("organization")
-	if service.CreateAnAuthorizationRequest(userID, citizenID, organization) == nil {
+	if service.CreateAnAuthorizationRequest(userID, citizenID, organization) != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "申请认证失败。",
