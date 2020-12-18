@@ -45,6 +45,7 @@ func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.Authori
 // UpdateAnAuthorizationRequest 更新一条认证申请
 func UpdateAnAuthorizationRequest(authreq *model.AuthorizationRequest, status string, authorID string) error {
 	authreq.Status = status
+	authreq.AuthorID = authorID
 	err := global.DB.Save(authreq).Error
 	return err
 }
