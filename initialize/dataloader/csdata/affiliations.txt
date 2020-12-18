@@ -1,0 +1,3159 @@
+0041F649	mahanakorn university of technology
+004658F4	xiangtan university
+00784876	university of glasgow
+0086CB8F	university of leon
+0088BF3F	national autonomous university of mexico
+01038E08	telecom lille 1
+013CF852	washington university school of medicine
+01682BF6	institute of robotics and intelligent systems
+01739E09	university of buenos aires
+01AB8D36	national institute for higher education
+01C4E3DD	morgridge institute for research
+01CA26E6	manchester business school
+0261D2D8	kettering university
+027B5DD3	association of research libraries
+028E8644	nicta
+03496C27	university of turin
+0349EE07	university of california
+03512020	instituto superior de engenharia de lisboa
+03F01FBB	genome institute of singapore
+03F22377	naresuan university
+04505D6E	osaka institute of technology
+0478D4F8	university of tennessee
+04FB543C	szechenyi istvan university
+050F3ADA	newcastle university
+0567A330	university of colombo
+056A2A0B	university of franche comte
+0584A892	walter sisulu university
+05A55A03	university of jyvaskyla
+05BF2DCA	university of defence
+05C31D4B	technical university of denmark
+05C33764	chuo university
+05F108EF	university of minho
+0644CC82	oxford internet institute
+06581C77	gradiant galician research and development center in advanced telecommunications
+070DED1B	depaul university
+0717DEEE	silesian university of technology
+07464868	rungta college of engineering and technology
+081C015C	robert h smith school of business
+08B11977	ipca laboratories ltd
+08FC2C82	waseda university
+0941E72A	west pomeranian university of technology
+09995E41	university of freiburg
+09CC60BD	fordham university
+09D3665E	metaio gmbh
+0A0D2BAD	university of calgary
+0A17D934	university of north carolina at greensboro
+0A546C41	university of granada
+0A8F91A9	durban university of technology
+0ABDAF90	yokohama national university
+0BADCAD2	glasgow caledonian university
+0BF79DFE	national and kapodistrian university of athens
+0C00E2F0	national university of computer and emerging sciences
+0C309CF2	university of macau
+0C37CBAD	harbin institute of technology
+0C3C3D64	trinity college
+0C546475	institute of photogrammetry and geoinformation
+0EE90B37	kessler foundation
+12A75ED7	national university of science and technology
+33B055BF	american megatrends
+344DAF2B	abertay university
+359DD561	international data corporation
+4C462F03	artificial intelligence center
+4D54C8C1	st john s hospital
+4D5D795C	international computer science institute
+4D9E5365	asia university
+4E2EC568	amazon com
+4EBD15F2	association for computing machinery
+4EEE5722	rehabilitation institute of chicago
+005B8048	de la salle university
+00E50760	fuji xerox
+0154426A	kyoto university
+01B75705	university of rochester medical center
+01D61EC6	shanghaitech university
+01E0D8CE	technische universitat darmstadt
+022A907E	concurrent technologies corporation
+025F5CB1	pierre and marie curie university
+029B7705	state university of new york at oswego
+02DEFE53	south university
+030EB925	sri venkateswara college of engineering
+03959311	nagoya university
+03DAAF69	ensenada center for scientific research and higher education
+03FCE859	university of yamanashi
+043B0D41	london school of hygiene tropical medicine
+05058734	harvard graduate school of design
+05354600	state university of new york college of optometry
+0537DD0E	southern illinois university edwardsville
+056408C5	salzburg research
+057FA477	university of split
+05C28CB2	meijo university
+05C86094	stanford university
+05EF3060	tsukuba international university
+05F47C53	yuan ze university
+061CAA26	australian artificial intelligence institute
+06967BF9	islamic azad university
+07FE697C	university of nevada reno
+088001DA	pacific northwest national laboratory
+08FA558A	boston university school of medicine
+09299093	university of ottawa
+0936CD92	lexmark
+093B0B5A	national taiwan university of science and technology
+0946AF68	pedagogical university
+094DB5D4	university of california merced
+0966B229	university of illinois at urbana champaign
+09DDBC07	royal college of art
+09E0E324	university of georgia
+09EB15AA	national university of cordoba
+09FFB116	institute of chemical technology
+0A93E042	university of west london
+0ACBE4F9	university of the west
+0B4803CE	university of alcala
+0C5875EF	new mexico institute of mining and technology
+362313B5	vpi industries
+36261C9A	brighton collectibles
+3767AE84	amperex electronic
+3790D794	shanmugha arts science technology research academy
+4C9AA917	cincinnati children s hospital medical center
+4D6112C8	guy s hospital
+4DE8BF46	salk institute for biological studies
+4E38B15D	western union
+4EDCB0D6	atlantic general hospital
+4F57F528	military academy
+4FD5E510	wadsworth center
+500D16B9	united states department of commerce
+501C7490	south korean ministry of national defence
+00453B04	addis ababa university
+0190EC9A	fx palo alto laboratory
+022F9467	courant institute of mathematical sciences
+0235F248	nijmegen institute for cognition and information
+0240D1DC	northwest university
+0262EA12	institute for advanced study
+0267A61E	university of chicago
+02710E52	central china normal university
+0298727C	ehime university
+02A71496	czech technical university in prague
+02B1C7DD	aichi prefectural university
+02E5116D	ulsan national institute of science and technology
+03006309	charles iii university of madrid
+031119AF	panjab university chandigarh
+03600676	kansai university
+03FD7B86	de montfort university
+03FED160	carleton university
+041C0D9D	university of strasbourg
+0437D79B	mines paristech
+044E199B	makerere university
+04A41CC4	survey of india
+04AEE5C7	monash university clayton campus
+04FDC89D	school of visual arts
+051F1353	nagaoka university of technology
+05397CB8	vtt technical research centre of finland
+05CEA7C0	university of wales
+05DB33D4	mcmaster university
+06156041	university of siena
+06BA26E7	university of messina
+06C7F76A	university of washington bothell
+06CBC4BA	university of technology sydney
+07103214	national research university higher school of economics
+07A4A8F7	zhejiang university school of medicine
+0824398D	omnivision technologies
+084F5A4B	shippensburg university of pennsylvania
+08CB8095	university of bedfordshire
+08EF476D	max planck society
+093AD6C0	indian institute of technology roorkee
+095FB507	usc marshall school of business
+09A107D9	bangor university
+09DAE0E3	university of oviedo
+0A188E08	university of groningen
+0A32FA39	school of computer science university of manchester
+0A397221	esl incorporated
+0A475496	university of cagliari
+0A6255B8	city university of new york
+0AA43B6D	university of the west of england
+0AE3F770	university of leoben
+0AE76810	hyundai mobis
+0B84EA8C	british university in dubai
+0BC7337B	national research council
+0BCC86FB	swiss bank corporation
+0BF90B6E	brookhaven national laboratory
+0BFDF683	stephen f austin state university
+0C0619CB	united arab emirates university
+0C5CD1AB	evolution robotics
+33CD4141	netflix
+343CD353	peabody energy
+4C5370B9	ames research center
+4C7D4F86	brigham and women s hospital
+4CC3C85D	massachusetts general hospital
+4D357196	center for democracy and technology
+4D4651F5	internal revenue service
+4E190C1B	iit research institute
+4F372D4A	duke university hospital
+863BFDE1	facebook
+00069231	united states air force academy
+003E7116	graz university of technology
+0049DC81	toyota technological institute
+006329B3	indian statistical institute
+008CC234	northeastern university
+0090FD55	westmont college
+00C50601	northeastern university
+012FC667	national center for supercomputing applications
+019FDCAB	oklahoma city university
+02788DE3	federal university of campina grande
+02D9F3BD	saint louis university
+037D28F2	deutsche telekom
+039459BF	polytechnic university of valencia
+03EC1FC5	university of limoges
+043C2E9C	university of reading
+04468646	university of louisiana at monroe
+04496BAA	king abdullah university of science and technology
+044A20BB	university of northern colorado
+04B11BDC	university of arkansas
+04C145AB	ho chi minh city university of agriculture and forestry
+04C1EC81	university of guelph
+04ED7E46	ross school of business
+04EDE9AE	lear corporation
+053FB310	technical university of madrid
+05C40A1D	shanghai maritime university
+05F6E42A	university of stuttgart
+05F73393	al hussein bin talal university
+063CD91D	millersville university of pennsylvania
+06956500	faculdade de engenharia da universidade do porto
+0699B629	paris descartes university
+06CB2E98	twitter
+06CED4D5	chinese academy of social sciences
+06D27A8D	university of geneva
+072A5F45	izmir institute of technology
+073AD50F	hunan university of science and technology
+078A8AE9	university of science and technology of china
+07D2B6B9	oregon state university
+07FD08C8	alpen adria universitat klagenfurt
+08329DA0	southern federal university
+08548E70	beijing university of posts and telecommunications
+08D3D0B6	national chung cheng university
+08F452CF	university of electronic science and technology of china
+08F7F83A	emory university
+091BC727	singapore university of technology and design
+09513698	fmc corporation
+099C4A9D	lahore college for women university
+099D9393	university of beira interior
+0AD3D01F	san diego supercomputer center
+0ADA5E4F	king juan carlos university
+0B4F1265	wellesley college
+0B5CD1C8	lulea university of technology
+0BF8A745	nanjing university of information science and technology
+0C2DEF79	aarhus university
+0C41D2F4	curtin university
+0C6712EF	coastal carolina university
+337E028A	delhi technological university
+3475EBEF	ntt communications corp
+3500F97D	ifs ab
+357F69F2	plymouth university
+35E846DF	bendix aviation
+369B4898	indian institutes of information technology
+4C6E8511	lawrence livermore national laboratory
+4CC2F516	villagereach
+4DBAC46F	nvidia
+4DE730CF	institute for defense analyses
+4E5C5D2F	chicago transit authority
+4E65910A	zhejiang wanli university
+4E69D83D	national museum of japanese history
+4EB27C46	food and drug administration
+4F0C6ED6	adria airways
+501DA64B	university of california irvine school of humanities
+00470615	university of warsaw
+0084240C	volkswagen group of america
+00922A53	indian institute of technology mandi
+00BFD2CF	institute of ocean sciences
+00F5B92B	school of geodesy and geomatics wuhan university
+00FFA1D2	strategy
+012431FB	chennai mathematical institute
+012F592B	moscow state university
+0139433B	university of electro communications
+017C99DB	fudan university
+0180C94B	university of pavia
+018C5555	university of wurzburg
+01C82785	charles darwin university
+01D43A14	european institute
+01D6FE3E	aarhus school of architecture
+020379FB	nynex
+02290965	national university of colombia
+0274013C	victoria university of wellington
+02965656	laval university
+02A05A89	columbia business school
+030D6658	eskisehir osmangazi university
+036AC4C4	north dakota state university
+038AE3AA	brunel university london
+039AFB05	middlesex university
+039DA1C4	max planck institute for human development
+03A04D94	king mongkut s university of technology thonburi
+03E298B8	indian institute of technology hyderabad
+04002EC9	voestalpine
+0476D8B7	marmara university
+04AF492D	rutgers business school newark and new brunswick
+04B9147D	university of seville
+04DC736E	amrita vishwa vidyapeetham
+0564D70F	national cancer institute
+0578DF46	national cheng kung university
+05A34E1E	hongik university
+05DAB8C0	polytechnic institute of new york university
+05E5B71B	chukyo university
+067A7298	qingdao university
+0690C9F1	university of akron
+06918666	universidade federal de minas gerais
+06DA7DC2	aalborg university copenhagen
+06EB0D45	university of rome tor vergata
+0790B52C	chongqing normal university
+080931A9	spanish national research council
+084BB75F	union carbide
+08B2AABE	nara sangyo university
+09037355	chung yuan christian university
+092FD9CF	university of auckland
+093F0669	universita campus bio medico
+095F1AD2	university of east london
+09622C42	aalborg university esbjerg
+09856704	technical university of nova scotia
+09D4F273	open university of israel
+09D744C0	duquesne university
+0A2FAFA5	duke university
+0A4D0900	university of holguin
+0A97D133	oakland university
+0B3F8B19	instituto superior de engenharia do porto
+0BF0D6C3	technical university of dortmund
+0C190F13	huafan university
+0C38690C	chicago kent college of law
+0C6245A8	caci
+337496DE	eclipse internet
+33DBE707	department of the army
+34898359	university of gothenburg
+4D1CA769	government college
+4EB89D5A	ontario ministry of natural resources
+001C3B8F	university of basel
+0054DD96	university of bari
+005CEDFE	iwate prefectural university
+0087D272	foundation for research technology hellas
+008DE9F8	bournemouth university
+012E6F4E	chinese academy of sciences
+017148B8	chengdu university of information technology
+0197E0DD	foothill college
+01B7A80D	civil aviation university of china
+01C641C3	budapest university of technology and economics
+027B2292	fluid operations
+02AC6C7F	university of southern mississippi
+02D54009	norwegian institute of technology
+031ED962	laurentian university
+03356722	abasyn university
+03906F0B	lamsade
+0403A9D4	bayer
+042C692F	mind institute
+05A9F14A	university of kwazulu natal
+061A86E7	university of arkansas at little rock
+061BF8F3	harvard business school
+062BC2E4	boston college
+068DC70D	agricultural university of athens
+06BEE641	college of the canyons
+071AE4C7	shandong university of technology
+07AB6F39	institute for logic language and computation
+07BC3356	university of vienna
+07F84AD1	osaka sangyo university
+083E10AB	agilent technologies
+08ADCF85	university of miami
+08B64D4F	universidade federal de vicosa
+09266AF0	national taiwan ocean university
+093456D7	university of alberta
+0948C934	university of hildesheim
+0A7F477C	gettysburg college
+0AC8F2B8	university of hyogo
+0AD224B5	thales communications
+0B052EDF	washington and lee university
+0B1B8D25	university of passau
+0BA67E13	university of aberdeen
+0BAD17B3	zuse institute berlin
+0BB40002	chungnam national university
+0C21380B	comprehensive epilepsy center
+0C2D7F2F	medical college of wisconsin
+0C39A13A	kyushu institute of design
+3607CCC2	upc ireland
+4C58B737	dimagi
+4E82707A	national archives and records administration
+4E8AC000	west
+4F0FAF38	fred hutchinson cancer research center
+4F4B7F14	united states department of defense
+007B93A0	department of computer science university of illinois at urbana champaign
+00F85EDF	university of houston downtown
+00FCC8AE	national pingtung university of science and technology
+0147F037	aix marseille university
+0159FE4E	williams college
+01776B6C	university of massachusetts amherst
+01FF2D19	glendon college
+021B54E0	ircam
+022BD15B	institute of medical science
+027B658D	ege university
+02B1C5D7	university of calabria
+0352694C	arizona state university
+037632F0	romanian academy
+03C49B37	toyama prefectural university
+04174390	usc viterbi school of engineering
+04FFA7EC	oporto polytechnic institute
+0502A721	hyogo university
+0507994B	faculty of humanities
+05E740A3	mississippi state university
+0652A5B8	hebei university of engineering
+0681D939	beijing foreign studies university
+06C27DBF	kumoh national institute of technology
+06DA32E7	china mobile research institute
+07CC35F1	ural federal university
+0826E0F3	tianjin university of technology
+08853520	institute of cancer research
+089D722C	apache corporation
+089DDE41	macdonald dettwiler and associates
+08BB8DA0	enseeiht
+08BDCA25	university of liverpool
+0912F9A4	chosun university
+0932D61D	tasc inc
+098A712E	department of computer science university of oxford
+099B472E	west chester university of pennsylvania
+09F26814	national healthcare group
+0A0D316F	hachinohe institute of technology
+0A1E7728	norwich university
+0A25A483	university of south australia
+0A984C51	ursinus college
+0A98F168	western institute
+0AC8DC36	computer laboratory university of cambridge
+0B379307	cereteth
+0B435A3C	international institute of information technology
+0C3BAC1F	nankai university
+0C9FE57F	beta
+12C92C99	aea technology
+33DFC828	aalto university school of business
+4C54202D	darpa
+4D31A8AF	canadian hydrographic service
+4D37C10E	seattle children s
+4DB8954A	cornell tech
+4E894D44	indian institute of technology guwahati
+4ED8C7DB	sil international
+4F879C6C	nottingham university hospitals nhs trust
+500090B8	institute of international education
+005E4813	ibaraki university
+00804F4E	cardiff metropolitan university
+008AA581	taiyuan university of technology
+008ED3A6	university of bologna
+0092C1B8	polytechnic university of catalonia
+00FF56A8	national taiwan university
+0117794A	institute of statistical mathematics
+0138C43F	thoughtworks
+014CB16C	university of evora
+01936685	orebro university
+01B291A4	citec
+01B7C749	institute for telecommunication sciences
+01E8DE69	university of central arkansas
+021B9D77	naval postgraduate school
+02396E88	penn state college of communications
+025DB013	hunter college
+026020B1	mitsubishi electric
+02642F55	university of oxford
+027015D7	telstra
+02E9407D	tokyo university of marine science and technology
+03369A6C	technische hochschule
+041709F5	polytechnic university of bari
+042826F4	tokyo metropolitan university
+04377F0B	kla tencor
+044791BC	kddi
+052F5108	royal institute of technology
+0557FC58	northwest a f university
+059E9386	yale school of medicine
+05E5F910	ogi school of science and engineering
+062D596B	university of california riverside
+066037F3	idaho state university
+068EBAE5	francois rabelais university
+06C2C7BC	ecole normale superieure de lyon
+06CCE1C6	goethe university frankfurt
+0784D2D2	chaoyang university of technology
+07BDC4B0	university of oldenburg
+0812EDE2	citigroup
+0826A657	garvan institute of medical research
+083CF11D	austrian academy of sciences
+0855A25E	mental health research institute
+08D7E515	national chiao tung university
+0910DE3A	aletheia university
+0925D0AE	north china electric power university
+092BE41A	eastern illinois university
+0947E863	haverford college
+0A1542E1	faculdade de ciencias e tecnologia da universidade nova de lisboa
+0A398D80	free university of bozen bolzano
+0A9AD19C	providence university
+0AACCE3D	carthage university
+0AEA10B1	malmo university
+0B154F8A	university of minnesota crookston
+0C00C58C	bae systems
+0C0CFC14	king s college cambridge
+0C33EF81	university of paris
+0C34AB7F	norwegian university of science and technology
+0C477B82	kwansei gakuin university
+0EFC6DD1	university of girona
+350343F5	smith corona
+36A19626	kindai university
+4D0B48B1	social security administration
+4D31303B	all nippon airways
+4DF80BCB	verisign
+4DFD73ED	ast
+4E1BA375	chicago metropolitan agency for planning
+4E55E3A2	institut national de la recherche agronomique
+4ECF7896	american hospital association
+4F872588	at t labs
+4FC22A88	american museum of natural history
+00034B77	university of madras
+0005673C	minjiang university
+00090A43	indiana university
+000EC3D5	gannon university
+00CD8766	vrije universiteit brussel
+015AA05A	lanzhou university of technology
+01815C1D	beijing normal university
+018A6121	national tsing hua university
+01AEE5B6	ecole nationale superieure des mines de saint etienne
+025A7177	institut national de la recherche scientifique
+026022A6	auckland university of technology
+02870E7F	gifu university
+02A630F2	shandong jianzhu university 山東建築大學
+031F2438	deutsches institut fur normung
+0323ACCE	western washington university
+0378029D	ramkhamhaeng university
+0398C237	qatar university
+0403586C	california state university fresno
+04634070	national institute of advanced industrial science and technology
+0476DFB9	central queensland university
+0477FFD3	carnegie mellon university
+0501E2EA	ensae paristech
+057836AB	hokkai gakuen university
+06552B9D	cankaya university
+068EDD47	iscte university institute of lisbon
+06A4AD85	queens college
+06C7F024	surugadai university
+06D39D72	tokyo institute of technology
+0782737C	skolkovo institute of science and technology
+07CC18F3	pacific bell
+07E07FCC	indian institute of technology patna
+084DEFE6	university of central oklahoma
+08B9DFEF	university of tsukuba
+0A10A938	bilkent university
+0A5D91BE	university of washington tacoma
+0AA50C62	virginia bioinformatics institute
+0ACF7BFE	university of erlangen nuremberg
+0AE1BBC5	scientific computing and imaging institute
+0B09600A	king abdulaziz university
+0B29DEF1	university of ostrava
+0B66187C	university of hull
+0BC0E906	st francis xavier university
+0BE128D6	nantong university
+0E285B07	zurich insurance group
+34244534	european university institute
+35095641	bosch
+358A0AB5	sei investments company
+35BC7522	halifax
+4CABD435	united states geological survey
+4CDB9E04	indian space research organisation
+4D07390E	nuance communications
+4DDC0B9D	goddard space flight center
+4DE93E9B	federation internationale de motocyclisme
+4E8A34CC	library of congress
+4FA5C415	wellcome trust centre for human genetics
+4FEAEE66	judge rotenberg educational center
+4FF1CAEE	ita software
+8626355D	samsung
+0049B166	rheinmain university of applied sciences
+00A0C1D6	chongqing university of posts and telecommunications
+00C86936	university of cantabria
+01584612	institute for environment and sustainability
+01A35BD4	university of perugia
+01B0B8DE	pritzker school of medicine
+01B2BC70	dso national laboratories
+029819CC	toulouse school of economics
+035B7F18	sarah lawrence college
+0363988A	universidad nacional del sur
+037E5334	seattle university
+038CB6F6	stony brook university
+03EC9BA0	kobe university
+03FC3F40	chalmers university of technology
+0436D944	palacký university olomouc
+0509BF20	alexandria university
+056D3FC6	texas a m university
+059F8171	western kentucky university
+05E79D01	tsinghua university
+062F666F	tibco software
+066A0DAD	information technology institute
+066AF386	dartmouth college
+06D59D21	leidos
+06DA8418	artemis
+0708D92C	swarthmore college
+07262DB0	university of the pacific
+07679147	ben gurion university of the negev
+078199E6	national united university
+07CC4A10	university of leeds
+07E08F13	barwon health
+0838AF5E	trier university of applied sciences
+08B965E9	applied science private university
+08D44357	university of marne la vallee
+08E5FFC5	arthur d little
+09AA300F	pontifical catholic university of chile
+0A0E3831	ecole des mines de nantes
+0A520111	franklin marshall college
+0A64EB23	hefei normal university
+0A9EA77E	southern methodist university
+0B05ECC8	chubu university
+0B1B9F95	shell oil company
+0C3975CF	sciences po
+0C3D6366	hokkaido university
+33B1A617	university of texas southwestern medical center
+35A60E21	cgi group
+4C609D6F	oslo university hospital
+4D23D89B	united states atomic energy commission
+4D5C1113	convair
+4D5CE7C2	european medicines agency
+4DA8F568	planetary science institute
+4E6F1FA2	milacron
+4EE83DBC	sunnybrook health sciences centre
+4F0D0B40	alfred i dupont hospital for children
+4F6C9CED	noblis
+00099A27	simon bolivar university
+00BAC512	australian institute of sport
+01474A2D	masaryk university
+016FC32A	conocophillips
+019FA0A0	pacific national university
+01A28A3B	kyoto institute of technology
+01E21B83	chengdu university of technology
+02A7FDB9	artois university
+02B87939	albion college
+02D6CD9F	hampshire college
+0312B01D	university of virginia
+031C103D	ariel university
+03381F1C	university of bayreuth
+03FA8F1E	university of milano bicocca
+04079B84	soka university of america
+043F74E8	university of naples federico ii
+04416949	niigata university
+04592826	washington state university
+04C128B1	pontificia universidade catolica de campinas
+04D98949	old dominion university
+0515E0CA	esade business school
+052DF235	athabasca university
+0541B7BC	hyogo university of teacher education
+054E46B5	dankook university
+05E74909	macquarie university
+06783480	pacific university
+0708044B	university of hawaii at manoa
+07D24849	bucknell university
+080DBBEF	universite de sherbrooke
+0830FCA0	franklin w olin college of engineering
+087165E4	western michigan university
+0875F56E	university of toronto department of computer science
+087E851D	college of the atlantic
+0899B641	data storage institute
+0935E318	french institute of health and medical research
+095B60F6	jordan university of science and technology
+0963600E	shenyang university of technology
+096A089D	holon institute of technology
+09B4B990	national chung hsing university
+0AC280F8	copenhagen business school
+0B39AE7C	university of canberra
+0B4FB4B8	tzu chi university
+0B659C39	xiamen university
+0C27B6EC	industrial light magic
+0C355FDC	university of wollongong
+0C56C959	kyushu institute of technology
+11BB5306	capella education company
+4D0FB79F	commonwealth scientific and industrial research organisation
+4D8CDA30	city of hope national medical center
+4DEE4E7B	powerhouse museum
+4E73E000	inter services intelligence
+4EB84CDD	chrysler group llc
+4F29109B	ensco inc
+4FD85CEA	oclc
+000F248D	university of boras
+004E3300	ecole polytechnique federale de lausanne
+0098C26C	huanggang normal university
+00F8422C	santa clara university
+013FBDE4	mit lincoln laboratory
+014401B5	thiagarajar college of engineering
+01EE3848	university of alabama at birmingham
+021B83E1	china university of technology
+024B19AC	urmia university
+0299DE59	federal reserve bank of new york
+02A68932	qingdao technological university
+034793B5	heilongjiang university
+034A874C	tata consultancy services
+03CAFC05	autonomous university of madrid
+0463457B	it university
+0486EC92	free university of berlin
+04F5921E	jeju national university
+05161245	national brain research centre
+0574C576	king mongkut s institute of technology ladkrabang
+05F3C57B	university of zanjan
+067186B9	university of valladolid
+06B5C61C	central leather research institute
+06C4E6F1	kigali institute of science and technology
+070A9F1F	general motors
+0747B7A8	federal university of rio de janeiro
+07AA6ED8	israel chemicals
+07F8C3E1	anadolu university
+08639853	university of pardubice
+0896FB69	mcgovern institute for brain research
+089F28EA	norwegian computing center
+08EDE3C2	institute of psychology
+094D7613	upsala college
+099D8475	institute for theoretical computer science
+09AD7055	university of mondragon
+09FA0FE3	henan university of science and technology
+0A2B3EBD	university of the fraser valley
+0A7B0C9D	electronics research center
+0ACD6604	university of oregon
+0AE04EEA	nycomed
+0AF04895	capital medical university
+0B13E33F	university of central lancashire
+0B46561F	university of milan
+0B8684B1	national chi nan university
+0BA8371A	janelia farm research campus
+0BC1D058	hebrew university of jerusalem
+0BCD6FFB	staffordshire university
+0C3423EF	university of mysore
+0C626C1C	overseas chinese university
+0D7ECD89	armstrong state university
+332E4ED1	applied signal technology inc
+342F3CE8	environ
+34A0CC70	furtwangen university
+35B5EDC7	banco nacional ultramarino
+36F7341B	telenor
+36FBD70F	university of tokushima
+4CC89935	united states naval research laboratory
+4D0C933D	toshiba
+4E13CA1C	sarnoff corporation
+4E7E575E	cleveland clinic
+4EF77785	hewlett packard
+4F97622A	children s hospital of philadelphia
+500F742B	vrvis
+000B65EA	halmstad university
+004FEB6D	frankfurt university of applied sciences
+00F87E5D	college of william mary
+010CF393	university of rhode island
+012BCF09	wright state university
+012CE579	national institute of mental health
+01310471	paine college
+01F6ADD2	helsinki institute for information technology
+0226D15A	rush medical college
+02B911E0	ecole polytechnique de montreal
+02D0FFFC	wake forest university
+02D1C434	illinois state university
+0328AB6E	harvard smithsonian center for astrophysics
+033140F3	radford university
+038FA885	open university of cyprus
+039DB9B6	university of regensburg
+03C2675E	university of portsmouth
+041C3083	martin luther university of halle wittenberg
+0440C56B	enel
+04905D15	southeast university
+0495B534	srinakharinwirot university
+0527E2AB	monroe community college
+055DA639	national institute of information and communications technology
+05A3E21A	university of bamberg
+05A41608	haas school of business
+05A8DA0B	university of westminster
+05E11067	american university of beirut
+066427B8	frederick institute of technology
+066A71BC	university of notre dame
+068A7232	canadian institute for advanced research
+06EBDE64	dolby laboratories
+06F984C4	purdue university calumet
+070A58AF	new jersey institute of technology
+0762DD98	epson
+076AA9A4	international computers limited
+07F892EC	university of helsinki
+08117FD8	new york institute of technology
+081BD043	university of deusto
+085C9D9D	technical university of kenya
+087E04C5	ecole polytechnique
+08820D32	university of louisville
+08D6D550	netherlands organisation for applied scientific research
+095FFF3F	maynooth university
+09630970	kaist
+09988D7C	toyota technological institute at chicago
+09E3EE34	national university of singapore
+0A08A19C	chongqing university of science and technology
+0A15C811	aston university
+0A899CF4	murdoch university
+0A9960BC	technical university of moldova
+0B5EA747	paristech
+0B7C6B14	university of lima
+0BB0D1E0	international university of japan
+0BC2585A	stanford university medical center
+0BE339FA	american university of sharjah
+0BF0184F	university of santiago de compostela
+0BF72034	krannert school of management
+0DEEAC00	pontifical xavierian university
+3372241F	gmv innovating solutions
+3399EB68	tutor com
+352C263C	alfa
+361FF5AE	career education corporation
+363B46B5	london school of economics and political science
+4D1C955A	tri service general hospital
+4D354E04	boeing commercial airplanes
+4E286443	apple inc
+4E5B259B	allen institute for brain science
+4FF45383	ibm
+500EBE93	charles stark draper laboratory
+00473244	university of rostock
+005DC2E8	university of minnesota duluth
+00C3D61B	university of wyoming
+00D4F325	bar ilan university
+00D956B2	hong kong polytechnic university
+0151A617	university of derby
+0173B19B	robert koch institute
+018DD578	indian institute of information technology allahabad
+01A6473F	indian institute of technology gandhinagar
+021EBB72	kochi university of technology
+0302DD9C	lunghwa university of science and technology
+032B1770	madhav institute of technology and science
+03438C46	interactive advertising bureau
+04281A41	university of chile
+043FA10E	community college of rhode island
+04B18D93	university of la rochelle
+04EB9A27	california college of the arts
+04FFB057	institute of mathematics and informatics
+0585C279	florida institute of oceanography
+0586BB42	university of west bohemia
+058C251A	bendix corporation
+05BCC65E	college of engineering trivandrum
+05C1AD22	leibniz institute for neurobiology
+061DABA2	cleveland state university
+0706F10D	national instruments
+071B5A71	nicolaus copernicus university in torun
+0729798C	kunsan national university
+0743C345	defence science and technology organization
+07454816	utah state university
+07BD7CF7	universidad de guanajuato
+07EB0D61	fuqua school of business
+08AA33AF	costa rica institute of technology
+08F92607	modul university vienna
+0915E233	jawaharlal nehru university
+096009DA	itron
+09C9B410	king s college
+09D7E4FA	university of queensland
+0A567B93	university of applied sciences western switzerland
+0A622A44	graduate school of management
+0A887385	bell canada
+0A9418E0	polytechnic university of turin
+0ACD6137	national university of ireland
+0AD2620C	united states army war college
+0B002509	royal holloway university of london
+0B00BA67	national institute of informatics
+0B2B81D1	south china normal university
+0BB8DCB1	universidad autonoma de san luis potosi
+0BD857CA	jawaharlal nehru engineering college
+0C103FFF	academy of sciences of the czech republic
+0CECE932	ecole centrale paris
+33957263	control group
+4D76ACCE	department of science and technology
+4D8B08D7	centralesupelec
+4EB83D69	canon inc
+4F3BE6AD	philips
+4F4069DE	bhabha atomic research centre
+4F884175	world bank
+501CEEC2	howard hughes medical institute
+8620BB61	walmart labs
+007B4591	clemson university
+01438A3B	kazan federal university
+0153C041	national central university
+01C5C92C	guangxi normal university
+02A35E59	university of dusseldorf
+02CBA8F9	hp software division
+03099350	centers for medicare and medicaid services
+0355C54D	rovira i virgili university
+03565917	university of wollongong in dubai
+03F2657D	long beach city college
+03FB6E89	southern cross university
+047EFC56	national ilan university
+04AB1E96	malek ashtar university of technology
+04BE3F72	university of pennsylvania
+04BEE805	university of arkansas for medical sciences
+0532B1F5	university of tulsa
+061B6EC0	marquette university
+06CBEAA9	university of north carolina at chapel hill
+07668367	conservatoire national des arts et metiers
+077489A2	fiat automobiles
+07B04ACC	university of south wales
+0833DAE3	tshwane university of technology
+086912D1	nanchang institute of technology
+087167FA	nanchang university
+08802AB2	university of crete
+088A680B	hasso plattner institute
+0921D6FE	mellon institute of industrial research
+09889E70	jinan university
+09E03886	university of edinburgh school of informatics
+0A8478AE	university of potsdam
+0AD27695	georgia state university
+0B47208B	yunnan university
+0B755491	jerusalem college of technology
+0BCE47B1	scientific and technological research council of turkey
+0BFFF799	university of ferrara
+0C124673	smith college
+0D331261	university of the bio bio
+11523008	california state university dominguez hills
+3515A5D8	martin marietta materials inc
+35F4A52E	shanghai university of international business and economics
+36172737	mediatech institute
+3679E6DC	erasmus university rotterdam
+4DAEA636	afl cio
+4F4B6B43	mayo clinic
+4F721ABC	bt group
+4FE77675	sphere
+500B3463	oracle corporation
+500D59A7	kaiser permanente
+0041F3FA	towson university
+00576805	university of sunderland
+00949274	ecole de technologie superieure
+00B57546	university of nigeria nsukka
+01A89579	california state university los angeles
+01ED0853	max planck institute of immunobiology and epigenetics
+02047FF4	university of malaya
+0274CC35	harbin university of commerce
+027D443C	central electronics engineering research institute
+02A02222	rand afrikaans university
+02A52458	european space research and technology centre
+0317A8D3	universidade luterana do brasil
+034BDB0A	university of texas medical branch
+0357CA53	university of tartu
+038A2BC4	mriglobal
+03D37308	international institute of information technology hyderabad
+03E2D097	tatung university
+040F37A8	universidade federal de goias
+0412EAF6	shih hsin university
+045C5FAD	viktoria institute
+04756336	university of tokyo
+047B7011	wakayama university
+04946B1E	university of missouri
+04A6C2AF	university of tromso
+04C2F260	university of illinois at springfield
+0535FE32	ithaca college
+053A59FC	beijing sport university
+05B9651E	kumamoto university
+05EE1B99	stetson university
+0640DF0F	universite du quebec a chicoutimi
+068174F3	nxp semiconductors
+068E815A	university of essex
+06EFCA50	trident microsystems
+0725C649	augsburg college
+075B69F9	scripps research institute
+0787E01C	portland state university
+07CB626B	pennsylvania state university
+07D782F6	concordia university college of alberta
+07DB88BD	stmicroelectronics
+084B474F	dalla lana school of public health
+08842A80	universidad del norte colombia
+09299425	bang olufsen
+092D7CCF	university of ljubljana
+092EBB82	henry ford health system
+093FC384	rochester institute of technology
+096FFC0E	technical university of cluj napoca
+0A5DBE7D	yamaguchi university
+0B347331	college de france
+0BB40DCF	university of ulm
+0BF1D8BD	university of puerto rico
+0BF72363	tele universite
+0C1E973E	eastern connecticut state university
+0CA4B187	university of victoria
+0D7460FA	london college of communication
+0DE1DEAC	quest university
+358948F4	technical career institute college of technology
+373A6845	leipzig university
+4C7A9B63	at t
+4CC65A5D	chemical bank
+4CC8F361	australian council for educational research
+4CDC114C	centers for disease control and prevention
+4CF6F697	rockwell international
+4DE1C757	volkswagen
+4EDEFAEC	sage bionetworks
+4EF8C3D6	st thomas hospital
+4F221E82	institute of management accountants
+003F8D78	international islamic university malaysia
+012FF857	mayo medical school
+015BDFDA	school of electrical and electronic engineering university of manchester
+0211B0F4	dav college chandigarh
+023D0727	universite de technologie de belfort montbeliard
+0277737E	pontifical university of salamanca
+028DE130	shenyang university
+0298F6CF	university of wisconsin milwaukee
+02E61692	partners healthcare
+034B5160	university of houston college of optometry
+0388650E	indian institute of science
+03C6849E	universite du quebec a trois rivieres
+03EC85E6	duksung women s university
+040AF21A	helsinki university of technology
+04346A8B	national semiconductor
+0480F0E8	m s ramaiah institute of technology
+048B750B	interval research corporation
+056819C0	keck graduate institute of applied life sciences
+05DD4F15	dhirubhai ambani institute of information and communication technology
+05F8C346	harbin university of science and technology
+0618318B	vienna university of economics and business
+066D36CB	institute of public administration
+06945043	american society for engineering education
+0717DB44	roma tre university
+072ABA1B	whitehead institute
+0808A606	institute of business administration karachi
+0832C111	telecom italia
+08402C61	irobot
+08709332	university of bucharest
+0877F335	shenyang institute of automation
+088AA042	university of kentucky
+092DF256	institute for the management of information systems
+0965EC45	university of liege
+09841345	university of sassari
+099D30C9	tokyo university of science
+0A2510E5	university of pittsburgh
+0A296B1E	pompeu fabra university
+0A9A3087	university of western australia
+0A9A4164	pomona college
+0AC72C36	city university london
+0AF5B565	urbana university
+0B68D84B	university of jaen
+0B77A2A4	humboldt state university
+0BC5075D	los angeles harbor college
+0BCE997F	ball state university
+0BF6BC56	vanderbilt university
+363D52D2	harmonic inc
+4C75849B	tektronix
+4CA9F625	george washington university hospital
+4CB4A4D5	international association of machinists and aerospace workers
+4CF99586	google
+4DED1868	cross cancer institute
+4E173D62	international monetary fund
+4EBB4C84	max planck institute of psychiatry
+4F05218E	battelle memorial institute
+4F4728A2	johnson johnson
+4F98606C	spss inc
+501B18D1	general dynamics
+000B02D3	benemerita universidad autonoma de puebla
+0079454A	university of maine
+008EB791	sudan university of science and technology
+00B64D85	tata institute of fundamental research
+00D7E323	chemical abstracts service
+00F09338	university of lleida
+017B59A9	st olaf college
+01C3C549	ecole normale superieure
+026A9F31	university of ulsan
+02A370AB	rowan university
+02A65CE4	maltepe university
+02A66F75	university of houston
+0311E6B4	san jose state university
+03839B48	case western reserve university
+03BE4754	portugal telecom
+03FE5E00	shanghai institute of technology
+0534ECCF	national chengchi university
+055ABEC2	centaur technology
+0567819A	school for advanced studies in the social sciences
+0573E769	mills college
+06A93848	fujian normal university
+06BC1D9D	airbus group
+06C61180	beni suef university
+0708D687	hoffmann la roche
+072620B4	indraprastha institute of information technology
+0734E3CC	siemens healthcare
+07564CF8	mahasarakham university
+083D1500	georgia college state university
+08571507	bentley university
+0874F9B7	instituto nacional de matematica pura e aplicada
+08BA57D0	incheon national university
+08ED4AE9	universite de namur
+0904612E	cisco systems inc
+0922AB66	kaiserslautern university of technology
+0930F176	ifremer
+09B77B21	st patrick s college maynooth
+0A241BFD	atos
+0A4ACFBD	nanyang technological university
+0A56E54B	iona college
+0A599FD9	logica
+0A6604CB	national technical university of athens
+0A7668D6	university of eastern finland
+0A9D2D50	harvard school of engineering and applied sciences
+0ACF14C4	university of zagreb
+0AFFB9AC	oslo and akershus university college of applied sciences
+0B0338EC	information sciences institute
+0BC09FA0	brics
+0BC2EB17	university of mainz
+0C313C4D	china university of petroleum
+0C4370B1	university of dhaka
+0C44CDCE	system planning corporation
+0D2A3B0C	paris sorbonne university
+339CD1B3	vu university amsterdam
+36D0A3A4	perelman school of medicine at the university of pennsylvania
+4C7A84E0	computer simulation technology
+4D7B0467	bloomberg l p
+4E1BB800	accenture
+4E3254D7	advanced micro devices
+4EA2535F	monterey bay aquarium research institute
+4ED45F4B	united states bureau of reclamation
+4EEF7716	lsi corporation
+4F5548F6	united states department of energy
+00A52A7E	universidade federal de ouro preto
+00F9B76E	hefei university of technology
+01124466	university of sao paulo
+01A5BDF7	northeastern illinois university
+01EF9B11	florida polytechnic university
+02046B9B	bankers trust
+023AE996	bates college
+024C0B9C	asian institute of technology
+02585490	humboldt university of berlin
+0269AA0E	technological educational institute of athens
+029E3479	wuhan university of science and technology
+02C5432A	anqing teachers college
+038E2ECB	jiangxi university of finance and economics
+041B3329	indian institute of technology delhi
+045559C0	athens state university
+04935CE8	university of san francisco
+04AF010A	columbia university
+04C3E428	mugla university
+050ACD48	national university of colombia at manizales
+05282E0D	university of texas at austin
+05776AD7	saarland university
+0583A7C0	stottler henke associates
+05C6B39D	xinjiang university
+05EFFB90	national taipei university
+05F5F76A	brigham young university
+06744A71	p a college of engineering
+06CF160C	beijing union university
+07681456	oxford brookes university
+076D453A	university of parma
+07FCAA8D	university of nevada las vegas
+084D6664	hofstra university
+08B74C11	omron
+08E58262	stanford graduate school of business
+08EC4F5B	deakin university
+098D4750	university of cienfuegos
+09AC5A80	sant anna school of advanced studies
+09AF5E12	centre hospitalier de luxembourg
+09B48D0B	indian institute of technology bombay
+09DDAA88	tokyo denki university
+09EB4F00	united states army research laboratory
+0AA9203B	purdue university school of electrical and computer engineering
+0B7C6B9E	ming chuan university
+0BAF65AC	max planck institute for medical research
+0BE70AFF	empresa brasileira de pesquisa agropecuaria
+0D109F83	purdue university
+0FEA0FD3	nassau community college
+36CA0353	louisiana tech university
+4D07D6C0	nato
+4D8C4F7A	rakuten
+4DFEDD28	santa fe institute
+4E474BB3	eastern air lines
+4ECD74BC	alcatel lucent
+4ED7B8DE	intel architecture labs
+4F2F13D7	australian bureau of rural sciences
+4FEB61A6	congressional research service
+0027E0B8	university of south florida
+00341058	sanyo
+006952C5	brandeis university
+009F903A	university of santiago chile
+00B28C35	griffith university
+00BC0B79	international centre for theoretical physics
+00BDF5D6	university of orleans
+00F9AA74	rafael advanced defense systems
+01461554	aristotle university of thessaloniki
+01AFAF1B	university of surrey
+01FD4331	airbus
+02191A3B	faculty of information technology university džemal bijedic of mostar
+021A9D92	esiea
+025139D2	zhengzhou university
+02541072	university of catania
+025E5718	chulabhorn research institute
+030DA872	dong a university
+03199CDF	keimyung university
+03552D02	bangkok university
+035DC03A	mid sweden university
+03672BD5	swinburne university of technology
+03839CF8	yandex
+03B817A9	university of rouen
+03C9544D	university of western sydney
+0434D6D0	oberlin college
+0460A923	university of southern maine
+0489A984	zhejiang university
+04FD6759	university of michigan school of information
+059DE5E4	indian institute of technology kanpur
+05C5D9C3	capital normal university
+05E2161B	university of caen lower normandy
+065700BC	wake forest school of medicine
+069BF47D	disney research
+069F11AE	boston university
+07427AD9	leiden university
+078BC7D6	tezpur university
+07E013FE	alberta research council
+08119320	california state university monterey bay
+0842546C	prince mohammad bin fahd university
+088351CF	st john s university
+08B1D62B	radboud university nijmegen
+08EEDBAB	institute for mathematics and its applications
+08F47EBA	university of shizuoka
+092727F6	national institute on aging
+096EAD68	amirkabir university of technology
+097CD675	university of hamburg
+099C0285	steel authority of india
+09B97E8D	hangzhou normal university
+0A3EE016	forschungszentrum julich
+0A97E0C1	the chinese university of hong kong
+0B017C0B	sorbonne
+0B1B3F93	east carolina university
+0B4EC93C	university of konstanz
+0C10F7B1	mobil
+0C137645	sk telecom
+15FC0F56	university of mississippi
+339E4034	rolls royce holdings
+33D32A50	university of port elizabeth
+34190567	teesside university
+34527487	irving convention and visitors bureau
+348C33BA	think cell
+37688A17	national university of sciences and technology
+4D66E94F	shizuoka university
+4D68F3D7	environmental defense fund
+4E1CC783	bureau of ships
+4EB5DDD7	united states minerals management service
+4F076E00	siemens
+4F16E7ED	center for automotive research
+4F338164	zhejiang sci tech university
+4FD74C4B	northshore university healthsystem
+0004F204	bowie state university
+007D2F41	ludwig maximilian university of munich
+009C54F3	rajamangala university of technology thanyaburi
+00C43889	university of nairobi
+00D9D76D	chungyu institute of technology
+0126039E	qualcomm
+01752D5C	korea aerospace university
+01C3EDA3	university of indonesia
+02B3D015	columbia college chicago
+02DE71FC	alpert medical school
+034EA791	reed college
+0377AB29	institute for system programming
+03FCABA3	saint mary s university
+040B962D	hanoi university of science
+04C30B43	singapore management university
+04EAC6E5	university of alabama in huntsville
+04F89294	rockefeller university
+05364FE4	xi an jiaotong university
+05B80899	shijiazhuang university of economics
+05F589EA	fh aachen
+05FCAEB6	ecole centrale de nantes
+061C55AA	cologne university of applied sciences
+0667DEC5	tamkang university
+0672E33C	hec montreal
+06969DE2	electricite de france
+073806CA	nielsen holdings n v
+074BDB0A	california institute of technology
+0755844E	autonomous university of barcelona
+075D73DF	vietnam national university ho chi minh city
+0762929E	pohang university of science and technology
+07A2497F	forest research institute
+07BDAE7E	oregon institute of technology
+080B0734	institute for scientific interchange
+0815134D	kyushu university
+082C1DA8	kiva systems
+084A4349	hiroshima institute of technology
+0877C406	industrial technology research institute
+088502AB	california state university fullerton
+0925C53B	maebashi institute of technology
+09396A59	university of piraeus
+09698FE2	generalitat of catalonia
+099A9C9D	federal fluminense university
+09F07E1F	university of pittsburgh school of medicine
+0A023AFE	centre national d etudes des telecommunications
+0A251809	laboratory of molecular biology
+0ACED25B	donghua university
+0B185497	lehigh university
+0BBD8EF9	imec
+0BF88082	department of systems biology
+0C2FE58D	washington university in st louis
+3377881A	cna financial
+34217AC6	jean moulin university lyon 3
+4C6B6145	argonne national laboratory
+4CE6FC2D	microsoft
+4D12A6A2	international institute of minnesota
+4E330E21	corporation for national research initiatives
+4F2B6313	food corporation of india
+4F5A5649	robarts research institute
+4FE93C67	united states department of state
+0045D019	hanyang university
+0055593E	ramon llull university
+009F0671	laguardia community college
+00B6E61F	universita iuav di venezia
+0156CBB8	university of munster
+01E93C2F	heriot watt university
+027DDB06	kanagawa university
+02BC2BCD	willow garage
+02D828C1	huazhong university of science and technology
+02DC3B71	cirano
+0310EEF4	bauhaus university weimar
+0315EB81	royal military college of canada
+031FD638	federal university of parana
+033CCF96	university of jendouba
+036F5CD2	nile university
+03781302	southern medical university
+03C2CC97	liverpool john moores university
+03F6EA7B	fayoum university
+03FAAFFE	council of scientific and industrial research
+04B13DDC	jacksonville state university
+04E79119	cranfield university
+0527EA39	university of delaware
+0545C8B7	novay
+056E6D66	university of latvia
+06268289	smithsonian institution
+06415983	nihon university
+0698C4D9	infosys
+06DE3FEB	agency for science technology and research
+06FEABA1	lockheed martin advanced technology laboratories
+07DEF9D7	universite libre de bruxelles
+07F8AFEC	university of massachusetts lowell
+087095C7	university of lisbon
+0873DCEE	baruch college
+08860EC8	minghsin university of science and technology
+098D9152	fortune institute of technology
+09D3A574	lim college
+0A1C9634	blaise pascal university
+0A4C6A95	university of the punjab
+0A968F8B	university of dundee
+0A9AAD1D	federal university of sao carlos
+0AE810B3	university of dallas
+0B054663	metz
+0B7B2289	university of the witwatersrand
+0B8CC95E	yonsei university
+0C601A7F	slovak academy of sciences
+103446AA	polaris industries
+335ED749	sapienza university of rome
+35B98F41	weingarten realty investors
+4C99169E	recruit
+4DE273D0	raytheon
+4E968B3E	harvard innovation lab
+4EB81A1F	academy of arts in tirana
+4F661D2C	thailand national science and technology development agency
+863C435D	fujitsu
+00783204	charite
+00F1EE39	telecom sudparis
+00F89C76	national institute of technology rourkela
+01370496	missouri university of science and technology
+017889A7	indian institute of technology madras
+0179EEF0	gjovik university college
+01A17328	dalian university of technology
+01A3B05B	colby college
+01E50000	fukuoka university
+01EF6A99	merrill lynch
+0230551A	kuwait university
+0231D08D	northwest university
+025C0B1D	swansea university
+028389E0	language computer corporation
+02AFF078	university of florence
+02D4EDF8	imperial college london
+02DEBB7A	heritage institute of technology
+0313CD63	siemens energy sector
+031A714D	clark atlanta university
+038BA460	shandong university of finance and economics
+03A19AC4	naver corporation
+03C1A3AD	stanford university school of medicine
+041D9F0A	near east university
+058D133F	emporia state university
+05DCD65A	delft university of technology
+060C03D3	american science and engineering inc
+06533BDD	eotvos lorand university
+066B7DC3	roskilde university
+06719A8C	thammasat university
+06CD7B7B	ncr corporation
+07061FD4	pantheon assas university
+0723B89A	philips consumer lifestyle
+073A0591	international islamic university islamabad
+0749A315	university of nebraska omaha
+07E71ACD	zhongyuan university of technology
+08495949	guangdong university of technology
+09D19BFE	institut national des sciences appliquees
+0A1CBCE6	university of arkansas at monticello
+0A86B91F	khalifa university
+0ACD6EA5	aes corporation
+0B40411E	national university of ireland galway
+0C1D2B23	rhodes university
+0C2C9DD2	university of california irvine
+0C5CA969	utsunomiya university
+33E22295	rolf c hagen group
+4CE037FF	royal society
+4D50973C	space telescope science institute
+4E6630F6	at t information systems
+4F9B5176	florida institute for human and machine cognition
+4FEE81E2	educational testing service
+00195CEF	university of puerto rico rio piedras
+00243975	max planck institute for software systems
+00518ABF	guilin university of electronic technology
+005237C4	university of rochester
+00849FD8	kpmg
+00A65A75	james i university
+00B54721	national institute of technology karnataka
+00BC8D07	telecom paristech
+016D0C5B	university of exeter
+017E189A	georgia regents university
+018E2322	stellenbosch university
+0194318D	louisiana state university in shreveport
+019BFCB5	university of the free state
+01D3F2C0	brescia university
+01D5887E	istituto italiano di tecnologia
+028116F0	sardar vallabhbhai national institute of technology surat
+02CFE29C	acropolis institute of technology research
+03569BD4	keele university
+03A8769C	pa consulting group
+04D32B34	msu graduate school of business administration
+0512F565	szczecin university of technology
+06D74A38	software engineering institute
+07083AE8	rhodes college
+0724A49B	openlink software
+07C29C39	university of alicante
+083385EE	infineon technologies
+084D66DD	british geological survey
+09226E89	b v b college of engineering and technology
+0977BD3A	chongqing university
+0A4C8709	university of concepcion
+0A9D3DAE	institute for computational engineering and sciences
+0AC4CEEF	university of california san francisco
+0AE9651A	shanghai jiao tong university
+0B0524B7	maersk
+0B4CEC90	kansas state university
+0BCA536D	seconda universita degli studi di napoli
+0C073747	middle east technical university
+0C07DAF2	university of nice sophia antipolis
+0C45AA84	berlin school of economics and law
+107EE2A3	gfk
+12066CC3	m s ramaiah school of advanced studies
+35238AAD	daimler ag
+371D077C	unisource energy corporation
+377990FA	the hague university of applied sciences
+37823082	college of business administration
+4C916952	king abdulaziz city for science and technology
+4CE08E93	university college hospital
+4CEAEABB	southwest research institute
+4DC39331	douglas aircraft company
+4DFCE30E	fannie mae
+4F12B121	vivekananda college madhyamgram
+4F1AE805	state university of new york system
+4F8D5106	esiee
+4F8FBAE3	memorial sloan kettering cancer center
+00004D0A	ateneo de manila university
+000CF342	sungkyunkwan university
+00739C9C	boeing phantom works
+008354A7	grand valley state university
+00B1F4F1	monash university malaysia campus
+00B88707	university of stirling
+01109E6D	university of toulouse
+0172948A	gifu shotoku gakuen university
+0184E1F9	st polten university of applied sciences
+0204A40F	nagoya city university
+02BA0846	cyprus college
+0303E79F	tepper school of business
+03135E95	university of bath
+035206F4	manhattan college
+0389C918	instituto politecnico nacional
+03B3657C	university of bielsko biala
+044C0559	bell labs
+045C11B3	athens university of economics and business
+047528B2	kitware
+04866877	nara institute of science and technology
+04EFDBC1	king mongkut s university of technology north bangkok
+0527654D	james cook university
+052A9786	silpakorn university
+0571BB98	arthur andersen
+057BB41C	sirris
+0585F1F2	walter reed army institute of research
+05E904C7	ntt docomo
+061B4A09	academy of media arts cologne
+065FC05B	university of new brunswick
+069F6FD2	tallinn university of technology
+0739CB12	digital enterprise research institute
+0742D5C5	louisiana state university
+07434009	the graduate center cuny
+07511464	sas institute
+0755C893	faculty of electrical engineering and computing university of zagreb
+075ABF1F	uppsala university
+076A10CE	arab open university
+077DD57B	city college of new york
+08EAA2CB	xidian university
+08FB679F	mount holyoke college
+093DC507	university of nottingham malaysia campus
+097192B6	university of la laguna
+097E03AD	cape peninsula university of technology
+099A4032	university of marburg
+09A1B954	stockholm university
+09F90C50	ge global research
+0A0E755C	city university of hong kong
+0A12FDFC	shimane university
+0A788013	carestream health
+0AED2B34	pacific gas and electric company
+0B010576	illinois wesleyan university
+0B78A521	york university
+0B908117	university of ioannina
+0C6703C3	david r cheriton school of computer science
+0D52D485	university of utah
+34BB5AE5	chartered institute of management accountants
+4D720C7E	rijksmuseum
+4DC91DE3	united states bureau of mines
+4E894DA7	national advisory committee for aeronautics
+4F18354F	gazeta tema
+4F5CE477	carnegie museum of natural history
+4F8DDB1E	american airlines
+0011114D	university of east anglia
+00C05EE5	hogeschool gent
+00C07D60	united international college
+00D40E2B	andres bello national university
+00FA1C18	tel aviv university
+01C915CD	center for information technology
+01F6859C	division of it convergence engineering
+022620B3	california state university chico
+02292F00	ieee computer society
+034F73BD	china jiliang university
+03E10F89	china university of geosciences
+046CBA38	chicago state university
+048806F7	keck school of medicine of usc
+04FB01B8	universidade nova de lisboa
+0507BBD7	temple university
+05690171	ministry of public works
+056E7790	wuhan institute of technology
+05A7B4A0	dundalk institute of technology
+05CAFA6C	university of nantes
+0683BF0A	gebze institute of technology
+06A0000C	national defense university
+06A1F65B	chonnam national university
+06CDCD52	fu jen catholic university
+06E3691E	shahid bahonar university of kerman
+070D298C	drexel university college of medicine
+0754B26A	istituto di scienza e tecnologie dell informazione
+07C0CC3D	georgia southwestern state university
+08053B2B	paul sabatier university
+080A5562	irin
+083839C7	north carolina state university
+08443FA0	university of ghana
+087A0AC3	midrand graduate institute
+08A6AD3B	southern regional education board
+08ABF65F	cairo university
+08D1B95B	democritus university of thrace
+0AAB75EE	indiana university south bend
+0AC5ACB1	shenzhen university
+0AD23220	baylor college of medicine
+0AF16C1F	tsuda college
+0B0E659A	university of canterbury
+0B4BBF3A	osaka electro communication university
+0B5AED5C	aichi institute of technology
+0BC51688	north eastern hill university
+0C357C05	southwestern university of finance and economics
+0C3A78F0	university of skovde
+37A15059	dit university
+4D8D409A	renault
+4E08AEE8	research triangle park
+4F05DC4B	yahoo
+4FAFA322	children s hospital los angeles
+4FF7CE5C	centrum wiskunde informatica
+862ADA3F	huawei
+86366AC3	nippon telegraph and telephone
+0073ECCC	hungarian academy of sciences
+0077FBFF	villanova university
+008F0AD9	ottawa university
+00B3D93A	virginia state university
+011FA287	capgemini
+01390E41	george brown college
+01E373B0	beijing forestry university
+02007869	anna university
+02243A1A	kyung hee university
+022B685F	nanjing university of science and technology
+025FABE1	national institute of astrophysics optics and electronics
+02AA1FA9	university of science and technology sana a
+02D71EDC	la salle university
+033871FA	t systems
+035E3620	community college of philadelphia
+035F81F4	monash university
+0405BB01	glasgow dental hospital and school
+04220119	international technological university
+056FA77A	university of haifa
+05B8BF8B	university of kurdistan hewler
+05DBB954	osaka university
+05DD2DB2	university of oulu
+05EFB4A2	menninger foundation
+06EE7AED	national graduate institute for policy studies
+070D0075	national taipei university of technology
+07148147	university of maryland biotechnology institute
+0743CD5B	johannes kepler university of linz
+07858D80	london metropolitan university
+07908B28	dai nippon printing
+07930A8B	imt institute for advanced studies lucca
+08476B82	interdisciplinary center herzliya
+08569CF9	university of bradford
+0884A47B	university of salento
+089340EF	anhui university
+08BE68C2	aai corporation
+08FD2313	guangxi university
+090B2C79	harbin engineering university
+09DE2F57	loyola university maryland
+09E0EB5B	gunma university
+0A22D0EF	teliasonera
+0A49490A	kaunas university of technology
+0A5B5D90	hunan normal university
+0AC9A62A	eunice kennedy shriver national institute of child health and human development
+0AEA993E	rhode island school of design
+0D139C22	university of wroclaw
+10D1B69A	international council for the exploration of the sea
+30464526	aerojet rocketdyne
+313AC62D	oceaneering international
+341E1277	national university of la plata
+352EEBAB	nustar energy
+35E9831D	ruhr university bochum
+36594C7C	ntt data
+37A0A9B2	cleveland institute of music
+4C7B64CA	panasonic
+4D2B1EE6	centre national de la recherche scientifique
+4E58E49F	soka gakkai international
+00209557	escuela superior politecnica del litoral
+004A76EA	feng chia university
+007FDB54	universidad nacional de asuncion
+008E89A1	university of lubeck
+00B6DA1D	manchester metropolitan university
+01AE4F56	qatar computing research institute
+01E4B957	sookmyung women s university
+023B9EF3	wuhan university
+02535E87	aichi university of education
+0274A3C3	nanjing university of posts and telecommunications
+02B49FCD	gakushuin university
+02D1354B	ho chi minh city university of technology
+02F586EB	national taipei university of education
+036FE573	ajou university
+03AC92A1	politehnica university of bucharest
+03B6E7B2	university of duisburg essen
+03BF901A	federal university of amazonas
+03F6ECEE	hacettepe university
+04003162	ibat college
+04066E17	denso
+043B1E1B	syracuse university
+04451824	university of brighton
+047E5F6B	beijing university of chemical technology
+04963A29	institute of engineering and management
+04B5445A	renmin university of china
+0531364E	catholic university of korea
+0532C770	drake university
+0554A5A7	community supported agriculture
+058DD3E2	litton industries
+05A4DC2F	center for autism and related disorders
+05B22A46	school of electronics and computer science university of southampton
+05E5F7BA	kitami institute of technology
+0649C0D2	arizona public service
+06A7DF29	rzeszow university of technology
+06CB1E4A	mitsubishi research institute
+06CF6EA0	ottawa hospital research institute
+07108C52	colorado technical university
+0733A746	yunnan normal university
+0764F090	university of copenhagen
+07802943	beijing institute of technology
+0795C3EE	open text corporation
+086E5DD5	monmouth university
+086EB1D2	university of alaska fairbanks
+08B454A1	arcelor
+08B4B7FF	harvard medical school
+09641F67	institute of science and technology austria
+096CC7DA	toyo university
+09829E78	institute for language and speech processing
+09A7090A	university of lucerne
+09BCB393	cognizant
+09EBA1FE	environmental research institute of michigan
+09FD03AD	colorado school of mines
+0A16928A	xavier university of louisiana
+0A513231	chang gung university
+0A8DC9F7	university of burgundy
+0A9B9952	university of southern denmark
+0AECCE00	silicon institute of technology
+0B23EC19	university of luxembourg
+0B42ECB6	anhui university of finance and economics
+0B4AEE92	faculty of science mahidol university
+0C59F9D2	indian institute of information technology design and manufacturing jabalpur
+0EEEA35A	prairie view a m university
+33954002	catholic university of leuven
+35B27DA4	university of palermo
+4C527B09	information international inc
+4D1FB58D	emc corporation
+4DAC89D8	european bioinformatics institute
+4E636137	marshfield clinic
+4EC16293	national institute of standards and technology
+4FE1FDBF	volvo
+4FFFF20D	urban ministries
+863B5D1F	cloudera
+0027D624	chemnitz university of technology
+00443FAF	anhui normal university
+00531349	macalester college
+005FFA02	university of vigo
+0084A3B8	university of oklahoma
+012D4619	birla institute of technology science pilani goa
+01A7AC91	north west university
+01B030B9	university of central missouri
+0204E8C3	finnish geodetic institute
+0240B99C	beijing university of technology
+025B9122	university of warwick
+0384B5A7	ocean university of china
+03D4DD23	the college of new jersey
+0474BFAF	texas instruments
+04754E65	birla institute of technology and science
+04B7E821	punjabi university
+04C776C1	university of murcia
+04D8BC12	patrick
+05B090CE	university of california berkeley
+05B9CDBD	babson college
+05E21BC0	icahn school of medicine at mount sinai
+061941ED	dibner institute for the history of science and technology
+062EA510	narula institute of technology
+06AC7928	university of fukui
+0718A65C	lockheed martin systems integration owego
+074897CB	harvard mit division of health sciences and technology
+076B8315	tiasnimbas business school
+08377B3D	howard university
+08786941	southwest university
+09032505	national scientific and technical research council
+0961FFB5	bowling green state university
+09BC607B	hohai university
+09D4BCD0	university of texas at el paso
+09DBA719	university of south africa
+0A08EC51	kyoto sangyo university
+0A09D66C	northern kentucky university
+0A1466D4	kielce university of technology
+0A3042E0	pontificia universidade catolica de minas gerais
+0A5AB93B	benq
+0AAE44EB	khon kaen university
+0B033334	lafayette college
+0B1A4B5E	guangdong university of foreign studies
+0B2DFB94	american university of armenia
+0B3CDF24	university of colorado boulder
+0B547AE9	universidade federal de sergipe
+0B68FAA6	sam houston state university
+0B78A057	sandia national laboratories
+0BCEDAAB	kasetsart university
+0BD6754D	psg college of technology
+0BF76680	university of giessen
+0C0C3541	qufu normal university
+0D57443D	heidelberg university
+341D95ED	nec soft
+34F8EDB7	university of colorado colorado springs
+35802644	iese business school
+36C67BE3	marathon petroleum corporation
+3761BB55	telesoft technologies
+4C77ECDA	cedars sinai medical center
+4CFA1840	swedish defence research agency
+4D4ACA0B	united parcel service
+4DADEF94	max planck institute for intelligent systems
+4E4924B4	united states forest service
+4E9F4E92	langley research center
+4EB3BEDB	cnet
+4EDECF14	international relief and development inc
+4F7BF314	westat
+500E917D	zug com
+8623AC36	telefonica
+00515389	raytheon intelligence and information systems
+007A8E55	cooper union
+008CA6E1	westinghouse electric
+00BD45F0	yavapai college
+00E7E105	supsi
+0111B479	german cancer research center
+02AD1047	mitre corporation
+02BCD1A8	alibaba group
+03068959	hangzhou dianzi university
+031E8E73	universidad francisco marroquin
+03376F29	weizmann institute of science
+03CD1843	florida atlantic university
+03D00B37	massachusetts institute of technology
+04430FED	university of the algarve
+04482BAA	san francisco state university
+04BC8263	analysis group
+04F2C66A	eindhoven university of technology
+056D2D71	assiut university
+05A45DE2	university of memphis
+05A7778B	ecole nationale superieure d informatique et de mathematiques appliquees de grenoble
+06188F1E	insead
+065D6BA7	grenoble institute of technology
+076D883C	centro de investigacion en matematicas
+079AE592	university of dayton
+07D8D616	university of denver
+0810AAFA	university of wisconsin madison
+086D2873	soongsil university
+088062F1	ecole des ponts paristech
+089249D9	loughborough university
+08ADD82C	southern university and a m college
+08E8E6D6	tamagawa university
+08ECC6FC	hengyang normal university
+092DDA29	harvard graduate school of education
+09676E2E	sun yat sen university
+09989277	queensland university of technology
+09D93FB1	asian university
+09FDDFA3	college of engineering pune
+0A503763	multimedia university
+0A59C3D7	american medical association
+0A6C6FB4	university of patras
+0ADC5821	university of salzburg
+0B06DFB6	university of salamanca
+0B53264D	holy spirit university of kaslik
+0C1EB600	university of lyon
+0C54F961	university of siegen
+33D8AC53	international speedway corporation
+34F273FD	institute of company secretaries of india
+36308FA0	mdu resources
+36DA7003	siena college
+36E16E83	bible broadcasting network
+4C7EDC1C	bmw
+4CB18E8A	rutherford appleton laboratory
+4E8F22EE	elsevier
+4EDF3BB0	information technology university
+4F50E576	collegio carlo alberto
+4FD4120A	sony computer entertainment
+0005FC5A	university at albany suny
+007B68B5	university of tubingen
+00F94921	university of sannio
+00FB3D72	austral university of chile
+015B46C7	ohio university
+018761A3	shenzhen graduate school of harbin institute of technology
+01F146DF	universiti teknikal malaysia melaka
+01FACAD8	university of florida
+01FFF88D	lnm institute of information technology
+023F32E2	university of maribor
+0296D744	university of southampton
+02DD981A	chiang mai university
+02E2FBDB	institut national des sciences appliquees de lyon
+0317DFFA	international school of software wuhan university
+03195D00	cri
+031AFA6D	university of york
+0352F953	indiana university purdue university indianapolis
+0373F2F2	hiroshima city university
+044A9E97	university of barcelona
+0474FB72	rice university
+0482ED98	communication university of china
+04BA12FB	institute for health metrics and evaluation
+04E0D7FF	fairchild semiconductor international inc
+054B33A5	institut national des sciences appliquees de rouen
+0555D86A	illinois state police
+057E6F35	chunghwa telecom
+05B3DFF1	universite catholique de louvain
+05EDB3A0	katholieke universiteit leuven
+05FE199C	wesleyan university
+06167391	linkoping university
+06194FDE	rutgers university
+0626251D	florida state university
+0661DECB	worcester polytechnic institute
+06673C7E	instituto tecnologico de aeronautica
+067ADA00	tunis university
+0698C915	universidade catolica de pelotas
+06CD3667	leibniz university of hanover
+06FEBACB	national institute of japanese literature
+070DD774	australian national university
+07217E0E	university of las palmas de gran canaria
+074492CB	institute of mathematics
+07793CF2	sra international
+07C6567A	memorial university of newfoundland
+07E64E77	brown university school of engineering
+0803CE0A	carnegie mellon university in qatar
+0817AB42	ritsumeikan university
+083D03E5	eastern michigan university
+0845F019	ulster university
+08530CBF	central south university
+0870828E	university of aizu
+087AC4EF	university of nottingham
+088ED57C	asia university
+08BD4183	wenzhou university
+08FBF17B	university of brasilia
+09368EC9	university of california santa barbara
+094732A1	university of turku
+09781457	fedex institute of technology
+097B6E6D	bethel college
+097C1F5E	universite du quebec a montreal
+09C2ACF6	chungbuk national university
+0A16200B	chicago department of public health
+0A5D0987	qinetiq
+0A5F43B7	morpho
+0B047E91	hebei university of technology
+0B153984	soochow university
+0B1CE49B	universidad de oriente
+0B7ACD17	cognition and brain sciences unit
+0BEF8594	school of medicine shanghai jiao tong university
+0C18FB08	university of st gallen
+0C3E3082	mozilla corporation
+334ECC22	intelligent actuator
+3489BCB9	los angeles mission college
+35BD5C33	interpublic group of companies
+36E5AE3D	kxen inc
+4CB571AB	united nations
+4CCB3E34	technological university kalay
+4D490189	telecom italia mobile
+4EDA0161	federal highway administration
+4F10C1EB	french institute for research in computer science and automation
+4F6324E1	agriculture and agri food canada
+500AF415	federal aviation administration
+862979F8	tcl corporation
+00298BAA	inner mongolia university
+00E5C27A	university of bordeaux
+012A3F2A	international crisis group
+0133076F	bielefeld university
+01420706	skidmore college
+0179F162	bulgarian academy of sciences
+01A8C383	university of michigan
+01AB9591	king saud university
+0227E3B1	university of michigan dearborn
+0232F27E	university of hyderabad
+030C9F14	massey university
+0348DC54	hogeschool van amsterdam
+035B1EF0	aselsan
+04254A53	university of pretoria
+04D19ABD	dhl express
+04EAD036	auburn university
+04EBF06A	gla university
+0508EA45	the catholic university of america
+05222068	numerical algorithms group
+0522EDF0	ecole nationale superieure de l electronique et de ses applications
+05614122	capital university of economics and business
+056D38FD	zayed university
+059C9782	information school
+05C56848	german university in cairo
+0642BA52	astrazeneca
+0664A07F	darmstadt university of applied sciences
+06761B1F	warsaw university of technology
+06E25C55	jikei university school of medicine
+07296F62	boise state university
+075CFC38	university of north texas
+07BE273D	dalhousie university
+0817BCC2	exalead
+08A09DC3	vocational training council
+08C75155	universidad veracruzana
+08EF96ED	california polytechnic state university
+08F8B86E	royal military academy
+092F5EFF	shandong university
+09490884	university of south carolina
+096500C2	university of cape town
+09800845	chiba university
+0A165E26	czechoslovak academy of sciences
+0A942FE1	joseph fourier university
+0BC0A2DC	southeastern louisiana university
+0C33D1B1	queen s university
+2BECA4ED	college of western idaho
+34850C95	peninsula library system
+3509B06D	civilian marksmanship program
+35170767	international society for intelligence research
+3574F69D	vision sciences inc
+36CF8DE2	university of texas health science center at houston
+4D8A0789	united states department of the treasury
+4DDE3B69	adobe systems
+4E17F06B	ucsf medical center
+4E29D976	intelligence and national security alliance
+5014F7E4	university of texas md anderson cancer center
+863479D1	singapore general hospital
+003E1361	university of belgrade
+0044D1C1	jiangxi university of science and technology
+004CA7A3	mcgill university
+00F2F427	national center for university entrance examinations
+00FE27B2	meiji university
+01444027	charles university in prague
+017F2ECE	federal university of pernambuco
+01CBD672	technical university of lisbon
+021C9E35	elizabethtown college
+0223970B	korea university of technology and education
+025C0D4C	wichita state university
+027CAFE4	muroran institute of technology
+029BFCF4	nagasaki university
+02D42C6F	pricewaterhousecoopers
+039C7E7E	brno university of technology
+0411A776	interdisciplinary center for scientific computing
+044E7E9C	saitama university
+04577437	institute of geophysics
+04B01E55	dresden university of technology
+04CDF630	university of extremadura
+052BF631	jean monnet university
+05628CAA	medical research council
+05864F21	acadia university
+05D0BAAA	university of lausanne
+0679E020	teradata
+06E3775F	dublin institute of technology
+070DD5D4	nec
+07187C83	huaqiao university
+07546ECF	aptina
+07660C82	upjohn
+080E155C	university of bonn
+08B22DAB	indian institute of technology kharagpur
+08D443A2	university of shanghai for science and technology
+090E55D5	university of northern british columbia
+09221C2D	charles sturt university
+092B2040	estonian business school
+09B2EB2C	karadeniz technical university
+0A1370BC	universidad autonoma de nuevo leon
+0A1AB335	university of new mexico
+0A2C09B7	university of osnabruck
+0AE2AD26	university of paris iii sorbonne nouvelle
+0B66F672	volda university college
+0BB2E102	providence college
+0C01DCFD	university of washington
+0C3E2EEC	national institute for materials science
+0C4400FF	cornell university
+34401277	search technologies
+348EB203	nanjing university
+34B383B2	anschutz entertainment group
+34DF872C	university of amsterdam
+353AE2D0	cvc capital partners
+35558D99	ent federal credit union
+4C6541ED	christiana care health system
+4C840A2B	ign
+4D53BB5A	altarum institute
+4D5B5415	urban design group
+4DE595E9	cybercast news service
+4F2861B3	sun microsystems
+4F5D155B	centre for development of advanced computing
+4F6FF56A	general electric
+00081A17	ryerson university
+001D6362	loyola university chicago
+0084B3B5	sim university
+00E520DD	police academy
+017127EB	ricoh
+01838F76	mahidol university
+01930FCD	university of l aquila
+01BBB342	national institute of geophysics and volcanology
+02C29293	university of zielona gora
+02F5CC90	universite du quebec
+03343A56	american bureau of shipping
+038D97B3	institute of mathematical sciences chennai
+03ADCE23	universidade do vale do rio dos sinos
+03D09CA7	marvell technology group
+03EB6D7F	wolfram research
+043A55FE	universite de montreal
+0530A7B7	university of the philippines diliman
+05342657	engineer research and development center
+05669A68	south china university of technology
+06586461	harvard t h chan school of public health
+06B81A59	hannam university
+06D31F95	university of fort hare
+07634566	binghamton university
+087CE01A	electronics and telecommunications research institute
+08D012AB	university of alaska anchorage
+09EBF77B	shiraz university
+09F7CB6B	isik university
+0A542BFF	grinnell college
+0A6F1108	universidad publica de navarra
+0A8FBBC7	sun microsystems laboratories
+0A905FB1	vietnam national university hanoi
+0AAFEB48	mount saint vincent university
+0ACFF857	american university
+0B05FE67	university of oslo
+0B08755E	university of california santa cruz
+0B3DB1DE	hamilton college
+0B3FCABE	vytautas magnus university
+0B44E8A4	celanese
+0BBB6080	la trobe university
+0BE71552	umm al qura university
+0BF48E84	hrl laboratories
+0BF77E37	hong kong university of science and technology
+13822651	secretaria da receita federal do brasil
+3333E44B	virginia tech
+36A19CD1	burlington coat factory
+4C777452	community emergency response team
+4CD3CC33	johnson johnson pharmaceutical research and development
+4CF34932	indian ministry of environment and forests
+4D208126	bausch lomb
+4DDF7833	united states army corps of engineers
+4F3EFD85	minneapolis institute of arts
+4F46F500	lexisnexis
+4F53E0F8	intertrust technologies corporation
+5002C9E3	uppsala university hospital
+501B6986	acxiom
+0014A048	koc university
+0043A363	university of bergen
+006D6F16	lille university of science and technology
+00818482	chiba institute of technology
+016F28BA	konkuk university
+018FD8A2	teletype corporation
+01DF6D2D	kyungpook national university
+01FC40C5	southern new hampshire university
+0226B3BC	netaji subhas institute of technology
+025D2C19	colgate university
+0295A008	university of colorado denver school of medicine
+030B6040	saint joseph s university
+03482BA2	air force institute of technology
+03A194FC	avaya
+03B80D97	university of minnesota morris
+03FE7DA4	iran university of science and technology
+0452E4F6	lakehead university
+04B854A6	university of castilla la mancha
+04EA7829	suranaree university of technology
+04FEF040	university of genoa
+05282E76	algoma university
+056016CC	university of lorraine
+057B0E2C	unisys
+05A21A71	braunschweig university of technology
+0615F037	roosevelt university
+0697AE62	central university of technology
+06BF45FB	national institute of genetics
+06F120FF	kogakuin university
+074ADC51	university of modena and reggio emilia
+07A7BBF2	west los angeles college
+07FF24D2	national taiwan normal university
+0850A6AE	ilog
+08E5641F	thomas jefferson university
+0961A5E3	baylor university
+0964A836	university of malawi
+09655E51	california state university northridge
+097DED07	mansoura university
+099D447A	lehman college
+09A61295	austrian research institute for artificial intelligence
+09CDE827	university of pittsburgh school of law
+0A0FF9EB	h milton stewart school of industrial and systems engineering
+0A25846F	warsaw university of life sciences
+0A30F1FC	jadavpur university
+0A4E43E2	saint petersburg state university
+0A5D556F	sintef
+0AC4AFF9	china mobile
+0ADF576B	general instrument
+0B41185E	oita university
+0B46563B	united states naval academy
+0B8076B0	tata research development and design centre
+0BCB04C8	university of malta
+0C462A83	japan society for the promotion of science
+3413D9ED	leonard green partners
+345C2848	university of hasselt
+374356BB	asm international
+4C8040EB	honda
+4D4B6A15	new york state department of environmental conservation
+4DCCAA64	lovelace respiratory research institute
+4E3AF643	local initiatives support corporation
+4E3BBB83	naval medical research center
+4E47B81B	russian academy of sciences
+4E592AE2	tokai university
+4EAA0950	telecom saint etienne
+00A825C2	university of a coruna
+00B0637E	ecole normale superieure de cachan
+016DB076	cancer care ontario
+01A403E6	john f kennedy school of government
+01A4CB11	university college cork
+01C8B464	business decision
+02075317	ramakrishna mission vivekananda university
+021291BF	university of cyprus
+02901D83	sophia university
+02C1AEE3	university of manitoba
+03252DC2	hanover college
+034BB24C	university of california berkeley school of information
+03772003	itt technical institute
+03EACE0A	union bank of switzerland
+046DFC23	vodafone
+04B1E811	chihlee institute of technology
+04B68B01	international university of health and welfare
+0546E668	delgado community college
+0585314E	tokyo university of agriculture and technology
+05ABCBFE	drury university
+05E53F62	espci paristech
+060271F7	olivetti
+061A19CA	bryn mawr college
+06B0F769	ontario institute for cancer research
+073B94B1	inesc id
+077EC9E4	university of western ontario
+07C12800	mcgill university school of computer science
+07D26D8E	aoyama gakuin university
+083570F5	university of michigan health system
+0839CEE3	university of arizona
+08443C72	university of padua
+08902028	research institute for advanced computer science
+08C05CBF	hallym university
+08E4D2D6	university of antwerp
+090FD2EB	nanjing normal university
+099D876D	university of california los angeles
+09A5BCF7	concordia university
+09C2F114	okayama university
+09C35315	calvin college
+0A59EA6F	autonomous university of baja california
+0A6B08DF	bialystok technical university
+0A918490	christopher newport university
+0B77BD93	university of new orleans
+0B7EEF7F	zhengzhou institute of aeronautical industry management
+0BBC3545	clarkson college
+0BF148CF	universidad autonoma metropolitana
+0BFDC947	superior national school of advanced techniques
+0C280BFF	keio university
+0CF076A1	university of namibia
+361ABDF5	junior college
+36629E66	books a million
+36742C07	college of information technology
+377CBECE	lpl financial
+4C4ACDE2	defense information systems agency
+4C534D6B	dow chemical company
+4CC0B033	max planck institute for mathematics
+4DA090C2	united states environmental protection agency
+4DF379DB	office of technology assessment
+4E6E5267	japan agency for marine earth science and technology
+4EADC204	uganda revenue authority
+4EC10BCD	department of space
+4EEE136E	center for naval analyses
+4F66D442	ministry of communications
+4FD2F16D	space and naval warfare systems center pacific
+500A2743	sons of the american revolution
+0004BD19	tohoku gakuin university
+001638B2	north china university of technology
+00C46348	birmingham city university
+0125AA61	general dynamics advanced information systems
+0139FCD5	denison university
+0143616E	beijing jiaotong university
+01AA59B0	sahmyook university
+01ADE8B0	elekta
+01E89DDF	university of kiel
+021EB23C	loyola marymount university
+03947360	trinity university
+03C436D1	university at buffalo
+03C9AC1F	lappeenranta university of technology
+04113595	singapore mit alliance
+0489B9A5	medical university of vienna
+04BF660D	max planck institute for psycholinguistics
+07165B77	university of primorska
+0799FA58	system development corporation
+07C65F21	national security agency
+07E216E5	izmir university
+081F2973	toyohashi university of technology
+082B50D7	nanjing university of finance and economics
+082DF97E	iav
+0882616F	royal college of surgeons in ireland
+08A97E0C	deloitte
+08EAF9C1	university of british columbia okanagan
+08F401F9	scripps institution of oceanography
+092C5A58	university of north carolina at wilmington
+0949E45A	national institute of technology durgapur
+09F18F79	university of tampere
+0A221C1F	j p morgan co
+0A575E93	parc
+0AD3BA36	university of strathclyde
+0AF21A3A	parthenope university of naples
+0AF6A309	king s college london
+0B0ADEB6	university of toronto
+0B2D8123	lund university
+0B6050ED	arts et metiers paristech
+0BCEA3CF	tianjin polytechnic university
+0BF943D3	indiana university of pennsylvania
+33C05CD7	central university india
+347F2282	science applications international corporation
+4DB02EA5	institute of education sciences
+4E323B70	scripps health
+4E532558	chicago police department
+4E5792FF	media lab europe
+4F6A1BA0	department of planning and environment
+4F88F232	amrita school of engineering
+4F8CCD61	jet propulsion laboratory
+4FBBF8ED	australian research council
+500F4F9C	intel
+00552843	university of michigan school of kinesiology
+0078E64E	royal dutch shell
+00D766D6	wuhan polytechnic university
+00F4BA82	aberystwyth university
+0100E2FE	university of st andrews
+0127901A	orange s a
+01F5BC7E	university of poitiers
+01FB725A	german research centre for artificial intelligence
+02583013	yanshan university
+025D2F06	bard college
+025D47E1	nust business school
+031AD993	institute for the protection and security of the citizen
+0372589D	university of neuchâtel
+0395F208	concordia university
+039C1045	nazarbayev university
+0404AD5B	lancaster university
+0478D67A	fico
+049573B2	university of coimbra
+05E1B1D9	university of edinburgh
+06943C23	southern illinois university carbondale
+06B165B8	unicef
+070CACD8	western digital
+07698D3B	university of london
+07B99BFA	university of sydney
+07D46A71	toyota national college of technology
+07DC2840	prince of songkla university
+0800E441	pakistan institute of engineering and applied sciences
+087067C3	university of hertfordshire
+087D87F2	university of trieste
+08FE8253	university of clermont ferrand
+0927A22B	lawrence university
+097BCA77	eastern washington university
+09E1E653	rensselaer polytechnic institute
+0A68EC7D	institute for creative technologies
+0A8A5670	pontificia universidade catolica do parana
+0A961197	los angeles biomedical research institute
+0AA2F1D8	national university of distance education
+0AC67CFF	swiss life
+0AF30198	bangladesh university of engineering and technology
+0B317C57	ionian university
+0B4329BF	glaxosmithkline
+0B46E8A6	university of texas at arlington
+0B97151C	jilin university
+0BD2D4A6	hardin simmons university
+334B4286	trw inc
+33D5F80C	university of the western cape
+35FA668C	calspan corporation
+3694CE0A	digital federal credit union
+4C506D18	nuclear regulatory commission
+4CE326AE	goodyear aerospace
+4DDC5EF5	mitsubishi
+4EC97A4B	ebay
+4FB0218B	national presto industries
+4FC81716	xinhua news agency
+0016B1BD	david geffen school of medicine at ucla
+009CF281	ontoprise gmbh
+00A436F4	hamamatsu university school of medicine
+00F09265	university of graz
+00F5A2C2	university of valencia
+0134B592	peking university
+01767753	soonchunhyang university
+018E8F6B	ochanomizu university
+020C2C91	maastricht university
+0233AC46	olympus corporation
+029807AA	mda space missions
+03132EC9	pitney bowes
+031EDBE4	university of almeria
+031EE95E	ohio state university
+032A8584	rhode island college
+034F36C0	department of engineering science university of oxford
+03FC4F79	east china normal university
+0413757D	thomson reuters
+045D3373	language technologies institute
+04BEE6D7	university of birmingham
+04CAC49E	new england complex systems institute
+04EB110F	honeywell
+04F0A8A0	beihang university
+0515522A	senshu university
+0552CC14	plymouth state university
+05615F59	umea university
+056EA0E2	university of sheffield
+05DCEF4D	indian institute of engineering science and technology shibpur
+06172331	the new school
+065CCDE6	national marine fisheries service
+067461C8	university of pisa
+069A0840	slovak university of technology in bratislava
+06AE5ED6	academy of sciences of moldova
+06AFD223	rockwell collins
+06DF14CD	brookings institution
+06F892B4	tongji university
+07139065	kyungsung university
+074491E2	tufts university
+077C6D48	microstrategy
+07E160E6	north china institute of science and technology
+07FE7B76	lewis university
+084DE468	universiti sains malaysia
+087CBF68	college of staten island
+08A948CC	johns hopkins university
+08ECEB43	valparaiso university
+08FEC0C7	texas woman s university
+092B7FEF	moscow institute of physics and technology
+09346CBE	dental school
+097EB66B	dongshin university
+099ACD79	susquehanna university
+0A5B4A7C	universidad michoacana de san nicolas de hidalgo
+0B1E7DEF	makerere university business school
+0B51E8DD	dominican university
+0B553A65	helmut schmidt university
+0B8A67BD	jacobs university bremen
+0B9C8FEF	institute of acoustics
+0B9CA1B5	feinberg school of medicine
+0C2D3E49	hosei university
+3365FE45	eafit university
+33C95AFB	university of the west of scotland
+345636E5	grupo mexico
+34AF633B	international university cambodia
+359F573E	university of grenoble
+35C66585	jackson college
+3620CE7A	white oak conservation
+372BBBD1	advanced technology center
+3745192E	georgia tech research institute
+376BA2F5	international metalworking companies
+4CD2F7D8	health canada
+4CF19382	tufts medical center
+4D0F87A9	centrelink
+4D0FA93C	metlife
+4D91A54A	qatar airways
+4D959664	american express
+4E00F9AD	national center for science education
+4E03F223	computer sciences corporation
+4E7E7781	dupont
+4FA09039	media research center
+4FB8656B	museum of contemporary art chicago
+4FEA39B9	council of independent colleges
+000A77C3	agh university of science and technology
+00433890	bogazici university
+00647CC9	etsi
+00E02377	bt research
+00FCE90C	westfield college
+0108016A	university of alabama
+012DB4D2	yeshiva university
+01B1760F	university of manchester
+020476D1	moore school of electrical engineering
+024E4C9B	catholic university of the most holy conception
+026778A2	rutgers newark
+02B09E25	university college london
+030ED8E2	sirindhorn international institute of technology
+03FDB59F	woods hole oceanographic institution
+04206F3A	wellington management company
+04224B6D	xi an jiaotong liverpool university
+047E3604	mckinsey company
+048AB435	university of jena
+04BD5400	university of louisiana at lafayette
+04C900C3	university of otago
+04FB6B2B	wright laboratory
+050BB43F	academia sinica
+05451080	artificial intelligence applications institute
+05A79DDE	turkish military academy
+05E5D047	california state polytechnic university pomona
+05FF8B11	university of massachusetts dartmouth
+06601420	florida institute of technology
+068D7BC6	ningbo university
+06D58157	faw group
+078124DC	shenyang aerospace university
+078981CC	delphi automotive
+0796B6CF	tokyo university of agriculture
+07CA845D	earlham college
+07CDD543	university of mons
+07D3E88F	ubs
+07F57F7B	sharif university of technology
+09004A39	consolidated engineering corporation
+093CAADC	jaypee institute of information technology
+095FA8CB	sangmyung university
+0979AF17	world wide web foundation
+09B52E07	tianjin university
+09D1B4E0	bc cancer research centre
+0A10E438	zhejiang university of science and technology
+0A4FEC3E	iwate university
+0AEF0904	university of wisconsin parkside
+0B86525A	daegu gyeongbuk institute of science and technology
+0BC22D41	nagoya institute of technology
+0C321FC4	rowland institute for science
+0C4958A7	lockheed missiles and space company
+0C601462	kao corporation
+0F50B87B	robert wood johnson medical school
+3349C72A	j f drake state technical college
+347F6F52	graduate school usa
+369E833A	sri sivasubramaniya nadar college of engineering
+36E22876	american hotel lodging educational institute
+3717FAC6	macewan university
+4C916CDE	at t communications
+4CD2C7C1	boston children s hospital
+4D5DC7F6	southwest university of science and technology
+4DD03F82	nasa headquarters
+4DE63455	cooperative research centre
+4E350D59	national telecommunications and information administration
+4ECE052B	booz allen hamilton
+4EF2E417	realnetworks
+0045D4A2	universiti teknologi malaysia
+00498B1C	sri sathya sai university
+005ACB6A	university of west georgia
+00971BF1	georgia institute of technology college of computing
+00B67360	michigan technological university
+01028E71	clarkson university
+01059CAC	northwestern polytechnical university
+0128509A	university of pittsburgh cancer institute
+016D6331	university of tehran
+018190D3	kongsberg sim
+02924052	information and communications university
+02F292D5	university of angers
+03515FCB	indian institute of chemical technology
+0368D319	university of lugano
+03BEF882	barclays investment bank
+03C01CBC	universidade federal rural de pernambuco
+03E20219	hitachi
+04BF8F32	ecole nationale superieure des telecommunications de bretagne
+04C3CCF3	university of brescia
+04D537E8	science college
+04F59F2F	malaviya national institute of technology jaipur
+04F689AC	yale law school
+04F92508	hankuk university of foreign studies
+0507D9CA	future university hakodate
+057BEFD6	university of stavanger
+05E57998	nebraska wesleyan university
+064CCA71	mentor graphics
+0662D0FC	kagoshima university
+06A156A2	university of vermont
+06ACAD91	northwestern university
+06CB620C	hebei university of economics and business
+06E20357	oklahoma state university stillwater
+0738D799	otemon gakuin university
+0778E932	universidad nacional experimental del tachira
+07A75F52	university of southern indiana
+07B6A2A8	tampere university of technology
+07C34834	university of minnesota
+07E3CD1A	tianjin university of science and technology
+07F5B6CA	harvey mudd college
+07F90283	interdisciplinary center for neural computation
+0912F2A6	foundation university islamabad
+09363E94	indian institute of technology jodhpur
+097A526D	government accountability office
+09DC92C5	indiana university bloomington
+09EA1A37	queen mary university of london
+0AC1438B	university of bremen
+0B10ED5B	universities uk
+0B4AC107	ge healthcare
+0C2E6305	western connecticut state university
+0DBD1368	university of limerick
+33E1384D	center for excellence in education
+34BCC646	cma cgm
+35999274	fruit of islam
+36A14E67	university of colima
+4D634C00	sri international
+4E36ED43	agricultural research service
+4E614221	american diabetes association
+005B79AC	information retrieval facility
+00BF1B9F	seton hall university
+00CC80B3	joanneum research
+00FD6FCE	hunan university
+01192A38	bishop heber college
+012EA452	western new england university
+013A0DA1	university of kent
+0145EFFA	council for scientific and industrial research
+01499FCE	the hartford
+014A90F4	technology college
+016EA293	university of johannesburg
+01F164D0	ghent university
+01F1D439	university of saskatchewan
+01F71AD0	yale university
+021D1F0D	southern connecticut state university
+025A445B	university of ontario institute of technology
+0294EAD4	dalian maritime university
+02C2DBA9	digitalglobe
+034F3208	goldsmiths university of london
+03AC60BD	smith kettlewell institute
+040C1309	chung ang university
+046F75BC	university of windsor
+0479610C	tarleton state university
+04BD3A9F	cardiff university
+04F31C2A	brooklyn college
+0555C3F7	university of western macedonia
+0570C18E	science and engineering research council
+059FC914	zhongkai university of agriculture and engineering
+05A3DA1F	university of twente
+05F17F8F	nelson mandela metropolitan university
+069BC91F	teachers college columbia university
+06D35AFB	new york university stern school of business
+06E63D20	university of insubria
+072AE20D	new york university abu dhabi
+078BB68A	jagiellonian university
+07C4E139	universiti putra malaysia
+081E3F30	harvard university
+085ADB71	university of connecticut
+08BCC883	beckman institute for advanced science and technology
+093304A4	university of fribourg
+09998A84	university of new hampshire
+09D936C7	gadjah mada university
+0A3898A7	shibaura institute of technology
+0A4EA920	zilog
+0A91D237	union college
+0A9A3EC6	drew university
+0AD73B49	shanxi university
+0B546E88	durham university
+0BB5DF30	institute for research in fundamental sciences
+122FECC7	gordon college
+178BD04D	ifsttar
+1F2989F0	robert gordon university
+33865634	weimar institute
+35140788	singer corporation
+351E811C	aalborg university
+368593E8	house of fraser
+36BC0AB8	veda
+36D2087D	ministry of posts and telecommunications
+4CC6A85A	stoke on trent
+4CD84994	oak ridge national laboratory
+4D6545F3	salesforce com
+4DC94761	esso
+4DF86B43	national oceanic and atmospheric administration
+4E25333B	national science foundation
+4EA4ED1F	picatinny arsenal
+4F799D2F	motorola
+4F91FEEB	university of pittsburgh medical center
+000138AB	curie institute
+0011EAC4	university of southern california
+001240C0	southern nazarene university
+0046E88B	university of picardie jules verne
+004B1FBC	fraunhofer society
+005C7574	university of baltimore
+00F4032E	konan university
+0101C3D5	claflin university
+011FF0EF	institute for information industry
+015292AA	university of prince edward island
+0171E1E2	american university of paris
+01AE5A32	carnegie institute of technology
+01CC0228	sofia medical university
+0224BB57	university of antioquia
+0259891E	university of illinois at chicago
+03213FD9	daejin university
+0322782F	nottingham trent university
+03614135	commonwealth bank
+038B846A	jamia millia islamia
+03A3F605	sauder school of business
+0403197E	cern
+040820EE	union county college
+045716B5	drexel university
+0479515E	zhejiang gongshang university
+04821EE6	renesas electronics
+0526E9B4	institut de robotica i informatica industrial
+0532D181	michigan state university
+055B394D	university of trier
+05B80545	kobe steel
+06174BC0	university of new caledonia
+064B63A4	penn state abington
+06771A5A	stevens institute of technology
+06AC3B7D	macau university of science and technology
+06B14868	academy of finland
+071E8012	university of verona
+077C8BDD	tokyo medical and dental university
+07C665E3	universidade federal do rio grande do sul
+07DFF98E	austrian institute of technology
+0847D5FE	ewha womans university
+08AECE4E	fujita health university
+08B17323	vienna university of technology
+08D69EB4	lawrence berkeley national laboratory
+0911C0C1	grambling state university
+09700F8F	university of kerala
+09B4652E	indiana university purdue university fort wayne
+09E00D1D	university of bolton
+0A2D1336	university of novi sad
+0A5DAC76	iowa state university
+0AD47BFF	suny downstate medical center
+0AE3E37F	ludong university
+0AF07E9B	university of wisconsin whitewater
+0B42268D	lodz university of technology
+0BDCEF4D	kyushu sangyo university
+0D51CACB	linnaeus university
+0F36910E	university of zaragoza
+0F6CFB0D	new york university shanghai
+115F47CC	silver spring networks
+338C741A	nii holdings
+3709B4C3	exxonmobil
+4D1139C8	ford motor company
+4D1AF4AA	toyota
+4F461E1E	japanese ministry of international trade and industry
+001D0918	institut eurecom
+00962EEC	nanjing university of aeronautics and astronautics
+00FB0CDD	university of texas system
+0112E226	simon fraser university
+02066FCD	xerox
+0229448F	university of california san diego
+022C163F	magna graecia university
+02661D87	chinese academy of engineering
+02DB0F2D	vmware
+035786DA	university of rennes
+03B7F3B2	dept of computer science university of delhi
+03D87DC1	hanoi university
+03F05AEA	systems research institute
+040AB186	tufts university school of medicine
+043CFEC7	sdm college of engineering and technology
+0480FA93	masdar institute of science and technology
+04B1BEA6	university of newcastle
+04B999C0	university of maryland baltimore county
+04D32953	fuzhou university
+04FCE88F	university of west florida
+0583DE78	qatar foundation
+05B5B032	otto von guericke university magdeburg
+05DF9BD1	barnard college
+0606AD82	universidade federal de juiz de fora
+06299B62	ryukoku university
+066F2C46	university of lethbridge
+06D3896B	concordia college
+06E62E1D	assumption university
+078F2138	vassar college
+07CA5884	georgia institute of technology
+07DA0A1C	university of salerno
+080043AE	sabanci university
+084C5890	centro universitario da fei
+084D01D3	seoul national university
+0916A521	biola university
+091E6CBD	exelixis
+098F6245	jiaying university
+0999D47E	indian institutes of technology
+09B0BBA7	university of texas at dallas
+0A0BAF8E	eli lilly and company
+0A41BF9E	college of science and technology
+0A5D7E42	henan university
+0A60923E	changwon national university
+0A89E25F	liaoning technical university
+0A990BE9	university of mannheim
+0AAEC4EC	university of augsburg
+0AAF1348	simmons college
+0AC8AD72	university of cologne
+0B069EC8	northeast normal university
+0B0DA3DC	wayne state university
+0C0944A4	kagawa university
+0C3F8968	dongguk university
+0E272500	institut superieur de gestion
+12D1454B	leibniz association
+33FE0EC0	l abri
+3482B4E6	urban ecology center
+34C77BFA	hp labs
+35A089AA	air university
+4C5192A8	air force research laboratory
+4CCA17F9	kayaba industry
+4E11BDA1	matra
+4F14D3E8	americorps vista
+4F2A68A7	carnegie learning
+4F7CA714	united airlines
+003BDEE2	soochow university
+00460217	tottori university
+00CF64E1	the university of nottingham ningbo china
+00D3A786	defence evaluation and research agency
+01F10CD1	shantou university
+0206CA67	melbourne institute of technology
+0223FE88	university of economics prague
+0228EE3C	swedish institute of computer science
+02581824	iminds
+0270DE05	navteq
+02B554FC	university of texas at san antonio
+02CA96A6	ontotext
+0373A474	middle east technical university northern cyprus campus
+03FD8454	university of maryland college park
+0441D3D5	sheffield hallam university
+047E39A5	wilfrid laurier university
+04C6C31B	canisius college
+059E765C	escp europe
+05E3A62F	university of the aegean
+0653F611	university of central florida
+0669F0F9	broad institute
+06C089B5	bishop s university
+06D5B43F	university of applied sciences hof
+074B3001	nikon
+0757A922	reykjavik university
+07850863	federal university of bahia
+07862589	queen s university belfast
+07BAB9E7	wharton school of the university of pennsylvania
+07CBA10C	clark university
+07DC06DC	ask com
+07EF47FB	queen s college
+07FA315E	university of huddersfield
+08BA2180	university of kansas
+0923F043	johns hopkins school of medicine
+0975D0C0	university of peloponnese
+09C4F49C	mount allison university
+09E64FCF	montclair state university
+0A17D497	gdansk university of technology
+0A63B3A3	technion israel institute of technology
+0A9812F0	japan advanced institute of science and technology
+0AA4D3ED	mie university
+0AE14045	university of porto
+0B7D39A1	university of macedonia
+0B890E85	george washington university
+0BD39662	university of avignon
+0C286E79	blue martini software
+0D8F2D0E	university of szeged
+0E876476	federal university of ceara
+36F47726	university of colorado denver
+370182F3	philadelphia university
+374897BD	nanchang hangkong university
+378854B4	universiti tunku abdul rahman
+4C5568BA	ukraine international airlines
+4C85745E	at t corporation
+4CB89055	massachusetts eye and ear infirmary
+4D3D8038	houston methodist hospital
+4E632554	electronics for imaging
+4F56860F	university of yaounde i
+4F88C8D3	harris corporation
+4F99E692	electric power research institute
+86317390	technicolor
+00D7C59E	shih chien university
+00F133C8	osaka prefecture university
+012F9023	university of montpellier
+01710C78	sichuan university
+01AEE39C	new york university school of medicine
+01B71B8A	sejong university
+025900D5	university of chieti pescara
+02B8785E	pontificia universidade catolica do rio grande do sul
+02EA5807	istanbul technical university
+033EFB02	university of salford
+035D2408	paris dauphine university
+036E601F	indiana university school of informatics
+03A91535	seneca college
+047329C0	university of gottingen
+04F99C7A	it university of copenhagen
+05141549	ca technologies
+0581F5D5	university of science and technology beijing
+05D40434	beckman coulter
+05F97DE4	st lawrence university
+061C6C3B	university of michigan school of public health
+068DE830	university of tennessee at martin
+06B4FE31	yamagata university
+077DB9E5	the turing institute
+078DF811	university of maryland baltimore
+078FC9D3	pace university
+08AAFCDD	sewanee the university of the south
+09214599	institute for scientific information
+09D50AE5	visa inc
+09E03D32	oregon health science university
+0A1560D3	paris diderot university
+0AED3F4B	urban institute
+0AFEAA1E	university of winchester
+0B04728E	virginia commonwealth university
+0B856389	schiller international university
+0BB963EC	wuhan university of technology
+0BE64370	truman state university
+0BF71F43	zurcher fachhochschule
+0C38D521	kingston university
+0C629EED	lahore university of management sciences
+34B16DEE	technical university of hamburg
+34ED541F	rwth aachen university
+353BE6BA	nationwide mutual insurance company
+4CCC634B	ministry of internal affairs
+4DE69387	united kingdom ministry of defence
+4ECE5134	united aircraft corporation
+4F6D69F7	sikorsky aircraft
+50119D7F	shenyang
+0003B055	university of cambridge
+002B00EE	lg electronics
+00301185	intuitive surgical
+005B3EF1	bank of america merrill lynch
+006051A6	geneva college
+00644F08	turgut ozal university
+00670201	university of montana
+00A3C9C2	akamai technologies
+0108DAB7	aalto university school of science
+0194F011	san diego state university
+01C0F8A0	national institute of environmental health sciences
+01F620F7	fairleigh dickinson university
+025559B1	university of cadiz
+026639C9	university of new haven
+0273532E	birmingham southern college
+028F2298	dublin city university
+029F17F7	clausthal university of technology
+02C0976A	university of burgos
+032470B7	blekinge institute of technology
+03669064	rockwell automation
+0368E8BE	new york university
+038A8CFA	adam mickiewicz university in poznan
+03A0A15E	university of aveiro
+03CAB6DA	hong kong institute of education
+043F7F1E	victoria university australia
+04645BD2	vietnam maritime university
+04853B8A	american management systems
+0489F1AC	biodesign institute
+04EAFF91	malardalen university college
+056A9763	university of toledo
+0582A04E	colorado state university
+05DE656D	monterrey institute of technology and higher education
+0617FE65	university of manchester institute of science and technology
+06A456B5	ecri institute
+06BF8EEC	telebras
+07BC9DE3	university of tasmania
+07FC729C	doshisha university
+07FDF9F9	king fahd university of petroleum and minerals
+083046BE	charles river laboratories
+0846A43F	open university of catalonia
+088F1129	east china university of science and technology
+090E69F4	athlone institute of technology
+0911F42E	aetna
+09276851	nancy universite
+0975B154	chulalongkorn university
+0A12A606	university of toronto scarborough
+0A146396	university of the basque country
+0A1AFEAE	flinders university
+0A31FE6A	ceremade
+0A6A7282	kainan university
+0B09F358	mitsubishi electric research laboratories
+0B8A8DAA	tallinn university
+0C14EACF	university of zurich
+0C4DDE77	nec corporation of america
+0C55CD5F	niels bohr institute
+3391E616	ic bus
+362E84EA	axa equitable life insurance company
+4D71CB46	national institutes of health
+4D7B21FB	serc reliability corporation
+4E718DAA	linkedin
+4F5B50D5	university of hawaii
+4FB37D0B	adler planetarium
+4FEDAA01	thomson corporation
+002932B0	pontifical catholic university of rio de janeiro
+0045D9F6	technical university of berlin
+004B1A5C	pusan national university
+00BBEBAA	texas tech university
+00C3CF89	gachon university
+01198E98	yantai university
+01220A7A	mangalore university
+015A52A7	aries
+01781AC4	bradley university
+01AF2E3A	london south bank university
+01E46A0B	university of new south wales
+02C7065C	poznan university of technology
+0301AD5F	university of the balearic islands
+0384B370	pratt institute
+0413376A	cinvestav
+0439D9C8	university of savoy
+04F353DF	robotics institute
+05D9B3DA	faculty of law university of colombo
+05DB5368	birkbeck university of london
+06001ED9	banting and best department of medical research
+0607820B	kt corporation
+066AE546	krasnow institute for advanced study
+06778808	max planck institute for molecular plant physiology
+0693EC39	university of the sciences
+06D835C2	tulane university
+06E05320	baldwin wallace university
+07498A5D	geisel school of medicine
+0750357C	space research centre
+07970AEF	california state university
+0879EDC7	technical university of ostrava
+08847A48	university of sfax
+08AF8B99	university of thessaly
+08EBD249	federation university australia
+0908FA1B	barry university
+093A0C1C	universite de moncton
+09AC37B6	university of hartford
+09BAC200	i m sechenov institute of evolutionary physiology and biochemistry
+0AC9113B	illinois institute of technology
+0AD2F794	grove city college
+0B6FD996	inha university
+0B7A0147	united states military academy
+0BC3491B	korea university
+0C0FE15D	offis
+0C2AE079	open university
+338C0C86	land transport authority
+34E40386	united states national library of medicine
+350410CF	university of hong kong
+35065FEF	asm clermont auvergne
+4C8DAF78	ventana medical systems
+4D56FE9E	university of north carolina system
+4DA444BF	chinese ministry of public security
+4E1FA590	amazon web services
+4FA33633	united states department of agriculture
+86263FDB	tencent
+00493E54	southwest jiaotong university
+009962AC	new mexico state university
+00B5EF91	wroclaw university of technology
+00DA752D	nectec
+00E10395	royal college of surgeons of england
+01371ADE	state university of new york upstate medical university
+016A20AF	montana state university
+01A842AA	brown university
+01F19718	center for neural science
+01FE29EA	university of massachusetts boston
+027738ED	dongkang college
+0296EEA3	department of engineering university of cambridge
+02D9A7F2	sultan qaboos university
+0306728C	arcelormittal
+032A67A0	university of cordoba
+034AE6A8	yeungnam university
+03796283	lunar and planetary institute
+03C3607B	university of cincinnati
+04380D65	telecom management sudparis
+047DDBA6	national yunlin university of science and technology
+047ED7D5	university of missouri kansas city
+0486263A	hubei university
+04EEEE54	university of malaga
+053101E5	university of north carolina at asheville
+05412592	university of navarra
+05DF6131	sidi
+06041575	university college dublin
+061383FE	orbotech
+0617689C	university of paris sud
+061E8ABB	w l gore and associates
+06206463	dongseo university
+06225712	universiti malaysia pahang
+0653D579	university of kassel
+066BB112	ain shams university
+066C642F	national center for atmospheric research
+06A6DFA2	jiangnan university
+06DE021C	beijing language and culture university
+06E3CF01	jiangsu university
+07162905	instituto superior tecnico
+0721EEC6	university of wolverhampton
+07262C8C	missouri state university
+0738ED2A	texaco
+086D55E9	schulich school of law
+08702BDB	hong kong baptist university
+0871B6B6	willamette university
+08B4FEC0	university of texas pan american
+08BB47D5	justsystem pittsburgh research center
+08E89AA2	ca foscari university of venice
+09A9661F	university of los andes
+09B97DFE	cyprus university of technology
+0A254897	national university of defense technology
+0A6E5950	office of naval research
+0A960B30	amherst college
+0ABCC86B	national oceanography centre southampton
+0ACFCEA7	state university of campinas
+0AD1B0D7	international institute of information technology bangalore
+0B0EDD00	university of southern queensland
+0B56FA70	university of innsbruck
+0B7443BC	national university of kaohsiung
+0B8BA2BB	tilburg university
+0C3042AA	turkcell
+0DC52CFD	hellenic open university
+34327579	chubu electric power
+3772E914	kinder morgan
+4D0CFDD7	sparta inc
+4D66148B	dallas museum of art
+4DA25AF3	verizon communications
+4DDD26E0	ericsson
+4EDB9E68	drug enforcement administration
+4F7BCB26	united states census bureau
+4FE184F4	newyork presbyterian hospital
+0000A38E	instituto militar de engenharia
+005C051A	seikei university
+00725F06	idiap research institute
+00930C4F	defence research agency
+009779A9	aalto university
+012C9CDF	florida international university
+01328BF3	princeton university
+01B71B15	oki electric industry
+01BC1CC9	penn state college of information sciences and technology
+01C81A56	university of sharjah
+01CA90B8	reuters
+0228E4F2	university of bristol
+025B3E2B	gwangju institute of science and technology
+030D7FDB	anglia ruskin university
+031C31BE	university of waikato
+0331C355	jiangxi normal university
+038B49C6	chung hua university
+03D363DC	university of wisconsin oshkosh
+03F0BDB9	gallaudet university
+0442EF7C	indian institute of management calcutta
+048AEF89	lanzhou university
+050513B0	university of california davis
+05BDC90E	national yang ming university
+05DBF710	baidu
+05E4DDE4	nara women s university
+05EEE4E0	polish academy of sciences
+0616AB9C	university of north carolina at charlotte
+061BA55B	supelec
+061C10C2	northern illinois university
+06531185	claremont mckenna college
+06D79F9F	suez canal university
+06DDB9CE	high altitude observatory
+071B6166	university of northern iowa
+072AB23E	saudi electronic university
+0741BB65	complutense university of madrid
+079A63AE	dsm
+07B10DCB	university of udine
+07F9055E	booth school of business
+0837B2CF	central university of finance and economics
+090B77B3	university of waterloo
+0968EF00	quantum corporation
+09DD720A	kangwon national university
+09E1988B	university of melbourne
+0A1AFB6C	the aerospace corporation
+0A37F0AC	roke manor research
+0A8EE1C3	saga university
+0A9F9B53	guizhou university
+0AC7AC2B	pfizer
+0B7A84D3	rose hulman institute of technology
+0B8B0D91	utrecht university
+0C03398D	tohoku university
+0C42C8D3	institut mines telecom
+0D90B0F8	american physical therapy association
+33D19FDC	woodward inc
+3458784F	savitribai phule pune university
+34DF6097	mathworks
+373BB436	cleveland institute of electronics
+4D356AC9	monsanto
+4D4A1EBB	office of the secretary of defense
+4DB16F5E	defence science and technology organisation
+4DC29902	path
+4FD1FBD1	saab ab
+00B89992	west virginia university
+00BCE652	poznan university of economics
+00CE2969	texas state university
+00EE209B	otsuma women s university
+00F550A0	comsats institute of information technology
+021CC5D8	eth zurich
+031251BB	university of lincoln
+0327638F	university of houston clear lake
+03757322	university of madeira
+03F73244	mathematica policy research
+0408021C	ecole nationale superieure d ingenieurs electriciens de grenoble
+044A1B9E	adelphi university
+046042FA	coventry university
+04F1BEA5	rmit university
+04F77DC2	miami university
+05129BED	sir m visvesvaraya institute of technology
+06927C7E	university college west
+06C8EB4B	mit center for collective intelligence
+06CA964A	shanghai university
+07114E5F	university of miyazaki
+07322E36	research academic computer technology institute
+07874D3C	university of iowa
+0875EA92	university of british columbia
+08DE7BC4	tokyo university of technology
+09B136B8	university of sussex
+0A2233D7	isfahan university of technology
+0A9589CF	leonard m miller school of medicine
+0AB1BE73	indian council of agricultural research
+0B3B54E4	zynga
+0B5BD316	american chemical society
+0B845BA3	university of trento
+0BB57D55	naval air warfare center training systems division
+0BB80200	pes university
+0BCBD3FD	akdeniz university
+0C026C79	mit sloan school of management
+0C31D7EB	college of charleston
+0C384A49	jerusalem college of engineering chennai
+0C55BCAD	university of paderborn
+343FADDB	canadian real estate association
+4C4BF1F3	international student exchange programs
+4C8CFD0B	translational genomics research institute
+4D2A3B88	era aviation
+4D918B6F	indian department of telecommunications
+4DAB0EB9	australian taxation office
+4DF24018	aol
+4E12B79F	rand corporation
+4FED4BED	vision institute
+0018DB89	central michigan university
+003E9FBD	universidade federal de santa catarina
+004F21FE	ifisc
+0056B275	university of adelaide
+0098B681	dharamsinh desai university
+00B85247	edith cowan university
+00C771F7	duke nus graduate medical school
+00CC3909	exponent
+01B4A1B3	kyonggi university
+01D6C8A1	intellicorp
+01EE4B98	northumbria university
+020DACCF	shri vaishnav institute of technology and science
+0227A3E3	henan university of technology
+026A65AC	bundeswehr university munich
+026CDFF9	national formosa university
+0295457F	hebei university
+02AD0127	takeda pharmaceutical company
+0348299F	university of greenwich
+03528CBA	technical university of crete
+03563BDA	samsung sds
+037FF1C8	korea institute of science and technology
+03C0079C	technische universitat munchen
+03F0370A	development corporations
+049467C4	nust school of civil and environmental engineering
+04973917	pandian saraswathi yadav engineering college
+04B51E34	yangzhou university
+04CE0776	chonbuk national university
+05D37CE6	lg cns
+0619822C	karlsruhe institute of technology
+061C4858	university of technology of compiegne
+067F47EA	telcordia technologies
+069DA7A7	sprint corporation
+06C0EC61	hiroshima university
+06D18AFD	university of nebraska lincoln
+071126B7	university of bern
+07319A2F	fernuniversitat hagen
+0756C52E	north carolina central university
+07DAEA4C	seagate technology
+07F18B54	tianjin university of technology and education
+080F904E	zhejiang normal university
+08132F05	bowdoin college
+0832DECA	vanderbilt university school of medicine
+08338F51	eaton corporation
+08859D90	national sun yat sen university
+088BCAEA	forschungszentrum informatik
+08DDC677	sogang university
+08EF72DE	kent state university
+09146CA1	ecolab
+09287CDD	university of leicester
+098353A9	japan tobacco
+09B2D407	george mason university
+0A8E4CF0	university of tennessee at chattanooga
+0AB880D6	bergen university college
+0AEE2FA0	ocean drilling program
+0B003FA6	georgetown university
+0B90A353	university of regina
+0BA83DC6	middlebury college
+0BD2B099	national heart lung and blood institute
+0BF3024C	graduate university for advanced studies
+0CE1878C	digipen institute of technology
+33E37995	spacelabs healthcare
+35E1DB72	xuchang university
+364704D6	bombardier inc
+371A5B88	d s norden
+4CDD5BAE	bbn technologies
+4D67939A	cselt
+4DCF81CD	capital one
+4E045540	symantec
+4F7B6BCE	north american aviation
+4FC9F42B	department of english university of dhaka
+4FF779BF	national museum of natural history
+5005A67E	environment canada
+5019D871	los alamos national laboratory
