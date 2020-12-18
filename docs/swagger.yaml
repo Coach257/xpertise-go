@@ -294,11 +294,36 @@ paths:
       - portal
   /portal/column/searchcol:
     post:
+      description: 返回某个作者的一个专栏
+      parameters:
+      - description: 作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
       responses:
         "200":
           description: '{"success": true, "message": "返回专栏成功"}'
           schema:
             type: string
+      tags:
+      - portal
+  /portal/issettled:
+    post:
+      description: 判断该作者是否入驻
+      parameters:
+      - description: 作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "false"}'
+          schema:
+            type: string
+      tags:
+      - portal
   /portal/recommend/create_recommend:
     post:
       description: 创建一条推荐
@@ -364,16 +389,10 @@ paths:
       - portal
   /portal/recommend/top:
     post:
-      description: 判断该作者是否入驻
-      parameters:
-      - description: 作者ID
-        in: formData
-        name: author_id
-        required: true
-        type: string
+      description: 获取推荐数最多的前七篇文献
       responses:
         "200":
-          description: '{"success": true, "message": "false"}'
+          description: '{"success": true, "message": "查找成功", "data": "前七篇文献的ID"}'
           schema:
             type: string
       tags:
@@ -437,6 +456,27 @@ paths:
       responses:
         "200":
           description: '{"success":true, "message":"收藏成功"}'
+          schema:
+            type: string
+      tags:
+      - user
+  /user/favorite/isfav:
+    post:
+      description: 判断是否已经被收藏
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      - description: 文献ID
+        in: formData
+        name: paper_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true, "message":"true"}'
           schema:
             type: string
       tags:

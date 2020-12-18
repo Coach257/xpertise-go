@@ -465,9 +465,47 @@ var doc = `{
         },
         "/portal/column/searchcol": {
             "post": {
+                "description": "返回某个作者的一个专栏",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "{\"success\": true, \"message\": \"返回专栏成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/issettled": {
+            "post": {
+                "description": "判断该作者是否入驻",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"false\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -573,22 +611,13 @@ var doc = `{
         },
         "/portal/recommend/top": {
             "post": {
-                "description": "判断该作者是否入驻",
+                "description": "获取推荐数最多的前七篇文献",
                 "tags": [
                     "portal"
                 ],
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "作者ID",
-                        "name": "author_id",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\": true, \"message\": \"false\"}",
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -685,6 +714,38 @@ var doc = `{
                 "responses": {
                     "200": {
                         "description": "{\"success\":true, \"message\":\"收藏成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/favorite/isfav": {
+            "post": {
+                "description": "判断是否已经被收藏",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true, \"message\":\"true\"}",
                         "schema": {
                             "type": "string"
                         }

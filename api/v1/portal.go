@@ -30,7 +30,6 @@ func CreateSpecialColumn(c *gin.Context) {
 // @description 返回某个作者的一个专栏
 // @Tags portal
 // @Param author_id formData string true "作者ID"
-
 // @Success 200 {string} string "{"success": true, "message": "返回专栏成功"}"
 // @Router /portal/column/searchcol [post]
 func SearchSpecialColumn(c *gin.Context) {
@@ -40,9 +39,7 @@ func SearchSpecialColumn(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": "不对"})
 		return
 	}
-
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "返回专栏成功", "data": data})
-
 	return
 }
 
