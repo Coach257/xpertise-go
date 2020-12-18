@@ -27,7 +27,7 @@ func CreateAnAuthorizationRequest(userID uint64, citizenID string, organization 
 // QueryAnAuthorizationRequest 获取一条认证申请
 func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationRequest, err error) {
 	notFound := global.DB.First(&authreq, authreqID).RecordNotFound()
-	if notFound {
+	if !notFound {
 		return authreq, gorm.ErrRecordNotFound
 	}
 	return authreq, err
