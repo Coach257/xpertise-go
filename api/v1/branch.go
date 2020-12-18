@@ -171,3 +171,63 @@ func ListAllComments(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "操作成功", "data": comments})
 	return
 }
+
+func GetNodesFromReferences(references []model.PaperReference) []model.Node {
+	set := make(map[model.PaperReference]bool)
+	res := []model.Node{}
+	for _, refer := range references {
+		if !set[refer] {
+			set[refer] = true
+			tmp := model.Node{
+				Id:   refer.ReferenceID,
+				Text: refer.ReferencePaperTitle,
+			}
+			res = append(res, tmp)
+		}
+	}
+	return res
+}
+
+func GetLinksFromReferences(references []model.PaperReference, level string) []model.Link {
+	set := make(map[model.PaperReference]bool)
+	var res []model.Link
+	for _, refer := range references {
+		if !set[refer] {
+			set[refer] = true
+			tmp := model.Link{
+				From: refer.ReferenceID,
+				To:   refer.ReferencePaperTitle,
+				Text: level,
+			}
+			res = append(res, tmp)
+		}
+	}
+	return res
+}
+
+// GetThreeLevelReferences doc
+// @description 列出某条文献的三级参考文献
+// @Tags branch
+// @Param paper_id formData string true "文献ID"
+// @Success 200 {string} string "{"success": true, "message": "操作成功", "data": "某文献的2级参考文献"}"
+// @Router /branch/reference [post]
+func GetThreeLevelReferences(c *gin.Context) {
+	paperID := c.Request.FormValue("paper_id")
+	directRefers := service.QueryAllReferences(paperID)
+	nodes := GetNodesFromReferences(directRefers)
+	links := GetLinksFromReferences(directRefers, "1")
+	var secondRefers = []model.PaperReference{}
+	for _, refer := range secondRefers {
+		tmpRefers := service.QueryAllReferences(refer.ReferenceID)
+		secondRefers = append(secondRefers, tmpRefers...)
+	}
+	nodes = append(nodes, GetNodesFromReferences(directRefers)...)
+	links = append(links, GetLinksFromReferences(directRefers, "2")...)
+	data := model.LinkType{
+		RootID: paperID,
+		Nodes:  nodes,
+		Links:  links,
+	}
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "操作成功", "data": data})
+	return
+}

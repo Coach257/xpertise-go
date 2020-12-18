@@ -137,3 +137,9 @@ func GetAuthorConnectionGraph(FaID string) (connection []model.Connection) {
 	global.DB.Where("father_id = ?", FaID).Find(&connection)
 	return connection
 }
+
+// QueryAllReferences 列出某个文献的所有参考文献
+func QueryAllReferences(paperID string) (references []model.PaperReference) {
+	global.DB.Where(&model.PaperReference{PaperID: paperID}).Find(&references)
+	return references
+}
