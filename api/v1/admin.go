@@ -56,7 +56,7 @@ func DealWithAuthorizationRequest(c *gin.Context) {
 	}
 	if action == "Accept" {
 		authorID := c.Request.FormValue("author_id")
-		service.UpdateAnAuthorizationRequest(authreqID, "Accepted", authorID)
+		service.UpdateAnAuthorizationRequest(&authreq, "Accepted", authorID)
 		service.CreateAPortal(authreq.UserID, authreq.AuthorID)
 		userID := authreq.UserID
 		user, notFound := service.QueryAUserByID(userID)

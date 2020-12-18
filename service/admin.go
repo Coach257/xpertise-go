@@ -27,7 +27,7 @@ func CreateAnAuthorizationRequest(userID uint64, citizenID string, organization 
 // QueryAnAuthorizationRequest 获取一条认证申请
 func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationRequest, err error) {
 	notFound := global.DB.First(&authreq, authreqID).RecordNotFound()
-	if !notFound {
+	if notFound {
 		return authreq, gorm.ErrRecordNotFound
 	}
 	return authreq, err
@@ -43,9 +43,9 @@ func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.Authori
 }
 
 // UpdateAnAuthorizationRequest 更新一条认证申请
-func UpdateAnAuthorizationRequest(authreq *model.AuthorizationRequest, status string, authorID string) (err error) {
+func UpdateAnAuthorizationRequest(authreq *model.AuthorizationRequest, status string, authorID string) error {
 	authreq.Status = status
-	err = global.DB.Save(authreq).Error
+	err := global.DB.Save(authreq).Error
 	return err
 }
 
