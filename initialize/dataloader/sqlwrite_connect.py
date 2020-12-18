@@ -10,10 +10,10 @@ crusor = conn.cursor()
 
 # create table connections
 crusor.execute('CREATE TABLE `connections`( \
-               `author_1_id` VARCHAR(10) ,\
-                `author_1_name` VARCHAR(100) ,\
-               `author_2_id` VARCHAR(10) ,\
-                `author_2_name` VARCHAR(100) ,\
+               `author1_id` VARCHAR(10) ,\
+                `author1_name` VARCHAR(100) ,\
+               `author2_id` VARCHAR(10) ,\
+                `author2_name` VARCHAR(100) ,\
                 `father_id` VARCHAR(10),\
                `paper_id` VARCHAR(10) ,\
                `paper_title` VARCHAR(400))\
