@@ -9,11 +9,12 @@ import (
 func InitPortalRouter(Router *gin.RouterGroup) {
 	UserRouter := Router.Group("api/v1/portal")
 	{
+		UserRouter.POST("/author", v1.SearchAuthor)
+		UserRouter.POST("/issettled", v1.IsSettled)
 		UserRouter.POST("/column/create_column", v1.CreateSpecialColumn)
 		UserRouter.POST("/column/add_to_column", v1.AddToColumn)
 		UserRouter.POST("/column/list_all_from_column", v1.ListAllFromAColumn)
 		UserRouter.POST("/column/remove_from_column", v1.RemovePaperFromColumn)
-		UserRouter.POST("/author", v1.SearchAuthor)
 		UserRouter.POST("/column/searchcol", v1.SearchSpecialColumn)
 
 		UserRouter.POST("/recommend/create_recommend", v1.CreateRecommend)

@@ -206,3 +206,21 @@ func ListTopSevenPapers(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": papers})
 	return
 }
+
+// IsSettled doc
+// @description 判断该作者是否入驻
+// @Tags portal
+// @Param author_id formData string true "作者ID"
+// @Success 200 {string} string "{"success": true, "message": "true"}"
+// @Success 200 {string} string "{"success": true, "message": "false"}"
+// @Router /portal/recommend/top [post]
+func IsSettled(c *gin.Context) {
+	authorID := c.Request.FormValue("author_id")
+	_, notFound := service.FindPortalByID(authorID)
+	if notFound {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "false"})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "true"})
+	}
+	return
+}

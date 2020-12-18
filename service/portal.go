@@ -117,3 +117,8 @@ func QueryTopSevenPapers() (results []model.Result) {
 	return results // db.Select("AVG(age) as avgage").Group("name").Having("AVG(age) > (?)", subQuery).Find(&results)
 
 }
+
+func FindPortalByID(authorID string) (portal model.Portal, notFound bool) {
+	notFound = global.DB.Where("author_id = ?", authorID).First(&portal).RecordNotFound()
+	return portal, notFound
+}
