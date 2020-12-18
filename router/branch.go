@@ -12,5 +12,6 @@ func InitBranchRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/comment/create", v1.CreateAComment) // 注意不用加逗号
 		UserRouter.POST("/comment/operate", v1.OperateComment)
 		UserRouter.POST("/comment/give_a_like_or_dislike", v1.GiveALikeOrDislike)
+		UserRouter.POST("/graph/author_connection", v1.AuthorConnection)
 	}
 }

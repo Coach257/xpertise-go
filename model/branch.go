@@ -41,10 +41,11 @@ type PaperReference struct {
 }
 
 type Connection struct {
-	Author1ID   string `gorm:"type:varchar(10)" json:"author_1_id"`
-	Author1Name string `gorm:"type:varchar(10)" json:"author_1_name"`
-	Author2ID   string `gorm:"type:varchar(10)" json:"author_2_id"`
-	Author2Name string `gorm:"type:varchar(10)" json:"author_2_name"`
+	Author1ID   string `gorm:"type:varchar(10)" json:"author1_id"`
+	Author1Name string `gorm:"type:varchar(100)" json:"author1_name"`
+	Author2ID   string `gorm:"type:varchar(10)" json:"author2_id"`
+	Author2Name string `gorm:"type:varchar(100)" json:"author2_name"`
+	FatherID    string `gorm:"type:varchar(10)" json:"fa_id"`
 	PaperID     string `gorm:"type:varchar(10)" json:"paper_id"`
 	PaperTitle  string `gorm:"type:varchar(400);" json:"paper_title"`
 }
@@ -65,4 +66,19 @@ type CommentLike struct {
 	CommentID     uint64 `gorm:"primary_key;" json:"comment_id"`
 	UserID        uint64 `gorm:"primary_key;" json:"user_id"`
 	LikeOrDislike bool   `json:"like_or_dislike"`
+}
+
+type LinkType struct {
+	RootID string `json:"rootID"`
+	Nodes  []Node `json:"nodes"`
+	Links  []Link `json:"links"`
+}
+type Node struct {
+	Id   string `json:"id"`
+	Text string `json:"text"`
+}
+type Link struct {
+	From string `json:"from"`
+	To   string `json:"to"`
+	Text string `json:"text"`
 }

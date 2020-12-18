@@ -113,6 +113,53 @@ func GiveALikeOrDislike(c *gin.Context) {
 	return
 }
 
+// AuthorConnection doc
+// @description 创建一条评论
+// @Tags branch
+// @Param username formData string true "用户名"
+// @Param paper_id formData string true "文献ID"
+// @Param content formData string true "评论内容"
+// @Success 200 {string} string "{"success": true, "message": "用户评论成功"}"
+// @Router /branch/comment/create [post]
+func AuthorConnection(c *gin.Context) {
+	authorID := c.Request.FormValue("author_id")
+	authorName := c.Request.FormValue("author_name")
+	connection, notFound := service.GetFa(authorID)
+	var nodes []model.Node
+	var links []model.Link
+	var ok bool
+	if notFound {
+		node := model.Node{Id: authorID, Text: authorName}
+		nodes = append(nodes, node)
+		linkType := model.LinkType{RootID: authorID, Nodes: nodes, Links: links}
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": linkType})
+	} else {
+		var authorMap map[string]bool
+		authorMap = make(map[string]bool)
+		connectionGraph := service.GetAuthorConnectionGraph(connection.FatherID)
+		for _, v := range connectionGraph {
+			_, ok = authorMap[v.Author1ID]
+			if !ok {
+				node := model.Node{Id: v.Author1ID, Text: v.Author1Name}
+				nodes = append(nodes, node)
+				authorMap[v.Author1ID] = true
+			}
+			_, ok = authorMap[v.Author2ID]
+			if !ok {
+				node := model.Node{Id: v.Author2ID, Text: v.Author2Name}
+				nodes = append(nodes, node)
+				authorMap[v.Author2ID] = true
+			}
+			link := model.Link{From: v.Author1ID, To: v.Author2ID, Text: v.PaperTitle}
+			links = append(links, link)
+
+		}
+		linkType := model.LinkType{RootID: authorID, Nodes: nodes, Links: links}
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": linkType})
+	}
+	return
+}
+
 // ListAllComments doc
 func ListAllComments(c *gin.Context) {
 	// TODO
