@@ -72,3 +72,48 @@ func CreateAPortal(userID uint64, authorID string) (err error) {
 	}
 	return
 }
+
+// 创建一条推荐
+func CreateARecommend(authorID string, authorName string, paperID string, reason string) (err error) {
+	recommend := model.Recommend{
+		AuthorID:   authorID,
+		AuthorName: authorName,
+		PaperID:    paperID,
+		Reason:     reason,
+	}
+	if global.DB.Create(&recommend).Error != nil {
+		return err
+	}
+	return
+}
+
+// 删除某条评论
+func DeleteRecommend(authorID string, paperID string) (err error) {
+	var recommend model.Recommend
+	notFound := global.DB.Where(&model.Recommend{AuthorID: authorID, PaperID: paperID}).First(&recommend).RecordNotFound()
+	if notFound {
+		return gorm.ErrRecordNotFound
+	}
+	err = global.DB.Delete(&recommend).Error
+	return err
+}
+
+// 列出某个作者的所有推荐
+func QueryRecommendsFromOneAuthor(authorID string) (recommends []model.Recommend) {
+	global.DB.Where("author_id = ?", authorID).Find(&recommends)
+	return recommends
+}
+
+// 列出某个文献的所有推荐
+func QueryRecommendsFromOnePaper(paperID string) (recommends []model.Recommend) {
+	global.DB.Where("paper_id = ?", paperID).Find(&recommends)
+	return recommends
+}
+
+// 列出推荐数目最多的前七篇文献
+//db.Table("orders").Select("date(created_at) as date, sum(amount) as total").Group("date(created_at)").Rows()
+func QueryTopSevenPapers() (results []model.Result) {
+	global.DB.Table("recommends").Select("paper_id as paper_id, count(author_id) as total").Group("paper_id").Order("total desc").Limit(7).Scan(&results)
+	return results // db.Select("AVG(age) as avgage").Group("name").Having("AVG(age) > (?)", subQuery).Find(&results)
+
+}

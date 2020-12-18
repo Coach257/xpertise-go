@@ -26,3 +26,8 @@ type Recommend struct {
 	AuthorName string `gorm:"type:varchar(100)" json:"author_name"`
 	Reason     string `gorm:"type:varchar(255)" json:"reason"`
 }
+
+type Result struct {
+	PaperID string `json:"paper_id"`
+	Total   uint64 `json:"total"`
+}

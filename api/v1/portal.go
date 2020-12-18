@@ -14,7 +14,7 @@ import (
 // @Param author_id formData string true "作者ID"
 // @Param column_name formData string true "专栏名字"
 // @Success 200 {string} string "{"success": true, "message": "创建专栏成功"}"
-// @Router /portal/create_column [post]
+// @Router /portal/column/create_column [post]
 func CreateSpecialColumn(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	columnName := c.Request.FormValue("column_name")
@@ -32,7 +32,7 @@ func CreateSpecialColumn(c *gin.Context) {
 // @Param author_id formData string true "作者ID"
 
 // @Success 200 {string} string "{"success": true, "message": "返回专栏成功"}"
-// @Router /portal/searchcol [post]
+// @Router /portal/column/searchcol [post]
 func SearchSpecialColumn(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	data, err := service.QueryAColumnByID(authorID)
@@ -52,7 +52,7 @@ func SearchSpecialColumn(c *gin.Context) {
 // @Param paper_id formData string true "文献ID"
 // @Param column_id formData string true "专栏ID"
 // @Success 200 {string} string "{"success":true, "message":"添加到专栏成功"}"
-// @Router /portal/add_to_column [post]
+// @Router /portal/column/add_to_column [post]
 func AddToColumn(c *gin.Context) {
 	columnID, _ := strconv.ParseUint(c.Request.FormValue("column_id"), 0, 64)
 	paperID := c.Request.FormValue("paper_id")
@@ -76,7 +76,7 @@ func AddToColumn(c *gin.Context) {
 // @Tags portal
 // @Param column_id formData string true "专栏ID"
 // @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "专栏中的所有论文ID"}"
-// @Router /portal/list_all_from_column [post]
+// @Router /portal/column/list_all_from_column [post]
 func ListAllFromAColumn(c *gin.Context) {
 	columnID, _ := strconv.ParseUint(c.Request.FormValue("column_id"), 0, 64)
 	columnPapers := service.QueryAllFromAColumn(columnID)
@@ -95,7 +95,7 @@ func ListAllFromAColumn(c *gin.Context) {
 // @Param column_id formData string true "专栏ID"
 // @Param paper_id formData string true "论文ID"
 // @Success 200 {string} string "{"success": true, "message": "删除成功"}"
-// @Router /portal/remove_from_column [post]
+// @Router /portal/column/remove_from_column [post]
 func RemovePaperFromColumn(c *gin.Context) {
 	columnID, _ := strconv.ParseUint(c.Request.FormValue("column_id"), 0, 64)
 	paperID := c.Request.FormValue("paper_id")
@@ -114,7 +114,7 @@ func RemovePaperFromColumn(c *gin.Context) {
 // @Tags portal
 // @Param column_id formData string true "作者ID"
 // @Success 200 {string} string "{"success": true, "message": "删除成功"}"
-// @Router /portal/remove_from_column [post]
+// @Router /portal/author [post]
 func SearchAuthor(c *gin.Context) {
 	//authorID, _ := strconv.ParseUint(c.Request.FormValue("id"), 0, 64)
 	authorID := c.Request.FormValue("id")
@@ -125,5 +125,84 @@ func SearchAuthor(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": au})
 	}
+	return
+}
+
+// CreateRecommend doc
+// @description 创建一条推荐
+// @Tags portal
+// @Param author_id formData string true "作者ID"
+// @Param author_name formData string true "作者名字"
+// @Param paper_id formData string true "文献ID"
+// @Param reason formData string true "推荐理由"
+// @Success 200 {string} string "{"success": true, "message": "推荐成功"}"
+// @Router /portal/recommend/create_recommend [post]
+func CreateRecommend(c *gin.Context) {
+	authorID := c.Request.FormValue("author_id")
+	authorName := c.Request.FormValue("author_name")
+	paperID := c.Request.FormValue("paper_id")
+	reason := c.Request.FormValue("reason")
+	if err := service.CreateARecommend(authorID, authorName, paperID, reason); err != nil {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "推荐成功"})
+	return
+}
+
+// RemoveRecommend doc
+// @description 删除某条推荐
+// @Tags portal
+// @Param author_id formData string true "作者ID"
+// @Param paper_id formData string true "文献ID"
+// @Success 200 {string} string "{"success": true, "message": "删除成功"}"
+// @Router /portal/column/remove_recommend [post]
+func RemoveRecommend(c *gin.Context) {
+	authorID := c.Request.FormValue("author_id")
+	paperID := c.Request.FormValue("paper_id")
+
+	if err := service.DeleteRecommend(authorID, paperID); err != nil {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
+		return
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "删除成功"})
+	}
+
+}
+
+// ListRecommendsFromOneAuthor doc
+// @description 获取作者推荐的所有内容
+// @Tags portal
+// @Param author_id formData string true "作者ID"
+// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "作者的所有推荐"}"
+// @Router /portal/recommend/recommends_from_one_author [post]
+func ListRecommendsFromOneAuthor(c *gin.Context) {
+	authorID := c.Request.FormValue("author_id")
+	recommends := service.QueryRecommendsFromOneAuthor(authorID)
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": recommends})
+	return
+}
+
+// ListRecommendsFromOnePaper doc
+// @description 获取所有对某文章的推荐
+// @Tags portal
+// @Param paper_id formData string true "文献ID"
+// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "文献的所有推荐"}"
+// @Router /portal/recommend/recommends_from_one_paper [post]
+func ListRecommendsFromOnePaper(c *gin.Context) {
+	paperID := c.Request.FormValue("paper_id")
+	recommends := service.QueryRecommendsFromOnePaper(paperID)
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": recommends})
+	return
+}
+
+// ListRecommendsFromOnePaper doc
+// @description 获取推荐数最多的前七篇文献
+// @Tags portal
+// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇文献的ID"}"
+// @Router /portal/recommend/top [post]
+func ListTopSevenPapers(c *gin.Context) {
+	papers := service.QueryTopSevenPapers()
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": papers})
 	return
 }

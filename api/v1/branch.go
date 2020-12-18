@@ -161,6 +161,14 @@ func AuthorConnection(c *gin.Context) {
 }
 
 // ListAllComments doc
+// @description 列出某条文献的全部评论
+// @Tags branch
+// @Param paper_id formData string true "文献ID"
+// @Success 200 {string} string "{"success": true, "message": "操作成功", "data": "某文献的所有评论"}"
+// @Router /branch/comment/list_all_comments [post]
 func ListAllComments(c *gin.Context) {
-	// TODO
+	paperID := c.Request.FormValue("paper_id")
+	comments := service.QueryAllComments(paperID)
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "操作成功", "data": comments})
+	return
 }

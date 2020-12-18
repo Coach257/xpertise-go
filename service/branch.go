@@ -20,6 +20,12 @@ func QueryAComment(commentID uint64) (comment model.Comment, notFound bool) {
 	return comment, notFound
 }
 
+// 列出某个文献的所有评论
+func QueryAllComments(paperID string) (comments []model.Comment) {
+	global.DB.Where("paper_id = ?", paperID).Find(&comments)
+	return comments
+}
+
 // 删除某条评论
 func DeleteAComment(CommentID uint64) (err error) {
 	var comment model.Comment
