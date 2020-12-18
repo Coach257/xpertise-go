@@ -5,7 +5,7 @@ import (
 )
 
 type Paper struct {
-	PaperID          string `gorm:"type:varchar(10);primary_key;" json:"paper_id"`
+	PaperID          string `gorm:"type:varchar(30);primary_key;" json:"paper_id"`
 	Title            string `gorm:"type:varchar(400);not null;" json:"title"`
 	PaperPublishYear string `gorm:"type:varchar(5)" json:"paper_publish_year"`
 	ConferenceID     string `gorm:"type:varchar(10)" json:"conference_id"`
@@ -17,7 +17,7 @@ type Affiliation struct {
 }
 
 type Author struct {
-	AuthorID   string `gorm:"type:varchar(10);primary_key;" json:"author_id"`
+	AuthorID   string `gorm:"type:varchar(30);primary_key;" json:"author_id"`
 	AuthorName string `gorm:"type:varchar(100)" json:"author_name"`
 }
 
@@ -54,7 +54,7 @@ type Comment struct {
 	//gorm.Model
 	CommentID   uint64    `gorm:"primary_key;" json:"comment_id"`
 	Username    string    `gorm:"size:15" json:"username"`
-	PaperID     string    `gorm:"size:10" json:"paper_id"`
+	PaperID     string    `gorm:"size:30" json:"paper_id"`
 	CommentTime time.Time `json:"comment_time"`
 	Content     string    `gorm:"size:255" json:"content"`
 	OnTop       bool      `gorm:"default:false" json:"on_top"`
