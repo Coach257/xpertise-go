@@ -114,13 +114,12 @@ func GiveALikeOrDislike(c *gin.Context) {
 }
 
 // AuthorConnection doc
-// @description 创建一条评论
+// @description 返回作者关系图数据
 // @Tags branch
-// @Param username formData string true "用户名"
-// @Param paper_id formData string true "文献ID"
-// @Param content formData string true "评论内容"
-// @Success 200 {string} string "{"success": true, "message": "用户评论成功"}"
-// @Router /branch/comment/create [post]
+// @Param author_id formData string true "作者ID"
+// @Param author_name formData string true "作者名字"
+// @Success 200 {string} string "{"success": true, "message": {"rootID":"","nodes":[{"id":"","text":""}],"links":[{"from":"","to":"","text":""}]}}}"
+// @Router /branch/graph/author_connection [post]
 func AuthorConnection(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	authorName := c.Request.FormValue("author_name")
