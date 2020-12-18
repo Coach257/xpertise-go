@@ -155,18 +155,39 @@ paths:
             type: string
       tags:
       - branch
+  /branch/graph/author_connection:
+    post:
+      description: 返回作者关系图数据
+      parameters:
+      - description: 作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
+      - description: 作者名字
+        in: formData
+        name: author_name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": {"rootID":"","nodes":[{"id":"","text":""}],"links":[{"from":"","to":"","text":""}]}}}'
+          schema:
+            type: string
+      tags:
+      - branch
   /portal/author:
     post:
       description: 查找作者是否存在
       parameters:
       - description: 作者ID
         in: formData
-        name: column_id
+        name: id
         required: true
         type: string
       responses:
         "200":
-          description: '{"success": true, "message": "删除成功"}'
+          description: '{"success": true, "message": "查询成功", "data": au}'
           schema:
             type: string
       tags:
