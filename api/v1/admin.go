@@ -45,14 +45,29 @@ func RequestForAuthorization(c *gin.Context) {
 // @Router /admin/authorize/deal [post]
 func DealWithAuthorizationRequest(c *gin.Context) {
 	authreqIDStr := c.Request.FormValue("authreq_id")
+	if authreqIDStr == "" {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "authreq_id为空。",
+		})
+		return
+	}
 	authreqID, _ := strconv.ParseUint(authreqIDStr, 0, 64)
 	action := c.Request.FormValue("action")
+	if action == "" {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "action为空。",
+		})
+		return
+	}
 	authreq, err := service.QueryAnAuthorizationRequest(authreqID)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "没有对应的请求。",
 		})
+		return
 	}
 	if action == "Accept" {
 		authorID := c.Request.FormValue("author_id")
