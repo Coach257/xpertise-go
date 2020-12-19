@@ -63,6 +63,6 @@ func DeleteAnAuthorizationRequest(authreqID uint64, userID uint64) (err error) {
 
 // QueryAllAuthorizationRequest 列出所有认证申请
 func QueryAllAuthorizationRequest() (authreqs []model.AuthorizationRequest) {
-	global.DB.Find(&authreqs)
+	global.DB.Where("status = 'TODO' ").Find(&authreqs)
 	return authreqs
 }
