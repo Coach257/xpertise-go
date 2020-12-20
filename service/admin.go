@@ -32,7 +32,7 @@ func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationR
 
 // QueryAuthorizationRequestsByUserID 获取某个用户的所有认证申请
 func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.AuthorizationRequest, notFound bool) {
-	notFound = global.DB.Find(&authreqs, userID).RecordNotFound()
+	notFound = global.DB.Where("user_id = ?", userID).Find(&authreqs).RecordNotFound()
 	return authreqs, notFound
 }
 
