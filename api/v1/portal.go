@@ -34,8 +34,8 @@ func CreateSpecialColumn(c *gin.Context) {
 // @Router /portal/column/searchcol [post]
 func SearchSpecialColumn(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
-	data, err := service.QueryAColumnByID(authorID)
-	if err == true {
+	data := service.QueryAColumnByID(authorID)
+	if data == nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": "不对"})
 		return
 	}

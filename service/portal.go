@@ -18,9 +18,10 @@ func QueryAnAuthorByID(authorID string) (author model.Author, notFound bool) {
 	notFound = global.DB.Where("author_id = ? ", authorID).First(&author).RecordNotFound()
 	return author, notFound
 }
-func QueryAColumnByID(authorID string) (col model.SpecialColumn, notFound bool) {
-	notFound = global.DB.Where("author_id = ? ", authorID).First(&col).RecordNotFound()
-	return col, notFound
+func QueryAColumnByID(authorID string) (col []model.SpecialColumn) {
+	global.DB.Where("author_id = ? ", authorID).Find(&col)
+	//notFound = global.DB.Where("author_id = ? ", authorID).First(&col).RecordNotFound()
+	return col
 }
 func CreateAColumn(authorID string, columnName string) (err error) {
 	specialColumn := model.SpecialColumn{AuthorID: authorID, ColumnName: columnName}
