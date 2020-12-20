@@ -30,8 +30,8 @@ func CreateAColumn(authorID string, columnName string) (err error) {
 	return
 }
 
-func AddPaperToColumn(columnID uint64, paperID string) (err error) {
-	columnPaper := model.ColumnPaper{ColumnID: columnID, PaperID: paperID}
+func AddPaperToColumn(columnID uint64, paperID string, paperTitle string) (err error) {
+	columnPaper := model.ColumnPaper{ColumnID: columnID, PaperID: paperID, PaperTitle: paperTitle}
 	if err = global.DB.Create(&columnPaper).Error; err != nil {
 		return err
 	}

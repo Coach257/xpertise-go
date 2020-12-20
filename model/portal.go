@@ -7,8 +7,9 @@ type SpecialColumn struct {
 }
 
 type ColumnPaper struct {
-	ColumnID uint64 `gorm:"primary_key; not null;" json:"column_id"`
-	PaperID  string `gorm:"type:varchar(30);primary_key; not null;" json:"paper_id"`
+	ColumnID   uint64 `gorm:"primary_key; not null;" json:"column_id"`
+	PaperID    string `gorm:"type:varchar(30);primary_key; not null;" json:"paper_id"`
+	PaperTitle string `gorm:"type:varchar(400);not null;" json:"paper_title"`
 }
 
 // Portal 记录认证用户专栏列表
