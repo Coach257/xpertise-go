@@ -316,12 +316,20 @@ func DeleteAUserByID(c *gin.Context) {
 func GetUserAllAuthorizationRequest(c *gin.Context) {
 	userIDStr := c.Request.FormValue("user_id")
 	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
-	authreqs := service.QueryAuthorizationRequestsByUserID(userID)
-	c.JSON(http.StatusOK, gin.H{
-		"success": true,
-		"message": "获取条目成功。",
-		"data":    authreqs,
-	})
+	aureqs, notFound := service.QueryAuthorizationRequestsByUserID(userID)
+	if notFound == true {
+		c.JSON(http.StatusOK, gin.H{
+			"success": false,
+			"message": "获取申请信息失败。",
+			"data":    aureqs,
+		})
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"message": "获取申请信息成功。",
+			"data":    aureqs,
+		})
+	}
 	return
 }
 
