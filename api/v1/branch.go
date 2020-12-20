@@ -213,14 +213,14 @@ func GetLinksFromReferences(references []model.PaperReference) []model.Link {
 // @Router /branch/graph/reference [post]
 func GetThreeLevelReferences(c *gin.Context) {
 	paperID := c.Request.FormValue("paper_id")
+	paperTitle := c.Request.FormValue("paper_title")
 	directRefers := service.QueryAllReferences(paperID)
 	var nodes []model.Node
 	var links []model.Link
 	if len(directRefers) == 0 {
-		paper, _ := service.QueryAPaperByID(paperID)
 		node := model.Node{
-			Id:   paper.PaperID,
-			Text: paper.Title,
+			Id:   paperID,
+			Text: paperTitle,
 		}
 		nodes = append(nodes, node)
 		links = nil
