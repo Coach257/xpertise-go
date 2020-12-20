@@ -19,11 +19,12 @@ import (
 // @Success 200 {string} string "{"success": true, "message": "用户评论成功"}"
 // @Router /branch/comment/create [post]
 func CreateAComment(c *gin.Context) {
-	username := c.Request.FormValue("username")
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	user, _ := service.QueryAUserByID(userID)
 	paperID := c.Request.FormValue("paper_id")
 	content := c.Request.FormValue("content")
 
-	comment := model.Comment{Username: username, PaperID: paperID, CommentTime: time.Now(), Content: content}
+	comment := model.Comment{UserID: userID, Username: user.Username, PaperID: paperID, CommentTime: time.Now(), Content: content}
 	err := service.CreateAComment(&comment)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
