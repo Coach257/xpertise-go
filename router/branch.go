@@ -14,6 +14,6 @@ func InitBranchRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/comment/give_a_like_or_dislike", v1.GiveALikeOrDislike)
 		UserRouter.POST("/graph/author_connection", v1.AuthorConnection)
 		UserRouter.POST("/comment/list_all_comments", v1.ListAllComments)
-		UserRouter.POST("/reference", v1.GetThreeLevelReferences)
+		UserRouter.POST("/graph/reference", v1.GetThreeLevelReferences)
 	}
 }

@@ -210,7 +210,7 @@ func GetLinksFromReferences(references []model.PaperReference, level string) []m
 // @Tags branch
 // @Param paper_id formData string true "文献ID"
 // @Success 200 {string} string "{"success": true, "message": "操作成功", "data": "某文献的2级参考文献"}"
-// @Router /branch/reference [post]
+// @Router /branch/graph/reference [post]
 func GetThreeLevelReferences(c *gin.Context) {
 	paperID := c.Request.FormValue("paper_id")
 	directRefers := service.QueryAllReferences(paperID)
