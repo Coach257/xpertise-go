@@ -21,11 +21,12 @@ func InitMySQL() (error error) {
 		&model.Favorite{},
 		&model.Wish{},
 
-		// potal
+		// portal
 		&model.ColumnPaper{},
 		&model.Portal{},
 		&model.SpecialColumn{},
 		&model.Recommend{},
+		&model.PaperRecommend{},
 
 		// branch
 		&model.Paper{},

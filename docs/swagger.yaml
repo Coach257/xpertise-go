@@ -271,6 +271,32 @@ paths:
             type: string
       tags:
       - portal
+  /portal/column/remove:
+    post:
+      description: 删除某条推荐
+      parameters:
+      - description: 作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
+      - description: 文献ID
+        in: formData
+        name: paper_id
+        required: true
+        type: string
+      - description: h-index
+        in: formData
+        name: hindex
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "删除成功"}'
+          schema:
+            type: string
+      tags:
+      - portal
   /portal/column/remove_from_column:
     post:
       description: 删除专栏中的某条论文
@@ -281,27 +307,6 @@ paths:
         required: true
         type: string
       - description: 论文ID
-        in: formData
-        name: paper_id
-        required: true
-        type: string
-      responses:
-        "200":
-          description: '{"success": true, "message": "删除成功"}'
-          schema:
-            type: string
-      tags:
-      - portal
-  /portal/column/remove_recommend:
-    post:
-      description: 删除某条推荐
-      parameters:
-      - description: 作者ID
-        in: formData
-        name: author_id
-        required: true
-        type: string
-      - description: 文献ID
         in: formData
         name: paper_id
         required: true
@@ -345,7 +350,7 @@ paths:
             type: string
       tags:
       - portal
-  /portal/recommend/create_recommend:
+  /portal/recommend/create:
     post:
       description: 创建一条推荐
       parameters:
@@ -362,6 +367,21 @@ paths:
       - description: 文献ID
         in: formData
         name: paper_id
+        required: true
+        type: string
+      - description: 文献名
+        in: formData
+        name: paper_title
+        required: true
+        type: string
+      - description: 引用次数
+        in: formData
+        name: n_citation
+        required: true
+        type: string
+      - description: h-index
+        in: formData
+        name: hindex
         required: true
         type: string
       - description: 推荐理由

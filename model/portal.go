@@ -25,7 +25,14 @@ type Recommend struct {
 	AuthorID   string `gorm:"type:varchar(30);primary_key" json:"author_id"`
 	PaperID    string `gorm:"type:varchar(30);primary_key" json:"paper_id"`
 	AuthorName string `gorm:"type:varchar(100)" json:"author_name"`
+	Citation   uint64 `json:"n_citation"`
 	Reason     string `gorm:"type:varchar(255)" json:"reason"`
+}
+
+type PaperRecommend struct {
+	PaperID    string `gorm:"type:varchar(30);primary_key" json:"paper_id"`
+	PaperTitle string `gorm:"type:varchar(400)" json:"paper_title"`
+	Value      int64  `json:"value"`
 }
 
 type Result struct {

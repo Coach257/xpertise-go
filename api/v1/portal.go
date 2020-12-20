@@ -133,15 +133,27 @@ func SearchAuthor(c *gin.Context) {
 // @Param author_id formData string true "作者ID"
 // @Param author_name formData string true "作者名字"
 // @Param paper_id formData string true "文献ID"
+// @Param paper_title formData string true "文献名"
+// @Param n_citation formData string true "引用次数"
+// @Param hindex formData string true "h-index"
 // @Param reason formData string true "推荐理由"
 // @Success 200 {string} string "{"success": true, "message": "推荐成功"}"
-// @Router /portal/recommend/create_recommend [post]
+// @Router /portal/recommend/create [post]
 func CreateRecommend(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	authorName := c.Request.FormValue("author_name")
 	paperID := c.Request.FormValue("paper_id")
+	paperTitle := c.Request.FormValue("paper_title")
+	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
+	hindex, _ := strconv.ParseInt(c.Request.FormValue("hindex"), 0, 64)
 	reason := c.Request.FormValue("reason")
-	if err := service.CreateARecommend(authorID, authorName, paperID, reason); err != nil {
+	paperRecommend, notFound := service.QueryARecommendInPaperRecommend(paperID)
+	if notFound {
+		service.AddToPaperRecommend(paperID, paperTitle, citation, hindex)
+	} else {
+		service.UpdatePaperRecommend(&paperRecommend, hindex)
+	}
+	if err := service.CreateARecommend(authorID, authorName, paperID, citation, reason); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
 	}
@@ -154,19 +166,21 @@ func CreateRecommend(c *gin.Context) {
 // @Tags portal
 // @Param author_id formData string true "作者ID"
 // @Param paper_id formData string true "文献ID"
+// @Param hindex formData string true "h-index"
 // @Success 200 {string} string "{"success": true, "message": "删除成功"}"
-// @Router /portal/column/remove_recommend [post]
+// @Router /portal/column/remove [post]
 func RemoveRecommend(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	paperID := c.Request.FormValue("paper_id")
-
+	hindex, _ := strconv.ParseInt(c.Request.FormValue("hindex"), 0, 64)
+	paperRecommend, _ := service.QueryARecommendInPaperRecommend(paperID)
+	service.UpdatePaperRecommend(&paperRecommend, -hindex)
 	if err := service.DeleteRecommend(authorID, paperID); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{"success": true, "message": "删除成功"})
 	}
-
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "删除成功"})
+	return
 }
 
 // ListRecommendsFromOneAuthor doc
@@ -195,7 +209,7 @@ func ListRecommendsFromOnePaper(c *gin.Context) {
 	return
 }
 
-// ListRecommendsFromOnePaper doc
+// ListTopSevenPapers doc
 // @description 获取推荐数最多的前七篇文献
 // @Tags portal
 // @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇文献的ID"}"

@@ -74,11 +74,12 @@ func CreateAPortal(userID uint64, authorID string) (err error) {
 }
 
 // 创建一条推荐
-func CreateARecommend(authorID string, authorName string, paperID string, reason string) (err error) {
+func CreateARecommend(authorID string, authorName string, paperID string, citation uint64, reason string) (err error) {
 	recommend := model.Recommend{
 		AuthorID:   authorID,
 		AuthorName: authorName,
 		PaperID:    paperID,
+		Citation:   citation,
 		Reason:     reason,
 	}
 	if global.DB.Create(&recommend).Error != nil {
@@ -86,6 +87,39 @@ func CreateARecommend(authorID string, authorName string, paperID string, reason
 	}
 	return
 }
+
+// 查看是否在推荐统计表中，返回查到的Paper
+func QueryARecommendInPaperRecommend(paperID string) (paperRecommend model.PaperRecommend, notFound bool) {
+	notFound = global.DB.Where("paper_id = ? ", paperID).First(&paperRecommend).RecordNotFound()
+	return paperRecommend, notFound
+}
+
+// CalculateScore 计算推荐指数
+func CalculateScore(citation uint64, hindex uint64) (value uint64) {
+	value = citation + hindex
+	return value
+}
+
+// 加入至论文推荐统计表
+func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, hindex int64) (err error) {
+	//value:=CalculateScore(citation,hindex)
+	value := int64(citation) + hindex
+	paperRecommend := model.PaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
+	err = global.DB.Create(&paperRecommend).Error
+	return err
+}
+
+// 更新论文在论文推荐统计表中的数据
+func UpdatePaperRecommend(paperRecommend *model.PaperRecommend, hindex int64) (err error) {
+	paperRecommend.Value += hindex
+	err = global.DB.Save(paperRecommend).Error
+	return err
+}
+
+// 统计论文推荐，返回若干条
+// func ScoreRecommend() (papers []model.PaperRecommend) {
+
+// }
 
 // 删除某条评论
 func DeleteRecommend(authorID string, paperID string) (err error) {

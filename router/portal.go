@@ -17,8 +17,8 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/column/remove_from_column", v1.RemovePaperFromColumn)
 		UserRouter.POST("/column/searchcol", v1.SearchSpecialColumn)
 
-		UserRouter.POST("/recommend/create_recommend", v1.CreateRecommend)
-		UserRouter.POST("/recommend/remove_recommend", v1.RemoveRecommend)
+		UserRouter.POST("/recommend/create", v1.CreateRecommend)
+		UserRouter.POST("/recommend/remove", v1.RemoveRecommend)
 		UserRouter.POST("/recommend/recommends_from_one_author", v1.ListRecommendsFromOneAuthor)
 		UserRouter.POST("/recommend/recommends_from_one_paper", v1.ListRecommendsFromOnePaper)
 		UserRouter.POST("/recommend/top", v1.ListTopSevenPapers)

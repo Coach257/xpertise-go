@@ -431,6 +431,45 @@ var doc = `{
                 }
             }
         },
+        "/portal/column/remove": {
+            "post": {
+                "description": "删除某条推荐",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "h-index",
+                        "name": "hindex",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"删除成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/portal/column/remove_from_column": {
             "post": {
                 "description": "删除专栏中的某条论文",
@@ -448,38 +487,6 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "论文ID",
-                        "name": "paper_id",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{\"success\": true, \"message\": \"删除成功\"}",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/portal/column/remove_recommend": {
-            "post": {
-                "description": "删除某条推荐",
-                "tags": [
-                    "portal"
-                ],
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "作者ID",
-                        "name": "author_id",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "文献ID",
                         "name": "paper_id",
                         "in": "formData",
                         "required": true
@@ -545,7 +552,7 @@ var doc = `{
                 }
             }
         },
-        "/portal/recommend/create_recommend": {
+        "/portal/recommend/create": {
             "post": {
                 "description": "创建一条推荐",
                 "tags": [
@@ -570,6 +577,27 @@ var doc = `{
                         "type": "string",
                         "description": "文献ID",
                         "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献名",
+                        "name": "paper_title",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "引用次数",
+                        "name": "n_citation",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "h-index",
+                        "name": "hindex",
                         "in": "formData",
                         "required": true
                     },
