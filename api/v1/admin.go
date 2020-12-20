@@ -61,8 +61,8 @@ func DealWithAuthorizationRequest(c *gin.Context) {
 		})
 		return
 	}
-	authreq, err := service.QueryAnAuthorizationRequest(authreqID)
-	if err != nil {
+	authreq, notFound := service.QueryAnAuthorizationRequest(authreqID)
+	if notFound == true {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "没有对应的请求。",

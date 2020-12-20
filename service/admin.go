@@ -25,21 +25,15 @@ func CreateAnAuthorizationRequest(userID uint64, citizenID string, organization 
 }
 
 // QueryAnAuthorizationRequest 获取一条认证申请
-func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationRequest, err error) {
-	notFound := global.DB.First(&authreq, authreqID).RecordNotFound()
-	if notFound {
-		return authreq, gorm.ErrRecordNotFound
-	}
-	return authreq, err
+func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationRequest, notFound bool) {
+	notFound = global.DB.First(&authreq, authreqID).RecordNotFound()
+	return authreq, notFound
 }
 
 // QueryAuthorizationRequestsByUserID 获取某个用户的所有认证申请
-func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.AuthorizationRequest, err error) {
-	notFound := global.DB.Find(&authreqs, userID).RecordNotFound()
-	if notFound {
-		return authreqs, gorm.ErrRecordNotFound
-	}
-	return authreqs, err
+func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.AuthorizationRequest, notFound bool) {
+	notFound = global.DB.Find(&authreqs, userID).RecordNotFound()
+	return authreqs, notFound
 }
 
 // UpdateAnAuthorizationRequest 更新一条认证申请

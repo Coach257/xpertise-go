@@ -316,8 +316,8 @@ func DeleteAUserByID(c *gin.Context) {
 func GetUserAllAuthorizationRequest(c *gin.Context) {
 	userIDStr := c.Request.FormValue("user_id")
 	userID, _ := strconv.ParseUint(userIDStr, 0, 64)
-	aureqs, err := service.QueryAuthorizationRequestsByUserID(userID)
-	if err != nil {
+	aureqs, notFound := service.QueryAuthorizationRequestsByUserID(userID)
+	if notFound == true {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
 			"message": "获取申请信息失败。",
@@ -330,6 +330,7 @@ func GetUserAllAuthorizationRequest(c *gin.Context) {
 			"data":    aureqs,
 		})
 	}
+	return
 }
 
 // ReadAUserAuthorizationRequest doc
