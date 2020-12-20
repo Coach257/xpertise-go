@@ -35,6 +35,12 @@ type PaperRecommend struct {
 	Value      int64  `json:"value"`
 }
 
+type CsPaperRecommend struct {
+	PaperID    string `gorm:"type:varchar(30);primary_key" json:"paper_id"`
+	PaperTitle string `gorm:"type:varchar(400)" json:"paper_title"`
+	Value      int64  `json:"value"`
+}
+
 type Result struct {
 	PaperID string `json:"paper_id"`
 	Total   uint64 `json:"total"`

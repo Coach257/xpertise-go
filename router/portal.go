@@ -21,6 +21,7 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/recommend/remove", v1.RemoveRecommend)
 		UserRouter.POST("/recommend/recommends_from_one_author", v1.ListRecommendsFromOneAuthor)
 		UserRouter.POST("/recommend/recommends_from_one_paper", v1.ListRecommendsFromOnePaper)
-		UserRouter.POST("/recommend/top", v1.ListTopSevenPapers)
+		UserRouter.GET("/recommend/cs/top", v1.ListTopSevenCsPapers)
+		UserRouter.GET("/recommend/main/top", v1.ListTopSevenPapers)
 	}
 }

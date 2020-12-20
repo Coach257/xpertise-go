@@ -147,11 +147,20 @@ func CreateRecommend(c *gin.Context) {
 	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
 	hindex, _ := strconv.ParseInt(c.Request.FormValue("hindex"), 0, 64)
 	reason := c.Request.FormValue("reason")
-	paperRecommend, notFound := service.QueryARecommendInPaperRecommend(paperID)
-	if notFound {
-		service.AddToPaperRecommend(paperID, paperTitle, citation, hindex)
+	if len(paperID) >= 10 {
+		paperRecommend, notFound := service.QueryARecommendInPaperRecommend(paperID)
+		if notFound {
+			service.AddToPaperRecommend(paperID, paperTitle, citation, hindex)
+		} else {
+			service.UpdatePaperRecommend(&paperRecommend, hindex)
+		}
 	} else {
-		service.UpdatePaperRecommend(&paperRecommend, hindex)
+		paperRecommend, notFound := service.QueryARecommendInCsPaperRecommend(paperID)
+		if notFound {
+			service.AddToCsPaperRecommend(paperID, paperTitle, citation, hindex)
+		} else {
+			service.UpdateCsPaperRecommend(&paperRecommend, hindex)
+		}
 	}
 	if err := service.CreateARecommend(authorID, authorName, paperID, citation, reason); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
@@ -173,8 +182,14 @@ func RemoveRecommend(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	paperID := c.Request.FormValue("paper_id")
 	hindex, _ := strconv.ParseInt(c.Request.FormValue("hindex"), 0, 64)
-	paperRecommend, _ := service.QueryARecommendInPaperRecommend(paperID)
-	service.UpdatePaperRecommend(&paperRecommend, -hindex)
+	if len(paperID) >= 10 {
+		paperRecommend, _ := service.QueryARecommendInPaperRecommend(paperID)
+		service.UpdatePaperRecommend(&paperRecommend, -hindex)
+	} else {
+		paperRecommend, _ := service.QueryARecommendInCsPaperRecommend(paperID)
+		service.UpdateCsPaperRecommend(&paperRecommend, -hindex)
+	}
+
 	if err := service.DeleteRecommend(authorID, paperID); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
@@ -213,9 +228,20 @@ func ListRecommendsFromOnePaper(c *gin.Context) {
 // @description 获取推荐数最多的前七篇文献
 // @Tags portal
 // @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇文献的ID"}"
-// @Router /portal/recommend/top [post]
+// @Router /portal/recommend/main/top [get]
 func ListTopSevenPapers(c *gin.Context) {
 	papers := service.QueryTopSevenPapers()
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": papers})
+	return
+}
+
+// ListTopSevenCsPapers doc
+// @description 获取推荐数最多的前七篇CS文献
+// @Tags portal
+// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇文献的ID"}"
+// @Router /portal/recommend/cs/top [get]
+func ListTopSevenCsPapers(c *gin.Context) {
+	papers := service.QueryTopSevenCsPapers()
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查找成功", "data": papers})
 	return
 }

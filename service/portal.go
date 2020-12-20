@@ -117,10 +117,27 @@ func UpdatePaperRecommend(paperRecommend *model.PaperRecommend, hindex int64) (e
 	return err
 }
 
-// 统计论文推荐，返回若干条
-// func ScoreRecommend() (papers []model.PaperRecommend) {
+// 查看是否在推荐统计表中，返回查到的Paper
+func QueryARecommendInCsPaperRecommend(paperID string) (paperRecommend model.CsPaperRecommend, notFound bool) {
+	notFound = global.DB.Where("paper_id = ? ", paperID).First(&paperRecommend).RecordNotFound()
+	return paperRecommend, notFound
+}
 
-// }
+// 加入至论文推荐统计表
+func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, hindex int64) (err error) {
+	//value:=CalculateScore(citation,hindex)
+	value := int64(citation) + hindex
+	paperRecommend := model.CsPaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
+	err = global.DB.Create(&paperRecommend).Error
+	return err
+}
+
+// 更新论文在论文推荐统计表中的数据
+func UpdateCsPaperRecommend(paperRecommend *model.CsPaperRecommend, hindex int64) (err error) {
+	paperRecommend.Value += hindex
+	err = global.DB.Save(paperRecommend).Error
+	return err
+}
 
 // 删除某条评论
 func DeleteRecommend(authorID string, paperID string) (err error) {
@@ -146,11 +163,14 @@ func QueryRecommendsFromOnePaper(paperID string) (recommends []model.Recommend) 
 }
 
 // 列出推荐数目最多的前七篇文献
-//db.Table("orders").Select("date(created_at) as date, sum(amount) as total").Group("date(created_at)").Rows()
 func QueryTopSevenPapers() (results []model.Result) {
-	global.DB.Table("recommends").Select("paper_id as paper_id, count(author_id) as total").Group("paper_id").Order("total desc").Limit(7).Scan(&results)
-	return results // db.Select("AVG(age) as avgage").Group("name").Having("AVG(age) > (?)", subQuery).Find(&results)
+	global.DB.Table("paper_recommends").Order("value desc").Limit(7).Scan(&results)
+	return results
+}
 
+func QueryTopSevenCsPapers() (results []model.Result) {
+	global.DB.Table("cs_paper_recommends").Order("value desc").Limit(7).Scan(&results)
+	return results
 }
 
 func FindPortalByID(authorID string) (portal model.Portal, notFound bool) {

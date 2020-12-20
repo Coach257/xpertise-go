@@ -619,6 +619,38 @@ var doc = `{
                 }
             }
         },
+        "/portal/recommend/cs/top": {
+            "get": {
+                "description": "获取推荐数最多的前七篇CS文献",
+                "tags": [
+                    "portal"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/portal/recommend/main/top": {
+            "get": {
+                "description": "获取推荐数最多的前七篇文献",
+                "tags": [
+                    "portal"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/portal/recommend/recommends_from_one_author": {
             "post": {
                 "description": "获取作者推荐的所有内容",
@@ -662,22 +694,6 @@ var doc = `{
                 "responses": {
                     "200": {
                         "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"文献的所有推荐\"}",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/portal/recommend/top": {
-            "post": {
-                "description": "获取推荐数最多的前七篇文献",
-                "tags": [
-                    "portal"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
                         "schema": {
                             "type": "string"
                         }
