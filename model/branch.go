@@ -12,7 +12,7 @@ type Paper struct {
 }
 
 type Affiliation struct {
-	AffiliationID   string `gorm:"type:varchar(10);primary_key;" json:"affiliation_id"`
+	AffiliationID   string `gorm:"type:varchar(30);primary_key;" json:"affiliation_id"`
 	AffiliationName string `gorm:"type:varchar(150)" json:"affiliation_name"`
 }
 
@@ -22,31 +22,31 @@ type Author struct {
 }
 
 type Conference struct {
-	ConferenceID   string `gorm:"type:varchar(10);primary_key;" json:"conference_id"`
-	ConferenceName string `gorm:"type:varchar(10)" json:"conference_name"`
+	ConferenceID   string `gorm:"type:varchar(30);primary_key;" json:"conference_id"`
+	ConferenceName string `gorm:"type:varchar(30)" json:"conference_name"`
 }
 
 type PaperAuthorAffiliation struct {
-	PaperID        string `gorm:"type:varchar(10);primary_key;" json:"paper_id"`
-	AuthorID       string `gorm:"type:varchar(10)" json:"author_id"`
-	AffiliationID  string `gorm:"type:varchar(10)" json:"affiliation_id"`
+	PaperID        string `gorm:"type:varchar(30);primary_key;" json:"paper_id"`
+	AuthorID       string `gorm:"type:varchar(30)" json:"author_id"`
+	AffiliationID  string `gorm:"type:varchar(30)" json:"affiliation_id"`
 	AuthorSequence string `gorm:"type:varchar(3);primary_key;" json:"author_sequence"`
 }
 
 type PaperReference struct {
-	PaperID             string `gorm:"type:varchar(10);" json:"paper_id"`
+	PaperID             string `gorm:"type:varchar(30);" json:"paper_id"`
 	PaperTitle          string `gorm:"type:varchar(400);" json:"paper_title"`
-	ReferenceID         string `gorm:"type:varchar(10);" json:"reference_id"`
+	ReferenceID         string `gorm:"type:varchar(30);" json:"reference_id"`
 	ReferencePaperTitle string `gorm:"type:varchar(400);" json:"reference_paper_title"`
 }
 
 type Connection struct {
-	Author1ID   string `gorm:"type:varchar(10)" json:"author1_id"`
+	Author1ID   string `gorm:"type:varchar(30)" json:"author1_id"`
 	Author1Name string `gorm:"type:varchar(100)" json:"author1_name"`
-	Author2ID   string `gorm:"type:varchar(10)" json:"author2_id"`
+	Author2ID   string `gorm:"type:varchar(30)" json:"author2_id"`
 	Author2Name string `gorm:"type:varchar(100)" json:"author2_name"`
-	FatherID    string `gorm:"type:varchar(10)" json:"fa_id"`
-	PaperID     string `gorm:"type:varchar(10)" json:"paper_id"`
+	FatherID    string `gorm:"type:varchar(30)" json:"fa_id"`
+	PaperID     string `gorm:"type:varchar(30)" json:"paper_id"`
 	PaperTitle  string `gorm:"type:varchar(400);" json:"paper_title"`
 }
 

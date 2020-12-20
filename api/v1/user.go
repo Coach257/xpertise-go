@@ -320,7 +320,7 @@ func GetUserAllAuthorizationRequest(c *gin.Context) {
 	if notFound == true {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "获取申请信息失败。",
+			"message": "暂无申请信息。",
 			"data":    aureqs,
 		})
 	} else {
