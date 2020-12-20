@@ -188,16 +188,16 @@ func GetNodesFromReferences(references []model.PaperReference) []model.Node {
 	return res
 }
 
-func GetLinksFromReferences(references []model.PaperReference, level string) []model.Link {
+func GetLinksFromReferences(references []model.PaperReference) []model.Link {
 	set := make(map[model.PaperReference]bool)
 	var res []model.Link
 	for _, refer := range references {
 		if !set[refer] {
 			set[refer] = true
 			tmp := model.Link{
-				From: refer.ReferenceID,
-				To:   refer.ReferencePaperTitle,
-				Text: level,
+				From: refer.PaperID,
+				To:   refer.ReferenceID,
+				Text: refer.ReferencePaperTitle,
 			}
 			res = append(res, tmp)
 		}
@@ -215,14 +215,14 @@ func GetThreeLevelReferences(c *gin.Context) {
 	paperID := c.Request.FormValue("paper_id")
 	directRefers := service.QueryAllReferences(paperID)
 	nodes := GetNodesFromReferences(directRefers)
-	links := GetLinksFromReferences(directRefers, "1")
+	links := GetLinksFromReferences(directRefers)
 	var secondRefers = []model.PaperReference{}
-	for _, refer := range secondRefers {
+	for _, refer := range directRefers {
 		tmpRefers := service.QueryAllReferences(refer.ReferenceID)
 		secondRefers = append(secondRefers, tmpRefers...)
 	}
-	nodes = append(nodes, GetNodesFromReferences(directRefers)...)
-	links = append(links, GetLinksFromReferences(directRefers, "2")...)
+	nodes = append(nodes, GetNodesFromReferences(secondRefers)...)
+	links = append(links, GetLinksFromReferences(secondRefers)...)
 	data := model.LinkType{
 		RootID: paperID,
 		Nodes:  nodes,
