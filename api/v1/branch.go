@@ -225,8 +225,8 @@ func GetThreeLevelReferences(c *gin.Context) {
 		nodes = append(nodes, node)
 		links = nil
 	} else {
-		nodes := GetNodesFromReferences(directRefers)
-		links := GetLinksFromReferences(directRefers)
+		nodes = GetNodesFromReferences(directRefers)
+		links = GetLinksFromReferences(directRefers)
 		var secondRefers = []model.PaperReference{}
 		for _, refer := range directRefers {
 			tmpRefers := service.QueryAllReferences(refer.ReferenceID)
