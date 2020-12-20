@@ -31,9 +31,9 @@ func QueryAnAuthorizationRequest(authreqID uint64) (authreq model.AuthorizationR
 }
 
 // QueryAuthorizationRequestsByUserID 获取某个用户的所有认证申请
-func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.AuthorizationRequest, notFound bool) {
-	notFound = global.DB.Find(&authreqs, userID).RecordNotFound()
-	return authreqs, notFound
+func QueryAuthorizationRequestsByUserID(userID uint64) (authreqs []model.AuthorizationRequest) {
+	global.DB.Where("user_id == userID").Find(&authreqs)
+	return authreqs
 }
 
 // UpdateAnAuthorizationRequest 更新一条认证申请
