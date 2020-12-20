@@ -176,6 +176,22 @@ paths:
             type: string
       tags:
       - branch
+  /branch/graph/reference:
+    post:
+      description: 列出某条文献的三级参考文献
+      parameters:
+      - description: 文献ID
+        in: formData
+        name: paper_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": "操作成功", "data": "某文献的2级参考文献"}'
+          schema:
+            type: string
+      tags:
+      - branch
   /portal/author:
     post:
       description: 查找作者是否存在
@@ -204,6 +220,11 @@ paths:
       - description: 专栏ID
         in: formData
         name: column_id
+        required: true
+        type: string
+      - description: 文献标题
+        in: formData
+        name: paper_title
         required: true
         type: string
       responses:

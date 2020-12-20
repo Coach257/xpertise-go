@@ -285,6 +285,31 @@ var doc = `{
                 }
             }
         },
+        "/branch/graph/reference": {
+            "post": {
+                "description": "列出某条文献的三级参考文献",
+                "tags": [
+                    "branch"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": \"操作成功\", \"data\": \"某文献的2级参考文献\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/portal/author": {
             "post": {
                 "description": "查找作者是否存在",
@@ -328,6 +353,13 @@ var doc = `{
                         "type": "string",
                         "description": "专栏ID",
                         "name": "column_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献标题",
+                        "name": "paper_title",
                         "in": "formData",
                         "required": true
                     }
