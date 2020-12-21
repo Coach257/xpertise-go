@@ -187,6 +187,22 @@ paths:
             type: string
       tags:
       - portal
+  /portal/authorized_user_info:
+    post:
+      description: 通过UserID，返回该入驻用户的信息
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": portal的信息}'
+          schema:
+            type: string
+      tags:
+      - portal
   /portal/column/add_to_column:
     post:
       description: 添加某篇文章到专栏
@@ -313,6 +329,27 @@ paths:
             type: string
       tags:
       - portal
+  /portal/connection_graph:
+    post:
+      description: 返回与某作者有直接合作的作者列表
+      parameters:
+      - description: 作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
+      - description: 连接节点数量
+        in: formData
+        name: author_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": connection}'
+          schema:
+            type: string
+      tags:
+      - portal
   /portal/direct_connection/list:
     post:
       description: 返回与某作者有直接合作的作者列表
@@ -329,7 +366,7 @@ paths:
             type: string
       tags:
       - portal
-  /portal/issettled:
+  /portal/is_settled:
     post:
       description: 判断该作者是否入驻
       parameters:

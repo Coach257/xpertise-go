@@ -303,6 +303,31 @@ var doc = `{
                 }
             }
         },
+        "/portal/authorized_user_info": {
+            "post": {
+                "description": "通过UserID，返回该入驻用户的信息",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": portal的信息}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/portal/column/add_to_column": {
             "post": {
                 "description": "添加某篇文章到专栏",
@@ -495,6 +520,38 @@ var doc = `{
                 }
             }
         },
+        "/portal/connection_graph": {
+            "post": {
+                "description": "返回与某作者有直接合作的作者列表",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "连接节点数量",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": connection}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/portal/direct_connection/list": {
             "post": {
                 "description": "返回与某作者有直接合作的作者列表",
@@ -520,7 +577,7 @@ var doc = `{
                 }
             }
         },
-        "/portal/issettled": {
+        "/portal/is_settled": {
             "post": {
                 "description": "判断该作者是否入驻",
                 "tags": [

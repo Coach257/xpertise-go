@@ -10,7 +10,9 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 	UserRouter := Router.Group("api/v1/portal")
 	{
 		UserRouter.POST("/author", v1.SearchAuthor)
-		UserRouter.POST("/issettled", v1.IsSettled)
+		UserRouter.POST("/is_settled", v1.IsSettled)
+		UserRouter.POST("/authorized_user_info", v1.AuthorizedUserInfo)
+
 		UserRouter.POST("/column/create_column", v1.CreateSpecialColumn)
 		UserRouter.POST("/column/add_to_column", v1.AddToColumn)
 		UserRouter.POST("/column/list_all_from_column", v1.ListAllFromAColumn)
@@ -24,5 +26,6 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 		UserRouter.GET("/recommend/cs/top", v1.ListTopSevenCsPapers)
 		UserRouter.GET("/recommend/main/top", v1.ListTopSevenPapers)
 		UserRouter.POST("/direct_connection/list", v1.ListDirectConnectedAuthors)
+		UserRouter.POST("/connection_graph", v1.CreateAuthorConnectionsGraph)
 	}
 }

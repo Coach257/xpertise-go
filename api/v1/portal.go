@@ -252,14 +252,31 @@ func ListTopSevenCsPapers(c *gin.Context) {
 // @Param author_id formData string true "作者ID"
 // @Success 200 {string} string "{"success": true, "message": "true"}"
 // @Success 200 {string} string "{"success": true, "message": "false"}"
-// @Router /portal/issettled [post]
+// @Router /portal/is_settled [post]
 func IsSettled(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
-	_, notFound := service.FindPortalByID(authorID)
+	_, notFound := service.FindPortalByAuthorID(authorID)
 	if notFound {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "false"})
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": true, "message": "true"})
+	}
+	return
+}
+
+// AuthorizedUserInfo doc
+// @description 通过UserID，返回该入驻用户的信息
+// @Tags portal
+// @Param user_id formData string true "用户ID"
+// @Success 200 {string} string "{"success": true, "message": portal的信息}"
+// @Router /portal/authorized_user_info [post]
+func AuthorizedUserInfo(c *gin.Context) {
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	portal, notFound := service.FindPortalByUserID(userID)
+	if notFound {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": "没有找到该用户的门户"})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": portal})
 	}
 	return
 }
@@ -273,6 +290,24 @@ func IsSettled(c *gin.Context) {
 func ListDirectConnectedAuthors(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	connections, err := service.FindDirectConnectedAuthors(authorID)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": err})
+	}
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": connections})
+	return
+}
+
+// ListDirectConnectedAuthors doc
+// @description 返回与某作者有直接合作的作者列表
+// @Tags portal
+// @Param author_id formData string true "作者ID"
+// @Param author_id formData string true "连接节点数量"
+// @Success 200 {string} string "{"success": true, "message": connection}"
+// @Router /portal/connection_graph [post]
+func CreateAuthorConnectionsGraph(c *gin.Context) {
+	authorID := c.Request.FormValue("author_id")
+	tot, _ := strconv.ParseInt(c.Request.FormValue("total"), 0, 64)
+	connections, err := service.FindAuthorConnections(authorID, int(tot))
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err})
 	}

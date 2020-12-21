@@ -173,8 +173,13 @@ func QueryTopSevenCsPapers() (results []model.Result) {
 	return results
 }
 
-func FindPortalByID(authorID string) (portal model.Portal, notFound bool) {
+func FindPortalByAuthorID(authorID string) (portal model.Portal, notFound bool) {
 	notFound = global.DB.Where("author_id = ?", authorID).First(&portal).RecordNotFound()
+	return portal, notFound
+}
+
+func FindPortalByUserID(userID uint64) (portal model.Portal, notFound bool) {
+	notFound = global.DB.Where("user_id = ?", userID).First(&portal).RecordNotFound()
 	return portal, notFound
 }
 
@@ -183,6 +188,17 @@ func FindDirectConnectedAuthors(authorID string) (connections []model.Connection
 	return connections, err
 }
 
-func FindAuthorConnectionGraph(authorID string, tot uint64) (connections []model.Connection, err error) {
-	return
+func FindAuthorConnections(authorID string, tot int) (connections []model.Connection, err error) {
+	var tmpConnections []model.Connection
+	err = global.DB.Where("author1_id = ?", authorID).Or("author2_id = ?", authorID).Find(&tmpConnections).Error
+	connections = append(connections, tmpConnections...)
+	// for _, _ := range tmpConnections {
+	// 	if tmpConnections[0].Author2ID != authorID {
+	// 		authorID = tmpConnections[0].Author2ID
+	// 	} else {
+	// 		authorID = tmpConnections[0].Author1ID
+	// 	}
+	// }
+
+	return connections, err
 }
