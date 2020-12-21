@@ -707,7 +707,7 @@ paths:
       - user
   /user/wish/add:
     post:
-      description: 添加至清单
+      description: 添加至心愿清单
       parameters:
       - description: 用户ID
         in: formData
@@ -719,21 +719,31 @@ paths:
         name: paper_id
         required: true
         type: string
-      - description: 文献辩题
+      - description: 文献标题
         in: formData
         name: title
         required: true
         type: string
+      - description: PaperPublishYear
+        in: formData
+        name: year
+        required: true
+        type: string
+      - description: Paper引用数量
+        in: formData
+        name: n_citation
+        required: true
+        type: string
       responses:
         "200":
-          description: '{"success":true, "message":"已添加至清单"}'
+          description: '{"success":true, "message":"已添加至心愿清单"}'
           schema:
             type: string
       tags:
       - user
   /user/wish/list:
     post:
-      description: 获取收藏列表
+      description: 获取心愿清单列表
       parameters:
       - description: 用户ID
         in: formData
@@ -747,9 +757,30 @@ paths:
             type: string
       tags:
       - user
+  /user/wish/paper_in_wish:
+    post:
+      description: 判断该篇Paper是否已在用户心愿清单中
+      parameters:
+      - description: 用户ID
+        in: formData
+        name: user_id
+        required: true
+        type: string
+      - description: 文献ID
+        in: formData
+        name: paper_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success":true, "message":"不在用户的心愿清单内/已在用户的心愿清单中"}'
+          schema:
+            type: string
+      tags:
+      - user
   /user/wish/remove:
     post:
-      description: 移出清单
+      description: 移出心愿清单
       parameters:
       - description: 心愿ID
         in: formData

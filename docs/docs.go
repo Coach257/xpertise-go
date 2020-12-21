@@ -1094,7 +1094,7 @@ var doc = `{
         },
         "/user/wish/add": {
             "post": {
-                "description": "添加至清单",
+                "description": "添加至心愿清单",
                 "tags": [
                     "user"
                 ],
@@ -1115,15 +1115,29 @@ var doc = `{
                     },
                     {
                         "type": "string",
-                        "description": "文献辩题",
+                        "description": "文献标题",
                         "name": "title",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "PaperPublishYear",
+                        "name": "year",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Paper引用数量",
+                        "name": "n_citation",
                         "in": "formData",
                         "required": true
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\":true, \"message\":\"已添加至清单\"}",
+                        "description": "{\"success\":true, \"message\":\"已添加至心愿清单\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -1133,7 +1147,7 @@ var doc = `{
         },
         "/user/wish/list": {
             "post": {
-                "description": "获取收藏列表",
+                "description": "获取心愿清单列表",
                 "tags": [
                     "user"
                 ],
@@ -1156,9 +1170,41 @@ var doc = `{
                 }
             }
         },
+        "/user/wish/paper_in_wish": {
+            "post": {
+                "description": "判断该篇Paper是否已在用户心愿清单中",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文献ID",
+                        "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true, \"message\":\"不在用户的心愿清单内/已在用户的心愿清单中\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/user/wish/remove": {
             "post": {
-                "description": "移出清单",
+                "description": "移出心愿清单",
                 "tags": [
                     "user"
                 ],
