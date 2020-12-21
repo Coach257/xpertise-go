@@ -21,9 +21,21 @@ func QueryAComment(commentID uint64) (comment model.Comment, notFound bool) {
 }
 
 // 列出某个文献的所有评论
-func QueryAllComments(paperID string) (comments []model.Comment) {
-	global.DB.Where("paper_id = ?", paperID).Find(&comments)
-	return comments
+func QueryAllComments(paperID string) (res []model.Comment) {
+	var comments []model.Comment
+	global.DB.Where("paper_id = ?", paperID).Order("comment_time desc").Find(&comments)
+	// 将置顶的评论提前，存入res
+	for _, e := range comments {
+		if e.OnTop == true {
+			res = append(res, e)
+		}
+	}
+	for _, e := range comments {
+		if e.OnTop == false {
+			res = append(res, e)
+		}
+	}
+	return res
 }
 
 // 删除某条评论
