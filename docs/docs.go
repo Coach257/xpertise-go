@@ -110,7 +110,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\": true, \"message\": \"申请认证成功。\"}",
+                        "description": "{\"success\": true, \"message\": \"发送申请认证成功。\"}",
                         "schema": {
                             "type": "string"
                         }

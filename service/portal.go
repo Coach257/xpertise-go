@@ -179,7 +179,7 @@ func FindPortalByID(authorID string) (portal model.Portal, notFound bool) {
 }
 
 func FindDirectConnectedAuthors(authorID string) (connections []model.Connection, err error) {
-	err = global.DB.Where("author1_id = ?", authorID).Find(&connections).Error
+	err = global.DB.Where("author1_id = ?", authorID).Or("author2_id = ?", authorID).Find(&connections).Error
 	return connections, err
 }
 
