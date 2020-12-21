@@ -83,3 +83,19 @@ type Link struct {
 	To   string `json:"to"`
 	Text string `json:"text"`
 }
+
+type A struct {
+	Bs []B `json:"data"`
+	Cs []C `jsn:"links"`
+}
+
+type B struct {
+	Name  string `json:"name"`
+	Value int64  `json:"value"`
+}
+
+type C struct {
+	Source string `json:"source"`
+	Target string `json:"target"`
+	Num    int64  `json:"num"`
+}

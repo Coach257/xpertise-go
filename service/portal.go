@@ -188,10 +188,10 @@ func FindDirectConnectedAuthors(authorID string) (connections []model.Connection
 	return connections, err
 }
 
-func FindAuthorConnections(authorID string) (res []model.Connection, err error) {
+func FindAuthorConnections(authorID string) (a model.A, err error) {
 	//var curTot int
 	//curTot = 0
-	var tmpConnections, connections []model.Connection
+	var res, tmpConnections, connections []model.Connection
 	err = global.DB.Where("author1_id = ?", authorID).Or("author2_id = ?", authorID).Find(&tmpConnections).Error
 	connections = append(connections, tmpConnections...)
 	for _, v := range tmpConnections {
@@ -234,5 +234,40 @@ func FindAuthorConnections(authorID string) (res []model.Connection, err error) 
 			//}
 		}
 	}
-	return res, err
+
+	// var a model.A
+	var b []model.B
+	var c []model.C
+
+	for _, s := range res {
+		x := model.B{Name: s.Author1Name, Value: s.Author1HIndex}
+		stat := false
+		for _, p := range b {
+			if p.Name == x.Name {
+				stat = true
+				break
+			}
+		}
+		if stat == false {
+			b = append(b, x)
+		}
+		x = model.B{Name: s.Author2Name, Value: s.Author2HIndex}
+		stat = false
+		for _, p := range b {
+			if p.Name == x.Name {
+				stat = true
+				break
+			}
+		}
+		if stat == false {
+			b = append(b, x)
+		}
+	}
+
+	for _, s := range res {
+		x := model.C{Source: s.Author1Name, Target: s.Author2Name, Num: s.CoNum}
+		c = append(c, x)
+	}
+	a = model.A{Bs: b, Cs: c}
+	return a, err
 }
