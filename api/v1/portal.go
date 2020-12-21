@@ -263,3 +263,19 @@ func IsSettled(c *gin.Context) {
 	}
 	return
 }
+
+// ListDirectConnectedAuthors doc
+// @description 返回与某作者有直接合作的作者列表
+// @Tags portal
+// @Param author_id formData string true "作者ID"
+// @Success 200 {string} string "{"success": true, "message": connection}"
+// @Router /portal/direct_connection/list [post]
+func ListDirectConnectedAuthors(c *gin.Context) {
+	authorID := c.Request.FormValue("author_id")
+	connections, err := service.FindDirectConnectedAuthors(authorID)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": err})
+	}
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": connections})
+	return
+}

@@ -23,5 +23,6 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 		UserRouter.POST("/recommend/recommends_from_one_paper", v1.ListRecommendsFromOnePaper)
 		UserRouter.GET("/recommend/cs/top", v1.ListTopSevenCsPapers)
 		UserRouter.GET("/recommend/main/top", v1.ListTopSevenPapers)
+		UserRouter.POST("/direct_connection/list", v1.ListDirectConnectedAuthors)
 	}
 }
