@@ -182,3 +182,7 @@ func FindDirectConnectedAuthors(authorID string) (connections []model.Connection
 	err = global.DB.Where("author1_id = ?", authorID).Find(&connections).Error
 	return connections, err
 }
+
+func FindAuthorConnectionGraph(authorID string, tot uint64) (connections []model.Connection, err error) {
+	return
+}

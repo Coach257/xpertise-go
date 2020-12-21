@@ -43,7 +43,7 @@ func UpdateAUser(user *model.User, username string, password string, email strin
 // UpdateAUserUserType 更新用户状态
 func UpdateAUserUserType(user *model.User, userType int) error {
 	user.UserType = userType
-	err := global.DB.Update(user).Error
+	err := global.DB.Save(user).Error
 	return err
 }
 

@@ -313,6 +313,22 @@ paths:
             type: string
       tags:
       - portal
+  /portal/direct_connection/list:
+    post:
+      description: 返回与某作者有直接合作的作者列表
+      parameters:
+      - description: 作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": connection}'
+          schema:
+            type: string
+      tags:
+      - portal
   /portal/issettled:
     post:
       description: 判断该作者是否入驻

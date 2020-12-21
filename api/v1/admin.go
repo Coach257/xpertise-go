@@ -14,7 +14,7 @@ import (
 // @Param user_id formData string true "用户名"
 // @Param citizen_id formData string true "身份证号"
 // @Param organization formData string true "工作单位"
-// @Success 200 {string} string "{"success": true, "message": "申请认证成功。"}"
+// @Success 200 {string} string "{"success": true, "message": "发送申请认证成功。"}"
 // @Router /admin/authorize/request [post]
 func RequestForAuthorization(c *gin.Context) {
 	userIDStr := c.Request.FormValue("user_id")
@@ -29,7 +29,7 @@ func RequestForAuthorization(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, gin.H{
 			"success": true,
-			"message": "申请认证成功。",
+			"message": "发送申请认证成功。",
 		})
 	}
 	return
@@ -45,22 +45,8 @@ func RequestForAuthorization(c *gin.Context) {
 // @Router /admin/authorize/deal [post]
 func DealWithAuthorizationRequest(c *gin.Context) {
 	authreqIDStr := c.Request.FormValue("authreq_id")
-	if authreqIDStr == "" {
-		c.JSON(http.StatusOK, gin.H{
-			"success": false,
-			"message": "authreq_id为空。",
-		})
-		return
-	}
 	authreqID, _ := strconv.ParseUint(authreqIDStr, 0, 64)
 	action := c.Request.FormValue("action")
-	if action == "" {
-		c.JSON(http.StatusOK, gin.H{
-			"success": false,
-			"message": "action为空。",
-		})
-		return
-	}
 	authreq, notFound := service.QueryAnAuthorizationRequest(authreqID)
 	if notFound == true {
 		c.JSON(http.StatusOK, gin.H{
