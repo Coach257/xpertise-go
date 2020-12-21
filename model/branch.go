@@ -41,11 +41,13 @@ type PaperReference struct {
 }
 
 type Connection struct {
-	Author1ID   string `gorm:"type:varchar(30)" json:"author1_id"`
-	Author1Name string `gorm:"type:varchar(100)" json:"author1_name"`
-	Author2ID   string `gorm:"type:varchar(30)" json:"author2_id"`
-	Author2Name string `gorm:"type:varchar(100)" json:"author2_name"`
-	CoNum       int64  `json:"co_num"`
+	Author1ID     string `gorm:"type:varchar(30)" json:"author1_id"`
+	Author1Name   string `gorm:"type:varchar(100)" json:"author1_name"`
+	Author1HIndex int64  `json:"author1_h_index"`
+	Author2ID     string `gorm:"type:varchar(30)" json:"author2_id"`
+	Author2Name   string `gorm:"type:varchar(100)" json:"author2_name"`
+	Author2HIndex int64  `json:"author2_h_index"`
+	CoNum         int64  `json:"co_num"`
 }
 
 type Comment struct {

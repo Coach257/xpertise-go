@@ -96,23 +96,23 @@ func QueryARecommendInPaperRecommend(paperID string) (paperRecommend model.Paper
 }
 
 // CalculateScore 计算推荐指数
-func CalculateScore(citation uint64, hindex uint64) (value uint64) {
-	value = citation + hindex
+func CalculateScore(citation uint64, h_index uint64) (value uint64) {
+	value = citation + h_index
 	return value
 }
 
 // 加入至论文推荐统计表
-func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, hindex int64) (err error) {
-	//value:=CalculateScore(citation,hindex)
-	value := int64(citation) + hindex
+func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, h_index int64) (err error) {
+	//value:=CalculateScore(citation,h_index)
+	value := int64(citation) + h_index
 	paperRecommend := model.PaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
 }
 
 // 更新论文在论文推荐统计表中的数据
-func UpdatePaperRecommend(paperRecommend *model.PaperRecommend, hindex int64) (err error) {
-	paperRecommend.Value += hindex
+func UpdatePaperRecommend(paperRecommend *model.PaperRecommend, h_index int64) (err error) {
+	paperRecommend.Value += h_index
 	err = global.DB.Save(paperRecommend).Error
 	return err
 }
@@ -124,17 +124,17 @@ func QueryARecommendInCsPaperRecommend(paperID string) (paperRecommend model.CsP
 }
 
 // 加入至论文推荐统计表
-func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, hindex int64) (err error) {
-	//value:=CalculateScore(citation,hindex)
-	value := int64(citation) + hindex
+func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, h_index int64) (err error) {
+	//value:=CalculateScore(citation,h_index)
+	value := int64(citation) + h_index
 	paperRecommend := model.CsPaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
 }
 
 // 更新论文在论文推荐统计表中的数据
-func UpdateCsPaperRecommend(paperRecommend *model.CsPaperRecommend, hindex int64) (err error) {
-	paperRecommend.Value += hindex
+func UpdateCsPaperRecommend(paperRecommend *model.CsPaperRecommend, h_index int64) (err error) {
+	paperRecommend.Value += h_index
 	err = global.DB.Save(paperRecommend).Error
 	return err
 }

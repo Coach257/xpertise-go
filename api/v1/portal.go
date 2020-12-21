@@ -135,7 +135,7 @@ func SearchAuthor(c *gin.Context) {
 // @Param paper_id formData string true "文献ID"
 // @Param paper_title formData string true "文献名"
 // @Param n_citation formData string true "引用次数"
-// @Param hindex formData string true "h-index"
+// @Param h_index formData string true "h-index"
 // @Param reason formData string true "推荐理由"
 // @Success 200 {string} string "{"success": true, "message": "推荐成功"}"
 // @Router /portal/recommend/create [post]
@@ -145,21 +145,21 @@ func CreateRecommend(c *gin.Context) {
 	paperID := c.Request.FormValue("paper_id")
 	paperTitle := c.Request.FormValue("paper_title")
 	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
-	hindex, _ := strconv.ParseInt(c.Request.FormValue("hindex"), 0, 64)
+	h_index, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
 	reason := c.Request.FormValue("reason")
 	if len(paperID) >= 10 {
 		paperRecommend, notFound := service.QueryARecommendInPaperRecommend(paperID)
 		if notFound {
-			service.AddToPaperRecommend(paperID, paperTitle, citation, hindex)
+			service.AddToPaperRecommend(paperID, paperTitle, citation, h_index)
 		} else {
-			service.UpdatePaperRecommend(&paperRecommend, hindex)
+			service.UpdatePaperRecommend(&paperRecommend, h_index)
 		}
 	} else {
 		paperRecommend, notFound := service.QueryARecommendInCsPaperRecommend(paperID)
 		if notFound {
-			service.AddToCsPaperRecommend(paperID, paperTitle, citation, hindex)
+			service.AddToCsPaperRecommend(paperID, paperTitle, citation, h_index)
 		} else {
-			service.UpdateCsPaperRecommend(&paperRecommend, hindex)
+			service.UpdateCsPaperRecommend(&paperRecommend, h_index)
 		}
 	}
 	if err := service.CreateARecommend(authorID, authorName, paperID, citation, reason); err != nil {
@@ -175,19 +175,19 @@ func CreateRecommend(c *gin.Context) {
 // @Tags portal
 // @Param author_id formData string true "作者ID"
 // @Param paper_id formData string true "文献ID"
-// @Param hindex formData string true "h-index"
+// @Param h_index formData string true "h-index"
 // @Success 200 {string} string "{"success": true, "message": "删除成功"}"
 // @Router /portal/column/remove [post]
 func RemoveRecommend(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	paperID := c.Request.FormValue("paper_id")
-	hindex, _ := strconv.ParseInt(c.Request.FormValue("hindex"), 0, 64)
+	h_index, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
 	if len(paperID) >= 10 {
 		paperRecommend, _ := service.QueryARecommendInPaperRecommend(paperID)
-		service.UpdatePaperRecommend(&paperRecommend, -hindex)
+		service.UpdatePaperRecommend(&paperRecommend, -h_index)
 	} else {
 		paperRecommend, _ := service.QueryARecommendInCsPaperRecommend(paperID)
-		service.UpdateCsPaperRecommend(&paperRecommend, -hindex)
+		service.UpdateCsPaperRecommend(&paperRecommend, -h_index)
 	}
 
 	if err := service.DeleteRecommend(authorID, paperID); err != nil {

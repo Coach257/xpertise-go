@@ -448,7 +448,7 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "h-index",
-                        "name": "hindex",
+                        "name": "h_index",
                         "in": "formData",
                         "required": true
                     }
@@ -640,7 +640,7 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "h-index",
-                        "name": "hindex",
+                        "name": "h_index",
                         "in": "formData",
                         "required": true
                     },
