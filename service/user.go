@@ -81,10 +81,15 @@ func QueryAllFavorites(userID uint64) model.User {
 	return user
 }
 
-func CreateAWish(userID uint64, paperID string, title string, url string) error {
-	wish := model.Wish{UserID: userID, PaperID: paperID, Title: title, Url: url}
+func CreateAWish(userID uint64, paperID string, title string, url string, year string, citation uint64) error {
+	wish := model.Wish{UserID: userID, PaperID: paperID, Title: title, Url: url, Citation: citation, PaperPublishYear: year}
 	err := global.DB.Create(&wish).Error
 	return err
+}
+
+func QueryAWish(userID uint64, paperID string) (wish model.Wish, notFound bool) {
+	notFound = global.DB.Where("user_id = ? AND paper_id = ?", userID, paperID).First(&wish).RecordNotFound()
+	return wish, notFound
 }
 
 func DeleteAWish(wishID uint64) error {

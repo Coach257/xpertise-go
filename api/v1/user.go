@@ -239,54 +239,74 @@ func IsFavorite(c *gin.Context) {
 	}
 }
 
-// AddToWishes doc
-// @description 添加至清单
+// IsUserWish doc
+// @description 判断该篇Paper是否已在用户心愿清单中
 // @Tags user
 // @Param user_id formData string true "用户ID"
 // @Param paper_id formData string true "文献ID"
-// @Param title formData string true "文献辩题"
-// @Success 200 {string} string "{"success":true, "message":"已添加至清单"}"
+// @Success 200 {string} string "{"success":true, "message":"不在用户的心愿清单内/已在用户的心愿清单中"}"
+// @Router /user/wish/paper_in_wish [post]
+func IsUserWish(c *gin.Context) {
+	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
+	paperID := c.Request.FormValue("paper_id")
+	_, notFound := service.QueryAWish(userID, paperID)
+	if notFound {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "不在用户的心愿清单内"})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "已在用户的心愿清单中"})
+	return
+}
+
+// AddToWishes doc
+// @description 添加至心愿清单
+// @Tags user
+// @Param user_id formData string true "用户ID"
+// @Param paper_id formData string true "文献ID"
+// @Param title formData string true "文献标题"
+// @Param year formData string true "PaperPublishYear"
+// @Param n_citation formData string true "Paper引用数量"
+// @Success 200 {string} string "{"success":true, "message":"已添加至心愿清单"}"
 // @Router /user/wish/add [post]
 func AddToWishes(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	paperID := c.Request.FormValue("paper_id")
 	title := c.Request.FormValue("title")
+	year := c.Request.FormValue("year")
+	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
 	url := c.Request.FormValue("url")
-
-	if err := service.CreateAWish(userID, paperID, title, url); err != nil {
+	if err := service.CreateAWish(userID, paperID, title, url, year, citation); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"success": true, "message": "已添加至清单"})
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "已添加至心愿清单"})
+	return
 }
 
 // RemoveFromWishes doc
-// @description 移出清单
+// @description 移出心愿清单
 // @Tags user
 // @Param wish_id formData string true "心愿ID"
 // @Success 200 {string} string "{"success":true, "message":"已移出清单"}"
 // @Router /user/wish/remove [post]
 func RemoveFromWishes(c *gin.Context) {
 	wishID, _ := strconv.ParseUint(c.Request.FormValue("wish_id"), 0, 64)
-
 	if err := service.DeleteAWish(wishID); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"success": true, "message": "已移出清单"})
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "已移出心愿清单"})
 }
 
 // ListAllWishes doc
-// @description 获取收藏列表
+// @description 获取心愿清单列表
 // @Tags user
 // @Param user_id formData string true "用户ID"
 // @Success 200 {string} string "{"success":true, "message":"查询成功","data":"user的清单"}"
 // @Router /user/wish/list [post]
 func ListAllWishes(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
-
 	user := service.QueryAllWishes(userID)
-
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": user.Wishes})
 
 }

@@ -20,9 +20,11 @@ type Favorite struct {
 }
 
 type Wish struct {
-	WishID  uint64 `gorm:"primary_key" json:"wish_id"`
-	UserID  uint64 `gorm:"not null" json:"user_id"`
-	Title   string `gorm:"not null" json:"title"`
-	PaperID string `gorm:"size:30;not null" json:"paper_id"`
-	Url     string `gorm:"not null" json:"url"`
+	WishID           uint64 `gorm:"primary_key" json:"wish_id"`
+	UserID           uint64 `gorm:"not null" json:"user_id"`
+	Title            string `gorm:"not null" json:"title"`
+	PaperID          string `gorm:"size:30;not null" json:"paper_id"`
+	Citation         uint64 `json:"n_citation"`
+	PaperPublishYear string `gorm:"type:varchar(5)" json:"paper_publish_year"`
+	Url              string `gorm:"not null" json:"url"`
 }
