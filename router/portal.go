@@ -7,25 +7,25 @@ import (
 )
 
 func InitPortalRouter(Router *gin.RouterGroup) {
-	UserRouter := Router.Group("api/v1/portal")
+	PortalRouter := Router.Group("api/v1/portal")
 	{
-		UserRouter.POST("/author", v1.SearchAuthor)
-		UserRouter.POST("/is_settled", v1.IsSettled)
-		UserRouter.POST("/authorized_user_info", v1.AuthorizedUserInfo)
+		PortalRouter.POST("/author", v1.SearchAuthor)
+		PortalRouter.POST("/is_settled", v1.IsSettled)
+		PortalRouter.POST("/authorized_user_info", v1.AuthorizedUserInfo)
 
-		UserRouter.POST("/column/create_column", v1.CreateSpecialColumn)
-		UserRouter.POST("/column/add_to_column", v1.AddToColumn)
-		UserRouter.POST("/column/list_all_from_column", v1.ListAllFromAColumn)
-		UserRouter.POST("/column/remove_from_column", v1.RemovePaperFromColumn)
-		UserRouter.POST("/column/searchcol", v1.SearchSpecialColumn)
+		PortalRouter.POST("/column/create_column", v1.CreateSpecialColumn)
+		PortalRouter.POST("/column/add_to_column", v1.AddToColumn)
+		PortalRouter.POST("/column/list_all_from_column", v1.ListAllFromAColumn)
+		PortalRouter.POST("/column/remove_from_column", v1.RemovePaperFromColumn)
+		PortalRouter.POST("/column/searchcol", v1.SearchSpecialColumn)
 
-		UserRouter.POST("/recommend/create", v1.CreateRecommend)
-		UserRouter.POST("/recommend/remove", v1.RemoveRecommend)
-		UserRouter.POST("/recommend/recommends_from_one_author", v1.ListRecommendsFromOneAuthor)
-		UserRouter.POST("/recommend/recommends_from_one_paper", v1.ListRecommendsFromOnePaper)
-		UserRouter.GET("/recommend/cs/top", v1.ListTopSevenCsPapers)
-		UserRouter.GET("/recommend/main/top", v1.ListTopSevenPapers)
-		UserRouter.POST("/direct_connection/list", v1.ListDirectConnectedAuthors)
-		UserRouter.POST("/connection_graph", v1.CreateAuthorConnectionsGraph)
+		PortalRouter.POST("/recommend/create", v1.CreateRecommend)
+		PortalRouter.POST("/recommend/remove", v1.RemoveRecommend)
+		PortalRouter.POST("/recommend/recommends_from_one_author", v1.ListRecommendsFromOneAuthor)
+		PortalRouter.POST("/recommend/recommends_from_one_paper", v1.ListRecommendsFromOnePaper)
+		PortalRouter.GET("/recommend/cs/top", v1.ListTopSevenCsPapers)
+		PortalRouter.GET("/recommend/main/top", v1.ListTopSevenPapers)
+		PortalRouter.POST("/direct_connection/list", v1.ListDirectConnectedAuthors)
+		PortalRouter.POST("/connection_graph", v1.CreateAuthorConnectionsGraph)
 	}
 }
