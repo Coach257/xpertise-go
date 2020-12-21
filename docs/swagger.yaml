@@ -338,11 +338,6 @@ paths:
         name: author_id
         required: true
         type: string
-      - description: 连接节点数量
-        in: formData
-        name: author_id
-        required: true
-        type: string
       responses:
         "200":
           description: '{"success": true, "message": connection}'

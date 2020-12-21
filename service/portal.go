@@ -188,17 +188,51 @@ func FindDirectConnectedAuthors(authorID string) (connections []model.Connection
 	return connections, err
 }
 
-func FindAuthorConnections(authorID string, tot int) (connections []model.Connection, err error) {
-	var tmpConnections []model.Connection
+func FindAuthorConnections(authorID string) (res []model.Connection, err error) {
+	//var curTot int
+	//curTot = 0
+	var tmpConnections, connections []model.Connection
 	err = global.DB.Where("author1_id = ?", authorID).Or("author2_id = ?", authorID).Find(&tmpConnections).Error
 	connections = append(connections, tmpConnections...)
-	// for _, _ := range tmpConnections {
-	// 	if tmpConnections[0].Author2ID != authorID {
-	// 		authorID = tmpConnections[0].Author2ID
-	// 	} else {
-	// 		authorID = tmpConnections[0].Author1ID
-	// 	}
-	// }
-
-	return connections, err
+	for _, v := range tmpConnections {
+		var tmpAuthorID string
+		if v.Author2ID != authorID {
+			tmpAuthorID = v.Author2ID
+		} else {
+			tmpAuthorID = v.Author1ID
+		}
+		// fmt.Println(tmpAuthorID)
+		err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&tmpConnections).Error
+		connections = append(connections, tmpConnections...)
+		for _, e := range tmpConnections {
+			var tmpAuthorID string
+			if e.Author2ID != authorID {
+				tmpAuthorID = e.Author2ID
+			} else {
+				tmpAuthorID = e.Author1ID
+			}
+			// fmt.Println(tmpAuthorID)
+			err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&tmpConnections).Error
+			connections = append(connections, tmpConnections...)
+		}
+	}
+	for _, x := range connections {
+		stat := false
+		for _, v := range res {
+			if x == v {
+				stat = true
+				break
+			}
+		}
+		if stat == false {
+			//if curTot < tot {
+			res = append(res, x)
+			//curTot++
+			//fmt.Println(curTot)
+			//} else {
+			//	break
+			//}
+		}
+	}
+	return res, err
 }

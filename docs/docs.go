@@ -533,13 +533,6 @@ var doc = `{
                         "name": "author_id",
                         "in": "formData",
                         "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "连接节点数量",
-                        "name": "author_id",
-                        "in": "formData",
-                        "required": true
                     }
                 ],
                 "responses": {
