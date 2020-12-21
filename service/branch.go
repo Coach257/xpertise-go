@@ -126,17 +126,17 @@ func TransferBetweenLikeAndDislike(commentLike *model.CommentLike, comment *mode
 	return err2
 }
 
-// 找到authorid所属连通块的根
-func GetFa(AuthorID string) (connection model.Connection, notFound bool) {
-	notFound = global.DB.Where("author1_id = ?", AuthorID).Or("author2_id = ?", AuthorID).First(&connection).RecordNotFound()
-	return connection, notFound
-}
+// // 找到authorid所属连通块的根
+// func GetFa(AuthorID string) (connection model.Connection, notFound bool) {
+// 	notFound = global.DB.Where("author1_id = ?", AuthorID).Or("author2_id = ?", AuthorID).First(&connection).RecordNotFound()
+// 	return connection, notFound
+// }
 
-// 获得图
-func GetAuthorConnectionGraph(FaID string) (connection []model.Connection) {
-	global.DB.Where("father_id = ?", FaID).Find(&connection)
-	return connection
-}
+// // 获得图
+// func GetAuthorConnectionGraph(FaID string) (connection []model.Connection) {
+// 	global.DB.Where("father_id = ?", FaID).Find(&connection)
+// 	return connection
+// }
 
 // QueryAllReferences 列出某个文献的所有参考文献
 func QueryAllReferences(paperID string) (references []model.PaperReference) {

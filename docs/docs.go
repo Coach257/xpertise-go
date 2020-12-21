@@ -253,38 +253,6 @@ var doc = `{
                 }
             }
         },
-        "/branch/graph/author_connection": {
-            "post": {
-                "description": "返回作者关系图数据",
-                "tags": [
-                    "branch"
-                ],
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "作者ID",
-                        "name": "author_id",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "作者名字",
-                        "name": "author_name",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{\"success\": true, \"message\": {\"rootID\":\"\",\"nodes\":[{\"id\":\"\",\"text\":\"\"}],\"links\":[{\"from\":\"\",\"to\":\"\",\"text\":\"\"}]}}}",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
         "/branch/graph/reference": {
             "post": {
                 "description": "列出某条文献的三级参考文献",

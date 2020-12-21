@@ -45,9 +45,7 @@ type Connection struct {
 	Author1Name string `gorm:"type:varchar(100)" json:"author1_name"`
 	Author2ID   string `gorm:"type:varchar(30)" json:"author2_id"`
 	Author2Name string `gorm:"type:varchar(100)" json:"author2_name"`
-	FatherID    string `gorm:"type:varchar(30)" json:"fa_id"`
-	PaperID     string `gorm:"type:varchar(30)" json:"paper_id"`
-	PaperTitle  string `gorm:"type:varchar(400);" json:"paper_title"`
+	CoNum       int64  `json:"co_num"`
 }
 
 type Comment struct {

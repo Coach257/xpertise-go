@@ -155,27 +155,6 @@ paths:
             type: string
       tags:
       - branch
-  /branch/graph/author_connection:
-    post:
-      description: 返回作者关系图数据
-      parameters:
-      - description: 作者ID
-        in: formData
-        name: author_id
-        required: true
-        type: string
-      - description: 作者名字
-        in: formData
-        name: author_name
-        required: true
-        type: string
-      responses:
-        "200":
-          description: '{"success": true, "message": {"rootID":"","nodes":[{"id":"","text":""}],"links":[{"from":"","to":"","text":""}]}}}'
-          schema:
-            type: string
-      tags:
-      - branch
   /branch/graph/reference:
     post:
       description: 列出某条文献的三级参考文献
