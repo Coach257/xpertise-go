@@ -2,6 +2,7 @@ package service
 
 import (
 	"fmt"
+	"time"
 	"xpertise-go/global"
 	"xpertise-go/model"
 
@@ -77,11 +78,12 @@ func CreateAPortal(userID uint64, authorID string) (err error) {
 // 创建一条推荐
 func CreateARecommend(authorID string, authorName string, paperID string, citation uint64, reason string) (err error) {
 	recommend := model.Recommend{
-		AuthorID:   authorID,
-		AuthorName: authorName,
-		PaperID:    paperID,
-		Citation:   citation,
-		Reason:     reason,
+		AuthorID:      authorID,
+		AuthorName:    authorName,
+		PaperID:       paperID,
+		Citation:      citation,
+		Reason:        reason,
+		RecommendTime: time.Now(),
 	}
 	if global.DB.Create(&recommend).Error != nil {
 		return err

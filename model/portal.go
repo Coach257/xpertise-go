@@ -1,5 +1,7 @@
 package model
 
+import "time"
+
 type SpecialColumn struct {
 	ColumnID   uint64 `gorm:"primary_key; not null;" json:"column_id"`
 	AuthorID   string `gorm:"type:varchar(30);primary_key;" json:"author_id"`
@@ -22,11 +24,12 @@ type Portal struct {
 
 // 推荐表，记录认证用户推荐的内容
 type Recommend struct {
-	AuthorID   string `gorm:"type:varchar(30);primary_key" json:"author_id"`
-	PaperID    string `gorm:"type:varchar(30);primary_key" json:"paper_id"`
-	AuthorName string `gorm:"type:varchar(100)" json:"author_name"`
-	Citation   uint64 `json:"n_citation"`
-	Reason     string `gorm:"type:varchar(255)" json:"reason"`
+	AuthorID      string    `gorm:"type:varchar(30);primary_key" json:"author_id"`
+	PaperID       string    `gorm:"type:varchar(30);primary_key" json:"paper_id"`
+	AuthorName    string    `gorm:"type:varchar(100)" json:"author_name"`
+	Citation      uint64    `json:"n_citation"`
+	Reason        string    `gorm:"type:varchar(255)" json:"reason"`
+	RecommendTime time.Time `json:"recommend_time"`
 }
 
 type PaperRecommend struct {
