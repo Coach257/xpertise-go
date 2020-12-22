@@ -187,13 +187,13 @@ func CreateRecommend(c *gin.Context) {
 func RemoveRecommend(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	paperID := c.Request.FormValue("paper_id")
-	h_index, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
+	hIndex, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
 	if len(paperID) >= 10 {
 		paperRecommend, _ := service.QueryARecommendInPaperRecommend(paperID)
-		service.UpdatePaperRecommend(&paperRecommend, -h_index)
+		service.UpdatePaperRecommend(&paperRecommend, -hIndex)
 	} else {
 		paperRecommend, _ := service.QueryARecommendInCsPaperRecommend(paperID)
-		service.UpdateCsPaperRecommend(&paperRecommend, -h_index)
+		service.UpdateCsPaperRecommend(&paperRecommend, -hIndex)
 	}
 
 	if err := service.DeleteRecommend(authorID, paperID); err != nil {
