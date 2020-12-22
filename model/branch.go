@@ -106,7 +106,7 @@ type C struct {
 
 // 用于PaperReferenceGraph的Response struct
 type M struct {
-	Name string `json:"name"`
 	ID   string `json:"id"`
+	Name string `json:"name"`
 	Ms   []M    `json:"children"`
 }
