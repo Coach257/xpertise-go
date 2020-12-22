@@ -131,17 +131,17 @@ func QueryARecommendInCsPaperRecommend(paperID string) (paperRecommend model.CsP
 }
 
 // 加入至论文推荐统计表
-func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, h_index int64) (err error) {
-	//value:=CalculateScore(citation,h_index)
-	value := int64(citation) + h_index
+func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, hIndex int64) (err error) {
+	//value:=CalculateScore(citation,hIndex)
+	value := int64(citation) + hIndex
 	paperRecommend := model.CsPaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
 }
 
 // 更新论文在论文推荐统计表中的数据
-func UpdateCsPaperRecommend(paperRecommend *model.CsPaperRecommend, h_index int64) (err error) {
-	paperRecommend.Value += h_index
+func UpdateCsPaperRecommend(paperRecommend *model.CsPaperRecommend, hIndex int64) (err error) {
+	paperRecommend.Value += hIndex
 	err = global.DB.Save(paperRecommend).Error
 	return err
 }
