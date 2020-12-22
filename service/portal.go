@@ -254,10 +254,17 @@ func FormatConnections(res []model.Connection) (a model.A, err error) {
 func FindAuthorConnections(tot int, authorID string) (a model.A, err error) {
 	curTot := 0
 	var level1Connections, level2Connections, level3Connections, connections []model.Connection
-	//set := make(map[model.Connection]bool)
+	set := make(map[model.Connection]bool)
 	err = global.DB.Where("author1_id = ?", authorID).Or("author2_id = ?", authorID).Find(&level1Connections).Error
-	connections = append(connections, level1Connections...)
-	curTot += len(level1Connections)
+	//connections = append(connections, level1Connections...)
+	for _, v := range level1Connections {
+		if !set[v] {
+			set[v] = true
+			connections = append(connections, v)
+			curTot++
+		}
+	}
+	//curTot += len(level1Connections)
 	for _, v := range level1Connections {
 		var tmpAuthorID string
 		if v.Author2ID != authorID {
@@ -267,7 +274,12 @@ func FindAuthorConnections(tot int, authorID string) (a model.A, err error) {
 		}
 		err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&level2Connections).Error
 		for _, e := range level2Connections {
-			curTot, connections = AddIntoUniqueConnections(curTot, connections, e)
+			//curTot, connections = AddIntoUniqueConnections(curTot, connections, e)
+			if !set[e] {
+				set[e] = true
+				connections = append(connections, e)
+				curTot++
+			}
 			if curTot >= tot {
 				a, err = FormatConnections(connections)
 				return a, err
@@ -282,7 +294,12 @@ func FindAuthorConnections(tot int, authorID string) (a model.A, err error) {
 			}
 			err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&level3Connections).Error
 			for _, s := range level3Connections {
-				curTot, connections = AddIntoUniqueConnections(curTot, connections, s)
+				//curTot, connections = AddIntoUniqueConnections(curTot, connections, s)
+				if !set[s] {
+					set[s] = true
+					connections = append(connections, s)
+					curTot++
+				}
 				if curTot >= tot {
 					a, err = FormatConnections(connections)
 					return a, err
