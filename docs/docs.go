@@ -198,7 +198,7 @@ var doc = `{
         },
         "/branch/comment/list_all_comments": {
             "post": {
-                "description": "列出某条文献的全部评论",
+                "description": "列出某条文献的全部评论(含当前登录用户是否已点赞/点菜的信息)",
                 "tags": [
                     "branch"
                 ],
@@ -207,6 +207,13 @@ var doc = `{
                         "type": "string",
                         "description": "文献ID",
                         "name": "paper_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "当前登录用户ID",
+                        "name": "user_id",
                         "in": "formData",
                         "required": true
                     }
@@ -677,7 +684,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇CS文献的信息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -693,7 +700,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的ID\"}",
+                        "description": "{\"success\": true, \"message\": \"查找成功\", \"data\": \"前七篇文献的信息\"}",
                         "schema": {
                             "type": "string"
                         }

@@ -44,11 +44,19 @@ type CommentWithStat struct {
 }
 
 // 文献的所有评论中包含当前登录用户是否点赞/点踩的信息
-func QueryAllCommentsWithStatus(comments []model.Comment, userID string) {
+func QueryAllCommentsWithStatus(comments []model.Comment, userID uint64) (commentWithStat []CommentWithStat) {
 	for _, e := range comments {
 		var commentLike model.CommentLike
-		global.DB.Where("comment_id = ? And user_id = ?", e.CommentID, userID).First(&commentLike)
+		notFound := global.DB.Where("comment_id = ? And user_id = ?", e.CommentID, userID).First(&commentLike).RecordNotFound()
+		if notFound == true {
+			commentWithStat = append(commentWithStat, CommentWithStat{e, "该条评论该用户没有点赞也没有点踩"})
+		} else if commentLike.LikeOrDislike == true {
+			commentWithStat = append(commentWithStat, CommentWithStat{e, "该条评论该用户已点赞"})
+		} else {
+			commentWithStat = append(commentWithStat, CommentWithStat{e, "该条评论该用户已点踩"})
+		}
 	}
+	return commentWithStat
 }
 
 // 删除某条评论
