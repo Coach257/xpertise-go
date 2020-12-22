@@ -159,8 +159,15 @@ func QueryAllReferences(paperID string) (references []model.PaperReference) {
 func FindReferenceConnections(paperID string, paperTitle string) (m model.M) {
 	directRefers := QueryAllReferences(paperID)
 	var nilM []model.M
-	if len(directRefers) == 0 {
-		m = model.M{Name: paperTitle, ID: paperID, Ms: nilM}
+	m = model.M{Name: paperTitle, ID: paperID, Ms: nilM}
+	for j, e := range directRefers {
+		x := model.M{e.PaperID, e.PaperTitle, nilM}
+		m.Ms = append(m.Ms, x)
+		level2Refers := QueryAllReferences(e.PaperID)
+		for _, s := range level2Refers {
+			y := model.M{s.PaperID, s.PaperTitle, nilM}
+			m.Ms[j].Ms = append(m.Ms[j].Ms, y)
+		}
 	}
 	return m
 }
