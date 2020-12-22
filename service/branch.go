@@ -161,11 +161,11 @@ func FindReferenceConnections(paperID string, paperTitle string) (m model.M) {
 	var nilM []model.M
 	m = model.M{ID: paperID, Name: paperTitle, Ms: nilM}
 	for j, e := range directRefers {
-		x := model.M{ID: e.PaperID, Name: e.PaperTitle, Ms: nilM}
+		x := model.M{ID: e.ReferenceID, Name: e.ReferencePaperTitle, Ms: nilM}
 		m.Ms = append(m.Ms, x)
-		level2Refers := QueryAllReferences(e.PaperID)
+		level2Refers := QueryAllReferences(e.ReferenceID)
 		for _, s := range level2Refers {
-			y := model.M{ID: s.PaperID, Name: s.PaperTitle, Ms: nilM}
+			y := model.M{ID: s.ReferenceID, Name: s.ReferencePaperTitle, Ms: nilM}
 			m.Ms[j].Ms = append(m.Ms[j].Ms, y)
 		}
 	}
