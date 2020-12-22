@@ -244,7 +244,7 @@ func FormatConnections(res []model.Connection) (a model.A, err error) {
 	}
 
 	for _, s := range res {
-		x := model.C{Source: s.Author1Name, Target: s.Author2Name, Num: s.CoNum}
+		x := model.C{Source: s.Author1ID, Target: s.Author2ID, Num: s.CoNum}
 		c = append(c, x)
 	}
 	a = model.A{Bs: b, Cs: c}
