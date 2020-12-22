@@ -187,6 +187,27 @@ paths:
             type: string
       tags:
       - portal
+  /portal/author_connection_graph:
+    post:
+      description: 返回与某作者有直接合作的作者列表
+      parameters:
+      - description: 作者ID
+        in: formData
+        name: author_id
+        required: true
+        type: string
+      - description: 所画节点数量
+        in: formData
+        name: total
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"success": true, "message": connection}'
+          schema:
+            type: string
+      tags:
+      - portal
   /portal/authorized_user_info:
     post:
       description: 通过UserID，返回该入驻用户的信息
@@ -325,27 +346,6 @@ paths:
       responses:
         "200":
           description: '{"success": true, "message": "返回专栏成功"}'
-          schema:
-            type: string
-      tags:
-      - portal
-  /portal/connection_graph:
-    post:
-      description: 返回与某作者有直接合作的作者列表
-      parameters:
-      - description: 作者ID
-        in: formData
-        name: author_id
-        required: true
-        type: string
-      - description: 所画节点数量
-        in: formData
-        name: total
-        required: true
-        type: string
-      responses:
-        "200":
-          description: '{"success": true, "message": connection}'
           schema:
             type: string
       tags:

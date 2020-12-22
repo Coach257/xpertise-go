@@ -309,7 +309,7 @@ func ListDirectConnectedAuthors(c *gin.Context) {
 // @Param author_id formData string true "作者ID"
 // @Param total formData string true "所画节点数量"
 // @Success 200 {string} string "{"success": true, "message": connection}"
-// @Router /portal/connection_graph [post]
+// @Router /portal/author_connection_graph [post]
 func CreateAuthorConnectionsGraph(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	tot, _ := strconv.ParseInt(c.Request.FormValue("total"), 0, 64)

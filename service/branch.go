@@ -156,6 +156,11 @@ func QueryAllReferences(paperID string) (references []model.PaperReference) {
 	return references
 }
 
-func FindReferenceConnections() {
-	return
+func FindReferenceConnections(paperID string, paperTitle string) (m model.M) {
+	directRefers := QueryAllReferences(paperID)
+	var nilM []model.M
+	if len(directRefers) == 0 {
+		m = model.M{Name: paperTitle, ID: paperID, Ms: nilM}
+	}
+	return m
 }

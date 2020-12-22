@@ -244,3 +244,11 @@ func GetThreeLevelReferences(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "操作成功", "data": data})
 	return
 }
+
+func ReferenceConnectionGraph(c *gin.Context) {
+	paperID := c.Request.FormValue("paper_id")
+	paperTitle := c.Request.FormValue("paper_title")
+	m := service.FindReferenceConnections(paperID, paperTitle)
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "操作成功", "data": m})
+	return
+}

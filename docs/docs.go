@@ -303,6 +303,38 @@ var doc = `{
                 }
             }
         },
+        "/portal/author_connection_graph": {
+            "post": {
+                "description": "返回与某作者有直接合作的作者列表",
+                "tags": [
+                    "portal"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "作者ID",
+                        "name": "author_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "所画节点数量",
+                        "name": "total",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\": true, \"message\": connection}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/portal/authorized_user_info": {
             "post": {
                 "description": "通过UserID，返回该入驻用户的信息",
@@ -513,38 +545,6 @@ var doc = `{
                 "responses": {
                     "200": {
                         "description": "{\"success\": true, \"message\": \"返回专栏成功\"}",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/portal/connection_graph": {
-            "post": {
-                "description": "返回与某作者有直接合作的作者列表",
-                "tags": [
-                    "portal"
-                ],
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "作者ID",
-                        "name": "author_id",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "所画节点数量",
-                        "name": "total",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{\"success\": true, \"message\": connection}",
                         "schema": {
                             "type": "string"
                         }

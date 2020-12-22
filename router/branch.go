@@ -15,5 +15,6 @@ func InitBranchRouter(Router *gin.RouterGroup) {
 		//BranchRouter.POST("/graph/author_connection", v1.AuthorConnection)
 		BranchRouter.POST("/comment/list_all_comments", v1.ListAllComments)
 		BranchRouter.POST("/graph/reference", v1.GetThreeLevelReferences)
+		BranchRouter.POST("/reference_connection_graph", v1.ReferenceConnectionGraph)
 	}
 }

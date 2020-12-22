@@ -26,6 +26,6 @@ func InitPortalRouter(Router *gin.RouterGroup) {
 		PortalRouter.GET("/recommend/cs/top", v1.ListTopSevenCsPapers)
 		PortalRouter.GET("/recommend/main/top", v1.ListTopSevenPapers)
 		PortalRouter.POST("/direct_connection/list", v1.ListDirectConnectedAuthors)
-		PortalRouter.POST("/connection_graph", v1.CreateAuthorConnectionsGraph)
+		PortalRouter.POST("/author_connection_graph", v1.CreateAuthorConnectionsGraph)
 	}
 }
