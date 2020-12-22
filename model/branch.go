@@ -91,6 +91,7 @@ type A struct {
 
 type B struct {
 	Name  string `json:"name"`
+	ID    string `json:"id"`
 	Value int64  `json:"value"`
 }
 

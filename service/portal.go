@@ -207,7 +207,7 @@ func FormatConnections(res []model.Connection) (a model.A, err error) {
 	var b []model.B
 	var c []model.C
 	for _, s := range res {
-		x := model.B{Name: s.Author1Name, Value: s.Author1HIndex}
+		x := model.B{Name: s.Author1Name, ID: s.Author1ID, Value: s.Author1HIndex}
 		stat := false
 		for _, p := range b {
 			if p.Name == x.Name {
@@ -218,7 +218,7 @@ func FormatConnections(res []model.Connection) (a model.A, err error) {
 		if stat == false {
 			b = append(b, x)
 		}
-		x = model.B{Name: s.Author2Name, Value: s.Author2HIndex}
+		x = model.B{Name: s.Author2Name, ID: s.Author2ID, Value: s.Author2HIndex}
 		stat = false
 		for _, p := range b {
 			if p.Name == x.Name {
