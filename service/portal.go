@@ -170,12 +170,12 @@ func QueryRecommendsFromOnePaper(paperID string) (recommends []model.Recommend) 
 }
 
 // 列出推荐数目最多的前七篇文献
-func QueryTopSevenPapers() (results []model.Result) {
+func QueryTopSevenPapers() (results []model.PaperRecommend) {
 	global.DB.Table("paper_recommends").Order("value desc").Limit(7).Scan(&results)
 	return results
 }
 
-func QueryTopSevenCsPapers() (results []model.Result) {
+func QueryTopSevenCsPapers() (results []model.CsPaperRecommend) {
 	global.DB.Table("cs_paper_recommends").Order("value desc").Limit(7).Scan(&results)
 	return results
 }

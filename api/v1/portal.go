@@ -234,7 +234,7 @@ func ListRecommendsFromOnePaper(c *gin.Context) {
 // ListTopSevenPapers doc
 // @description 获取推荐数最多的前七篇文献
 // @Tags portal
-// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇文献的ID"}"
+// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇文献的信息"}"
 // @Router /portal/recommend/main/top [get]
 func ListTopSevenPapers(c *gin.Context) {
 	papers := service.QueryTopSevenPapers()
@@ -245,7 +245,7 @@ func ListTopSevenPapers(c *gin.Context) {
 // ListTopSevenCsPapers doc
 // @description 获取推荐数最多的前七篇CS文献
 // @Tags portal
-// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇文献的ID"}"
+// @Success 200 {string} string "{"success": true, "message": "查找成功", "data": "前七篇CS文献的信息"}"
 // @Router /portal/recommend/cs/top [get]
 func ListTopSevenCsPapers(c *gin.Context) {
 	papers := service.QueryTopSevenCsPapers()

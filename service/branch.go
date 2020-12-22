@@ -38,6 +38,19 @@ func QueryAllComments(paperID string) (res []model.Comment) {
 	return res
 }
 
+type CommentWithStat struct {
+	model.Comment
+	Status string `json:"status"`
+}
+
+// 文献的所有评论中包含当前登录用户是否点赞/点踩的信息
+func QueryAllCommentsWithStatus(comments []model.Comment, userID string) {
+	for _, e := range comments {
+		var commentLike model.CommentLike
+		global.DB.Where("comment_id = ? And user_id = ?", e.CommentID, userID).First(&commentLike)
+	}
+}
+
 // 删除某条评论
 func DeleteAComment(CommentID uint64) (err error) {
 	var comment model.Comment
