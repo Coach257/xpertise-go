@@ -18,11 +18,12 @@ import (
 func CreateSpecialColumn(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	columnName := c.Request.FormValue("column_name")
-	if err := service.CreateAColumn(authorID, columnName); err != nil {
+	id, err := service.CreateAColumn(authorID, columnName)
+	if err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"success": true, "message": "创建专栏成功"})
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "创建专栏成功", "column_id": id})
 	return
 }
 

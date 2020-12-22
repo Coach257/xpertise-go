@@ -24,10 +24,10 @@ func QueryAColumnByID(authorID string) (col []model.SpecialColumn) {
 	//notFound = global.DB.Where("author_id = ? ", authorID).First(&col).RecordNotFound()
 	return col
 }
-func CreateAColumn(authorID string, columnName string) (err error) {
+func CreateAColumn(authorID string, columnName string) (id uint64, err error) {
 	specialColumn := model.SpecialColumn{AuthorID: authorID, ColumnName: columnName}
 	if err = global.DB.Create(&specialColumn).Error; err != nil {
-		return err
+		return specialColumn.ColumnID, err
 	}
 	return
 }
