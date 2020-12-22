@@ -27,9 +27,9 @@ func QueryAColumnByID(authorID string) (col []model.SpecialColumn) {
 func CreateAColumn(authorID string, columnName string) (id uint64, err error) {
 	specialColumn := model.SpecialColumn{AuthorID: authorID, ColumnName: columnName}
 	if err = global.DB.Create(&specialColumn).Error; err != nil {
-		return specialColumn.ColumnID, err
+		return 0, err
 	}
-	return
+	return specialColumn.ColumnID, err
 }
 
 func AddPaperToColumn(columnID uint64, paperID string, paperTitle string) (err error) {
