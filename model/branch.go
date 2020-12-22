@@ -84,6 +84,7 @@ type Link struct {
 	Text string `json:"text"`
 }
 
+// 用于AuthorConnectionGraph的Response struct
 type A struct {
 	Bs []B `json:"data"`
 	Cs []C `json:"links"`
@@ -98,5 +99,12 @@ type B struct {
 type C struct {
 	Source string `json:"source"`
 	Target string `json:"target"`
-	Num    int64  `json:"num"`
+	Num    int64  `json:"value"`
+}
+
+// 用于PaperReferenceGraph的Response struct
+type M struct {
+	Name string `json:"name"`
+	ID   string `json:"id"`
+	Ms   []M    `json:"children"`
 }
