@@ -301,12 +301,13 @@ func ListDirectConnectedAuthors(c *gin.Context) {
 // @description 返回与某作者有直接合作的作者列表
 // @Tags portal
 // @Param author_id formData string true "作者ID"
+// @Param total formData string true "所画节点数量"
 // @Success 200 {string} string "{"success": true, "message": connection}"
 // @Router /portal/connection_graph [post]
 func CreateAuthorConnectionsGraph(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
-	// tot, _ := strconv.ParseInt(c.Request.FormValue("total"), 0, 64)
-	connections, err := service.FindAuthorConnections(authorID)
+	tot, _ := strconv.ParseInt(c.Request.FormValue("total"), 0, 64)
+	connections, err := service.FindAuthorConnections(int(tot), authorID)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err})
 	}

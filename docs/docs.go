@@ -533,6 +533,13 @@ var doc = `{
                         "name": "author_id",
                         "in": "formData",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "所画节点数量",
+                        "name": "total",
+                        "in": "formData",
+                        "required": true
                     }
                 ],
                 "responses": {

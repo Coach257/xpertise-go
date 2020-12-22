@@ -188,57 +188,24 @@ func FindDirectConnectedAuthors(authorID string) (connections []model.Connection
 	return connections, err
 }
 
-func FindAuthorConnections(authorID string) (a model.A, err error) {
-	//var curTot int
-	//curTot = 0
-	var res, tmpConnections, connections []model.Connection
-	err = global.DB.Where("author1_id = ?", authorID).Or("author2_id = ?", authorID).Find(&tmpConnections).Error
-	connections = append(connections, tmpConnections...)
-	for _, v := range tmpConnections {
-		var tmpAuthorID string
-		if v.Author2ID != authorID {
-			tmpAuthorID = v.Author2ID
-		} else {
-			tmpAuthorID = v.Author1ID
-		}
-		// fmt.Println(tmpAuthorID)
-		err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&tmpConnections).Error
-		connections = append(connections, tmpConnections...)
-		for _, e := range tmpConnections {
-			var tmpAuthorID string
-			if e.Author2ID != authorID {
-				tmpAuthorID = e.Author2ID
-			} else {
-				tmpAuthorID = e.Author1ID
-			}
-			// fmt.Println(tmpAuthorID)
-			err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&tmpConnections).Error
-			connections = append(connections, tmpConnections...)
+func AddIntoUniqueConnections(curTot int, connections []model.Connection, connection model.Connection) (int, []model.Connection) {
+	// stat := false
+	for _, v := range connections {
+		if connection == v {
+			// stat = true
+			// fmt.Println("!!!", connection)
+			return curTot, connections
 		}
 	}
-	for _, x := range connections {
-		stat := false
-		for _, v := range res {
-			if x == v {
-				stat = true
-				break
-			}
-		}
-		if stat == false {
-			//if curTot < tot {
-			res = append(res, x)
-			//curTot++
-			//fmt.Println(curTot)
-			//} else {
-			//	break
-			//}
-		}
-	}
+	// fmt.Println("unique_____________", connection)
+	connections = append(connections, connection)
+	curTot++
+	return curTot, connections
+}
 
-	// var a model.A
+func FormatConnections(res []model.Connection) (a model.A, err error) {
 	var b []model.B
 	var c []model.C
-
 	for _, s := range res {
 		x := model.B{Name: s.Author1Name, Value: s.Author1HIndex}
 		stat := false
@@ -269,5 +236,51 @@ func FindAuthorConnections(authorID string) (a model.A, err error) {
 		c = append(c, x)
 	}
 	a = model.A{Bs: b, Cs: c}
+	return a, err
+}
+
+func FindAuthorConnections(tot int, authorID string) (a model.A, err error) {
+	curTot := 0
+	var level1Connections, level2Connections, level3Connections, connections []model.Connection
+	err = global.DB.Where("author1_id = ?", authorID).Or("author2_id = ?", authorID).Find(&level1Connections).Error
+	connections = append(connections, level1Connections...)
+	curTot += len(level1Connections)
+	for _, v := range level1Connections {
+		var tmpAuthorID string
+		if v.Author2ID != authorID {
+			tmpAuthorID = v.Author2ID
+		} else {
+			tmpAuthorID = v.Author1ID
+		}
+		// fmt.Println(tmpAuthorID)
+		err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&level2Connections).Error
+		// fmt.Println(level2Connections)
+		for _, e := range level2Connections {
+			curTot, connections = AddIntoUniqueConnections(curTot, connections, e)
+			if curTot >= tot {
+				a, err = FormatConnections(connections)
+				return a, err
+			}
+			//fmt.Println(e)
+		}
+		for _, e := range level2Connections {
+			var tmpAuthorID string
+			if e.Author2ID != authorID {
+				tmpAuthorID = e.Author2ID
+			} else {
+				tmpAuthorID = e.Author1ID
+			}
+			// fmt.Println(tmpAuthorID)
+			err = global.DB.Where("author1_id = ?", tmpAuthorID).Or("author2_id = ?", tmpAuthorID).Find(&level3Connections).Error
+			for _, s := range level3Connections {
+				curTot, connections = AddIntoUniqueConnections(curTot, connections, s)
+				if curTot >= tot {
+					a, err = FormatConnections(connections)
+					return a, err
+				}
+			}
+		}
+	}
+	a, err = FormatConnections(connections)
 	return a, err
 }

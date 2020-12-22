@@ -86,7 +86,7 @@ type Link struct {
 
 type A struct {
 	Bs []B `json:"data"`
-	Cs []C `jsn:"links"`
+	Cs []C `json:"links"`
 }
 
 type B struct {

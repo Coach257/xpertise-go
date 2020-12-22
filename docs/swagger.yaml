@@ -338,6 +338,11 @@ paths:
         name: author_id
         required: true
         type: string
+      - description: 所画节点数量
+        in: formData
+        name: total
+        required: true
+        type: string
       responses:
         "200":
           description: '{"success": true, "message": connection}'
