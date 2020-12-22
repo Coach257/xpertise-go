@@ -145,21 +145,21 @@ func CreateRecommend(c *gin.Context) {
 	paperID := c.Request.FormValue("paper_id")
 	paperTitle := c.Request.FormValue("paper_title")
 	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
-	HIndex, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
+	hIndex, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
 	reason := c.Request.FormValue("reason")
 	if len(paperID) >= 10 {
 		paperRecommend, notFound := service.QueryARecommendInPaperRecommend(paperID)
 		if notFound {
-			service.AddToPaperRecommend(paperID, paperTitle, citation, HIndex)
+			service.AddToPaperRecommend(paperID, paperTitle, citation, hIndex)
 		} else {
-			service.UpdatePaperRecommend(&paperRecommend, HIndex)
+			service.UpdatePaperRecommend(&paperRecommend, hIndex)
 		}
 	} else {
 		paperRecommend, notFound := service.QueryARecommendInCsPaperRecommend(paperID)
 		if notFound {
-			service.AddToCsPaperRecommend(paperID, paperTitle, citation, HIndex)
+			service.AddToCsPaperRecommend(paperID, paperTitle, citation, hIndex)
 		} else {
-			service.UpdateCsPaperRecommend(&paperRecommend, HIndex)
+			service.UpdateCsPaperRecommend(&paperRecommend, hIndex)
 		}
 	}
 	_, notFound := service.QueryARecommend(paperID, authorID)
