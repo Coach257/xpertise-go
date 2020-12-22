@@ -155,3 +155,7 @@ func QueryAllReferences(paperID string) (references []model.PaperReference) {
 	global.DB.Where(&model.PaperReference{PaperID: paperID}).Find(&references)
 	return references
 }
+
+func FindReferenceConnections() {
+	return
+}

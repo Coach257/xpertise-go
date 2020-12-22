@@ -98,23 +98,28 @@ func QueryARecommendInPaperRecommend(paperID string) (paperRecommend model.Paper
 }
 
 // CalculateScore 计算推荐指数
-func CalculateScore(citation uint64, h_index uint64) (value uint64) {
-	value = citation + h_index
+func CalculateScore(citation uint64, hIndex uint64) (value uint64) {
+	value = citation + hIndex
 	return value
 }
 
+func QueryARecommend(paperID string, authorID string) (recommend model.Recommend, notFound bool) {
+	notFound = global.DB.Where("paper_id = ? And author_id = ?", paperID, authorID).First(&recommend).RecordNotFound()
+	return recommend, notFound
+}
+
 // 加入至论文推荐统计表
-func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, h_index int64) (err error) {
-	//value:=CalculateScore(citation,h_index)
-	value := int64(citation) + h_index
+func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, hIndex int64) (err error) {
+	//value:=CalculateScore(citation,hIndex)
+	value := int64(citation) + hIndex
 	paperRecommend := model.PaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
 }
 
 // 更新论文在论文推荐统计表中的数据
-func UpdatePaperRecommend(paperRecommend *model.PaperRecommend, h_index int64) (err error) {
-	paperRecommend.Value += h_index
+func UpdatePaperRecommend(paperRecommend *model.PaperRecommend, hIndex int64) (err error) {
+	paperRecommend.Value += hIndex
 	err = global.DB.Save(paperRecommend).Error
 	return err
 }
@@ -244,7 +249,7 @@ func FormatConnections(res []model.Connection) (a model.A, err error) {
 	}
 
 	for _, s := range res {
-		x := model.C{Source: s.Author1ID, Target: s.Author2ID, Num: s.CoNum}
+		x := model.C{Source: s.Author1ID, SourceName: s.Author1Name, Target: s.Author2ID, TargetName: s.Author2Name, Num: s.CoNum}
 		c = append(c, x)
 	}
 	a = model.A{Bs: b, Cs: c}

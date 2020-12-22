@@ -97,9 +97,11 @@ type B struct {
 }
 
 type C struct {
-	Source string `json:"source"`
-	Target string `json:"target"`
-	Num    int64  `json:"value"`
+	Source     string `json:"source"`
+	SourceName string `json:"source_name"`
+	Target     string `json:"target"`
+	TargetName string `json:"target_name"`
+	Num        int64  `json:"value"`
 }
 
 // 用于PaperReferenceGraph的Response struct

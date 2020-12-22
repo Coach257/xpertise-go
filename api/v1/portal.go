@@ -145,23 +145,29 @@ func CreateRecommend(c *gin.Context) {
 	paperID := c.Request.FormValue("paper_id")
 	paperTitle := c.Request.FormValue("paper_title")
 	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
-	h_index, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
+	HIndex, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
 	reason := c.Request.FormValue("reason")
 	if len(paperID) >= 10 {
 		paperRecommend, notFound := service.QueryARecommendInPaperRecommend(paperID)
 		if notFound {
-			service.AddToPaperRecommend(paperID, paperTitle, citation, h_index)
+			service.AddToPaperRecommend(paperID, paperTitle, citation, HIndex)
 		} else {
-			service.UpdatePaperRecommend(&paperRecommend, h_index)
+			service.UpdatePaperRecommend(&paperRecommend, HIndex)
 		}
 	} else {
 		paperRecommend, notFound := service.QueryARecommendInCsPaperRecommend(paperID)
 		if notFound {
-			service.AddToCsPaperRecommend(paperID, paperTitle, citation, h_index)
+			service.AddToCsPaperRecommend(paperID, paperTitle, citation, HIndex)
 		} else {
-			service.UpdateCsPaperRecommend(&paperRecommend, h_index)
+			service.UpdateCsPaperRecommend(&paperRecommend, HIndex)
 		}
 	}
+	_, notFound := service.QueryARecommend(paperID, authorID)
+	if !notFound {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": "已经被作者(您)推荐"})
+		return
+	}
+
 	if err := service.CreateARecommend(authorID, authorName, paperID, citation, reason); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
