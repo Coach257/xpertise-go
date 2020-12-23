@@ -101,10 +101,9 @@ func DeleteAWish(wishID uint64) error {
 	return err
 }
 
-func QueryAllWishes(userID uint64) model.User {
-	user, _ := QueryAUserByID(userID)
-	global.DB.Model(&user).Association("Wishes").Find(&user.Wishes)
-	return user
+func QueryAllWishes(userID uint64) (wishes model.Wish, notFound bool) {
+	notFound = global.DB.Where("user_id = ?", userID).Find(&wishes).RecordNotFound()
+	return wishes, notFound
 }
 
 func DeleteAUserByID(userID uint64) (err error) {

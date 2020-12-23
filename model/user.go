@@ -9,7 +9,7 @@ type User struct {
 	BasicInfo string     `gorm:"size:100" json:"basic_info"`
 	Ban       bool       `gorm:"default:false" json:"ban"`
 	Favorites []Favorite `gorm:"ForeignKey:UserID;AssociationForeignKey:UserID" json:"favorites"`
-	Wishes    []Wish     `gorm:"ForeignKey:UserID;AssociationForeignKey:UserID" json:"wishes"`
+	//Wishes    []Wish     `gorm:"ForeignKey:UserID;AssociationForeignKey:UserID" json:"wishes"`
 }
 
 type Favorite struct {
