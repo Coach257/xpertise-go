@@ -75,10 +75,9 @@ func DeleteAFavorite(favorID uint64) (err error) {
 	return err
 }
 
-func QueryAllFavorites(userID uint64) model.User {
-	user, _ := QueryAUserByID(userID)
-	global.DB.Model(&user).Association("Favorites").Find(&user.Favorites)
-	return user
+func QueryAllFavorites(userID uint64) (favorites []model.Favorite) {
+	global.DB.Where("user_id = ?", userID).Find(&favorites)
+	return favorites
 }
 
 func CreateAWish(userID uint64, paperID string, paperType string, title string, url string, year string, citation uint64) error {
@@ -101,9 +100,9 @@ func DeleteAWish(wishID uint64) error {
 	return err
 }
 
-func QueryAllWishes(userID uint64) (wishes model.Wish, notFound bool) {
-	notFound = global.DB.Where("user_id = ?", userID).Find(&wishes).RecordNotFound()
-	return wishes, notFound
+func QueryAllWishes(userID uint64) (wishes []model.Wish) {
+	global.DB.Where("user_id = ?", userID).Find(&wishes)
+	return wishes
 }
 
 func DeleteAUserByID(userID uint64) (err error) {

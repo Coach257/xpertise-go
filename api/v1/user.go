@@ -206,8 +206,9 @@ func AddToFavorites(c *gin.Context) {
 // @Router /user/favorite/list [post]
 func ListAllFavorites(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
-	user := service.QueryAllFavorites(userID)
-	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": user.Favorites})
+	favorites := service.QueryAllFavorites(userID)
+	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": favorites})
+	return
 }
 
 // RemoveFavorite doc
@@ -321,11 +322,7 @@ func RemoveFromWishes(c *gin.Context) {
 // @Router /user/wish/list [post]
 func ListAllWishes(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
-	wishes, notFound := service.QueryAllWishes(userID)
-	if notFound {
-		c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": "暂无心愿清单"})
-		return
-	}
+	wishes := service.QueryAllWishes(userID)
 	c.JSON(http.StatusOK, gin.H{"success": true, "message": "查询成功", "data": wishes})
 	return
 }
