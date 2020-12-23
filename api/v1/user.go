@@ -280,6 +280,12 @@ func AddToWishes(c *gin.Context) {
 	year := c.Request.FormValue("year")
 	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
 	url := c.Request.FormValue("url")
+
+	if userID==0{
+		c.JSON(http.StatusOK,gin.H{"success":true,"message":"请先登录"})
+		return
+	}
+
 	if err := service.CreateAWish(userID, paperID, title, url, year, citation); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
