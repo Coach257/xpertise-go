@@ -188,6 +188,7 @@ func AddToFavorites(c *gin.Context) {
 
 	if userID==0{
 		c.JSON(http.StatusOK,gin.H{"success":false,"message":"请先登录"})
+		return
 	}
 
 	if err := service.CreateAFavorite(userID, paperID, paperInfo); err != nil {
