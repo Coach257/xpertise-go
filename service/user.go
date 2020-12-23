@@ -81,8 +81,8 @@ func QueryAllFavorites(userID uint64) model.User {
 	return user
 }
 
-func CreateAWish(userID uint64, paperID string, title string, url string, year string, citation uint64) error {
-	wish := model.Wish{UserID: userID, PaperID: paperID, Title: title, Url: url, Citation: citation, PaperPublishYear: year}
+func CreateAWish(userID uint64, paperID string, paperType string, title string, url string, year string, citation uint64) error {
+	wish := model.Wish{UserID: userID, PaperID: paperID, PaperType: paperType, Title: title, URL: url, Citation: citation, PaperPublishYear: year}
 	err := global.DB.Create(&wish).Error
 	return err
 }

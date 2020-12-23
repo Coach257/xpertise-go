@@ -186,8 +186,8 @@ func AddToFavorites(c *gin.Context) {
 	paperID := c.Request.FormValue("paper_id")
 	paperInfo := c.Request.FormValue("paper_info")
 
-	if userID==0{
-		c.JSON(http.StatusOK,gin.H{"success":false,"message":"请先登录"})
+	if userID == 0 {
+		c.JSON(http.StatusOK, gin.H{"success": false, "message": "请先登录"})
 		return
 	}
 
@@ -276,17 +276,21 @@ func IsUserWish(c *gin.Context) {
 func AddToWishes(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	paperID := c.Request.FormValue("paper_id")
+	paperType := "cs"
+	if len(paperID) >= 10 {
+		paperType = "main"
+	}
 	title := c.Request.FormValue("title")
 	year := c.Request.FormValue("year")
 	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
 	url := c.Request.FormValue("url")
 
-	if userID==0{
-		c.JSON(http.StatusOK,gin.H{"success":true,"message":"请先登录"})
+	if userID == 0 {
+		c.JSON(http.StatusOK, gin.H{"success": true, "message": "请先登录"})
 		return
 	}
 
-	if err := service.CreateAWish(userID, paperID, title, url, year, citation); err != nil {
+	if err := service.CreateAWish(userID, paperID, paperType, title, url, year, citation); err != nil {
 		c.JSON(http.StatusOK, gin.H{"success": false, "message": err.Error()})
 		return
 	}
