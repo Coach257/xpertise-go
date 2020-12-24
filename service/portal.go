@@ -99,7 +99,7 @@ func QueryARecommendInPaperRecommend(paperID string) (paperRecommend model.Paper
 
 // CalculateScore 计算推荐指数
 func CalculateScore(citation uint64, hIndex uint64) (value uint64) {
-	value = citation/3 + hIndex
+	value = citation/10 + hIndex
 	return value
 }
 
@@ -111,7 +111,7 @@ func QueryARecommend(paperID string, authorID string) (recommend model.Recommend
 // 加入至论文推荐统计表
 func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, hIndex int64) (err error) {
 	//value:=CalculateScore(citation,hIndex)
-	value := int64(citation)/3 + hIndex
+	value := int64(citation)/10 + hIndex
 	paperRecommend := model.PaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
