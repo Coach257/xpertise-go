@@ -3,6 +3,7 @@ package v1
 import (
 	"net/http"
 	"strconv"
+	"strings"
 	"xpertise-go/service"
 
 	"github.com/gin-gonic/gin"
@@ -55,7 +56,7 @@ func SearchSpecialColumn(c *gin.Context) {
 func AddToColumn(c *gin.Context) {
 	columnID, _ := strconv.ParseUint(c.Request.FormValue("column_id"), 0, 64)
 	paperID := c.Request.FormValue("paper_id")
-	paperTitle := c.Request.FormValue("paper_title")
+	paperTitle := strings.Title(c.Request.FormValue("paper_title"))
 	_, notFound := service.QueryItemFromColumnPaper(columnID, paperID)
 
 	if !notFound {
@@ -144,7 +145,7 @@ func CreateRecommend(c *gin.Context) {
 	authorID := c.Request.FormValue("author_id")
 	authorName := c.Request.FormValue("author_name")
 	paperID := c.Request.FormValue("paper_id")
-	paperTitle := c.Request.FormValue("paper_title")
+	paperTitle := strings.Title(c.Request.FormValue("paper_title"))
 	citation, _ := strconv.ParseUint(c.Request.FormValue("n_citation"), 0, 64)
 	hIndex, _ := strconv.ParseInt(c.Request.FormValue("h_index"), 0, 64)
 	reason := c.Request.FormValue("reason")
