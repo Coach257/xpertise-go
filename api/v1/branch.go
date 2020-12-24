@@ -13,7 +13,8 @@ import (
 // CreateAComment doc
 // @description 创建一条评论
 // @Tags branch
-// @Param username formData string true "用户名"
+// @Param user_id formData string true "用户ID"
+// @Param author_name formData string true "作者名(如果是作者本人评论)"
 // @Param paper_id formData string true "文献ID"
 // @Param content formData string true "评论内容"
 // @Success 200 {string} string "{"success": true, "message": "用户评论成功"}"
@@ -21,10 +22,11 @@ import (
 func CreateAComment(c *gin.Context) {
 	userID, _ := strconv.ParseUint(c.Request.FormValue("user_id"), 0, 64)
 	user, _ := service.QueryAUserByID(userID)
+	authorName := c.Request.FormValue("author_name")
 	paperID := c.Request.FormValue("paper_id")
 	content := c.Request.FormValue("content")
 
-	comment := model.Comment{UserID: userID, Username: user.Username, PaperID: paperID, CommentTime: time.Now(), Content: content}
+	comment := model.Comment{UserID: userID, Username: user.Username, AuthorName: authorName, PaperID: paperID, CommentTime: time.Now(), Content: content}
 	err := service.CreateAComment(&comment)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{

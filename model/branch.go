@@ -54,6 +54,7 @@ type Comment struct {
 	//gorm.Model
 	CommentID   uint64    `gorm:"primary_key;" json:"comment_id"`
 	Username    string    `gorm:"size:15" json:"username"`
+	AuthorName  string    `gorm:"size:30" json:"author_name"`
 	UserID      uint64    `gorm:"not null" json:"user_id"`
 	PaperID     string    `gorm:"size:30" json:"paper_id"`
 	CommentTime time.Time `json:"comment_time"`
