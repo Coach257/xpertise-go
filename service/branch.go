@@ -1,6 +1,7 @@
 package service
 
 import (
+	"strings"
 	"xpertise-go/global"
 	"xpertise-go/model"
 
@@ -180,13 +181,13 @@ func QueryAllReferences(paperID string) (references []model.PaperReference) {
 func FindReferenceConnections(paperID string, paperTitle string) (m model.M) {
 	directRefers := QueryAllReferences(paperID)
 	var nilM []model.M
-	m = model.M{ID: paperID, Name: paperTitle, Ms: nilM}
+	m = model.M{ID: paperID, Name: strings.Title(paperTitle), Ms: nilM}
 	for j, e := range directRefers {
-		x := model.M{ID: e.ReferenceID, Name: e.ReferencePaperTitle, Ms: nilM}
+		x := model.M{ID: e.ReferenceID, Name: strings.Title(e.ReferencePaperTitle), Ms: nilM}
 		m.Ms = append(m.Ms, x)
 		level2Refers := QueryAllReferences(e.ReferenceID)
 		for _, s := range level2Refers {
-			y := model.M{ID: s.ReferenceID, Name: s.ReferencePaperTitle, Ms: nilM}
+			y := model.M{ID: s.ReferenceID, Name: strings.Title(s.ReferencePaperTitle), Ms: nilM}
 			m.Ms[j].Ms = append(m.Ms[j].Ms, y)
 		}
 	}
