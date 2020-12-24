@@ -111,7 +111,7 @@ func QueryARecommend(paperID string, authorID string) (recommend model.Recommend
 // 加入至论文推荐统计表
 func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, hIndex int64) (err error) {
 	//value:=CalculateScore(citation,hIndex)
-	value := int64(float64(citation)/10 + float64(hIndex))
+	value := int64(float64(citation)/10+float64(hIndex)) + 1
 	paperRecommend := model.PaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
@@ -119,7 +119,7 @@ func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, hIn
 
 // 更新论文在论文推荐统计表中的数据
 func UpdatePaperRecommend(paperRecommend *model.PaperRecommend, hIndex int64) (err error) {
-	paperRecommend.Value += hIndex
+	paperRecommend.Value += hIndex + 1
 	err = global.DB.Save(paperRecommend).Error
 	return err
 }
@@ -133,7 +133,7 @@ func QueryARecommendInCsPaperRecommend(paperID string) (paperRecommend model.CsP
 // 加入至论文推荐统计表
 func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, hIndex int64) (err error) {
 	//value:=CalculateScore(citation,hIndex)
-	value := int64(float64(citation)/10 + float64(hIndex))
+	value := int64(float64(citation)/10+float64(hIndex)) + 1
 	paperRecommend := model.CsPaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
@@ -141,7 +141,7 @@ func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, h
 
 // 更新论文在论文推荐统计表中的数据
 func UpdateCsPaperRecommend(paperRecommend *model.CsPaperRecommend, hIndex int64) (err error) {
-	paperRecommend.Value += hIndex
+	paperRecommend.Value += hIndex + 1
 	err = global.DB.Save(paperRecommend).Error
 	return err
 }
