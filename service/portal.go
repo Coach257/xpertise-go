@@ -98,10 +98,10 @@ func QueryARecommendInPaperRecommend(paperID string) (paperRecommend model.Paper
 }
 
 // CalculateScore 计算推荐指数
-func CalculateScore(citation uint64, hIndex uint64) (value uint64) {
-	value = citation/10 + hIndex
-	return value
-}
+// func CalculateScore(citation uint64, hIndex uint64) (value uint64) {
+// 	value = citation<<3 + hIndex
+// 	return value
+// }
 
 func QueryARecommend(paperID string, authorID string) (recommend model.Recommend, notFound bool) {
 	notFound = global.DB.Where("paper_id = ? And author_id = ?", paperID, authorID).First(&recommend).RecordNotFound()
@@ -111,7 +111,7 @@ func QueryARecommend(paperID string, authorID string) (recommend model.Recommend
 // 加入至论文推荐统计表
 func AddToPaperRecommend(paperID string, paperTitle string, citation uint64, hIndex int64) (err error) {
 	//value:=CalculateScore(citation,hIndex)
-	value := int64(citation)/10 + hIndex
+	value := int64(float64(citation)/10 + float64(hIndex))
 	paperRecommend := model.PaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
@@ -133,7 +133,7 @@ func QueryARecommendInCsPaperRecommend(paperID string) (paperRecommend model.CsP
 // 加入至论文推荐统计表
 func AddToCsPaperRecommend(paperID string, paperTitle string, citation uint64, hIndex int64) (err error) {
 	//value:=CalculateScore(citation,hIndex)
-	value := int64(citation) + hIndex
+	value := int64(float64(citation)/10 + float64(hIndex))
 	paperRecommend := model.CsPaperRecommend{PaperID: paperID, PaperTitle: paperTitle, Value: value}
 	err = global.DB.Create(&paperRecommend).Error
 	return err
