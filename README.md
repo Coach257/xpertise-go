@@ -1,16 +1,10 @@
 # xpertise-scholar
 
-前端仓库地址
+> [Frontend Github Repo](https://github.com/Coach257/xpertise-frontend)
+> [Backend Github Repo](https://github.com/Coach257/xpertise-go)
+> [Xpertise Scholar Website](https://xpertise-buaa.df.r.appspot.com/)
 
-https://github.com/Coach257/xpertise-frontend
-
-后端仓库地址
-
-https://github.com/Coach257/xpertise-go/graphs/contributors
-
-
-
-## Go 后端
+## Go后端
 
 ### 运行
 
@@ -51,7 +45,7 @@ timeout: "1600s"
 - `go mod tidy` 安装依赖
 - `gcloud app deploy` 部署
 
-### CI/CD 部署
+### CI/CD部署
 
 > 使用Cloud Build服务，持续集成，持续部署
 
@@ -62,7 +56,7 @@ timeout: "1600s"
   - Source: Connect repository(GitHub)-Select your_repo
 - 在Cloud Build/Settings中，ENABLE App Engine & Service Accounts
 
-## Vue 前端
+## Vue前端
 
 ### 运行
 
@@ -73,7 +67,7 @@ timeout: "1600s"
 
 ### 部署
 
-与Go 后端类似。修改的地方如下：
+与Go后端类似。修改的地方如下：
 
 - `app.yaml`
 
