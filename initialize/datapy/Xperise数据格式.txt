@@ -1,0 +1,123 @@
+thb paper:
+{
+    id:
+    title:
+    authors:[
+        {
+            name:
+            id:
+        }
+    ]
+    venue:发表地址
+    {
+        raw:
+        id:
+    }
+    year:
+    keywords:[""]
+    n_citation:
+    page_start:
+    page_end:
+    lang:语言
+    volume:第几卷
+    issue:第几期
+    doi:分类号
+    url:[""]原文地址
+    abstract:
+}
+
+thb author:
+{
+    id:
+    name:
+    h_index:最高文献引用数
+    n_pubs:文献数量
+    tags:兴趣列表
+    [
+        {
+            w:权重
+            t:名称
+        }
+    ]
+    pubs:文献列表
+    [
+        {
+            i:文献id
+            r:第几作者
+        }
+    ]
+    n_citation:总引用数
+    orgs:机构列表
+    ["",""]
+}
+
+计算机文献:
+{
+    id:PaperID,
+    title:Title,
+    authors:[
+        {
+            name:AuthorName,
+            id:AuthorID,
+        }
+    ],
+    venue:{
+        raw:ConferenceName,
+        id:ConferenceID,
+    },
+    year:PaperPublishYear,
+    keywords:[]从scholarly请求补充
+    n_citation:通过在reference中计算得出
+    page_start:scholarly
+    page_end:scholarly
+    lang:语言 scholarly
+    volume:第几卷 scholarly
+    issue:第几期 scholarly
+    doi:分类号 scholarly
+    url:[""]原文地址 scholarly
+    abstract: scholarly
+    reference: 引用文献id列表[]
+}
+
+计算机作者:
+{
+    id:AuthorID,
+    name:AuthorName,
+    n_pubs:文献个数，可计算
+    tags:[] scholarly
+    pubs:[
+        {
+            id:PaperID,
+            title:
+            r:AuthorSequence
+        }
+    ],
+    n_citation:计算得出
+    orgs:机构id列表[
+        {
+            id:
+            name:
+        }
+    ]
+}
+
+计算机机构:
+{
+    id:AffiliationID,
+    name:AffiliationName,
+    authors:[
+        {
+            name:AuthorName,
+            id:AuthorID,
+        }
+    ],
+    h_index:计算得出
+    n_pubs:计算得出
+    n_citation:计算得出
+    pubs:[
+        {
+            id:
+            title:
+        }
+    ]
+}

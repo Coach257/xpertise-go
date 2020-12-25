@@ -1,0 +1,4 @@
+
+分别为：
+第一个人的id 第一个人的姓名 第二个人的id 第二个人的姓名 并查集father的id paper的id paper的title
+中间用\t分隔开
