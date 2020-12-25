@@ -1,5 +1,15 @@
 # xpertise-scholar
 
+前端仓库地址
+
+https://github.com/Coach257/xpertise-frontend
+
+后端仓库地址
+
+https://github.com/Coach257/xpertise-go/graphs/contributors
+
+
+
 ## Go 后端
 
 ### 运行
